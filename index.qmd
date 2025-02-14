@@ -26,26 +26,26 @@ Op dit moment wordt gewerkt aan een nationaal actieplan om deze barrières te ad
 3. AI-beschikbaarheid
 4. Orkestratie.
 
-Binnen de actielijn databeschikbaarheid is in de afgelopen jaren het nodige in gang gezet, waaronder het systematisch toepassen van FAIR principes, een helder en breed gedragen ethisch en juridisch kader en het realiseren van gedistribueerde toegang tot data. Tegelijkertijd kunnen we constateren dat het ontbreekt aan een generieke 'AI dataplatform' waarop effectief onderzoek kan worden gedaan, algoritmes kunnen worden ontwikkeld etc. Een dergelijk platform is een geïntegreerd systeem dat AI-ontwikkelaars ondersteunt met toegang tot data, modellen en andere hulpmiddelen om AI-projecten te ontwikkelen en te verbeteren. Dit platform biedt toegang tot essentiële bronnen, zoals datasets voor het trainen van AI-algoritmen, basis AI-modellen en diensten zoals een ELSA-desk voor ethische en juridische vraagstukken.
+Binnen de actielijn databeschikbaarheid is in de afgelopen jaren het nodige in gang gezet, waaronder het systematisch toepassen van FAIR principes, een helder en breed gedragen ethisch en juridisch kader en het realiseren van gedistribueerde toegang tot data. Tegelijkertijd kunnen we constateren dat het ontbreekt aan voldoende gedetailleerde afspraken om te komen tot een ecosysteem van 'AI dataplatformen' waarop effectief onderzoek kan worden gedaan, algoritmes kunnen worden ontwikkeld etc. Een dergelijk platform is een geïntegreerd systeem dat AI-ontwikkelaars ondersteunt met toegang tot data, modellen en andere hulpmiddelen om AI-projecten te ontwikkelen en te verbeteren. Dit platform biedt toegang tot essentiële bronnen, zoals datasets voor het trainen van AI-algoritmen, basis AI-modellen en diensten zoals een ELSA-desk voor ethische en juridische vraagstukken.
 
-Een dergelijk 'AI dataplatform' is in feite een specifieke vorm van een beveiligde verwerkingsomgeving zoals in in de datagovernance verordening artikel 2 lid 20 is gedefinieerd:
+Dergelijke 'AI dataplatformen' zijn in feite specifieke vormen van beveiligde verwerkingsomgevingen zoals in in de datagovernance verordening artikel 2 lid 20 is gedefinieerd:
 
 > “beveiligde verwerkingsomgeving”: de fysieke of virtuele omgeving en organisatorische middelen om te zorgen voor de naleving van het Unierecht, zoals Verordening (EU) 2016/679 (de Algemene verordening gegevensbescherming), met name wat betreft de rechten van datasubjecten, intellectuele-eigendomsrechten, en handels- en statistisch geheim, integriteit en toegankelijkheid, alsook van het toepasselijke nationale recht, en om de entiteit die de beveiligde verwerkingsomgeving biedt in staat te stellen alle gegevensverwerkingsactiviteiten te bepalen en er toezicht op te houden, met inbegrip van het tonen, opslaan, downloaden en exporteren van gegevens en het berekenen van afgeleide gegevens door middel van computeralgoritmen;
 
-Onder de werktitel "AIDA" willen we in de komende periode met experts, belanghebbenden en veldpartijen te komen tot een gecoördineerde realisatie van een dergelijke nutsvoorziening. Deze startnotitie en website is bedoeld als interactief discussie document, ter ondersteuning van dit consultatieproces.
+Onder de werktitel "AIDA" willen we in de komende periode met experts, belanghebbenden en veldpartijen te komen tot een gecoördineerde realisatie van een dergelijke nutsvoorzieningen. Deze startnotitie en website is bedoeld als interactief discussie document, ter ondersteuning van dit consultatieproces.
 
-Op dit moment zijn er ontzettend veel ontwikkelingen gaande die relevant zijn voor AIDA. In het onderstaande geven we een samenvatting van relevante initiatieven, om te komen tot een eerste scoping en vraagstelling.
+Op dit moment zijn er ontzettend veel ontwikkelingen gaande die relevant zijn voor AIDA. In het onderstaande geven we een samenvatting van relevante initiatieven, waarna we een eerste scoping presenteren en vragen formuleren als start voor de discussie.
 
 ## Europese context
 
 ### Simpl
 
-Het Europese [Simpl](https://digital-strategy.ec.europa.eu/en/policies/simpl) is een _"... is an open source, smart and secure middleware platform that supports data access and interoperability among European data spaces."_ In januari 2025 zijn gedetailleerde architecturen en functionele beschrijvingen van __Simpl-Open__ opgeleverd om, zijnde een open-source software stack waarmee we deze generieke intergratie laag op een gestandaardiseerde manier willen realiseren.
+Het Europese [Simpl](https://digital-strategy.ec.europa.eu/en/policies/simpl) is een _"... is an open source, smart and secure middleware platform that supports data access and interoperability among European data spaces."_ In januari 2025 zijn gedetailleerde architecturen en functionele beschrijvingen van __Simpl-Open__ opgeleverd om, zijnde een open-source software stack waarmee we deze generieke integratie laag op een gestandaardiseerde manier willen realiseren.
 
 De Simpl-Open architectuur is een gedetailleerde uitwerken van bestaande referentie architecturen en is compatible met:
 
-- De _blueprint_ van de Data Spaces Support Center (DSSC) (huidige versie: [Blueprint 1.5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
-- International Data Spaces Reference Architecture Model (IDS-RAM) ([huidige versie 4](https://docs.internationaldataspaces.org/ids-knowledgebase/ids-ram-4), [draft versie 5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
+- De Data Spaces Support Center (DSSC) Blueprint ([versie 1.5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
+- De International Data Spaces Reference Architecture Model (IDS-RAM) ([huidige versie 4](https://docs.internationaldataspaces.org/ids-knowledgebase/ids-ram-4), [draft versie 5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
 
 ### AI Factories
 
@@ -84,8 +84,6 @@ zijn verschillende aandachtsgebieden en oplossingen gei
 - Hoe komen we tot harmonisatie, en waar nodig standaardisatie van verschillende oplossingsrichtingen op maximale interoperabiliteit te realiseren.
 - Wat zijn de essentiele generieke functies om het vertrouwensmodel goed te implementeren?
 - Hoe kunnen we 
-
-
 
 
 

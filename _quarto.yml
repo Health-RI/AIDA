@@ -9,8 +9,17 @@ website:
     content: "**Let op** - dit is een werkdocument dat bedoeld is om met experts, partners en andere belanghebbenden in discussie te gaan."
     type: primary
     position: above-navbar
+  reader-mode: true
   sidebar:
-    search: true    
+    search: true
+    style: floating
+    tools:
+      - icon: linkedin
+        href: https://www.linkedin.com/company/health-ri/
+        text: "LinkedIn profile"
+      - icon: github
+        href: https://github.com/Health-RI/AIDA
+        text: "GitHub repository"
     contents:
       - href: index.qmd
         text: Startnotitie
@@ -51,7 +60,7 @@ website:
 format:
   html:
     grid:
-      sidebar-width: 350px
+      sidebar-width: 280px
     theme:
       - cosmo
       - brand
