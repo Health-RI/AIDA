@@ -4,7 +4,7 @@ title: Scoping review bestaande blauwdrukken
 
 ## DSSC Blueprint 1.5 als startpunt
 
-Er zijn verschillende referentie architecturen en blauwdrukken die vergelijkbaar zijn met AIDA. Wij kiezen ervoor om de Blueprint 1.5 van de Data Spaces Support Centre (DSSC) als startpunt te gebruiken, omdat deze wordt ondersteund door een grote community en het expliciet bedoelt is om aan de hand van bouwblokken specifieke ontwerpen en implementaties te maken. @fig-dssc-blueprint geeft een overzicht van de bouwblokken die zijn onderverdeelt in bedrijfsmatige en organisatie bouwblokken, en technische bouwblokken.De [online documentatie](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home) geeft een gedetailleerde beschrijving van elke bouwblok. Daarnaast is er een uitgebreide [DSSC Glossary](https://dssc.eu/space/bv15e/766061530/Introduction+-+DSSC+Glossary) die wij zullen gebruiken voor het beschrijven en definieeren van AIDA. Daarbij hanteren we de methode zoals in @fig-dssc-tools is geillustreerd, namelijk dat AIDA een verzameling van bouwblokken is, waarvoor we (met de tijd) verschillende implementatie en configuraties zullen verwachten. 
+Er zijn verschillende referentie architecturen en blauwdrukken die vergelijkbaar zijn met AIDA. Wij kiezen ervoor om de Simpl Open architectuur in combinatie met de Blueprint 1.5 van de Data Spaces Support Centre (DSSC) als startpunt te gebruiken. De Simpl Open architectuur is het meest gedetailleerd en richt zich met name ook op de orchestratie van de infrastructuur, wat essentieel is om hybride SPEs te realiseren. De DSSC Blueprint is met name nuttig als framework om de concepten te communiceren. Het wordt ondersteund door een grote community en het expliciet bedoelt is om aan de hand van bouwblokken specifieke ontwerpen en implementaties te maken. @fig-dssc-blueprint geeft een overzicht van de bouwblokken die zijn onderverdeelt in bedrijfsmatige en organisatie bouwblokken, en technische bouwblokken.De [online documentatie](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home) geeft een gedetailleerde beschrijving van elke bouwblok. Daarnaast is er een uitgebreide [DSSC Glossary](https://dssc.eu/space/bv15e/766061530/Introduction+-+DSSC+Glossary) die wij zullen gebruiken voor het beschrijven en definiëren van AIDA. Daarbij hanteren we de methode zoals in @fig-dssc-tools is geïllustreerd, namelijk dat elke SPE een verzameling van bouwblokken is, waarvoor we (met de tijd) verschillende implementatie en configuraties zullen verwachten. 
 
 ![DSSC Blueprint 1.5 Building Block](/images/dssc-blueprint-building-blocks.png){#fig-dssc-blueprint}
 
@@ -27,6 +27,9 @@ De eerste versie van de blauwdruk is in december 2024 gepubliceerd ([link](/reso
 
 Veel componenten van de ENTRUST architectuur zijn een op een te mappen op de DSSC Blueprint. Meest in het oog springende is dat ENTRUST vooral richt op gefedereerde TREs.
 
+
+
+## Europe AI Factory
 
 ## BDVA reference model
 
@@ -52,5 +55,4 @@ Van de benoemde functionele domeinen zijn de volgende in scope van AIDA:
   - standaarden
 
 
-### Europe AI Factory
 

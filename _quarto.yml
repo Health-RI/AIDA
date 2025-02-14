@@ -25,13 +25,12 @@ website:
         text: Startnotitie
       - section: "Strategisch perspectief"
         href: strategisch/index.qmd
-        contents:
-          - href: strategisch/aida.qmd
-            text: "Verhaallijn AIDA"          
+        contents:     
+          - href: strategisch/ai-in-de-zorg.qmd
+            text: "AI in de zorg"
           - href: strategisch/blauwdrukken.qmd
             text: "Vergelijking blauwdrukken"
-          - href: strategisch/valleys.qmd
-            text: "Achtergrond"          
+                    
           # - href: strategisch/plugin.qmd
           #   text: "Voorbeeld: Amsterdam Health Data Space"
           # - href: strategisch/plugin.qmd
@@ -57,6 +56,7 @@ website:
             target: _blank
   page-navigation: true
 
+lightbox: true
 format:
   html:
     grid:
@@ -71,6 +71,7 @@ format:
     brand: /_brand.yml
     lang: nl-nl
     papersize: a4
+    number-sections: true
 
 comments:
   giscus: 

@@ -1,0 +1,6 @@
+## Lijst van relevante projecten en componenten
+
+- https://molgenis.org/ : analyse platform bioinformatics
+- https://www.openplanet.cloud/data-platform : analyuse 
+- https://www.yivi.app/ : Identity mgnt
+- https://checkmk.com/ : OSS operations & observability
