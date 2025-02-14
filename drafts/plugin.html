@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Beschrijving van de achtergrond wat heeft geleid tot AIDA. Het overbruggen van valleys of death als narratief.">
 
-<title>Strategisch perspectief – Working document AI platform</title>
+<title>PLUGIN en vantage6 – Working document AI platform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -51,8 +30,6 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../business/index.html" rel="next">
-<link href="../strategisch/blauwdrukken.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -62,7 +39,9 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-c207e758c661506f1df4df416510a700.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/accordion/accordion.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -107,7 +86,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../strategisch/index.html">Strategisch perspectief</a></li><li class="breadcrumb-item"><a href="../strategisch/valleys.html">Achtergrond</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">PLUGIN en vantage6</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
@@ -158,20 +137,14 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../strategisch/aida.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verhaallijn AIDA</span></a>
+  <a href="../strategisch/ai-in-de-zorg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI in de zorg</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../strategisch/blauwdrukken.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vergelijking blauwdrukken</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../strategisch/valleys.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Achtergrond</span></a>
   </div>
 </li>
       </ul>
@@ -238,26 +211,24 @@ div.csl-indent {
     <h2 id="toc-title">Op deze pagina</h2>
    
   <ul>
-  <li><a href="#context-ai4health" id="toc-context-ai4health" class="nav-link active" data-scroll-target="#context-ai4health">Context: AI4Health</a></li>
-  <li><a href="#behoefte-aan-een-ai-dataplatform-aida" id="toc-behoefte-aan-een-ai-dataplatform-aida" class="nav-link" data-scroll-target="#behoefte-aan-een-ai-dataplatform-aida">Behoefte aan een “AI dataplatform” (AIDA)</a></li>
-  <li><a href="#een-eerste-ontwerp-van-aida" id="toc-een-eerste-ontwerp-van-aida" class="nav-link" data-scroll-target="#een-eerste-ontwerp-van-aida">Een eerste ontwerp van AIDA</a></li>
+  <li><a href="#waarom-plugin" id="toc-waarom-plugin" class="nav-link active" data-scroll-target="#waarom-plugin">Waarom PLUGIN</a>
+  <ul class="collapse">
+  <li><a href="#één-infrastructuur" id="toc-één-infrastructuur" class="nav-link" data-scroll-target="#één-infrastructuur">Één infrastructuur</a></li>
+  <li><a href="#ai" id="toc-ai" class="nav-link" data-scroll-target="#ai">AI</a></li>
+  <li><a href="#standaardiseren-aan-de-bron" id="toc-standaardiseren-aan-de-bron" class="nav-link" data-scroll-target="#standaardiseren-aan-de-bron">Standaardiseren aan de bron</a></li>
+  </ul></li>
+  <li><a href="#vantage6" id="toc-vantage6" class="nav-link" data-scroll-target="#vantage6">vantage6</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="valleys.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="plugin.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../strategisch/index.html">Strategisch perspectief</a></li><li class="breadcrumb-item"><a href="../strategisch/valleys.html">Achtergrond</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Strategisch perspectief</h1>
-<p class="subtitle lead">Achtergrond</p>
+<h1 class="title">PLUGIN en vantage6</h1>
 </div>
 
-<div>
-  <div class="description">
-    <p>Beschrijving van de achtergrond wat heeft geleid tot AIDA. Het overbruggen van <em>valleys of death</em> als narratief.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -272,116 +243,34 @@ div.csl-indent {
 </header>
 
 
-<p><br></p>
-<section id="context-ai4health" class="level2">
-<h2 class="anchored" data-anchor-id="context-ai4health">Context: AI4Health</h2>
-<p>In Nederland zijn verschillende landelijke initiatieven actief die zich richten op het verbeteren van de digitale zorg en het benutten van de grote potentie van AI daarbij:</p>
-<ul>
-<li>Health-RI en Cumuluz werken aan data-beschikbaarheid</li>
-<li>de Nederlandse AI Coalitie (NLAIC) richt zich op AI <em>an sich</em></li>
-<li>Digizo-Zorgverzekeraars Nederland (ZN) voor het versnellen van innovatie</li>
-</ul>
-<p>Elk van deze initiatieven maakt op zichzelf goede voortgang, maar lopen tegen knelpunten aan die ze individueel niet kunnen oplossen. Hiervoor is overzicht, regie en nauwe samenwerking met VWS nodig en intrinsieke betrokkenheid van essentiële ketenpartijen, waaronder Nictiz, de koepels, de Patiëntenfederatie en de zorg- en onderzoeksorganisaties.</p>
-<p>Het is in deze context dat Health-RI, NLAIC de krachten gebundeld, met betrokkenheid van ZN, om gezamenlijk een versneld en positief AI-innovatieklimaat te creëren in zorg en onderzoek wat heeft geleid tot een eerste aanzet voor een nationaal actieplan: AI4Health.</p>
-<p>Met deze aanpak willen we breed barrières aangepakken die het momenteel AI-gedreven innovaties buitengewoon moeilijk maken om de opschalingsfase bereiken. Vanuit de praktijk , waardoor impact op de noodzakelijke zorgtransformatie achterblijft. De dagelijkse praktijk wijst uit dat er drie breed-gevoelde barrières (<em>valleys of death</em>) die overkomen moeten worden (zie <span class="citation" data-cites="mxi2024ai">Gude, van Eekeren, en Vasseur (<a href="#ref-mxi2024ai" role="doc-biblioref">2024</a>)</span> voor een recent overzicht).</p>
-<div id="fig-three-valleys-of-death" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-three-valleys-of-death-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/three-valleys-of-death.png" class="img-fluid figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-three-valleys-of-death-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;1: De drie <em>valleys of death</em> die grootschalig gebruik van AI in de zorg in de weg staan.
-</figcaption>
-</figure>
-</div>
-<ol type="1">
-<li><strong>Van concept tot toegang tot de praktijk.</strong> Voordat grootschalig pilots en marktanalyse mogelijk is moet voldaan worden aan de voorwaarden van de Medical Device Regulation (MDR) en de AI act; 80-90% van de innovaties strandt hier. In de verschillende meetings en workshops die NLAIC georganiseerd heeft met zorginstellingen en innovatoren kwam de MDR/AI ACT bij herhaling als grote bottleneck naar boven (altijd top-3).</li>
-<li><strong>Van pilot naar eerste betalende klant.</strong> Dit vereist onder meer een solide business case, betrouwbare toegang tot data en professionele ondersteuning. Dit blijft een hardnekkig probleem, niet alleen voor toepassingen in de ziekenhuiszorg maar komt ook terug bij GGZ en VVT. Binnen de ziekenhuiszorg is het adresseren van deze VoD daarom bv een speerpunt voor de SAZ-ziekenhuizen (Expertisecentrum Zorgalgoritmen).</li>
-<li><strong>Van eerste klant naar duurzame opschaling.</strong> Implementatie, acceptatie en validatie (“calibratie”) in andere omgevingen dan die van de pilot sites en eerste klant zijn verre van triviaal voor AI-innovaties. De meeste innovaties die de eerste klant weten te bereiken stranden alsnog in deze Valley of Death. Ter verdere illustratie van de huidige stand van zaken: bij een AI-readiness traject van NLAIC kwam naar voren dat nog geen enkele zorginstelling daadwerkelijk AI-ready is.</li>
-</ol>
+<section id="waarom-plugin" class="level2">
+<h2 class="anchored" data-anchor-id="waarom-plugin">Waarom PLUGIN</h2>
+<section id="één-infrastructuur" class="level3">
+<h3 class="anchored" data-anchor-id="één-infrastructuur">Één infrastructuur</h3>
+<p>Met PLUGIN willen we één federatief platform neerzetten van en voor de Nederlandse ziekenhuizen. Dit elimineert de behoefte aan maatwerk infrastructuur, wat resulteert in een efficiëntere gegevensuitwisseling en lagere kosten voor het ziekenhuis.</p>
 </section>
-<section id="behoefte-aan-een-ai-dataplatform-aida" class="level2">
-<h2 class="anchored" data-anchor-id="behoefte-aan-een-ai-dataplatform-aida">Behoefte aan een “AI dataplatform” (AIDA)</h2>
-<p>Op dit moment wordt gewerkt aan een nationaal actieplan om deze barrières te adresseren langs vier actielijnen, te weten i) databeschikbaarheid, ii) AI-readiness, iii) AI-beschikbaarheid, en iv) orkestratie. Binnen de eerste actielijn databeschikbaarheid is in de afgelopen jaren het nodige in gang gezet, waaronder het systematisch toepassen van FAIR principes, een helder en breed gedragen ethisch en juridisch kader en het realiseren van gedistribueerde toegang tot data.</p>
-<p>Tegelijkertijd kunnen we constateren dat het ontbreekt aan een generieke ‘AI dataplatform’ waarop effectief onderzoek kan worden gedaan, algoritmes kunnen worden ontwikkeld etc. Een dergelijk platform is een geïntegreerd systeem dat AI-ontwikkelaars ondersteunt met toegang tot data, modellen en andere hulpmiddelen om AI-projecten te ontwikkelen en te verbeteren. Dit platform biedt toegang tot essentiële bronnen, zoals datasets voor het trainen van AI-algoritmen, basis AI-modellen en diensten zoals een ELSA-desk voor ethische en juridische vraagstukken.</p>
-<p>Een dergelijk ‘AI dataplatform’ is in feite een specifieke vorm van een beveiligde verwerkingsomgeving zoals in in de datagovernance verordening artikel 2 lid 20 is gedefinieerd:</p>
-<blockquote class="blockquote">
-<p>“beveiligde verwerkingsomgeving”: de fysieke of virtuele omgeving en organisatorische middelen om te zorgen voor de naleving van het Unierecht, zoals Verordening (EU) 2016/679 (de Algemene verordening gegevensbescherming), met name wat betreft de rechten van datasubjecten, intellectuele-eigendomsrechten, en handels- en statistisch geheim, integriteit en toegankelijkheid, alsook van het toepasselijke nationale recht, en om de entiteit die de beveiligde verwerkingsomgeving biedt in staat te stellen alle gegevensverwerkingsactiviteiten te bepalen en er toezicht op te houden, met inbegrip van het tonen, opslaan, downloaden en exporteren van gegevens en het berekenen van afgeleide gegevens door middel van computeralgoritmen;</p>
-</blockquote>
-<p>Nationaal als ook internationaal zijn er voorbeelden van dergelijke beveiligde verwerkingsomgevingen. Zo hebben de meeste <em>National Statistics Offices (NSOs)</em> zoals het CBS een <a href="https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen">microdata omgeving</a>. Alhoewel deze omgevingen zijn opzet voordat machine learning zijn intrede deed, bieden de meeste microdata omgevingen nu ook al de mogelijkheid om ‘lichte’ algoritmes te trainen op tabulaire data. Een rapport van de Verenigde Naties beschrijft dat deze omgevingen in toenemende mate ook worden uitgebreid met nieuwe AI-technieken, zoals privacy-enhancing technologieën (PETs)(<span class="citation" data-cites="un2023pet-guide">(<a href="#ref-un2023pet-guide" role="doc-biblioref"><span>‘The <span>PET Guide</span>’</span> 2023</a>)</span>).</p>
-<p>Specifiek voor de zorg zijn er ook al een aantal beveiligde verwerkingsomgevingen operationeel.</p>
-<ul>
-<li>Het Finse Social and Health Data Permit Authority (Findata) biedt met <a href="https://findata.fi/en/kapseli/">Kapseli</a> een landelijke voorziening aan dat aanvullend is op het Finse NSO.</li>
-<li>Het <a href="https://www.mayoclinicplatform.org/discover/">Mayo Clinic Platform_Discover</a> is een voorbeeld van een platform binnen een netwerk van zorg leveranciers.</li>
-<li>In toenemende mate worden federated learning (FL) platformen gebruikt <span class="citation" data-cites="teo2024federated">(<a href="#ref-teo2024federated" role="doc-biblioref">Teo e.a. 2024</a>)</span>. In Nederland is een actieve community rondom het <a href="https://distributedlearning.ai/">vantage6 platform</a> dat wordt gebruikt in het <a href="https://distributedlearning.ai/">PLUGIN project</a>, en internationaal in <a href="https://www.medicaldataworks.nl/customers">50 andere netwerken</a>.</li>
-</ul>
+<section id="ai" class="level3">
+<h3 class="anchored" data-anchor-id="ai">AI</h3>
+<p>Via PLUGIN is het mogelijk om AI-modellen te trainen met data van verschillende ziekenhuizen, wat de schaalbaarheid naar andere ziekenhuizen verhoogt. De betrokken ziekenhuizen hebben echter geen toegang tot de inviduele gegevens van andere ziekenhuizen.</p>
 </section>
-<section id="een-eerste-ontwerp-van-aida" class="level2">
-<h2 class="anchored" data-anchor-id="een-eerste-ontwerp-van-aida">Een eerste ontwerp van AIDA</h2>
+<section id="standaardiseren-aan-de-bron" class="level3">
+<h3 class="anchored" data-anchor-id="standaardiseren-aan-de-bron">Standaardiseren aan de bron</h3>
+<p>Het omzetten van klinische gegevens naar het FHIR-formaat vergemakkelijkt de analyse en uitwisseling van deze informatie. Met FHIR-standaardisatie aan de bron biedt PLUGIN één infrastructuur die voor meerdere doeleinden gebruikt kan worden.</p>
+<p><a href="https://plugin.healthcare/wp-content/uploads/2023/10/Architectuurplaat-PLUGIN-versie-Madou.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://plugin.healthcare/wp-content/uploads/2023/10/Architectuurplaat-PLUGIN-versie-Madou.jpeg" class="img-fluid"></a></p>
+</section>
+</section>
+<section id="vantage6" class="level2">
+<h2 class="anchored" data-anchor-id="vantage6">vantage6</h2>
 <ul>
-<li>In analogie: de huidige stand van zaken zijn gefragmenteerde terpen, waarbij AI-gedreven innovaties vaak van worden ontwikkeld op niet gestandaardiseerde infrastructuur (terpen)</li>
-<li>In plaats van terpen, willen we naar een deltawerken voor AI4Health.
-<ul>
-<li>Deltaplan: het ontwerp van een gestandaardiseerd “AI dataplatform” waarmee komende jaren generieke, landelijk dekkende voorzieningen gerealiseerd kunnen worden</li>
-<li>Deltawerken: de realisatie van het Deltaplan, met het perspectief dat er niet één platform is, maar een ecosysteem van platformen die interoperabel zijn. Net zoals dat de Deltawerken een ecosysteem van dijken, waterkeringen is.</li>
-</ul></li>
+<li>Beveiliging via gebruikers op centrale server</li>
+<li>Goedkeuring via container registry: welke berekeningen mogen worden uitgevoerd</li>
+<li></li>
 </ul>
-<p>Dit document geeft een aanzet tot het Deltaplan voor AIDA. Het is opgebouwd in hoofdstukken die min of meer de <a href="https://archimate.visual-paradigm.com/what-is-layers-and-aspects-in-archimate-core-framework/">lagen van Archimate</a> volgen.</p>
-<p></p><div id="layers" class="accordion quarto-accordion">
-<div class="accordion-item">
-<div class="accordion-header" id="heading-layers-trategischnkrijgen">
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-layers-trategischnkrijgen" aria-expanded="false" aria-controls="collapse-layers-trategischnkrijgen">
-<div class="accordion-header-content">Strategisch</div></button>
-</div>
-<div id="collapse-layers-trategischnkrijgen" class="accordion-collapse collapse" aria-labelledby="heading-layers-trategischnkrijgen" data-bs-parent="layers">
-<div class="accordion-body">
-<div class="accordion-body-content">Narratief met beschrijving van strategische rationale van het platform. Relevante prior art en ontwikkelingen worden geïntroduceerd, zodat deze in de verdere uitwerking een plek kunnen krijgen.</div></div>
-</div>
-</div>
-<div class="accordion-item">
-<div class="accordion-header" id="heading-layers-businessrijvingen">
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-layers-businessrijvingen" aria-expanded="false" aria-controls="collapse-layers-businessrijvingen">
-<div class="accordion-header-content">Business</div></button>
-</div>
-<div id="collapse-layers-businessrijvingen" class="accordion-collapse collapse" aria-labelledby="heading-layers-businessrijvingen" data-bs-parent="layers">
-<div class="accordion-body">
-<div class="accordion-body-content">Uitwerking van operationele en functionele eisen die “human readable” en software neutraal is. Dit omvat bijvoorbeeld personas en procesbeschrijvingen.</div></div>
-</div>
-</div>
-<div class="accordion-item">
-<div class="accordion-header" id="heading-layers-applicatieandaarden">
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-layers-applicatieandaarden" aria-expanded="false" aria-controls="collapse-layers-applicatieandaarden">
-<div class="accordion-header-content">Applicatie</div></button>
-</div>
-<div id="collapse-layers-applicatieandaarden" class="accordion-collapse collapse" aria-labelledby="heading-layers-applicatieandaarden" data-bs-parent="layers">
-<div class="accordion-body">
-<div class="accordion-body-content">Gestructureerde en software-neutrale technische beschrijving, die voldoende details bieden als startpunt voor implementaties. Dit omvat bijvoorbeeld technische ontwerp principes en interoperability standaarden.</div></div>
-</div>
-</div>
-</div>
-<p></p>
-<p>We volgen ongeveer het volgende proces:</p>
-<ul>
-<li>januari/februari 2025: bureauonderzoek, eerste opzet en structuur</li>
-<li>februari/maart 2025: eerste feedback rond met architecten van de nodes</li>
-<li>maart/april: publieke consultatie en rondetafel met VWS</li>
-</ul>
-
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-mxi2024ai" class="csl-entry" role="listitem">
-Gude, Wouter, Patrick van Eekeren, en Jordan Vasseur. 2024. <span>‘AI Monitor Ziekenhuizen 2024’</span>. M&amp;I Partners. <a href="https://mxi.nl/uploads/files/publication/ai-monitor-2024.pdf">https://mxi.nl/uploads/files/publication/ai-monitor-2024.pdf</a>.
-</div>
-<div id="ref-teo2024federated" class="csl-entry" role="listitem">
-Teo, Zhen Ling, Liyuan Jin, Nan Liu, Siqi Li, Di Miao, Xiaoman Zhang, Wei Yan Ng, e.a. 2024. <span>‘Federated Machine Learning in Healthcare: <span>A</span> Systematic Review on Clinical Applications and Technical Architecture’</span>. <em>Cell Reports Medicine</em> 5 (2): 101419. <a href="https://doi.org/10.1016/j.xcrm.2024.101419">https://doi.org/10.1016/j.xcrm.2024.101419</a>.
-</div>
-<div id="ref-un2023pet-guide" class="csl-entry" role="listitem">
-<span>‘The <span>PET Guide</span>’</span>. 2023. United Nations. <a href="https://unstats.un.org/bigdata/task-teams/privacy/guide/">https://unstats.un.org/bigdata/task-teams/privacy/guide/</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -803,19 +692,39 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
 <input type="hidden" id="giscus-alt-theme" value="dark">
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../strategisch/blauwdrukken.html" class="pagination-link" aria-label="Vergelijking blauwdrukken">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Vergelijking blauwdrukken</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../business/index.html" class="pagination-link" aria-label="Business perspectief">
-        <span class="nav-page-text">Business perspectief</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

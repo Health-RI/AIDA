@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/strategisch/index.html",
+    "items": [
+      "/strategisch/ahds.html",
+      "/strategisch/blauwdrukken.html",
+      "/strategisch/ai-in-de-zorg.html"
+    ]
+  },
+  {
     "listing": "/business/personas/index.html",
     "items": [
       "/business/personas/community-manager.html",

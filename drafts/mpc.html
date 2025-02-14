@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kapseli – Working document AI platform</title>
+<title>Secure Multiparty Computation (MPC) – Working document AI platform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Kapseli</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Secure Multiparty Computation (MPC)</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
@@ -134,20 +134,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../strategisch/aida.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verhaallijn AIDA</span></a>
+  <a href="../strategisch/ai-in-de-zorg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI in de zorg</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../strategisch/blauwdrukken.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vergelijking blauwdrukken</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../strategisch/valleys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Achtergrond</span></a>
   </div>
 </li>
       </ul>
@@ -210,14 +204,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="kapseli.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#wat-is-mpc" id="toc-wat-is-mpc" class="nav-link active" data-scroll-target="#wat-is-mpc">Wat is MPC?</a></li>
+  <li><a href="#waar-is-mpc-al-operationeel" id="toc-waar-is-mpc-al-operationeel" class="nav-link" data-scroll-target="#waar-is-mpc-al-operationeel">Waar is MPC al operationeel?</a>
+  <ul class="collapse">
+  <li><a href="#transmuraal-zorgnetwerk-west-brabant-oost" id="toc-transmuraal-zorgnetwerk-west-brabant-oost" class="nav-link" data-scroll-target="#transmuraal-zorgnetwerk-west-brabant-oost">Transmuraal Zorgnetwerk West-Brabant Oost</a></li>
+  <li><a href="#linksight" id="toc-linksight" class="nav-link" data-scroll-target="#linksight">Linksight</a></li>
+  <li><a href="#umcu" id="toc-umcu" class="nav-link" data-scroll-target="#umcu">UMCU</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="mpc.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Kapseli</h1>
+<h1 class="title">Secure Multiparty Computation (MPC)</h1>
 </div>
 
 
@@ -234,12 +240,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="wat-is-mpc" class="level2">
+<h2 class="anchored" data-anchor-id="wat-is-mpc">Wat is MPC?</h2>
+<p>(korte uitleg) Verschillende leveranciers in Nederland, waaronder Linksight en Roseman Labs</p>
+</section>
+<section id="waar-is-mpc-al-operationeel" class="level2">
+<h2 class="anchored" data-anchor-id="waar-is-mpc-al-operationeel">Waar is MPC al operationeel?</h2>
+<section id="transmuraal-zorgnetwerk-west-brabant-oost" class="level3">
+<h3 class="anchored" data-anchor-id="transmuraal-zorgnetwerk-west-brabant-oost">Transmuraal Zorgnetwerk West-Brabant Oost</h3>
 <ul>
-<li>uitleg Kapseli</li>
-<li>zie ook details in EOSC-Entrust blueprint</li>
+<li>https://www.tmz-breda.nl/</li>
+<li>Roseman Platform als om middels MPC een federated in-the-blind SPE aan te bieden. Platform kan tot een paar miljoen rijen tabulaire machine learning algoritmes ondersteunen</li>
+<li>Voorbeeld van een onderzoek: Verbeteren instroom, doorstroom en uitstroom van patiënten in de keten (<a href="https://www.tmz-breda.nl/proefschrift-verbeteren-instroom-doorstroom-en-uitstroom-van-patienten-in-de-keten/">link</a>)</li>
 </ul>
+</section>
+<section id="linksight" class="level3">
+<h3 class="anchored" data-anchor-id="linksight">Linksight</h3>
+<ul>
+<li>…</li>
+<li>…</li>
+<li>…</li>
+</ul>
+</section>
+<section id="umcu" class="level3">
+<h3 class="anchored" data-anchor-id="umcu">UMCU</h3>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

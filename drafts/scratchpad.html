@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Een eerste ruwe schets van AIDA wordt gegeven, binnen de bestaande Health-RI architectuur v4.0. De verschillende soorten van Secure Processing Environments worden geïntroduceerd inclusief bestaande voorbeelden.">
 
-<title>Strategisch perspectief – Working document AI platform</title>
+<title>scratchpad – Working document AI platform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../strategisch/blauwdrukken.html" rel="next">
-<link href="../strategisch/index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -42,9 +39,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-c207e758c661506f1df4df416510a700.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -89,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../strategisch/index.html">Strategisch perspectief</a></li><li class="breadcrumb-item"><a href="../strategisch/aida.html">Verhaallijn AIDA</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
@@ -140,20 +134,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../strategisch/aida.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Verhaallijn AIDA</span></a>
+  <a href="../strategisch/ai-in-de-zorg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI in de zorg</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../strategisch/blauwdrukken.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Vergelijking blauwdrukken</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../strategisch/valleys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Achtergrond</span></a>
   </div>
 </li>
       </ul>
@@ -220,209 +208,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Op deze pagina</h2>
    
   <ul>
-  <li><a href="#secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata" id="toc-secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata" class="nav-link active" data-scroll-target="#secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata">Secure Processing Environments voor secundair gebruik van gezondheidsdata</a>
-  <ul class="collapse">
-  <li><a href="#tre-surf-secure-analysis-environment-sane" id="toc-tre-surf-secure-analysis-environment-sane" class="nav-link" data-scroll-target="#tre-surf-secure-analysis-environment-sane">TRE: SURF Secure Analysis Environment (SANE)</a></li>
-  <li><a href="#fln-pluginvantage6" id="toc-fln-pluginvantage6" class="nav-link" data-scroll-target="#fln-pluginvantage6">FLN: PLUGIN/vantage6</a></li>
-  <li><a href="#h-spe-ubiops-en-roseman-labs" id="toc-h-spe-ubiops-en-roseman-labs" class="nav-link" data-scroll-target="#h-spe-ubiops-en-roseman-labs">H-SPE: UbiOps en Roseman Labs</a></li>
-  </ul></li>
-  <li><a href="#praatplaat-aida" id="toc-praatplaat-aida" class="nav-link" data-scroll-target="#praatplaat-aida">Praatplaat AIDA</a></li>
-  <li><a href="#lijst-van-relevante-projecten-en-componenten" id="toc-lijst-van-relevante-projecten-en-componenten" class="nav-link" data-scroll-target="#lijst-van-relevante-projecten-en-componenten">Lijst van relevante projecten en componenten</a></li>
+  <li><a href="#lijst-van-relevante-projecten-en-componenten" id="toc-lijst-van-relevante-projecten-en-componenten" class="nav-link active" data-scroll-target="#lijst-van-relevante-projecten-en-componenten">Lijst van relevante projecten en componenten</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="aida.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="scratchpad.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../strategisch/index.html">Strategisch perspectief</a></li><li class="breadcrumb-item"><a href="../strategisch/aida.html">Verhaallijn AIDA</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Strategisch perspectief</h1>
-<p class="subtitle lead">Verhaallijn AI dataplatform (AIDA)</p>
-</div>
-
-<div>
-  <div class="description">
-    <p>Een eerste ruwe schets van AIDA wordt gegeven, binnen de bestaande Health-RI architectuur v4.0. De verschillende soorten van Secure Processing Environments worden geïntroduceerd inclusief bestaande voorbeelden.</p>
-  </div>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<p><br></p>
-<section id="secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata" class="level2">
-<h2 class="anchored" data-anchor-id="secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata">Secure Processing Environments voor secundair gebruik van gezondheidsdata</h2>
-<p>Versie 4 van de Health-RI wiki beschrijft de <a href="https://health-ri.atlassian.net/wiki/x/l4ZNLw">gezondheidsdata-infrastructuur voor onderzoek, beleid en innovatie</a>. Deze infrastructuur is specifiek gericht op secundair gebruik, en is een verbijzondering van de algemene <a href="https://health-ri.atlassian.net/wiki/x/KIZNLw">gezamenlijk gezondheidsdata architectuurmodel</a>. Binnen deze architectuur zijn reeds twee soorten van Secure Processing Environments benoemd, namelijk <a href="https://health-ri.atlassian.net/wiki/spaces/HWV4/pages/793614634/Applicaties+veilige+verwerkingsomgeving">veilige verwerkingsomgevingen</a>) en <a href="https://health-ri.atlassian.net/wiki/spaces/HWV4/pages/793614678/Applicaties+gefedereerde+verwerkingsomgeving">gefedereerde verwerkingsomgevingen</a>.</p>
-<div id="fig-hri-architectuur-secundair" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-hri-architectuur-secundair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/hri-architectuur-secundair.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figuur&nbsp;1: Conceptuele architectuur voor secundair gebruik"><img src="../images/hri-architectuur-secundair.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hri-architectuur-secundair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;1: Conceptuele architectuur voor secundair gebruik
-</figcaption>
-</figure>
-</div>
-<p>De basis gedachte achter AIDA is dat er <em>verschillende soorten van <strong>secure processing environments</strong></em> zullen zijn. Als start voor de discussie introduceren we een derde type, de hybride Secure Processing Environment (H-SPE). In dit document hanteren we de namen van deze drie typen om expliciet onderscheid te maken; we zullen spreken van SPEs in het algemeen als we alle drie de soorten bedoelen. We geven een korte schets en voorbeeld van elk type.</p>
-<div id="tbl-spe-typen" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spe-typen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabel&nbsp;1: Drie soorten van Secure Processing Environments die binnen de scope van AIDA vallen.
-</figcaption>
-<div aria-describedby="tbl-spe-typen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 70%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Gecentraliseerde SPE</td>
-<td style="text-align: left;"><ul>
-<li>vaak benoemd als Trusted Research Environment</li>
-<li>veel bestaande voorbeelden, zie o.a. EOSC-ENTRUST</li>
-<li>machine learning op tabulaire data mogelijk</li>
-<li><em>statistical disclosure control</em> op output</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>Federated SPEs</td>
-<td style="text-align: left;"><ul>
-<li>decentrale benadering cf.&nbsp;personal health train</li>
-<li>oorspronkelijk bedoelt voor machine learning</li>
-<li>kan ook gebruikt worden voor statistische analyse</li>
-<li>moeilijker om mee te werken</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td>Hybride SPE (H-SPE)</td>
-<td style="text-align: left;"><ul>
-<li>Combinatie van bovenstaande technieken</li>
-<li>Nodig om gebruik te maken centrale rekencapaciteit</li>
-<li>Gedachte om gebruiksgemak te verbeteren</li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<section id="tre-surf-secure-analysis-environment-sane" class="level3">
-<h3 class="anchored" data-anchor-id="tre-surf-secure-analysis-environment-sane">TRE: SURF Secure Analysis Environment (SANE)</h3>
-<p>SURF Secure ANalysis Environment (SANE) is een virtuele, volledig afgeschermde omgeving waarop met vooraf goedgekeurde analyse software draait en toegang tot sensitive data wordt gegeven (<a href="#fig-sane" class="quarto-xref">Figuur&nbsp;2</a>). In onderstaand overzicht is SANE gepositioneerd als TRE, waarmee de data aanbieder controle houdt over de data die ter beschikking wordt gesteld en waarmee de data consumer op een makkelijke manier toegang krijgt. SANE biedt functionaliteiten op het gebied van <em>Research Analytics</em>, <em>Secure Data Zone</em> en <em>Data Discovery</em>. Meer details staan in de <a href="../resources/EOSC-ENTRUST_D13.4-blueprint-v1.pdf">blauwdruk van EOSC-ENTRUST</a>.</p>
-<div id="fig-sane" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-sane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/sane.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figuur&nbsp;2: Positionering van SANE binnen een generieke data space architectuur."><img src="../images/sane.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;2: Positionering van SANE binnen een generieke data space architectuur.
-</figcaption>
-</figure>
-</div>
-<p>Belangrijk kenmerk van SANE en andere TREs is dat de data fysiek naar de <em>Secure Data Zone</em> wordt gekopieerd. Naast het veilig aanbieden van data (als data houder), is dit ook het mechanisme waarmee data gebruikers hun eigen data mee kunnen nemen naar de TRE, om daarbinnen te koppelen aan andere data. Dit gebeurd vaak met gebruik van pseudonimisering. De CBS microdata omgeving werkt op een vergelijkbare manier.</p>
-<p>Binnen de blauwdruk van EOSC-ENTRUST wordt gesproken over <em>Federation Services</em> tussen verschillende TREs. Daarbij gaat het om data federation: data wordt (tijdelijk) van de ene naar de andere TRE gekopieerd zodat het daar in combinatie verwerkt kan worden. Data federation als mechanisme is anders dan federated learning: daarbij worden de berekeningen decentraal uitgevoerd en alleen de resultaten centraal gedeeld (zie hieronder). Federated learning is met name nuttig voor horizontaal gepartitioneerde data. Voor verticaal gepartitioneerde data, is data federation zoals beschreven door EOSC-ENTRUST meer geschikt.</p>
-</section>
-<section id="fln-pluginvantage6" class="level3">
-<h3 class="anchored" data-anchor-id="fln-pluginvantage6">FLN: PLUGIN/vantage6</h3>
-<p>Federated learning (FL) als concept staat ook wel bekend als de Personal Health Train (PHT). De term FL wordt vooral gebruikt om naar het technische concept te verwijzen, terwijl PHT verder gaat in het definiëren van afspraken rondom het gebruik van FL. Het basis principe is dat bij FL de gegevens op afzonderlijke ‘data stations’ verschillende apparaten blijven die participeren in het FLN. Om deze data te gebruiken voor machine learning, wordt bij elk data station het algoritme lokaal c.q. afzonderlijk getraind. Vervolgens worden alleen de resultaten van het algoritme - bijvoorbeeld geaggregeerde statistieken of de modelparameters van het neurale netwerk - gedeeld met een centrale server. Deze server combineert de resultaten van afzonderlijke modellen tot één model, welke vervolgens met alle deelnemers van het FLN gedeeld wordt.</p>
-<div id="fig-plugin" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-plugin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="https://plugin.healthcare/wp-content/uploads/2023/10/Architectuurplaat-PLUGIN-versie-Madou.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figuur&nbsp;3: Overzicht van vantage6 infrastructuur zoals in PLUGIN is gerealiseerd."><img src="https://plugin.healthcare/wp-content/uploads/2023/10/Architectuurplaat-PLUGIN-versie-Madou.jpeg" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plugin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;3: Overzicht van vantage6 infrastructuur zoals in PLUGIN is gerealiseerd.
-</figcaption>
-</figure>
-</div>
-<p>Het <a href="https://plugin.healthcare">PLUGIN project</a> heeft een FLN van tientallen ziekenhuizen gerealiseerd, waarbij gebruik wordt gemaakt <a href="https://distributedlearning.ai/">vantage6</a> als platform. Belangrijkste kenmerken van deze opzet zijn:</p>
-<ul>
-<li>Sterke nadruk op veiligheid en privacy, door gebruik van beveiligde containers en virtual private networks in de basis infrastructuur</li>
-<li>Ontzorgen van deelnemende ziekenhuizen, waarbij gebruik wordt gemaakt van een generieke Linux server in het domain van het ziekenhuis dat als basis dient om de opslag en rekenkracht voor de FLN te realiseren. Afhankelijk of een ziekenhuis mee doet als trainingsziekenhuis of alleen als gebruiker dient een zwaardere resp. lichtere Linux server te worden geconfigureerd</li>
-<li>Voor elk project wordt de berekening c.q. machine learning expliciet ‘verpakt’ in een Docker container, zijnde de berekening die daadwerkelijk wordt uitgevoerd.</li>
-<li>De generieke Linux server wordt ook gebruikt om dashboard, informatieproducten etc. te hosten binnen het IT domein van het ziekenhuis</li>
-</ul>
-<p>Het gebruik van een standaard data model (op de data stations) is een belangrijke randvoorwaarde om FL te kunnen doen. Naast het gebruik van vantage6 als kerntechnologie, heeft PLUGIN ervoor gekozen om FHIR als data standaard te gebruiken. Hiertoe is een <a href="https://plugin.healthcare/fhir/">FHIR profiel in ontwikkeling</a> die aansluit op de bestaande ZIBS2020 bouwstenen. Meer achtergrond over de keuze voor FHIR is te lezen in <a href="https://plugin-healthcare.github.io/viewpoint-jmir/">dit artikel</a>. Andere voorbeelden van FLN platform zijn <a href="https://maastrichtu-biss.github.io/Inventory-DataSharing-tools/inventory.html">hier</a> te vinden.</p>
-</section>
-<section id="h-spe-ubiops-en-roseman-labs" class="level3">
-<h3 class="anchored" data-anchor-id="h-spe-ubiops-en-roseman-labs">H-SPE: UbiOps en Roseman Labs</h3>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-ncsc" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ncsc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/ncsc-soc.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figuur&nbsp;4: Hybride samenwerking tusssen SOCs"><img src="../images/ncsc-soc.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ncsc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;4: Hybride samenwerking tusssen SOCs
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-ubiops" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ubiops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/ubiops.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figuur&nbsp;5: UbiOps orchestratielaag"><img src="../images/ubiops.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ubiops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;5: UbiOps orchestratielaag
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<p>De hybride SPE is een nieuwe oplossingsrichting die we willen verkennen (en realiseren) in AIDA. Er zijn veel minder concrete voorbeelden van een dergelijke opzet. UbiOps en Roseman Labs hebben een oplossing die er het dichts bij in de buurt komt (<a href="#fig-ncsc" class="quarto-xref">Figuur&nbsp;4</a>). In analogie met data spaces, gaat het hier om het verbinden van verschillende Security Operating Centra (SOC) in de beveiligingsketen (NCSC, politie, UWV etc.) In een H-SPE kunnen <em>compute</em> (rekenkracht) en <em>storage</em> (opslag) zowel lokaal als centraal worden uitgevoerd. In deze architectuur worden bijvoorbeeld pre-processing van data decentraal uitgevoerd in de SOCs in de onderste laag van <a href="#fig-ncsc" class="quarto-xref">Figuur&nbsp;4</a>. De resultaten van deze pre-processing gaan naar het centrale platform, in dit geval de NCSC. Daar kunnen vervolgens ook weer (vervolg-)berekeningen worden uitgevoerd, op de <em>storage</em> en <em>compute</em> die beschikbaar zijn in de omgeving van de NCSC.</p>
-<p>Deze opzet bij de NCSC is mogelijk gemaakt door <a href="https://ubiops.com/">UbiOps</a>, een platform leverancier die de orkestratielaag biedt waarmee alle <em>storage</em> en <em>compute</em> centraal wordt beheerd (<a href="#fig-ubiops" class="quarto-xref">Figuur&nbsp;5</a>). Een belangrijk ontwerpprincipe van deze orkestratielaag is dat het verschillende soort fysieke infrastructuur kan managen, variërend van <em>bare metal</em> servers, Kubernetes cluster, virtuele machines, public cloud infrastructuur etc.</p>
-<p>Een ander onderscheidende kenmerk van de opzet bij NCSC is dat de centrale dataverwerking ook onder encryptie uitgevoerd kan worden via het Roseman Labs MPC (Multiparty Computation). Door berekeningen <em>in-the-blind</em> uit te voeren, zijn de data extra beschermd.</p>
-<p>Alhoewel er nog weinig voorbeelden zijn van operationele H-SPEs, is deze opzet in lijn met de recent gepubliceerde <a href="../resources/Simpl-Open Functional and Technical Architecture Specifications.pdf">Simpl-Open architectuur</a>. Kenmerken van het NCSC platform zien we daarin terugkomen als ontwerpprincipes, waaronder:</p>
-<ul>
-<li>Het gebruik van <em>agents</em> als mechanisme voor het orkestreren van allerlei <em>compute</em> en <em>storage</em> binnen een data space en tussen een data space</li>
-<li>Mogelijkheid om over verschillende fysieke locaties een data space op te zetten</li>
-<li>Sterke nadruk op Identificatie, Authenticatie en Autorisatie (IAA) functies, waarvoor standaarden gebruikt moeten worden
-<ul>
-<li>Tier 1: IAA van gebruikers</li>
-<li>Tier 2: IAA voor machine-to-machine orkestratie<br>
-</li>
-</ul></li>
-<li>Naast gebruik van catalogi voor data en applicaties wordt ook het gebruik van een infrastructuur voorgeschreven, zodat daarmee inzichtelijk is welke <em>compute</em> en <em>storage</em> beschikbaar is binnen het netwerk.</li>
-</ul>
-</section>
-</section>
-<section id="praatplaat-aida" class="level2">
-<h2 class="anchored" data-anchor-id="praatplaat-aida">Praatplaat AIDA</h2>
-<div id="fig-strategy-view" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-strategy-view-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/strategy-view.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figuur&nbsp;6: Praatplaat (strategy view)"><img src="../images/strategy-view.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-strategy-view-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;6: Praatplaat (strategy view)
-</figcaption>
-</figure>
-</div>
-<p>Eerste schot voor de boeg. Deze praatplaat gaan we bespreken om de scope en omvang van AIDA te bepalen, en wanneer die voldoende helder is gaan we het detailleren en uitwerken. In de rest van dit hoofdstuk beschrijven we:</p>
-<ul>
-<li>Relevante blauwdrukken en referentiearchitecturen</li>
-<li>Verschillende voorbeelden van AIDA-achtige platformen die op dit moment al in ontwikkeling zijn c.q. draaien, als inspiratie voor de discussies</li>
-</ul>
-</section>
 <section id="lijst-van-relevante-projecten-en-componenten" class="level2">
 <h2 class="anchored" data-anchor-id="lijst-van-relevante-projecten-en-componenten">Lijst van relevante projecten en componenten</h2>
 <ul>
@@ -857,51 +652,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <input type="hidden" id="giscus-base-theme" value="light">
 <input type="hidden" id="giscus-alt-theme" value="dark">
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../strategisch/index.html" class="pagination-link" aria-label="Strategisch perspectief">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Strategisch perspectief</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../strategisch/blauwdrukken.html" class="pagination-link" aria-label="Vergelijking blauwdrukken">
-        <span class="nav-page-text">Vergelijking blauwdrukken</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

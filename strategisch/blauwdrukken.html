@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../strategisch/valleys.html" rel="next">
-<link href="../strategisch/aida.html" rel="prev">
+<link href="../business/index.html" rel="next">
+<link href="../strategisch/ai-in-de-zorg.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -61,6 +61,9 @@ div.csl-indent {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-c207e758c661506f1df4df416510a700.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -156,20 +159,14 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../strategisch/aida.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verhaallijn AIDA</span></a>
+  <a href="../strategisch/ai-in-de-zorg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AI in de zorg</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../strategisch/blauwdrukken.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Vergelijking blauwdrukken</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../strategisch/valleys.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Achtergrond</span></a>
   </div>
 </li>
       </ul>
@@ -239,10 +236,8 @@ div.csl-indent {
   <li><a href="#dssc-blueprint-1.5-als-startpunt" id="toc-dssc-blueprint-1.5-als-startpunt" class="nav-link active" data-scroll-target="#dssc-blueprint-1.5-als-startpunt">DSSC Blueprint 1.5 als startpunt</a></li>
   <li><a href="#idsa" id="toc-idsa" class="nav-link" data-scroll-target="#idsa">IDSA</a></li>
   <li><a href="#eosc-entrust" id="toc-eosc-entrust" class="nav-link" data-scroll-target="#eosc-entrust">EOSC-Entrust</a></li>
-  <li><a href="#bdva-reference-model" id="toc-bdva-reference-model" class="nav-link" data-scroll-target="#bdva-reference-model">BDVA reference model</a>
-  <ul class="collapse">
   <li><a href="#europe-ai-factory" id="toc-europe-ai-factory" class="nav-link" data-scroll-target="#europe-ai-factory">Europe AI Factory</a></li>
-  </ul></li>
+  <li><a href="#bdva-reference-model" id="toc-bdva-reference-model" class="nav-link" data-scroll-target="#bdva-reference-model">BDVA reference model</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="blauwdrukken.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
@@ -270,11 +265,11 @@ div.csl-indent {
 
 <section id="dssc-blueprint-1.5-als-startpunt" class="level2">
 <h2 class="anchored" data-anchor-id="dssc-blueprint-1.5-als-startpunt">DSSC Blueprint 1.5 als startpunt</h2>
-<p>Er zijn verschillende referentie architecturen en blauwdrukken die vergelijkbaar zijn met AIDA. Wij kiezen ervoor om de Blueprint 1.5 van de Data Spaces Support Centre (DSSC) als startpunt te gebruiken, omdat deze wordt ondersteund door een grote community en het expliciet bedoelt is om aan de hand van bouwblokken specifieke ontwerpen en implementaties te maken. <a href="#fig-dssc-blueprint" class="quarto-xref">Figuur&nbsp;1</a> geeft een overzicht van de bouwblokken die zijn onderverdeelt in bedrijfsmatige en organisatie bouwblokken, en technische bouwblokken.De <a href="https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home">online documentatie</a> geeft een gedetailleerde beschrijving van elke bouwblok. Daarnaast is er een uitgebreide <a href="https://dssc.eu/space/bv15e/766061530/Introduction+-+DSSC+Glossary">DSSC Glossary</a> die wij zullen gebruiken voor het beschrijven en definieeren van AIDA. Daarbij hanteren we de methode zoals in <a href="#fig-dssc-tools" class="quarto-xref">Figuur&nbsp;2</a> is geillustreerd, namelijk dat AIDA een verzameling van bouwblokken is, waarvoor we (met de tijd) verschillende implementatie en configuraties zullen verwachten.</p>
+<p>Er zijn verschillende referentie architecturen en blauwdrukken die vergelijkbaar zijn met AIDA. Wij kiezen ervoor om de Simpl Open architectuur in combinatie met de Blueprint 1.5 van de Data Spaces Support Centre (DSSC) als startpunt te gebruiken. De Simpl Open architectuur is het meest gedetailleerd en richt zich met name ook op de orchestratie van de infrastructuur, wat essentieel is om hybride SPEs te realiseren. De DSSC Blueprint is met name nuttig als framework om de concepten te communiceren. Het wordt ondersteund door een grote community en het expliciet bedoelt is om aan de hand van bouwblokken specifieke ontwerpen en implementaties te maken. <a href="#fig-dssc-blueprint" class="quarto-xref">Figuur&nbsp;1</a> geeft een overzicht van de bouwblokken die zijn onderverdeelt in bedrijfsmatige en organisatie bouwblokken, en technische bouwblokken.De <a href="https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home">online documentatie</a> geeft een gedetailleerde beschrijving van elke bouwblok. Daarnaast is er een uitgebreide <a href="https://dssc.eu/space/bv15e/766061530/Introduction+-+DSSC+Glossary">DSSC Glossary</a> die wij zullen gebruiken voor het beschrijven en definiëren van AIDA. Daarbij hanteren we de methode zoals in <a href="#fig-dssc-tools" class="quarto-xref">Figuur&nbsp;2</a> is geïllustreerd, namelijk dat elke SPE een verzameling van bouwblokken is, waarvoor we (met de tijd) verschillende implementatie en configuraties zullen verwachten.</p>
 <div id="fig-dssc-blueprint" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dssc-blueprint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/dssc-blueprint-building-blocks.png" class="img-fluid figure-img">
+<a href="../images/dssc-blueprint-building-blocks.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figuur&nbsp;1: DSSC Blueprint 1.5 Building Block"><img src="../images/dssc-blueprint-building-blocks.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dssc-blueprint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;1: DSSC Blueprint 1.5 Building Block
@@ -284,7 +279,7 @@ Figuur&nbsp;1: DSSC Blueprint 1.5 Building Block
 <div id="fig-dssc-tools" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dssc-tools-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/dssc-blueprint-tools.png" class="img-fluid figure-img">
+<a href="../images/dssc-blueprint-tools.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figuur&nbsp;2: DSSC"><img src="../images/dssc-blueprint-tools.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dssc-tools-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;2: DSSC
@@ -295,7 +290,7 @@ Figuur&nbsp;2: DSSC
 <div id="fig-dssc-value-creation-services" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-dssc-value-creation-services-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://dssc.eu/download/attachments/766070344/image-20240828-092041.png" class="img-fluid figure-img">
+<a href="https://dssc.eu/download/attachments/766070344/image-20240828-092041.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figuur&nbsp;3: Overzicht van capabilities binnen Value Creation Services"><img src="https://dssc.eu/download/attachments/766070344/image-20240828-092041.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dssc-value-creation-services-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;3: Overzicht van <em>capabilities</em> binnen <em>Value Creation Services</em>
@@ -314,18 +309,21 @@ Figuur&nbsp;3: Overzicht van <em>capabilities</em> binnen <em>Value Creation Ser
 <p>De eerste versie van de blauwdruk is in december 2024 gepubliceerd (<a href="../resources/EOSC-ENTRUST_D13.4-blueprint-v1.pdf">link</a>). Een eerste versie van de architectuur is opgesteld met de DARE UK Federated Architecture Blueprint als uitgangspunt, wat vervolgens in vergeleken en aangevuld met NOTRE (Norwegian TREs), het Nederlandse SURF Secure ANalysis Environment (SANE) en het Finse CSC Secure Data Services.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/entrust-architecture.png" class="img-fluid figure-img"></p>
+<p><a href="../images/entrust-architecture.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="ENTRUST infrastructuur architectuur (versie 1, december 2024)"><img src="../images/entrust-architecture.png" class="img-fluid figure-img" alt="ENTRUST infrastructuur architectuur (versie 1, december 2024)"></a></p>
 <figcaption>ENTRUST infrastructuur architectuur (versie 1, december 2024)</figcaption>
 </figure>
 </div>
 <p>Veel componenten van de ENTRUST architectuur zijn een op een te mappen op de DSSC Blueprint. Meest in het oog springende is dat ENTRUST vooral richt op gefedereerde TREs.</p>
+</section>
+<section id="europe-ai-factory" class="level2">
+<h2 class="anchored" data-anchor-id="europe-ai-factory">Europe AI Factory</h2>
 </section>
 <section id="bdva-reference-model" class="level2">
 <h2 class="anchored" data-anchor-id="bdva-reference-model">BDVA reference model</h2>
 <div id="fig-bdv-reference-model" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bdv-reference-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/bdv-reference-model.png" class="img-fluid figure-img">
+<a href="../images/bdv-reference-model.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figuur&nbsp;4: Big Data Value Reference Model, @curry2021reference"><img src="../images/bdv-reference-model.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bdv-reference-model-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figuur&nbsp;4: Big Data Value Reference Model, <span class="citation" data-cites="curry2021reference">Curry e.a. (<a href="#ref-curry2021reference" role="doc-biblioref">2021</a>)</span>
@@ -355,15 +353,12 @@ Figuur&nbsp;4: Big Data Value Reference Model, <span class="citation" data-cites
 <li>standaarden</li>
 </ul></li>
 </ul>
-<section id="europe-ai-factory" class="level3">
-
 
 
 
 </section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Europe AI Factory</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-curry2021reference" class="csl-entry" role="listitem">
 Curry, Edward, Andreas Metzger, Arne J. Berre, Andrés Monzón, en Alessandra Boggio-Marzet. 2021. <span>‘A <span>Reference Model</span> for <span>Big Data Technologies</span>’</span>. In <em>The <span>Elements</span> of <span>Big Data Value</span>: <span>Foundations</span> of the <span>Research</span> and <span>Innovation Ecosystem</span></em>, onder redactie van Edward Curry, Andreas Metzger, Sonja Zillner, Jean-Christophe Pazzaglia, en Ana García Robles, 127–51. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-68176-0_6">https://doi.org/10.1007/978-3-030-68176-0_6</a>.
 </div>
@@ -791,17 +786,49 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <input type="hidden" id="giscus-alt-theme" value="dark">
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../strategisch/aida.html" class="pagination-link" aria-label="Verhaallijn AIDA">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Verhaallijn AIDA</span>
+      <a href="../strategisch/ai-in-de-zorg.html" class="pagination-link" aria-label="AI in de zorg">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">AI in de zorg</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../strategisch/valleys.html" class="pagination-link" aria-label="Achtergrond">
-        <span class="nav-page-text">Achtergrond</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../business/index.html" class="pagination-link" aria-label="Business perspectief">
+        <span class="nav-page-text">Business perspectief</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
