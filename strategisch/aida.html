@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Een eerste ruwe schets van AIDA wordt gegeven, binnen de bestaande Health-RI architectuur v4.0. De verschillende soorten van Secure Processing Environments worden geïntroduceerd inclusief bestaande voorbeelden.">
+
+<title>Strategisch perspectief – Working document AI platform</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../strategisch/blauwdrukken.html" rel="next">
+<link href="../strategisch/index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-476b25b0e17dc2b47678849abeeab195.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <div id="quarto-announcement" data-announcement-id="5a3953608c613b1fc2dd7a15dda4f10a" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>Let op</strong> - dit is een werkdocument dat bedoeld is om met experts, partners en andere belanghebbenden in discussie te gaan.</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../strategisch/index.html">Strategisch perspectief</a></li><li class="breadcrumb-item"><a href="../strategisch/aida.html">Verhaallijn AIDA</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Startnotitie</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../strategisch/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategisch perspectief</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../strategisch/aida.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Verhaallijn AIDA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../strategisch/blauwdrukken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vergelijking blauwdrukken</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../strategisch/valleys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Achtergrond</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../business/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Business perspectief</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../business/personas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../business/verhaallijn-data-engineer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verhaallijn data engineer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../business/verhaallijn-ml-engineer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verhaallijn machine learning engineer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../technisch/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applicaties en technisch perspectief</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://health-ri.github.io/AIDA-Archimate/" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">AIDA Archimate viewer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://health-ri.github.io/simple-open-architecture/" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Simpl Open Archimate viewer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata" id="toc-secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata" class="nav-link active" data-scroll-target="#secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata">Secure Processing Environments voor secundair gebruik van gezondheidsdata</a>
+  <ul class="collapse">
+  <li><a href="#tre-surf-secure-analysis-environment-sane" id="toc-tre-surf-secure-analysis-environment-sane" class="nav-link" data-scroll-target="#tre-surf-secure-analysis-environment-sane">TRE: SURF Secure Analysis Environment (SANE)</a></li>
+  <li><a href="#fln-pluginvantage6" id="toc-fln-pluginvantage6" class="nav-link" data-scroll-target="#fln-pluginvantage6">FLN: PLUGIN/vantage6</a></li>
+  <li><a href="#h-spe-ubiops-en-roseman-labs" id="toc-h-spe-ubiops-en-roseman-labs" class="nav-link" data-scroll-target="#h-spe-ubiops-en-roseman-labs">H-SPE: UbiOps en Roseman Labs</a></li>
+  </ul></li>
+  <li><a href="#praatplaat-aida" id="toc-praatplaat-aida" class="nav-link" data-scroll-target="#praatplaat-aida">Praatplaat AIDA</a></li>
+  <li><a href="#lijst-van-relevante-projecten-en-componenten" id="toc-lijst-van-relevante-projecten-en-componenten" class="nav-link" data-scroll-target="#lijst-van-relevante-projecten-en-componenten">Lijst van relevante projecten en componenten</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="aida.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../strategisch/index.html">Strategisch perspectief</a></li><li class="breadcrumb-item"><a href="../strategisch/aida.html">Verhaallijn AIDA</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Strategisch perspectief</h1>
+<p class="subtitle lead">Verhaallijn AI dataplatform (AIDA)</p>
+</div>
+
+<div>
+  <div class="description">
+    <p>Een eerste ruwe schets van AIDA wordt gegeven, binnen de bestaande Health-RI architectuur v4.0. De verschillende soorten van Secure Processing Environments worden geïntroduceerd inclusief bestaande voorbeelden.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><br></p>
+<section id="secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata" class="level2">
+<h2 class="anchored" data-anchor-id="secure-processing-environments-voor-secundair-gebruik-van-gezondheidsdata">Secure Processing Environments voor secundair gebruik van gezondheidsdata</h2>
+<p>Versie 4 van de Health-RI wiki beschrijft de <a href="https://health-ri.atlassian.net/wiki/x/l4ZNLw">gezondheidsdata-infrastructuur voor onderzoek, beleid en innovatie</a>. Deze infrastructuur is specifiek gericht op secundair gebruik, en is een verbijzondering van de algemene <a href="https://health-ri.atlassian.net/wiki/x/KIZNLw">gezamenlijk gezondheidsdata architectuurmodel</a>. Binnen deze architectuur zijn reeds twee soorten van Secure Processing Environments benoemd, namelijk <a href="https://health-ri.atlassian.net/wiki/spaces/HWV4/pages/793614634/Applicaties+veilige+verwerkingsomgeving">veilige verwerkingsomgevingen</a>) en <a href="https://health-ri.atlassian.net/wiki/spaces/HWV4/pages/793614678/Applicaties+gefedereerde+verwerkingsomgeving">gefedereerde verwerkingsomgevingen</a>.</p>
+<div id="fig-hri-architectuur-secundair" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hri-architectuur-secundair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/hri-architectuur-secundair.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figuur&nbsp;1: Conceptuele architectuur voor secundair gebruik"><img src="../images/hri-architectuur-secundair.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hri-architectuur-secundair-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Conceptuele architectuur voor secundair gebruik
+</figcaption>
+</figure>
+</div>
+<p>De basis gedachte achter AIDA is dat er <em>verschillende soorten van <strong>secure processing environments</strong></em> zullen zijn. Als start voor de discussie introduceren we een derde type, de hybride Secure Processing Environment (H-SPE). In dit document hanteren we de namen van deze drie typen om expliciet onderscheid te maken; we zullen spreken van SPEs in het algemeen als we alle drie de soorten bedoelen. We geven een korte schets en voorbeeld van elk type.</p>
+<div id="tbl-spe-typen" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-spe-typen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;1: Drie soorten van Secure Processing Environments die binnen de scope van AIDA vallen.
+</figcaption>
+<div aria-describedby="tbl-spe-typen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Gecentraliseerde SPE</td>
+<td style="text-align: left;"><ul>
+<li>vaak benoemd als Trusted Research Environment</li>
+<li>veel bestaande voorbeelden, zie o.a. EOSC-ENTRUST</li>
+<li>machine learning op tabulaire data mogelijk</li>
+<li><em>statistical disclosure control</em> op output</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Federated SPEs</td>
+<td style="text-align: left;"><ul>
+<li>decentrale benadering cf.&nbsp;personal health train</li>
+<li>oorspronkelijk bedoelt voor machine learning</li>
+<li>kan ook gebruikt worden voor statistische analyse</li>
+<li>moeilijker om mee te werken</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Hybride SPE (H-SPE)</td>
+<td style="text-align: left;"><ul>
+<li>Combinatie van bovenstaande technieken</li>
+<li>Nodig om gebruik te maken centrale rekencapaciteit</li>
+<li>Gedachte om gebruiksgemak te verbeteren</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<section id="tre-surf-secure-analysis-environment-sane" class="level3">
+<h3 class="anchored" data-anchor-id="tre-surf-secure-analysis-environment-sane">TRE: SURF Secure Analysis Environment (SANE)</h3>
+<p>SURF Secure ANalysis Environment (SANE) is een virtuele, volledig afgeschermde omgeving waarop met vooraf goedgekeurde analyse software draait en toegang tot sensitive data wordt gegeven (<a href="#fig-sane" class="quarto-xref">Figuur&nbsp;2</a>). In onderstaand overzicht is SANE gepositioneerd als TRE, waarmee de data aanbieder controle houdt over de data die ter beschikking wordt gesteld en waarmee de data consumer op een makkelijke manier toegang krijgt. SANE biedt functionaliteiten op het gebied van <em>Research Analytics</em>, <em>Secure Data Zone</em> en <em>Data Discovery</em>. Meer details staan in de <a href="../resources/EOSC-ENTRUST_D13.4-blueprint-v1.pdf">blauwdruk van EOSC-ENTRUST</a>.</p>
+<div id="fig-sane" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/sane.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figuur&nbsp;2: Positionering van SANE binnen een generieke data space architectuur."><img src="../images/sane.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sane-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;2: Positionering van SANE binnen een generieke data space architectuur.
+</figcaption>
+</figure>
+</div>
+<p>Belangrijk kenmerk van SANE en andere TREs is dat de data fysiek naar de <em>Secure Data Zone</em> wordt gekopieerd. Naast het veilig aanbieden van data (als data houder), is dit ook het mechanisme waarmee data gebruikers hun eigen data mee kunnen nemen naar de TRE, om daarbinnen te koppelen aan andere data. Dit gebeurd vaak met gebruik van pseudonimisering. De CBS microdata omgeving werkt op een vergelijkbare manier.</p>
+<p>Binnen de blauwdruk van EOSC-ENTRUST wordt gesproken over <em>Federation Services</em> tussen verschillende TREs. Daarbij gaat het om data federation: data wordt (tijdelijk) van de ene naar de andere TRE gekopieerd zodat het daar in combinatie verwerkt kan worden. Data federation als mechanisme is anders dan federated learning: daarbij worden de berekeningen decentraal uitgevoerd en alleen de resultaten centraal gedeeld (zie hieronder). Federated learning is met name nuttig voor horizontaal gepartitioneerde data. Voor verticaal gepartitioneerde data, is data federation zoals beschreven door EOSC-ENTRUST meer geschikt.</p>
+</section>
+<section id="fln-pluginvantage6" class="level3">
+<h3 class="anchored" data-anchor-id="fln-pluginvantage6">FLN: PLUGIN/vantage6</h3>
+<p>Federated learning (FL) als concept staat ook wel bekend als de Personal Health Train (PHT). De term FL wordt vooral gebruikt om naar het technische concept te verwijzen, terwijl PHT verder gaat in het definiëren van afspraken rondom het gebruik van FL. Het basis principe is dat bij FL de gegevens op afzonderlijke ‘data stations’ verschillende apparaten blijven die participeren in het FLN. Om deze data te gebruiken voor machine learning, wordt bij elk data station het algoritme lokaal c.q. afzonderlijk getraind. Vervolgens worden alleen de resultaten van het algoritme - bijvoorbeeld geaggregeerde statistieken of de modelparameters van het neurale netwerk - gedeeld met een centrale server. Deze server combineert de resultaten van afzonderlijke modellen tot één model, welke vervolgens met alle deelnemers van het FLN gedeeld wordt.</p>
+<div id="fig-plugin" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plugin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://plugin.healthcare/wp-content/uploads/2023/10/Architectuurplaat-PLUGIN-versie-Madou.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figuur&nbsp;3: Overzicht van vantage6 infrastructuur zoals in PLUGIN is gerealiseerd."><img src="https://plugin.healthcare/wp-content/uploads/2023/10/Architectuurplaat-PLUGIN-versie-Madou.jpeg" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plugin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;3: Overzicht van vantage6 infrastructuur zoals in PLUGIN is gerealiseerd.
+</figcaption>
+</figure>
+</div>
+<p>Het <a href="https://plugin.healthcare">PLUGIN project</a> heeft een FLN van tientallen ziekenhuizen gerealiseerd, waarbij gebruik wordt gemaakt <a href="https://distributedlearning.ai/">vantage6</a> als platform. Belangrijkste kenmerken van deze opzet zijn:</p>
+<ul>
+<li>Sterke nadruk op veiligheid en privacy, door gebruik van beveiligde containers en virtual private networks in de basis infrastructuur</li>
+<li>Ontzorgen van deelnemende ziekenhuizen, waarbij gebruik wordt gemaakt van een generieke Linux server in het domain van het ziekenhuis dat als basis dient om de opslag en rekenkracht voor de FLN te realiseren. Afhankelijk of een ziekenhuis mee doet als trainingsziekenhuis of alleen als gebruiker dient een zwaardere resp. lichtere Linux server te worden geconfigureerd</li>
+<li>Voor elk project wordt de berekening c.q. machine learning expliciet ‘verpakt’ in een Docker container, zijnde de berekening die daadwerkelijk wordt uitgevoerd.</li>
+<li>De generieke Linux server wordt ook gebruikt om dashboard, informatieproducten etc. te hosten binnen het IT domein van het ziekenhuis</li>
+</ul>
+<p>Het gebruik van een standaard data model (op de data stations) is een belangrijke randvoorwaarde om FL te kunnen doen. Naast het gebruik van vantage6 als kerntechnologie, heeft PLUGIN ervoor gekozen om FHIR als data standaard te gebruiken. Hiertoe is een <a href="https://plugin.healthcare/fhir/">FHIR profiel in ontwikkeling</a> die aansluit op de bestaande ZIBS2020 bouwstenen. Meer achtergrond over de keuze voor FHIR is te lezen in <a href="https://plugin-healthcare.github.io/viewpoint-jmir/">dit artikel</a>. Andere voorbeelden van FLN platform zijn <a href="https://maastrichtu-biss.github.io/Inventory-DataSharing-tools/inventory.html">hier</a> te vinden.</p>
+</section>
+<section id="h-spe-ubiops-en-roseman-labs" class="level3">
+<h3 class="anchored" data-anchor-id="h-spe-ubiops-en-roseman-labs">H-SPE: UbiOps en Roseman Labs</h3>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-ncsc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ncsc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/ncsc-soc.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figuur&nbsp;4: Hybride samenwerking tusssen SOCs"><img src="../images/ncsc-soc.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ncsc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;4: Hybride samenwerking tusssen SOCs
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-ubiops" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ubiops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/ubiops.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figuur&nbsp;5: UbiOps orchestratielaag"><img src="../images/ubiops.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ubiops-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;5: UbiOps orchestratielaag
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>De hybride SPE is een nieuwe oplossingsrichting die we willen verkennen (en realiseren) in AIDA. Er zijn veel minder concrete voorbeelden van een dergelijke opzet. UbiOps en Roseman Labs hebben een oplossing die er het dichts bij in de buurt komt (<a href="#fig-ncsc" class="quarto-xref">Figuur&nbsp;4</a>). In analogie met data spaces, gaat het hier om het verbinden van verschillende Security Operating Centra (SOC) in de beveiligingsketen (NCSC, politie, UWV etc.) In een H-SPE kunnen <em>compute</em> (rekenkracht) en <em>storage</em> (opslag) zowel lokaal als centraal worden uitgevoerd. In deze architectuur worden bijvoorbeeld pre-processing van data decentraal uitgevoerd in de SOCs in de onderste laag van <a href="#fig-ncsc" class="quarto-xref">Figuur&nbsp;4</a>. De resultaten van deze pre-processing gaan naar het centrale platform, in dit geval de NCSC. Daar kunnen vervolgens ook weer (vervolg-)berekeningen worden uitgevoerd, op de <em>storage</em> en <em>compute</em> die beschikbaar zijn in de omgeving van de NCSC.</p>
+<p>Deze opzet bij de NCSC is mogelijk gemaakt door <a href="https://ubiops.com/">UbiOps</a>, een platform leverancier die de orkestratielaag biedt waarmee alle <em>storage</em> en <em>compute</em> centraal wordt beheerd (<a href="#fig-ubiops" class="quarto-xref">Figuur&nbsp;5</a>). Een belangrijk ontwerpprincipe van deze orkestratielaag is dat het verschillende soort fysieke infrastructuur kan managen, variërend van <em>bare metal</em> servers, Kubernetes cluster, virtuele machines, public cloud infrastructuur etc.</p>
+<p>Een ander onderscheidende kenmerk van de opzet bij NCSC is dat de centrale dataverwerking ook onder encryptie uitgevoerd kan worden via het Roseman Labs MPC (Multiparty Computation). Door berekeningen <em>in-the-blind</em> uit te voeren, zijn de data extra beschermd.</p>
+<p>Alhoewel er nog weinig voorbeelden zijn van operationele H-SPEs, is deze opzet in lijn met de recent gepubliceerde <a href="../resources/Simpl-Open Functional and Technical Architecture Specifications.pdf">Simpl-Open architectuur</a>. Kenmerken van het NCSC platform zien we daarin terugkomen als ontwerpprincipes, waaronder:</p>
+<ul>
+<li>Het gebruik van <em>agents</em> als mechanisme voor het orkestreren van allerlei <em>compute</em> en <em>storage</em> binnen een data space en tussen een data space</li>
+<li>Mogelijkheid om over verschillende fysieke locaties een data space op te zetten</li>
+<li>Sterke nadruk op Identificatie, Authenticatie en Autorisatie (IAA) functies, waarvoor standaarden gebruikt moeten worden
+<ul>
+<li>Tier 1: IAA van gebruikers</li>
+<li>Tier 2: IAA voor machine-to-machine orkestratie<br>
+</li>
+</ul></li>
+<li>Naast gebruik van catalogi voor data en applicaties wordt ook het gebruik van een infrastructuur voorgeschreven, zodat daarmee inzichtelijk is welke <em>compute</em> en <em>storage</em> beschikbaar is binnen het netwerk.</li>
+</ul>
+</section>
+</section>
+<section id="praatplaat-aida" class="level2">
+<h2 class="anchored" data-anchor-id="praatplaat-aida">Praatplaat AIDA</h2>
+<div id="fig-strategy-view" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-strategy-view-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/strategy-view.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figuur&nbsp;6: Praatplaat (strategy view)"><img src="../images/strategy-view.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-strategy-view-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;6: Praatplaat (strategy view)
+</figcaption>
+</figure>
+</div>
+<p>Eerste schot voor de boeg. Deze praatplaat gaan we bespreken om de scope en omvang van AIDA te bepalen, en wanneer die voldoende helder is gaan we het detailleren en uitwerken. In de rest van dit hoofdstuk beschrijven we:</p>
+<ul>
+<li>Relevante blauwdrukken en referentiearchitecturen</li>
+<li>Verschillende voorbeelden van AIDA-achtige platformen die op dit moment al in ontwikkeling zijn c.q. draaien, als inspiratie voor de discussies</li>
+</ul>
+</section>
+<section id="lijst-van-relevante-projecten-en-componenten" class="level2">
+<h2 class="anchored" data-anchor-id="lijst-van-relevante-projecten-en-componenten">Lijst van relevante projecten en componenten</h2>
+<ul>
+<li>https://molgenis.org/ : analyse platform bioinformatics</li>
+<li>https://www.openplanet.cloud/data-platform : analyuse</li>
+<li>https://www.yivi.app/ : Identity mgnt</li>
+<li>https://checkmk.com/ : OSS operations &amp; observability</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../strategisch/index.html" class="pagination-link" aria-label="Strategisch perspectief">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Strategisch perspectief</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../strategisch/blauwdrukken.html" class="pagination-link" aria-label="Vergelijking blauwdrukken">
+        <span class="nav-page-text">Vergelijking blauwdrukken</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

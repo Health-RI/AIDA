@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>rse-personal-story – Working document AI platform</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-476b25b0e17dc2b47678849abeeab195.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Geen resultaten",
+    "search-matching-documents-text": "Gevonden documenten",
+    "search-copy-link-title": "Kopieer link om te zoeken",
+    "search-hide-matches-text": "Extra overeenkomsten verbergen",
+    "search-more-match-text": "meer overeenkomst in dit document",
+    "search-more-matches-text": "meer overeenkomsten in dit document",
+    "search-clear-button-title": "Wissen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuleren",
+    "search-submit-button-title": "Verzenden",
+    "search-label": "Zoeken"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <div id="quarto-announcement" data-announcement-id="5a3953608c613b1fc2dd7a15dda4f10a" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>Let op</strong> - dit is een werkdocument dat bedoeld is om met experts, partners en andere belanghebbenden in discussie te gaan.</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Startnotitie</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../strategisch/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Strategisch perspectief</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../strategisch/aida.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verhaallijn AIDA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../strategisch/blauwdrukken.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vergelijking blauwdrukken</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../strategisch/valleys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Achtergrond</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../business/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Business perspectief</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../business/personas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Personas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../business/verhaallijn-data-engineer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verhaallijn data engineer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../business/verhaallijn-ml-engineer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verhaallijn machine learning engineer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../technisch/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applicaties en technisch perspectief</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://health-ri.github.io/AIDA-Archimate/" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">AIDA Archimate viewer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://health-ri.github.io/simple-open-architecture/" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">Simpl Open Archimate viewer</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="rse-personal-story.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<p>(cl-infrastructure-rse-personal-story)= # Research Software Engineering Personal Story</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The <a href="https://society-rse.org/">Society of Research Software Engineering</a> was founded on the belief that a world which relies on software must recognise the people who develop it.</p>
+<p>Although originating in the UK, the concept of Research Software Engineering (RSE) has been widely adopted and specialised roles across academia, industry and other sectors are being recognised across the globe (see <a href="https://society-rse.org/international-rse-organisations/">list of International RSE communities</a>).</p>
+<p>In this chapter, we share a personal story in the form of an open interview with <a href="https://saranjeetkaur.github.io/About-Me/">Saranjeet Kaur Bhogal</a> who has been spearheading efforts to establish recognition for RSE skills and roles in Asia.</p>
+<p>Recently, she has set up the <a href="https://rse-asia.github.io/RSE_Asia/">RSE Asia Association</a> to connect with different Asian researchers working in this space and establish pathways for early career researchers to build their skills in RSE in preparation for their RSE careers.</p>
+<p>Before you dive into the interview, please note that we have a chapter describing the {ref}<code>Research Software Engineering in Research Infrastructure Roles&lt;cl-infrastructure-rse&gt;</code> as well as specific recommendation for {ref}<code>starting a new community&lt;cl-new-community&gt;</code>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>```quommgxp ../../figures/rse-community.*</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>height: 400px</td>
+</tr>
+<tr class="even">
+<td>name: rse-community</td>
+</tr>
+<tr class="odd">
+<td>alt: International RSE community is shown as a world map with different people helping each other jump from one continent to other. Especially shows people in India joining in the RSE network in Europe.</td>
+</tr>
+</tbody>
+</table>
+<p>RSE Asia Community joins the International RSE Network. This image was created by <a href="http://www.scriberia.co.uk/">Scriberia</a> for The Turing Way community and is used under a CC-BY 4.0 licence for reuse. Zenodo. DOI <a href="https://doi.org/10.5281/zenodo.3332807">10.5281/zenodo.3332807</a>). ```</p>
+<p><strong>Tell us about your background, and what led you to set up the RSE Asia Association?</strong></p>
+<p>My name is <a href="https://saranjeetkaur.github.io/About-Me/">Saranjeet Kaur Bhogal</a> and I’m a Statistician based in India. I am interested to learn about open source and open science and like to remain involved with open science community work. In early 2021, I wrote the first draft of the <a href="https://github.com/r-devel/rdevguide">R Development Guide</a> through a project funded by the <a href="https://www.r-project.org/foundation/">R Foundation</a>. Furthermore, I co-lead the work on the outreach of the R Development Guide at the <a href="https://incubator.codeforscience.org/">Digital Infrastructure Incubator at Code for Science &amp; Society</a>. Recently, I am working as a Technical Writer with The R Project at the Google Season of Docs 2022 for a project to <a href="https://github.com/rstats-gsod/gsod2022/wiki/GSOD-2022-Proposal">“Expand and Reorganize the R Development Guide”</a>. Previously, I have also worked with the Julia Language organization for <a href="https://gist.github.com/SaranjeetKaur/37086fea06076bd3ec76d052cc166378">Google Summer of Code 2020</a>. In early 2022, I was selected as the founding committee of NumFOCUS Project Incubator. This Incubator is designed to support the growth of open-source scientific projects and communities and provide such projects with the required tools for becoming NumFOCUS Affiliated. I co-founded the <a href="https://rse-asia.github.io/RSE_Asia/">Research Software Engineering (RSE) Asia Association</a> during my participation in the <a href="https://openlifesci.org/ols-4/projects-participants/">Cohort 4 of the Open Life Science programme</a>, to promote the RSE community and profession in the Asia region. I am also participating in the <a href="https://society-rse.org/events/pilot-mentoring-programme/">Pilot Mentorship Programme</a> of the Society of Research Software Engineering to further build the RSE Asia community.</p>
+<p><strong>What is the main motivation behind starting the RSE Asia Association?</strong></p>
+<p>The RSE Asia Association was started because there was a lack of representation from the Asian region in the international RSE community. Another reason was the significant timezone difference with the global north. Despite the shift of events to online mode due to the pandemic, the timezone difference remains a challenge for us when attending the events. Hence, we started RSE Asia to conduct events in a more Asia friendly timezone, and promote the RSE community and profession in Asia.</p>
+<p><strong>How did you get started?</strong></p>
+<p>Along with <a href="https://jyoti-bhogal.github.io/about-me/">Jyoti Bhogal</a>, I started by getting a structured mentorship for building RSE Asia. The <a href="https://openlifesci.org/">Open Life Science</a> programme’s Cohort-4 (OLS-4) is where we started scoping out our work and built initial social presence as well as public infrastructure like our <a href="https://rse-asia.github.io/RSE_Asia/">website</a> and <a href="https://twitter.com/RSE_Asia">Twitter account</a>. We launched RSE Asia on 14th October 2021 during our participation in OLS-4. The launch invitation and our graduation video from OLS-4 are available on our <a href="https://rse-asia.github.io/RSE_Asia/talks.html">website</a>.</p>
+<p><strong>What impact do you think is the RSE Asia Association is making in your community?</strong></p>
+<p>Within less than a year from our launch, we already have followers from around the work on our official <a href="https://twitter.com/RSE_Asia">Twitter account</a>. I now represent RSE Asia as an observer at the <a href="https://researchsoftware.org/council.html">international council of RSE</a>. I was also invited to various RSE events taking place at the international levels, including direct mentorship and support from the Society of RSE. Based on these interactions and connections, it has become evident that representation from Asian communities had been long missing in the international RSE networks and RSE Asia Association is committed to address that. Thus, the impact I see is that RSE Asia is gaining momentum &amp; receiving recognition in the international RSE community.</p>
+<p><strong>What tools/software do you use most for the RSE Asia Association digital infrastructure?</strong></p>
+<p>Mostly <a href="https://github.com/rse-asia">GitHub organization</a>, our <a href="https://rse-asia.github.io/RSE_Asia/">organization website</a> is hosted on GitHub.</p>
+<p><strong>Do you have any top tips for other people that might be interested in starting a Research Software Engineering association/community?</strong></p>
+<p>If possible try to start with a structured mentoring programme, like the <a href="https://openlifesci.org/">Open Life Science Programme</a> - they can be immensely helpful in your community-building journey as they empower you with the best of tools and advice from the very start.</p>
+<p><strong>Do you have any tips on things to avoid?</strong></p>
+<p>Try to collaborate more and avoid working solo when you start with community building, it can get too big, too soon - so it is always helpful to have a group of collaborators along.</p>
+<p><strong>Are there any other organisations/networks that you’re collaborating with?</strong></p>
+<p>I (with my Co-Founder <a href="https://jyoti-bhogal.github.io/about-me/">Jyoti</a>) started building the RSE Asia Association as a project during my participation in the <a href="https://openlifesci.org/ols-4/projects-participants/">Open Life Science Cohort-4 (OLS-4) programme</a> with <a href="https://github.com/annefou">Anne Fouilloux</a> as our mentor. After OLS-4, I participated in the <a href="https://society-rse.org/events/pilot-mentoring-programme/">Pilot Mentoring Programme by the Society of Research Software Engineering</a> to further build the community around RSE Asia under the mentorship of <a href="https://www.researchsoft.org/people/">Michelle Barker</a>, whereas Jyoti joined <a href="https://openlifesci.org/ols-5/projects-participants/">OLS-5 with a project to create onboardings pathways</a> under the mentorship of Malvika Sharan. Recently, I presented talks about the work being done at RSE Asia at various events organized by groups and networks like the Asia Pacific Advanced Network (APAN53), the Research Software Alliance, the Collaborations Workshop (CW22) by the Software Sustainability Institute (All these talks are shared on our <a href="https://rse-asia.github.io/RSE_Asia/talks.html">website</a>.). We are open to collaborating with other organisations and networks too!</p>
+<p><strong>Apart from timezone differences what would you describe as the main challenge for your community?</strong></p>
+<p>It is a multinational association - so that is a unique challenge in itself. Several languages and cultures thrive in Asia and we are planning to set up a working group that includes representatives from different parts and nationalities of Asia - so that we have more understanding of the local research culture.</p>
+<p><strong>What problems did you encounter along the way and what were some of the ways to solve them?</strong></p>
+<p>Lack of awareness about the term ‘Research Software Engineering’ in Asia has been challenging. To solve this we are planning to conduct some awareness events (more on that will be available on our website soon).</p>
+<p><strong>What types of activities does RSE Asia support? Are there other activities you’d like to support in the future?</strong></p>
+<p>We participated in Hacktoberfest 2021. We are very keen on participating in online events/workshops/hackathons that help provide exposure to technical skills to our community members and also highlight the work that they do! In the future, we hope to co-organize some events with the Open Science communities and the international RSE community.</p>
+<p><strong>Which other organisations have influenced you the most when starting up RSE Asia?</strong></p>
+<p>The <a href="https://society-rse.org/">Society of Research Software Engineering</a> has been the most influential one. I got introduced to the work of the Society during my participation in the <a href="https://user2021.r-project.org/">useR! 2021</a> conference.</p>
+<p><strong>Have you planned/do you foresee any governance structure for RSE Asia Association?</strong></p>
+<p>We are planning to set up a working group for RSE Asia soon. Setting up an Advisory Board is the next step toward bringing more structure to the organisation’s governance process.</p>
+<p><strong>Have you been able to connect with other RSE associations across the globe? Has this been useful? How can other RSE associations help you get started?</strong></p>
+<p>Yes, we are planning to collaborate with RSE AUNZ for an event happening this year. I feel it is very useful to connect with the other RSE associations as there is always an exchange of ideas. Besides that, I am an observer at the international council of RSEs and represent RSE Asia there. At the council meetings, I get to interact with the representatives from various RSE associations and know more about their work. We are always open to discussing collaborations with the other RSE associations.</p>
+<p><strong>About awareness raising – there is a similar issue in Latin America; to the best of my knowledge, the discussion around the need for RSEs hasn’t even started there yet! Is starting the RSE community a one-person effort? Or is there a critical mass of people pushing this effort?</strong></p>
+<p>To start with we are only a couple of people leading this initiative in Asia. Although we have immensely benefited from various Mentorship programmes and Mentors, there is still a need to get more people involved from Asia to push the effort forward. With the hope to achieve this, we are planning to set up a working group soon.</p>
+<p><strong>Where do you see the RSE Asia Association going in the future?</strong></p>
+<p>I feel the RSE Asia Association would expand more and include more representatives across the Asian region in the future. We are setting up a Working Group and an Advisory Board for RSE Asia, details for which are shared on the <a href="https://rse-asia.github.io/RSE_Asia/">RSE Asia Association</a>.</p>
+<p><em>This personal story in the form of an open interview was originally written by Saranjeet Kaur Bhogal during the Turing Way book Dash in May 2022. We acknowledge all the people who contributed their time asking questions and reviewing the written draft: Anne Lee Steele, Arielle Bennett, Carlos Martinez, Elisa Rodenburg, Emma Karoune, Esther Plomp, Kim Martin, Lena Karvovskaya and Malvika Sharan (names are in alphabetical order).</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Gekopieerd!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Gekopieerd!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
