@@ -67,7 +67,7 @@ Europa heeft op 11 februari het [InvestAI-initiatief](https://netherlands.repres
 
 ### Twiin
 
-[Twiin](https://www.twiin.nl/) is een samenwerkingsverband waarin zorgaanbieders, leveranciers en partners werken aan het Twiin Afsprakenstelsel. ...
+[Twiin](https://www.twiin.nl/) is een samenwerkingsverband waarin zorgaanbieders, leveranciers en partners werken aan het Twiin Afsprakenstelsel. Dit [Afsprakenstelsel](https://twiin-afsprakenstelsel.scrollhelp.site/ta130/TA130) omvat gedetailleerde uitwerkingen over alle lagen van de architectuur voor het beschikbaar maken van gezondheidsgevens. Zo zijn duidelijke keuzes gemaakt om bijvoorbeeld te werken met FHIR-gebaseerde _notified pull_, het gebruik van BSN voor identificatie, het gebruik van eIDAS voor authenticatie en OAuth2 voor autorisatie.
 
 ### NUTS
 
@@ -82,7 +82,7 @@ _Last but certainly not least_ hebben de [Health RI nodes](https://www.health-ri
 
 - In analogie: de huidige stand van zaken zijn gefragmenteerde terpen, waarbij AI-gedreven innovaties vaak van worden ontwikkeld op niet gestandaardiseerde infrastructuur (terpen)
 - In plaats van terpen, willen we naar een deltawerken voor AI4Health.
-  - Deltaplan: het ontwerp van een gestandaardiseerd "AI dataplatform" waarmee komende jaren generieke, landelijk dekkende voorzieningen gerealiseerd kunnen worden
+  - Deltaplan: het ontwerp van een gestandaardiseerde en interoperabele "AI dataplatformen" waarmee komende jaren generieke, landelijk dekkende voorzieningen gerealiseerd kunnen worden
   - Deltawerken: de realisatie van het Deltaplan, met het perspectief dat er niet één platform is, maar een ecosysteem van platformen die interoperabel zijn. Net zoals dat de Deltawerken een ecosysteem van dijken, waterkeringen is. 
 
  
@@ -97,8 +97,8 @@ Vooral ook zaak om eenduidige terminologie en component beschrijvingen te gebrui
 We zien drie thema's waarlangs we de discussie tav AIDA willen voeren:
 
 1. Onderscheid verschillende vormen van _Secure Processing Environments (SPEs)_
-2. Koppelvlak tussen data beschikbaarheid en AIDA
-3. Opkomende standaarden en technieken om tot orchestratie van infrastructuur te realiseren
+2. Koppelvlak tussen data en SPEs
+3. Orchestratie van infrastructuur
 
 
 ## Thema 1: soorten SPEs
@@ -107,7 +107,7 @@ Versie 4 van de Health-RI wiki beschrijft de [gezondheidsdata-infrastructuur voo
 
 ![Conceptuele architectuur voor secundair gebruik](/images/hri-architectuur-secundair.png){#fig-hri-architectuur-secundair}
 
-De basis gedachte achter AIDA is dat er *verschillende soorten van __secure processing environments__* zullen zijn. Daarbij introduceren we een derde type, de hybride Secure Processing Environment (H-SPE). In dit document hanteren we de namen van deze drie typen om expliciet onderscheid te maken; we zullen spreken van SPEs in het algemeen als we alle drie de soorten bedoelen. We geven een korte schets en voorbeelden van elk type.
+De basis gedachte achter AIDA is dat er *verschillende soorten van secure processing environments (SPEs)* zullen zijn. Daarbij introduceren we een derde type, de hybride SPE. In dit document hanteren we de namen van deze drie typen om expliciet onderscheid te maken; we zullen spreken van SPEs in het algemeen als we alle drie de soorten bedoelen. We geven een korte schets en voorbeelden van elk type.
 
 +-----------------------+:------------------------------------------------------+
 | Centrale              | - vaak benoemd als Trusted Research Environment       |
