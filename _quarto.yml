@@ -47,6 +47,7 @@ website:
             text: "Simpl Open Archimate viewer"
             target: _blank
   page-navigation: true
+
 format:
   html:
     grid:
@@ -62,9 +63,9 @@ format:
     lang: nl-nl
     papersize: a4
 
-# comments:
-#   giscus: 
-#     repo: health-ri/aida
+comments:
+  giscus: 
+    repo: health-ri/aida
 bibliography: health-ri.bib
 filters:
   - d2
