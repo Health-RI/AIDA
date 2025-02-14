@@ -1,0 +1,15 @@
+---
+title: "Personas"
+listing:
+    id: personas
+    contents: .
+    type: table
+---
+
+Vanuit de dagelijkse praktijk van data science & AI ontwikkeling weten we dat er verschillende rollen zijn. Deze rollen zijn echter nog fluide, er is geen 'standaard' definitie. Als startpunt nemen we de beschrijvingen van personas van [The Turing Way](https://book.the-turing-way.org/), een Europees initatief dat _best practices_ beschrijft data science in een onderzoek- en ontwikkelomgeving. Voor nu zijn de Engelse teksten overgenomen, deze kunnen later naar het nederlands worden vertaald.
+
+De rollen die binnen de architectuur van databeschikbaarheid reeds zijn beschreven zijn buiten beschouwing gelaten ([Rollen v4.0](https://health-ri.atlassian.net/wiki/spaces/HWV4/pages/793611340/Rollen))
+
+
+:::{#personas}
+:::

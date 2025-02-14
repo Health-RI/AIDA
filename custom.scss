@@ -1,0 +1,13 @@
+/*-- scss:defaults --*/
+$h2-font-size:          1.4rem !default;
+$h3-font-size:          1.0rem !default;
+$headings-font-weight:  500 !default;
+
+/*-- scss:rules --*/
+h2 {
+    color: $brand-dark-blue;
+  }
+
+h3 {
+    color: $brand-dark-blue;
+  }

@@ -1,0 +1,120 @@
+---
+title: Van terpen naar deltawerken voor AI in de zorg 
+subtitle: "Startnotitie 'AI dataplaformen' (werktitel: AIDA)"
+description: |
+  We beschrijven de aanleiding en context om als onderdeel van een nationaal actieplan open, modulaire en interoperabele 'AI dataplaformen" (werktitel: AIDA) te realiseren in Nederland. Een eerste inhoudelijk scoping van AIDA wordt gegeven, bedoeld als startnotitie om hierover met experts, belanghebbenden en veldpartijen in gesprek te gaan. Uiteindelijk doel is om te komen tot een gecoordineerde realisatie van de nutsvoorziening(en) die nodig zijn om AI-gedreven onderzoek en innovatie in de zorg te versnellen middels secundair gebruik van data.
+---
+<br>
+
+## Aanleiding: oproep voor een nationaal actieplan AI4health
+
+Tijdens de laatste ICT&Health conferentie is [een oproep gedaan](https://icthealth.nl/nieuws/overwin-de-valleys-of-death-in-ai-voor-de-zorg) om te komen tot een nationaal actieplan AI4Health. De kern van deze oproep is dat, ondanks alle lopende initiatieven, er nog steeds veel barrières zijn om data- en AI-gedreven innovaties in de zorg op grote schaal te realiseren. De praktijk wijst uit dat er drie _valleys of death_ overkomen (zie @mxi2024ai voor een recent overzicht):
+
+![De drie _valleys of death_ die grootschalig gebruik van AI in de zorg in de weg staan.](images/three-valleys-of-death.png){#fig-three-valleys-of-death}
+
+1. __Van concept tot toegang tot de praktijk.__ Voordat grootschalig pilots en marktanalyse mogelijk is moet voldaan worden aan de voorwaarden van de Medical Device Regulation (MDR) en de AI act; 80-90% van de innovaties strandt hier. In de verschillende meetings en workshops die NLAIC georganiseerd heeft met zorginstellingen en innovatoren kwam de MDR/AI ACT bij herhaling als grote bottleneck naar boven (altijd top-3).
+2. __Van pilot naar eerste betalende klant.__ Dit vereist onder meer een solide business case, betrouwbare toegang tot data en professionele ondersteuning. Dit blijft een hardnekkig probleem, niet alleen voor toepassingen in de ziekenhuiszorg maar komt ook terug bij GGZ en VVT. Binnen de ziekenhuiszorg is het adresseren van deze VoD daarom bv een speerpunt voor de SAZ-ziekenhuizen (Expertisecentrum Zorgalgoritmen).
+3. __Van eerste klant naar duurzame opschaling.__ Implementatie, acceptatie en validatie (“calibratie”) in andere omgevingen dan die van de pilot sites en eerste klant zijn verre van triviaal voor AI-innovaties. De meeste innovaties die de eerste klant weten te bereiken stranden alsnog in deze Valley of Death. Ter verdere illustratie van de huidige stand van zaken: bij een AI-readiness traject van NLAIC kwam naar voren dat nog geen enkele zorginstelling daadwerkelijk AI-ready is.
+
+
+## Behoefte aan een "AI dataplatform" (werktitel: AIDA)
+
+Op dit moment wordt gewerkt aan een nationaal actieplan om deze barrières te adresseren langs vier actielijnen, te weten
+
+1. databeschikbaarheid
+2. AI-readiness
+3. AI-beschikbaarheid
+4. Orkestratie.
+
+Binnen de actielijn databeschikbaarheid is in de afgelopen jaren het nodige in gang gezet, waaronder het systematisch toepassen van FAIR principes, een helder en breed gedragen ethisch en juridisch kader en het realiseren van gedistribueerde toegang tot data. Tegelijkertijd kunnen we constateren dat het ontbreekt aan een generieke 'AI dataplatform' waarop effectief onderzoek kan worden gedaan, algoritmes kunnen worden ontwikkeld etc. Een dergelijk platform is een geïntegreerd systeem dat AI-ontwikkelaars ondersteunt met toegang tot data, modellen en andere hulpmiddelen om AI-projecten te ontwikkelen en te verbeteren. Dit platform biedt toegang tot essentiële bronnen, zoals datasets voor het trainen van AI-algoritmen, basis AI-modellen en diensten zoals een ELSA-desk voor ethische en juridische vraagstukken.
+
+Een dergelijk 'AI dataplatform' is in feite een specifieke vorm van een beveiligde verwerkingsomgeving zoals in in de datagovernance verordening artikel 2 lid 20 is gedefinieerd:
+
+> “beveiligde verwerkingsomgeving”: de fysieke of virtuele omgeving en organisatorische middelen om te zorgen voor de naleving van het Unierecht, zoals Verordening (EU) 2016/679 (de Algemene verordening gegevensbescherming), met name wat betreft de rechten van datasubjecten, intellectuele-eigendomsrechten, en handels- en statistisch geheim, integriteit en toegankelijkheid, alsook van het toepasselijke nationale recht, en om de entiteit die de beveiligde verwerkingsomgeving biedt in staat te stellen alle gegevensverwerkingsactiviteiten te bepalen en er toezicht op te houden, met inbegrip van het tonen, opslaan, downloaden en exporteren van gegevens en het berekenen van afgeleide gegevens door middel van computeralgoritmen;
+
+Onder de werktitel "AIDA" willen we in de komende periode met experts, belanghebbenden en veldpartijen te komen tot een gecoördineerde realisatie van een dergelijke nutsvoorziening. Deze startnotitie en website is bedoeld als interactief discussie document, ter ondersteuning van dit consultatieproces.
+
+Op dit moment zijn er ontzettend veel ontwikkelingen gaande die relevant zijn voor AIDA. In het onderstaande geven we een samenvatting van relevante initiatieven, om te komen tot een eerste scoping en vraagstelling.
+
+## Europese context
+
+### Simpl
+
+Het Europese [Simpl](https://digital-strategy.ec.europa.eu/en/policies/simpl) is een _"... is an open source, smart and secure middleware platform that supports data access and interoperability among European data spaces."_ In januari 2025 zijn gedetailleerde architecturen en functionele beschrijvingen van __Simpl-Open__ opgeleverd om, zijnde een open-source software stack waarmee we deze generieke intergratie laag op een gestandaardiseerde manier willen realiseren.
+
+De Simpl-Open architectuur is een gedetailleerde uitwerken van bestaande referentie architecturen en is compatible met:
+
+- De _blueprint_ van de Data Spaces Support Center (DSSC) (huidige versie: [Blueprint 1.5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
+- International Data Spaces Reference Architecture Model (IDS-RAM) ([huidige versie 4](https://docs.internationaldataspaces.org/ids-knowledgebase/ids-ram-4), [draft versie 5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
+
+### AI Factories
+
+Vanuit de EU wordt ingezet op de realisatie van [AI Factories](https://digital-strategy.ec.europa.eu/en/policies/ai-factories), zijnde _"...  leverage the supercomputing capacity of the EuroHPC Joint Undertaking to develop trustworthy cutting-edge generative AI models."_ Dit initiatief zit meer in de hoek van High Performance Computing, en wordt ook getrokken vanuit de EuroHPC Joint Undertaking om betrouwbare, _state-of-the-art_ generatieve AI modellen te ontwikkelen.
+
+SURF is op dit moment penvoerder om namens Nederland een aanvraag in te dienen om een [grootschalige Nederlandse AI-faciliteit](https://www.surf.nl/themas/artificial-intelligence/grootschalige-nederlandse-ai-faciliteit) te realiseren.
+ 
+
+### InvestAI
+
+Europa heeft op 11 februari het [InvestAI-initiatief](https://netherlands.representation.ec.europa.eu/nieuws/eu-start-investai-initiatief-om-eu200-miljard-aan-investeringen-kunstmatige-intelligentie-te-2025-02-11_nl) aangekondigd om 200 miljard euro aan investeringen te mobiliseren. Dit initatief is o.a. gevoed door CAIRNE, de _Confederation of Laboratories for Artificial Intelligence Research in Europe_ dat al langer pleit voor een [CERN voor AI](C[onfederation of Laboratories for Artificial Intelligence Research in Europe](https://cairne.eu/cern-for-ai/)). Op dit moment is het nog onduidelijk wat deze initiatieven concreet zullen betekenen voor AIDA.
+
+### TEHDAS2
+
+[TEHDAS2](https://tehdas.eu/) is een _"... joint action prepares [that] the ground for the harmonised implementation of the secondary use of health data in the European Health Data Space – EHDS."_ Het is een Europees, zorg-specifiek programma, en veel van de werkpakketten zijn direct relevant voor AIDA. Een van de zaken die nader uitgezocht moeten worden is hoe de generieke architectuur van Simpl Open (sector onafhankelijk) zich verhouden tot de ontwerpprincipes en keuzes die binnen TEHDAS2 zijn gemaakt. 
+
+
+## Nederlandse context
+
+### Twiin
+
+[Twiin](https://www.twiin.nl/) is een samenwerkingsverband waarin zorgaanbieders, leveranciers en partners werken aan het Twiin Afsprakenstelsel. ...
+
+### NUTS
+
+[NUTS](https://nuts.nl/) ontwikkelt en beheert een nutsvoorziening die het delen van zorg-gerelateerde informatie over het Internet mogelijk maakt op een vertrouwelijke, veilige en toegankelijke manier. Het Nuts-netwerk maakt gebruik van internationale standaarden om een vertrouwenslaag op het Internet te realiseren. Die standaarden zijn geïmplementeerd in de Nuts-node: Open Source software die zonder licentiekosten door elke IT leverancier gebruikt kan worden. Leveranciers mogen er ook voor kiezen om zelf de standaarden te implementeren.
+
+### Health RI nodes
+
+_Last but certainly not least_ hebben de [Health RI nodes](https://www.health-ri.nl/health-ri/organisatie/knooppunten) in de afgelopen jaren het nodige ontwikkeld. Binnen de nodes is gewerkt aan verschillende oplossingen en aandachtsgebieden, waaronder het [myDRE Trusted Research Environment](https://mydre.org/), het [molgenis](https://molgenis.org/) data platform gericht op wetenschappelijk onderzoek en bioinformatica, het [BBMRI-NL beeldanalyse platform](https://www.bbmri.nl/services/research-tools/image-analysis-platform) om er een paar te noemen.
+
+zijn verschillende aandachtsgebieden en oplossingen gei
+
+## Scope en vraagstelling AIDA
+
+- Hoe komen we tot harmonisatie, en waar nodig standaardisatie van verschillende oplossingsrichtingen op maximale interoperabiliteit te realiseren.
+- Wat zijn de essentiele generieke functies om het vertrouwensmodel goed te implementeren?
+- Hoe kunnen we 
+
+
+
+
+
+
+Nationaal als ook internationaal zijn er voorbeelden van dergelijke beveiligde verwerkingsomgevingen. Zo hebben de meeste _National Statistics Offices (NSOs)_ zoals het CBS een [microdata omgeving](https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen). Alhoewel deze omgevingen zijn opzet voordat machine learning zijn intrede deed, bieden de meeste microdata omgevingen nu ook al de mogelijkheid om 'lichte' algoritmes te trainen op tabulaire data. Een rapport van de Verenigde Naties beschrijft dat deze omgevingen in toenemende mate ook worden uitgebreid met nieuwe AI-technieken, zoals privacy-enhancing technologieën (PETs)([@un2023pet-guide]).
+
+Specifiek voor de zorg zijn er ook al een aantal beveiligde verwerkingsomgevingen operationeel.
+
+- Het Finse Social and Health Data Permit Authority (Findata) biedt met [Kapseli](https://findata.fi/en/kapseli/) een landelijke voorziening aan dat aanvullend is op het Finse NSO.
+- Het [Mayo Clinic Platform_Discover](https://www.mayoclinicplatform.org/discover/) is een voorbeeld van een platform binnen een netwerk van zorg leveranciers.
+- In toenemende mate worden federated learning (FL) platformen gebruikt [@teo2024federated]. In Nederland is een actieve community rondom het [vantage6 platform](https://distributedlearning.ai/) dat wordt gebruikt in het [PLUGIN project](https://distributedlearning.ai/), en internationaal in [50 andere netwerken](https://www.medicaldataworks.nl/customers).
+
+
+
+## Een eerste ontwerp van AIDA
+
+- In analogie: de huidige stand van zaken zijn gefragmenteerde terpen, waarbij AI-gedreven innovaties vaak van worden ontwikkeld op niet gestandaardiseerde infrastructuur (terpen)
+- In plaats van terpen, willen we naar een deltawerken voor AI4Health.
+  - Deltaplan: het ontwerp van een gestandaardiseerd "AI dataplatform" waarmee komende jaren generieke, landelijk dekkende voorzieningen gerealiseerd kunnen worden
+  - Deltawerken: de realisatie van het Deltaplan, met het perspectief dat er niet één platform is, maar een ecosysteem van platformen die interoperabel zijn. Net zoals dat de Deltawerken een ecosysteem van dijken, waterkeringen is. 
+
+
+Dit document geeft een aanzet tot het Deltaplan voor AIDA. Het is opgebouwd in hoofdstukken die min of meer de [lagen van Archimate](https://archimate.visual-paradigm.com/what-is-layers-and-aspects-in-archimate-core-framework/) volgen.
+
+
+
+
+We volgen ongeveer het volgende proces:
+
+- januari/februari 2025: bureauonderzoek, eerste opzet en structuur
+- februari/maart 2025: eerste feedback rond met architecten van de nodes
+- maart/april: publieke consultatie en rondetafel met VWS

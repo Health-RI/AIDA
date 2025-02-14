@@ -1,0 +1,6 @@
+---
+title: Kapseli
+---
+
+- uitleg Kapseli
+- zie ook details in EOSC-Entrust blueprint

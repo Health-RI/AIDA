@@ -1,0 +1,6 @@
+**/.DS_Store
+/.quarto/
+/_site/
+*.code-workspace
+
+/.luarc.json

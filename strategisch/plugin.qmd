@@ -1,0 +1,27 @@
+---
+title: PLUGIN en vantage6
+---
+
+## Waarom PLUGIN
+
+### Één infrastructuur
+
+Met PLUGIN willen we één federatief platform neerzetten van en voor de Nederlandse ziekenhuizen. Dit elimineert de behoefte aan maatwerk infrastructuur, wat resulteert in een efficiëntere gegevensuitwisseling en lagere kosten voor het ziekenhuis.
+
+### AI
+
+Via PLUGIN is het mogelijk om AI-modellen te trainen met data van verschillende ziekenhuizen, wat de schaalbaarheid naar andere ziekenhuizen verhoogt. De betrokken ziekenhuizen hebben echter geen toegang tot de inviduele gegevens van andere ziekenhuizen.
+
+### Standaardiseren aan de bron
+
+Het omzetten van klinische gegevens naar het FHIR-formaat vergemakkelijkt de analyse en uitwisseling van deze informatie. Met FHIR-standaardisatie aan de bron biedt PLUGIN één infrastructuur die voor meerdere doeleinden gebruikt kan worden.
+
+![](https://plugin.healthcare/wp-content/uploads/2023/10/Architectuurplaat-PLUGIN-versie-Madou.jpeg)
+
+## vantage6
+
+- Beveiliging via gebruikers op centrale server
+- Goedkeuring via container registry: welke berekeningen mogen worden uitgevoerd
+- 
+
+

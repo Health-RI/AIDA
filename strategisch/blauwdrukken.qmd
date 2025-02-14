@@ -1,0 +1,56 @@
+---
+title: Scoping review bestaande blauwdrukken
+---
+
+## DSSC Blueprint 1.5 als startpunt
+
+Er zijn verschillende referentie architecturen en blauwdrukken die vergelijkbaar zijn met AIDA. Wij kiezen ervoor om de Blueprint 1.5 van de Data Spaces Support Centre (DSSC) als startpunt te gebruiken, omdat deze wordt ondersteund door een grote community en het expliciet bedoelt is om aan de hand van bouwblokken specifieke ontwerpen en implementaties te maken. @fig-dssc-blueprint geeft een overzicht van de bouwblokken die zijn onderverdeelt in bedrijfsmatige en organisatie bouwblokken, en technische bouwblokken.De [online documentatie](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home) geeft een gedetailleerde beschrijving van elke bouwblok. Daarnaast is er een uitgebreide [DSSC Glossary](https://dssc.eu/space/bv15e/766061530/Introduction+-+DSSC+Glossary) die wij zullen gebruiken voor het beschrijven en definieeren van AIDA. Daarbij hanteren we de methode zoals in @fig-dssc-tools is geillustreerd, namelijk dat AIDA een verzameling van bouwblokken is, waarvoor we (met de tijd) verschillende implementatie en configuraties zullen verwachten. 
+
+![DSSC Blueprint 1.5 Building Block](/images/dssc-blueprint-building-blocks.png){#fig-dssc-blueprint}
+
+ ![DSSC ](/images/dssc-blueprint-tools.png){#fig-dssc-tools}
+
+De beoogde functionaliteit van AIDA valt onder de categorie Value Creation Services. @fig-dssc-value-creation-services geeft een gedetailleerder overzicht welke soort functionaliteit hieronder wordt verstaan.
+
+![Overzicht van _capabilities_ binnen _Value Creation Services_](https://dssc.eu/download/attachments/766070344/image-20240828-092041.png){#fig-dssc-value-creation-services}
+
+## IDSA 
+
+
+## EOSC-Entrust
+
+> EOSC-ENTRUST aims to create a European network of Trusted Research Environments (TREs) for sensitive data and drive European interoperability between TREs by development of a common blueprint for federated data access and analysis – the EOSC-ENTRUST Blueprint & Interoperability Framework (ENTRUST Blueprint, for short). The final ENTRUST Blueprint will consist of template legal agreements, architecture specifications, operating procedures, interface definitions, and a glossary of terminologies. This document is the first version of the ENTRUST Blueprint and presents a draft architecture specification and glossary.
+
+De eerste versie van de blauwdruk is in december 2024 gepubliceerd ([link](/resources/EOSC-ENTRUST_D13.4-blueprint-v1.pdf)). Een eerste versie van de architectuur is opgesteld met de DARE UK Federated Architecture Blueprint als uitgangspunt, wat vervolgens in vergeleken en aangevuld met NOTRE (Norwegian TREs), het Nederlandse SURF Secure ANalysis Environment (SANE) en het Finse CSC Secure Data Services.
+
+![ENTRUST infrastructuur architectuur (versie 1, december 2024)](/images/entrust-architecture.png)
+
+Veel componenten van de ENTRUST architectuur zijn een op een te mappen op de DSSC Blueprint. Meest in het oog springende is dat ENTRUST vooral richt op gefedereerde TREs.
+
+
+## BDVA reference model
+
+![Big Data Value Reference Model, @curry2021reference](/images/bdv-reference-model.png){#fig-bdv-reference-model}
+
+Indeling naar soorten data waarmee binnen AIDA gewerkt kan worden is handig:
+
+- Tabulaire data (gestructureerde data): zowel klinisch (vanuit EPD) als ook bedrijfsmatige data
+- tijdreeksen: hoogfrequente klinische data zoals bijvoorbeeld EEG. Vereisen specifieke opslagformaten en standaardisatie vanwege omvang.
+- geospatial data: bijvoorbeeld voor pandemic response en geoanalyses
+- beeld, video en geluid: veel gebruikt voor diagnostiek
+- tekst en genome data: sequentiele data waarmee via LLMs steeds meer gedaan wordt
+- graaf-gebaseerde data: relevant voor klinische ontologieen, vastleggen van metadata en het automatische transformeren van data tussen verschillende formaten
+
+Van de benoemde functionele domeinen zijn de volgende in scope van AIDA:
+
+- horizontaal: de primaire processen die onderdeel zijn van het AI ontwikkelproces
+  - data visualisatie en user interaction: 
+  - data analyse
+  - data processing architectuur
+- verticaal: ondersteunende, generieke functies
+  - development, engineering & DevOps
+  - standaarden
+
+
+### Europe AI Factory
+

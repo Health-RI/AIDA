@@ -1,0 +1,26 @@
+---
+title: "Secure Multiparty Computation (MPC)"
+---
+
+## Wat is MPC?
+
+(korte uitleg)
+Verschillende leveranciers in Nederland, waaronder Linksight en Roseman Labs
+
+## Waar is MPC al operationeel?
+
+### Transmuraal Zorgnetwerk West-Brabant Oost
+
+- https://www.tmz-breda.nl/
+- Roseman Platform als om middels MPC een federated in-the-blind SPE aan te bieden. Platform kan tot een paar miljoen rijen tabulaire machine learning algoritmes ondersteunen
+- Voorbeeld van een onderzoek: Verbeteren instroom, doorstroom en uitstroom van patiënten in de keten ([link](https://www.tmz-breda.nl/proefschrift-verbeteren-instroom-doorstroom-en-uitstroom-van-patienten-in-de-keten/))
+
+
+### Linksight
+
+- ...
+- ...
+- ...
+
+
+### UMCU

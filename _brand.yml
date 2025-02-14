@@ -1,0 +1,24 @@
+color:
+  palette:  
+    dark-grey: "#222222"
+    dark-blue: "#173d75"
+    hri-yellow: "#fcb91c"
+  background: white
+  foreground: dark-grey
+  primary: dark-blue
+
+typography:
+  fonts:
+    - family: Lato
+      source: google
+  base: Lato
+  headings: Lato
+
+logo:
+  large: /logo.png
+
+defaults:
+  bootstrap:
+    defaults:
+      navbar-bg: white
+      navbar-fg: "#173d75"

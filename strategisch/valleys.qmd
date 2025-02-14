@@ -1,0 +1,76 @@
+---
+title: Strategisch perspectief
+subtitle: Achtergrond
+description: |
+  Beschrijving van de achtergrond wat heeft geleid tot AIDA. Het overbruggen van _valleys of death_ als narratief.
+accordion:
+  - layers:
+    - header: Strategisch
+      body: Narratief met beschrijving van strategische rationale van het platform. Relevante _prior art_ en ontwikkelingen worden geïntroduceerd, zodat deze in de verdere uitwerking een plek kunnen krijgen.
+    - header: Business
+      body: Uitwerking van operationele en functionele eisen die "human readable" en software neutraal is. Dit omvat bijvoorbeeld personas en procesbeschrijvingen.
+    - header: Applicatie
+      body: Gestructureerde en software-neutrale technische beschrijving, die voldoende details bieden als startpunt voor implementaties. Dit omvat bijvoorbeeld technische ontwerp principes en interoperability standaarden.
+filters:
+  - accordion
+---
+<br>
+
+## Context: AI4Health
+
+In Nederland zijn verschillende landelijke initiatieven actief die zich richten op het verbeteren van de digitale zorg en het benutten van de grote potentie van AI daarbij:
+
+- Health-RI en Cumuluz werken aan data-beschikbaarheid
+- de Nederlandse AI Coalitie (NLAIC) richt zich op AI _an sich_
+- Digizo-Zorgverzekeraars Nederland (ZN) voor het versnellen van innovatie
+
+Elk van deze initiatieven maakt op zichzelf goede voortgang, maar lopen tegen knelpunten aan die ze individueel niet kunnen oplossen. Hiervoor is overzicht, regie en nauwe samenwerking met VWS nodig en intrinsieke betrokkenheid van essentiële ketenpartijen, waaronder Nictiz, de koepels, de Patiëntenfederatie en de zorg- en onderzoeksorganisaties. 
+
+Het is in deze context dat Health-RI, NLAIC de krachten gebundeld, met betrokkenheid van ZN, om gezamenlijk een versneld en positief AI-innovatieklimaat te creëren in zorg en onderzoek wat heeft geleid tot een eerste aanzet voor een nationaal actieplan: AI4Health.
+
+Met deze aanpak willen we breed barrières aangepakken die het momenteel AI-gedreven innovaties buitengewoon moeilijk maken om de opschalingsfase bereiken. Vanuit de praktijk , waardoor impact op de noodzakelijke zorgtransformatie achterblijft. De dagelijkse praktijk wijst uit dat er drie breed-gevoelde barrières (_valleys of death_) die overkomen moeten worden (zie @mxi2024ai voor een recent overzicht).
+
+![De drie _valleys of death_ die grootschalig gebruik van AI in de zorg in de weg staan.](/images/three-valleys-of-death.png){#fig-three-valleys-of-death}
+
+1. __Van concept tot toegang tot de praktijk.__ Voordat grootschalig pilots en marktanalyse mogelijk is moet voldaan worden aan de voorwaarden van de Medical Device Regulation (MDR) en de AI act; 80-90% van de innovaties strandt hier. In de verschillende meetings en workshops die NLAIC georganiseerd heeft met zorginstellingen en innovatoren kwam de MDR/AI ACT bij herhaling als grote bottleneck naar boven (altijd top-3).
+2. __Van pilot naar eerste betalende klant.__ Dit vereist onder meer een solide business case, betrouwbare toegang tot data en professionele ondersteuning. Dit blijft een hardnekkig probleem, niet alleen voor toepassingen in de ziekenhuiszorg maar komt ook terug bij GGZ en VVT. Binnen de ziekenhuiszorg is het adresseren van deze VoD daarom bv een speerpunt voor de SAZ-ziekenhuizen (Expertisecentrum Zorgalgoritmen).
+3. __Van eerste klant naar duurzame opschaling.__ Implementatie, acceptatie en validatie (“calibratie”) in andere omgevingen dan die van de pilot sites en eerste klant zijn verre van triviaal voor AI-innovaties. De meeste innovaties die de eerste klant weten te bereiken stranden alsnog in deze Valley of Death. Ter verdere illustratie van de huidige stand van zaken: bij een AI-readiness traject van NLAIC kwam naar voren dat nog geen enkele zorginstelling daadwerkelijk AI-ready is.
+
+## Behoefte aan een "AI dataplatform" (AIDA)
+
+Op dit moment wordt gewerkt aan een nationaal actieplan om deze barrières te adresseren langs vier actielijnen, te weten i) databeschikbaarheid, ii) AI-readiness, iii) AI-beschikbaarheid, en iv) orkestratie. Binnen de eerste actielijn databeschikbaarheid is in de afgelopen jaren het nodige in gang gezet, waaronder het systematisch toepassen van FAIR principes, een helder en breed gedragen ethisch en juridisch kader en het realiseren van gedistribueerde toegang tot data.
+
+Tegelijkertijd kunnen we constateren dat het ontbreekt aan een generieke 'AI dataplatform' waarop effectief onderzoek kan worden gedaan, algoritmes kunnen worden ontwikkeld etc. Een dergelijk platform is een geïntegreerd systeem dat AI-ontwikkelaars ondersteunt met toegang tot data, modellen en andere hulpmiddelen om AI-projecten te ontwikkelen en te verbeteren. Dit platform biedt toegang tot essentiële bronnen, zoals datasets voor het trainen van AI-algoritmen, basis AI-modellen en diensten zoals een ELSA-desk voor ethische en juridische vraagstukken.
+
+Een dergelijk 'AI dataplatform' is in feite een specifieke vorm van een beveiligde verwerkingsomgeving zoals in in de datagovernance verordening artikel 2 lid 20 is gedefinieerd:
+
+> “beveiligde verwerkingsomgeving”: de fysieke of virtuele omgeving en organisatorische middelen om te zorgen voor de naleving van het Unierecht, zoals Verordening (EU) 2016/679 (de Algemene verordening gegevensbescherming), met name wat betreft de rechten van datasubjecten, intellectuele-eigendomsrechten, en handels- en statistisch geheim, integriteit en toegankelijkheid, alsook van het toepasselijke nationale recht, en om de entiteit die de beveiligde verwerkingsomgeving biedt in staat te stellen alle gegevensverwerkingsactiviteiten te bepalen en er toezicht op te houden, met inbegrip van het tonen, opslaan, downloaden en exporteren van gegevens en het berekenen van afgeleide gegevens door middel van computeralgoritmen;
+
+Nationaal als ook internationaal zijn er voorbeelden van dergelijke beveiligde verwerkingsomgevingen. Zo hebben de meeste _National Statistics Offices (NSOs)_ zoals het CBS een [microdata omgeving](https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen). Alhoewel deze omgevingen zijn opzet voordat machine learning zijn intrede deed, bieden de meeste microdata omgevingen nu ook al de mogelijkheid om 'lichte' algoritmes te trainen op tabulaire data. Een rapport van de Verenigde Naties beschrijft dat deze omgevingen in toenemende mate ook worden uitgebreid met nieuwe AI-technieken, zoals privacy-enhancing technologieën (PETs)([@un2023pet-guide]).
+
+Specifiek voor de zorg zijn er ook al een aantal beveiligde verwerkingsomgevingen operationeel.
+
+- Het Finse Social and Health Data Permit Authority (Findata) biedt met [Kapseli](https://findata.fi/en/kapseli/) een landelijke voorziening aan dat aanvullend is op het Finse NSO.
+- Het [Mayo Clinic Platform_Discover](https://www.mayoclinicplatform.org/discover/) is een voorbeeld van een platform binnen een netwerk van zorg leveranciers.
+- In toenemende mate worden federated learning (FL) platformen gebruikt [@teo2024federated]. In Nederland is een actieve community rondom het [vantage6 platform](https://distributedlearning.ai/) dat wordt gebruikt in het [PLUGIN project](https://distributedlearning.ai/), en internationaal in [50 andere netwerken](https://www.medicaldataworks.nl/customers).
+
+
+
+## Een eerste ontwerp van AIDA
+
+- In analogie: de huidige stand van zaken zijn gefragmenteerde terpen, waarbij AI-gedreven innovaties vaak van worden ontwikkeld op niet gestandaardiseerde infrastructuur (terpen)
+- In plaats van terpen, willen we naar een deltawerken voor AI4Health.
+  - Deltaplan: het ontwerp van een gestandaardiseerd "AI dataplatform" waarmee komende jaren generieke, landelijk dekkende voorzieningen gerealiseerd kunnen worden
+  - Deltawerken: de realisatie van het Deltaplan, met het perspectief dat er niet één platform is, maar een ecosysteem van platformen die interoperabel zijn. Net zoals dat de Deltawerken een ecosysteem van dijken, waterkeringen is. 
+
+
+Dit document geeft een aanzet tot het Deltaplan voor AIDA. Het is opgebouwd in hoofdstukken die min of meer de [lagen van Archimate](https://archimate.visual-paradigm.com/what-is-layers-and-aspects-in-archimate-core-framework/) volgen.
+
+{{<accordion layers>}}
+
+
+We volgen ongeveer het volgende proces:
+
+- januari/februari 2025: bureauonderzoek, eerste opzet en structuur
+- februari/maart 2025: eerste feedback rond met architecten van de nodes
+- maart/april: publieke consultatie en rondetafel met VWS

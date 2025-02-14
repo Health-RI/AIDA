@@ -1,0 +1,11 @@
+---
+title: AnDREa
+---
+
+https://andrea-cloud.com/, currently run by [add list of nodes that run AnDREa]
+
+- Trusted Processing Environment
+- Provides generic services such as access control, workspace configuration etc. as the main service offering
+- Users are free to install and run whatever software they want on a virtual machine
+- Federated learning currently under development
+
