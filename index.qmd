@@ -2,7 +2,7 @@
 title: Van terpen naar deltawerken voor AI in de zorg 
 subtitle: "Startnotitie 'AI dataplaformen' (werktitel: AIDA)"
 description: |
-  We beschrijven de aanleiding en context om als onderdeel van een nationaal actieplan open, modulaire en interoperabele 'AI dataplaformen" (werktitel: AIDA) te realiseren in Nederland. Een eerste inhoudelijk scoping van AIDA wordt gegeven, bedoeld als startnotitie om hierover met experts, belanghebbenden en veldpartijen in gesprek te gaan. Uiteindelijk doel is om te komen tot een gecoordineerde realisatie van de nutsvoorziening(en) die nodig zijn om AI-gedreven onderzoek en innovatie in de zorg te versnellen middels secundair gebruik van data.
+  We beschrijven de aanleiding en context om als onderdeel van een nationaal actieplan open, modulaire en interoperabele 'AI dataplaformen" (werktitel: AIDA) te realiseren in Nederland. Een eerste inhoudelijk scoping van AIDA wordt gegeven, bedoeld als startnotitie om hierover met experts, belanghebbenden en veldpartijen in gesprek te gaan. Uiteindelijk doel is om te komen tot een gecoordineerde realisatie van de nutsvoorziening(en) die nodig zijn om AI-gedreven onderzoek en innovatie in de zorg te versnellen, ondersteund door secundair gebruik van data.
 ---
 <br>
 
@@ -21,7 +21,7 @@ Tijdens de laatste ICT&Health conferentie is [een oproep gedaan](https://ictheal
 
 Op dit moment wordt gewerkt aan een nationaal actieplan om deze barrières te adresseren langs vier actielijnen, te weten
 
-1. databeschikbaarheid
+1. Databeschikbaarheid
 2. AI-readiness
 3. AI-beschikbaarheid
 4. Orkestratie.
@@ -36,9 +36,11 @@ Onder de werktitel "AIDA" willen we in de komende periode met experts, belangheb
 
 Op dit moment zijn er ontzettend veel ontwikkelingen gaande die relevant zijn voor AIDA. In het onderstaande geven we een samenvatting van relevante initiatieven, waarna we een eerste scoping presenteren en vragen formuleren als start voor de discussie.
 
-## Europese context
+## Context en relevante initiatieven
 
-### Simpl
+### Europese initatieven
+
+#### Simpl Open
 
 Het Europese [Simpl](https://digital-strategy.ec.europa.eu/en/policies/simpl) is een _"... is an open source, smart and secure middleware platform that supports data access and interoperability among European data spaces."_ In januari 2025 zijn gedetailleerde architecturen en functionele beschrijvingen van __Simpl-Open__ opgeleverd om, zijnde een open-source software stack waarmee we deze generieke integratie laag op een gestandaardiseerde manier willen realiseren.
 
@@ -47,54 +49,51 @@ De Simpl-Open architectuur is een gedetailleerde uitwerken van bestaande referen
 - De Data Spaces Support Center (DSSC) Blueprint ([versie 1.5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
 - De International Data Spaces Reference Architecture Model (IDS-RAM) ([huidige versie 4](https://docs.internationaldataspaces.org/ids-knowledgebase/ids-ram-4), [draft versie 5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
 
-### AI Factories
+#### AI Factories
 
 Vanuit de EU wordt ingezet op de realisatie van [AI Factories](https://digital-strategy.ec.europa.eu/en/policies/ai-factories), zijnde _"...  leverage the supercomputing capacity of the EuroHPC Joint Undertaking to develop trustworthy cutting-edge generative AI models."_ Dit initiatief zit meer in de hoek van High Performance Computing, en wordt ook getrokken vanuit de EuroHPC Joint Undertaking om betrouwbare, _state-of-the-art_ generatieve AI modellen te ontwikkelen.
 
 SURF is op dit moment penvoerder om namens Nederland een aanvraag in te dienen om een [grootschalige Nederlandse AI-faciliteit](https://www.surf.nl/themas/artificial-intelligence/grootschalige-nederlandse-ai-faciliteit) te realiseren.
  
 
-### InvestAI
+#### InvestAI
 
 Europa heeft op 11 februari het [InvestAI-initiatief](https://netherlands.representation.ec.europa.eu/nieuws/eu-start-investai-initiatief-om-eu200-miljard-aan-investeringen-kunstmatige-intelligentie-te-2025-02-11_nl) aangekondigd om 200 miljard euro aan investeringen te mobiliseren. Dit initatief is o.a. gevoed door CAIRNE, de _Confederation of Laboratories for Artificial Intelligence Research in Europe_ dat al langer pleit voor een [CERN voor AI](C[onfederation of Laboratories for Artificial Intelligence Research in Europe](https://cairne.eu/cern-for-ai/)). Op dit moment is het nog onduidelijk wat deze initiatieven concreet zullen betekenen voor AIDA.
 
-### TEHDAS2
+#### TEHDAS2
 
 [TEHDAS2](https://tehdas.eu/) is een _"... joint action prepares [that] the ground for the harmonised implementation of the secondary use of health data in the European Health Data Space – EHDS."_ Het is een Europees, zorg-specifiek programma, en veel van de werkpakketten zijn direct relevant voor AIDA. Een van de zaken die nader uitgezocht moeten worden is hoe de generieke architectuur van Simpl Open (sector onafhankelijk) zich verhouden tot de ontwerpprincipes en keuzes die binnen TEHDAS2 zijn gemaakt. 
 
 
-## Nederlandse context
+### Nederlandse context
 
-### Twiin
+#### Twiin
 
 [Twiin](https://www.twiin.nl/) is een samenwerkingsverband waarin zorgaanbieders, leveranciers en partners werken aan het Twiin Afsprakenstelsel. Dit [Afsprakenstelsel](https://twiin-afsprakenstelsel.scrollhelp.site/ta130/TA130) omvat gedetailleerde uitwerkingen over alle lagen van de architectuur voor het beschikbaar maken van gezondheidsgevens. Zo zijn duidelijke keuzes gemaakt om bijvoorbeeld te werken met FHIR-gebaseerde _notified pull_, het gebruik van BSN voor identificatie, het gebruik van eIDAS voor authenticatie en OAuth2 voor autorisatie.
 
-### NUTS
+#### NUTS
 
 [NUTS](https://nuts.nl/) ontwikkelt en beheert een nutsvoorziening die het delen van zorg-gerelateerde informatie over het Internet mogelijk maakt op een vertrouwelijke, veilige en toegankelijke manier. Het Nuts-netwerk maakt gebruik van internationale standaarden om een vertrouwenslaag op het Internet te realiseren. Die standaarden zijn geïmplementeerd in de Nuts-node: Open Source software die zonder licentiekosten door elke IT leverancier gebruikt kan worden. Leveranciers mogen er ook voor kiezen om zelf de standaarden te implementeren.
 
-### Health RI nodes
+#### Health RI nodes
 
 _Last but certainly not least_ hebben de [Health RI nodes](https://www.health-ri.nl/health-ri/organisatie/knooppunten) in de afgelopen jaren het nodige ontwikkeld. Binnen de nodes is gewerkt aan verschillende oplossingen en aandachtsgebieden, waaronder het [myDRE Trusted Research Environment](https://mydre.org/), het [molgenis](https://molgenis.org/) data platform gericht op wetenschappelijk onderzoek en bioinformatica, het [BBMRI-NL beeldanalyse platform](https://www.bbmri.nl/services/research-tools/image-analysis-platform) om er een paar te noemen.
 
 
-## Scope en vraagstelling AIDA
+## Vraagstelling AIDA
 
-- In analogie: de huidige stand van zaken zijn gefragmenteerde terpen, waarbij AI-gedreven innovaties vaak van worden ontwikkeld op niet gestandaardiseerde infrastructuur (terpen)
-- In plaats van terpen, willen we naar een deltawerken voor AI4Health.
-  - Deltaplan: het ontwerp van een gestandaardiseerde en interoperabele "AI dataplatformen" waarmee komende jaren generieke, landelijk dekkende voorzieningen gerealiseerd kunnen worden
-  - Deltawerken: de realisatie van het Deltaplan, met het perspectief dat er niet één platform is, maar een ecosysteem van platformen die interoperabel zijn. Net zoals dat de Deltawerken een ecosysteem van dijken, waterkeringen is. 
+Op dit moment worden AI-gedreven innovaties vaak van worden ontwikkeld op niet gestandaardiseerde infrastructuur, wat leidt tot zeer hoge of zelfs onbetaalbare kosten voor een willekeurig onderzoek of innovatie. In analogie zou je kunnen zeggen dat elk onderzoek, elke innovatie zijn eigen terp moet bouwen, alvorens het project daadwerkelijk kan starten. Met AIDA willen we toe naar een Deltawerken voor AI4health. AIDA is hierbij het Deltaplan: het ontwerp van een gestandaardiseerde en interoperabele "AI dataplatformen" waarmee komende jaren generieke, landelijk dekkende voorzieningen gerealiseerd kunnen worden. In deze analogie zijn de Deltawerken de realisatie hiervan, waarbij het perspectief is dat we niet naar één AI platform streven, maar een ecosysteem van platformen die interoperabel zijn. Net zoals dat de Deltawerken een ecosysteem van dijken, waterkeringen die elkaar ondersteunen, elk met een eigen functie. 
 
- 
-Vragen die we willen beantwoorden:
+In de komende maanden willen we dus een aanzet geven tot het opstellen van het Deltaplan. Belangrijke uitgangspunten, scope en vragen hierbij zijn (indicatie, niet bedoeld als volledige opsomming):
 
 - Hoe komen we tot harmonisatie, en waar nodig standaardisatie van verschillende oplossingsrichtingen op maximale interoperabiliteit te realiseren.
-- Wat zijn de essentiële generieke functies om het vertrouwensmodel goed te implementeren?
-- ...
+- Hoe kunnen we bestaande en in ontwikkeling zijnde architecturen combineren tot een consistent plan?
+- Hoe kunnen we middels generieke functies het vertrouwensmodel goed te implementeren?
+- Hoe kunnen we bestaande initatieven maximale ruimte geven om zelf te blijven doorontwikkelen, met daarbij een minimale set van afspraken
 
-Vooral ook zaak om eenduidige terminologie en component beschrijvingen te gebruiken.
+Bij het opstellen van deze startnotitie kwam vooral ook naar voren dat er behoefte is aan een eenduidige terminologie en beschrijvingen van componnenten. Dat is een van de concrete _deliverables_ van AIDA voor dit jaar.
 
-We zien drie thema's waarlangs we de discussie tav AIDA willen voeren:
+Als start voor de discussie, benoemen we de volgende drie thema's die we met het veld verder willen verkennen en verdiepen:
 
 1. Onderscheid verschillende vormen van _Secure Processing Environments (SPEs)_
 2. Koppelvlak tussen data en SPEs
@@ -115,7 +114,7 @@ De basis gedachte achter AIDA is dat er *verschillende soorten van secure proces
 |                       | - machine learning op tabulaire data mogelijk         |
 |                       | - _statistical disclosure control_ op output          |
 +-----------------------+-------------------------------------------------------+
-| Federated             | - decentrale benadering cf. personal health train     |
+| Decentrale            | - decentrale c.q. federated benadering                |
 | SPEs                  | - oorspronkelijk bedoelt voor machine learning        |
 |                       | - kan ook gebruikt worden voor statistische analyse   |
 |                       | - moeilijker om mee te werken                         |
@@ -187,31 +186,67 @@ Gegeven deze verschillende soorten SPEs is een eerste _strategy view_ van AIDA g
 
 ## Thema 2: koppelvlak datastores en SPE
 
-- Resource discovery binnen Simpl Open
-- Onderscheid tussen datastores en datasets: FAIR gaat alleen over datasets
-- Voor real-world data wil je toe naar standaard manier om snel te verkennen of een bepaalde datastores interessant is voor een toepassing --> verkenner functie
-- Elke keer dat je de query runt, krijg je een iets andere datasets omdat nieuwe datapunten kunnen zijn binnengekomen. Maar de logica van inclusiecriteria is hetzelfde
-  
-Voorbeelden hoe je op gestandaardiseerde manier datasets kan definieren vanuit een datastore
+Het ontwerp van AIDA vereist harmonisatie van de koppelvlakken (component 9 in @fig-hri-architectuur-secundair) tussen de datastores (component 7) en de SPE. Binnen de Simpl Open architectuur wordt gesproken van Resource discovery (zie @fig-strategy-view, linker cluster van _capabilities_). Versie 4 van de Health-RI wiki geeft een uitwerking van deze _discovery_ services in een aantal bouwblokken (@fig-beheer-uitgifte-gebruik-data) . In het onderstaande gaan we in op een aantal van deze bouwblokken die relevant zijn voor de uitwerking van AIDA 
 
-- FHIR ecosysteem: Bulk FHIR en SQL-on-FHIR: je kan subsets en queries definieren
-- openEHR ecosysteem: Archtetype Query Language (AQL)
-- OMOP gebruikt SQL (geen OMOP-specifieke query language) direct op de relational database
+![Bouwblokken voor geautomatiseerd proces voor beheer, uitgifte en gebruik van de data ([bron](https://health-ri.atlassian.net/wiki/spaces/HWV4/pages/793613551/Geautomatiseerd+proces+voor+beheer+uitgifte+en+gebruik+van+de+data).](/images/beheer-uitgifte-gebruik-data.png){#fig-beheer-uitgifte-gebruik-data}
+
+### Onderscheid datastores en datasets
+
+Een van de uitgangspunten van de Health-RI architectuur is dat [data zo dicht mogelijk bij de bron FAIR wordt gemaakt](https://health-ri.atlassian.net/wiki/spaces/HNG/pages/608305356/Data+wordt+zo+dicht+mogelijk+bij+de+bron+FAIR+gemaakt+t.b.v.+meervoudig+gebruik.). Het concept van een [FAIR Data Point](https://www.fairdatapoint.org/) is hierin leidend, waarvan inmiddels verschillende implementaties zijn en complementaire software componenten voor b.v. het _harvesten_ van FAIR metadata catalogi.
+
+Een van de zaken die nader gespecificeerd moet worden is het onderscheid tussen een FAIR data set en een datastore. Een datastore in deze is een component dat als _system of record_ data beschikbaar stelt voor hergebruik en/of een longitudinale datastore waarbij data vanuit verschillende bronsystemen worden gecombineerd en gepersisteerd. openEHR en OMOP zijn veel gebruikte standaarden voor de implemenetatie van een dergelijk datastore. Voor meer details en achtergrond verwijzen we naar @tsafnat2024converge.
+
+Met name voor het beschikbaar stellen en hergebruiken van tabulaire data uit EPDs, HISen etc. is het wenselijk om snel te verkennen of een bepaalde dataset relevant is voor een gebruiker. We zien 'verkenner' voor ons, waarbij potentiele data gebruikers in staat worden gesteld om de datastore te queryen. Typisch betreft dit het zoeken naar relevante populaties in de datastores, bijvoorbeeld "hoeveel patienten ouder dan 65 met aandoening XXX" zitten in de datastore. De resultaat van een dergelijk query is overigens altijd een anonieme dataset met enkel geaggregeerde, beschrijvende statistieken.
+
+De meeste - en zo niet alle - open standaarden voor datastores hebben een mechanisme om dit te ondersteunen:. 
+
+- openEHR biedt hiervoor het [Archtetype Query Language (AQL)](https://specifications.openehr.org/releases/QUERY/latest/AQL.html)
+- OMOP gebruikt SQL (geen OMOP-specifieke query language) direct op de relationale database
+- binnen het FHIR ecosysteem zijn nieuwe standaarden zoals [Bulk FHIR](https://build.fhir.org/ig/HL7/bulk-data/) en [SQL-on-FHIR](https://build.fhir.org/ig/FHIR/sql-on-fhir-v2/) bedoelt om subsets te definiëren en op een makkelijke manier data te aggregeren
+
+Deze benadering zorgt ervoor dat (potentiele) data gebruikers op een eenduidige manier 'inclusiecriteria' kunnen bepalen op de datastore. Het gaat hierbij om inclusie van rijen (subjecten, patient) en kolommen (welke attributen, waarden). Alhoewel het runnen van de query elke keer een iets ander resultaat geeft (je kunt meer rijen krijgen omdat nieuwe patienten zijn toegevoegd), is het zodanig gestandaardiseerd dat het een vergelijkbare functie vervult als een statische, gepersisteerde dataset zoals een FDP dat beoogt. De metadatering van de query op de datastore zal waarschijnlijk met nagenoeg dezelfde metadata standaarden (DCAT-AP) kunnen worden gedaan.
+
+Alhoewel de inrichting van een 'verkenner' functie technisch mogelijk is, blijkt uit de praktijk dat er nog het nodige aan data verificatie, mapping etc. gedaan moet worden om te komen tot een 'bevroren' dataset die geschikt is voor secundair gebruik. Tijdens de hackathon in december 2024 zijn een aantal knelpunten geidentificeerd. In de uitwerken van AIDA willen we expliciet ingaan hoe we dit kunnen oplossen.
+
+### Standaard voor koppelen van vertikaal gepartitioneerde data middels pseudonimisering
+
+In veel use-cases dient data uit verschillende bronnen te worden gekoppeld op subject/patient niveau. Op dit moment is ZorgTTP een veelgebruikte pseudonimiseringsmethode dat wordt gebruikt, dat sinds 2015 tevens [openbaar is](https://www.zorgttp.nl/wp-content/uploads/2023/01/NEN-pseudonimisering-specificatie-voorstel-VWS-1.0.pdf). Het gebruik van pseudoniemen om te koppelen is met name relevant voor centrale en hybride SPEs: op deze manier kan een integrale dataset gemaakt worden voor secundair gebruik. Een decentrale SPE is minder geschikt voor het koppelen van zogenaamde verticaal gepartitioneerde data; het is niet onmogelijk maar zeker bewerkelijker. 
 
 
+## Thema 3: Orchestratie van infrastructuur {#sec- orchestratie}
 
-## Thema 3: orchestratie van infrastructuur {#sec-orchestratie}
+Orchestratie van infrastructuur binnen en tussen verschillende AIDA platformen is essentieel om tot een samenhangend Deltawerken te komen. Binnen de Simpl Open architectuur is de _Infrastructure Layer_ ook in detail uitwerkt.
 
- Kenmerken van het NCSC platform zien we daarin terugkomen als ontwerpprincipes, waaronder:
+::: {.callout-note}
+## Infrastructure Layer in Simpl Open
 
- - Het gebruik van _agents_ als mechanisme voor het orkestreren van allerlei _compute_ en _storage_ binnen een data space en tussen een data space
-- Mogelijkheid om over verschillende fysieke locaties een data space op te zetten
-- Sterke nadruk op Identificatie, Authenticatie en Autorisatie (IAA) functies, waarvoor standaarden gebruikt moeten worden
+The capabilities provided by this layer enable the consumers to easily provision the necessary computing and storage resources to execute their  workloads in a secure and energy-efficient way. The **infrastructure orchestration**, automates the provisioning of the infrastructure resources to enable the various infrastructure providers to interconnect infrastructure orchestration and get exposed via a standard interface. The **distributed execution**, allows the consumer to deploy applications and execute computations close to the distributed execution data.
+
+The **cloud & edge computing** capability provides the opportunity to provision various resources to execute computations or store data in the environment of their choice. The **platform-as-a-service** building blocks provide several database engines and other platform-level resources. Finally, the **HPC** capability permits the consumer to perform complex calculations at high speed by providing a cluster of high-performance computers.
+
+The infrastructure building blocks can be easily combined with each other to create even more value for the consumer. For instance, after successfully analysing certain data with the help of the provisioned _platform-as-a-service_ analytical resources or the _HPC_ capability, the consumer may want to store the used datasets and/or the results of their calculations. In this case, the _PaaS_ storage building block can easily fulfil the storage needs of the end user. In case a consumer would like to develop a stand-alone application, they may also use various _PaaS_ resources at the same time. They can leverage the different storage options to store each sort of data in the most efficient manner (e.g. the transactional data in a transactional database, while the sensor data in a NoSQL 
+database). Besides, they can use the _cloud & egde computing_ capabilities to deploy and run their applications, and the _distributed execution_ capability even enables them to run the code close to the edge.
+
+:::
+
+![Conceptueel overzich Simpl Open, met een centrale plek van de _Infrastructure Layer_](/images/simpl-open-overview.png)
+
+Simpl Open hanteert de volgende ontwerpprincipes voor de infrastructuur laag:
+
+- Het moet mogelijkheid zijn om over verschillende fysieke locaties een data space op te zetten
+- Het gebruik van _agents_ als mechanisme voor het orkestreren van allerlei _compute_ en _storage_ binnen een data space en tussen een data space
+- Indeling van twee Tiers voor Identificatie, Authenticatie en Autorisatie (IAA) functies, waarvoor standaarden gebruikt moeten worden
   - Tier 1: IAA van gebruikers
   - Tier 2: IAA voor machine-to-machine orkestratie  
-- Naast gebruik van catalogi voor data en applicaties wordt ook het gebruik van een infrastructuur voorgeschreven, zodat daarmee inzichtelijk is welke _compute_ en _storage_ beschikbaar is binnen het netwerk.
+- Naast gebruik van catalogi voor data en applicaties wordt ook het gebruik van een infrastructuur voorgeschreven, zodat daarmee inzichtelijk is welke _compute_ en _storage_ beschikbaar is binnen het netwerk
+- Aansluiten bij bestaande standaarden en open source componenten zoals Keycloak als IAA applicatie component, OAUth2 voor autorisatie, S3-compatible blob storage als default opslag dienst en Kubernetes voor de containerinfrastructuur
+
+De modulaire architectuur van Simpl Open heeft veel raakvlakken met de huidige trend binnen de data engineering community om toe te werken naar een zogenaamde _composable data stack_.[^1] In deze composable data stack worden _storage_, _compute_ en _query languages_ volledige 'ontvlochten' in afzonderlijke componenten. Interoperabiliteit tussen de componenten is gebaseerd om moderne standaarden zoals Apache Arrow, Apache Parquet, Apache Iceberg en Apache Substrait (zie @fig-composable-data-stack).
+
+![Vereenvoudigd overzicht van de _composable data stack_ ([bron](https://medium.com/vvus/data-council-2024-the-future-data-stack-is-composable-and-other-hot-takes-b6c5f2429e22)).](/images/composable-data-stack.png){#fig-composable-data-stack}
 
 
+[^1]: Zie de [Composable Codex](https://voltrondata.com/codex) voor een uitgebreide toelichting.
 
 
 
