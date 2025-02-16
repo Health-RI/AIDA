@@ -8,7 +8,7 @@ description: |
 
 ## Aanleiding: oproep voor een nationaal actieplan AI4health
 
-Tijdens de laatste ICT&Health conferentie is [een oproep gedaan](https://icthealth.nl/nieuws/overwin-de-valleys-of-death-in-ai-voor-de-zorg) om te komen tot een nationaal actieplan AI4Health. De kern van deze oproep is dat, ondanks alle lopende initiatieven, er nog steeds veel barrières zijn om data- en AI-gedreven innovaties in de zorg op grote schaal te realiseren. De praktijk wijst uit dat er drie _valleys of death_ overkomen (zie @mxi2024ai voor een recent overzicht):
+Tijdens de laatste ICT&Health conferentie is [een oproep gedaan](https://icthealth.nl/nieuws/overwin-de-valleys-of-death-in-ai-voor-de-zorg) om te komen tot een nationaal actieplan AI4Health. De kern van deze oproep is dat, ondanks alle lopende initiatieven, er nog steeds veel barrières zijn om data- en AI-gedreven innovaties in de zorg op grote schaal te realiseren. De praktijk wijst uit dat er drie _valleys of death_ overkomen moeten worden (zie @mxi2024ai voor een recent overzicht):
 
 ![De drie _valleys of death_ die grootschalig gebruik van AI in de zorg in de weg staan.](images/three-valleys-of-death.png){#fig-three-valleys-of-death}
 
@@ -44,14 +44,11 @@ Op dit moment zijn er ontzettend veel ontwikkelingen gaande die relevant zijn vo
 
 Het Europese [Simpl](https://digital-strategy.ec.europa.eu/en/policies/simpl) is een _"... is an open source, smart and secure middleware platform that supports data access and interoperability among European data spaces."_ In januari 2025 zijn gedetailleerde architecturen en functionele beschrijvingen van __Simpl-Open__ opgeleverd om, zijnde een open-source software stack waarmee we deze generieke integratie laag op een gestandaardiseerde manier willen realiseren.
 
-De Simpl-Open architectuur is een gedetailleerde uitwerken van bestaande referentie architecturen en is compatible met:
-
-- De Data Spaces Support Center (DSSC) Blueprint ([versie 1.5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
-- De International Data Spaces Reference Architecture Model (IDS-RAM) ([huidige versie 4](https://docs.internationaldataspaces.org/ids-knowledgebase/ids-ram-4), [draft versie 5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home))
+De Simpl-Open architectuur is een gedetailleerde uitwerking van bestaande referentie architecturen en is compatible met de Data Spaces Support Center (DSSC) Blueprint ([versie 1.5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home)) en de International Data Spaces Reference Architecture Model (IDS-RAM) ([huidige versie 4](https://docs.internationaldataspaces.org/ids-knowledgebase/ids-ram-4), [draft versie 5](https://dssc.eu/space/bv15e/766061169/Data+Spaces+Blueprint+v1.5+-+Home)).
 
 #### AI Factories
 
-Vanuit de EU wordt ingezet op de realisatie van [AI Factories](https://digital-strategy.ec.europa.eu/en/policies/ai-factories), zijnde _"...  leverage the supercomputing capacity of the EuroHPC Joint Undertaking to develop trustworthy cutting-edge generative AI models."_ Dit initiatief zit meer in de hoek van High Performance Computing, en wordt ook getrokken vanuit de EuroHPC Joint Undertaking om betrouwbare, _state-of-the-art_ generatieve AI modellen te ontwikkelen.
+Vanuit de EU wordt ingezet op de realisatie van [AI Factories](https://digital-strategy.ec.europa.eu/en/policies/ai-factories), zijnde faciliteiten _"... that leverage the supercomputing capacity of the EuroHPC Joint Undertaking to develop trustworthy cutting-edge generative AI models."_ Dit initiatief zit meer in de hoek van High Performance Computing (HPC), en wordt ook getrokken vanuit de EuroHPC Joint Undertaking om betrouwbare, _state-of-the-art_ generatieve AI modellen te ontwikkelen.
 
 SURF is op dit moment penvoerder om namens Nederland een aanvraag in te dienen om een [grootschalige Nederlandse AI-faciliteit](https://www.surf.nl/themas/artificial-intelligence/grootschalige-nederlandse-ai-faciliteit) te realiseren.
  
@@ -62,7 +59,7 @@ Europa heeft op 11 februari het [InvestAI-initiatief](https://netherlands.repres
 
 #### TEHDAS2
 
-[TEHDAS2](https://tehdas.eu/) is een _"... joint action prepares [that] the ground for the harmonised implementation of the secondary use of health data in the European Health Data Space – EHDS."_ Het is een Europees, zorg-specifiek programma, en veel van de werkpakketten zijn direct relevant voor AIDA. Een van de zaken die nader uitgezocht moeten worden is hoe de generieke architectuur van Simpl Open (sector onafhankelijk) zich verhouden tot de ontwerpprincipes en keuzes die binnen TEHDAS2 zijn gemaakt. 
+[TEHDAS2](https://tehdas.eu/) is een _"... joint action [that] prepares the ground for the harmonised implementation of the secondary use of health data in the European Health Data Space – EHDS."_ Het is een Europees, zorg-specifiek programma, en veel van de werkpakketten zijn direct relevant voor AIDA. Een van de zaken die nader uitgezocht moeten worden is hoe de generieke architectuur van Simpl Open (sector onafhankelijk) zich verhouden tot de ontwerpprincipes en keuzes die binnen TEHDAS2 zijn gemaakt. 
 
 
 ### Nederlandse context
@@ -82,9 +79,9 @@ _Last but certainly not least_ hebben de [Health RI nodes](https://www.health-ri
 
 ## Vraagstelling AIDA
 
-Op dit moment worden AI-gedreven innovaties vaak van worden ontwikkeld op niet gestandaardiseerde infrastructuur, wat leidt tot zeer hoge of zelfs onbetaalbare kosten voor een willekeurig onderzoek of innovatie. In analogie zou je kunnen zeggen dat elk onderzoek, elke innovatie zijn eigen terp moet bouwen, alvorens het project daadwerkelijk kan starten. Met AIDA willen we toe naar een Deltawerken voor AI4health. AIDA is hierbij het Deltaplan: het ontwerp van een gestandaardiseerde en interoperabele "AI dataplatformen" waarmee komende jaren generieke, landelijk dekkende voorzieningen gerealiseerd kunnen worden. In deze analogie zijn de Deltawerken de realisatie hiervan, waarbij het perspectief is dat we niet naar één AI platform streven, maar een ecosysteem van platformen die interoperabel zijn. Net zoals dat de Deltawerken een ecosysteem van dijken, waterkeringen die elkaar ondersteunen, elk met een eigen functie. 
+Op dit moment worden AI-gedreven innovaties vaak ontwikkeld op niet gestandaardiseerde infrastructuur, wat leidt tot zeer hoge of zelfs onbetaalbare kosten voor een willekeurig onderzoek of innovatie. In analogie zou je kunnen zeggen dat elk onderzoek, elke innovatie zijn eigen terp moet bouwen, alvorens het project daadwerkelijk kan starten. Met AIDA willen we toe naar een Deltawerken voor AI4health. AIDA is hierbij het Deltaplan: het ontwerp van gestandaardiseerde en interoperabele "AI dataplatformen" waarmee komende jaren generieke, landelijk dekkende voorzieningen gerealiseerd kunnen worden. In deze analogie zijn de Deltawerken de realisatie hiervan, waarbij het perspectief is dat we niet naar één AI platform streven, maar een ecosysteem van platformen die interoperabel zijn. Net zoals dat de Deltawerken een ecosysteem van dijken, waterkeringen etc. zijn die elkaar ondersteunen, elk met een eigen functie. 
 
-In de komende maanden willen we dus een aanzet geven tot het opstellen van het Deltaplan. Belangrijke uitgangspunten, scope en vragen hierbij zijn (indicatie, niet bedoeld als volledige opsomming):
+In de komende maanden willen we dus een aanzet geven tot het opstellen van het Deltaplan. Belangrijke uitgangspunten en vragen hierbij zijn (indicatief, niet bedoeld als volledige opsomming):
 
 - Hoe komen we tot harmonisatie, en waar nodig standaardisatie van verschillende oplossingsrichtingen op maximale interoperabiliteit te realiseren.
 - Hoe kunnen we bestaande en in ontwikkeling zijnde architecturen combineren tot een consistent plan?
@@ -135,29 +132,27 @@ Belangrijk kenmerk van SANE en andere TREs is dat de data fysiek naar de _Secure
 
 Binnen de blauwdruk van EOSC-ENTRUST wordt gesproken over _Federation Services_ tussen verschillende TREs. Daarbij gaat het om data federation: data wordt (tijdelijk) van de ene naar de andere TRE gekopieerd zodat het daar in combinatie verwerkt kan worden. Data federation als mechanisme is anders dan federated learning: daarbij worden de berekeningen decentraal uitgevoerd en alleen de resultaten centraal gedeeld (zie hieronder). Federated learning is met name nuttig voor horizontaal gepartitioneerde data. Voor verticaal gepartitioneerde data, is data federation zoals beschreven door EOSC-ENTRUST meer geschikt.
 
-Er zijn meer voorbeelden van centrale SPEs. Zo hebben de meeste _National Statistics Offices (NSOs)_ zoals het CBS een [microdata omgeving](https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen). Alhoewel deze omgevingen zijn opzet voordat machine learning zijn intrede deed, bieden de meeste microdata omgevingen nu ook al de mogelijkheid om 'lichte' algoritmes te trainen op tabulaire data. Een rapport van de Verenigde Naties beschrijft dat deze omgevingen in toenemende mate ook worden uitgebreid met nieuwe AI-technieken, zoals privacy-enhancing technologieën (PETs)([@un2023pet-guide]).
+Er zijn meer voorbeelden van centrale SPEs. Zo hebben de meeste _National Statistics Offices (NSOs)_ zoals het CBS een [microdata omgeving](https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen). Alhoewel deze omgevingen zijn opzet voordat machine learning zijn intrede deed, bieden de meeste microdata omgevingen nu ook al de mogelijkheid om 'lichte' algoritmes te trainen op tabulaire data. Een rapport van de Verenigde Naties beschrijft dat deze omgevingen in toenemende mate ook worden uitgebreid met nieuwe AI-technieken, zoals privacy-enhancing technologieën (PETs, zie @un2023pet-guide).
 
 Er zijn ook voorbeelden van centrale SPEs specifiek voor de zorg:
 
 - Het Finse Social and Health Data Permit Authority (Findata) biedt met [Kapseli](https://findata.fi/en/kapseli/) een landelijke voorziening aan dat aanvullend is op het Finse NSO.
 - Het [Mayo Clinic Platform_Discover](https://www.mayoclinicplatform.org/discover/) is een voorbeeld van een platform binnen een netwerk van zorg leveranciers.
 
+### Decentrale SPEs: PLUGIN/vantage6
 
-
-### Federated SPEs: PLUGIN/vantage6
-
-Federated learning (FL) als concept staat ook wel bekend als de Personal Health Train (PHT) en wordt in toenemende mate gebruikt in de zorg [@teo2024federated]. De term FL wordt vooral gebruikt om naar het technische concept te verwijzen, terwijl PHT verder gaat in het definiëren van afspraken rondom het gebruik van FL. In Nederland is een actieve community rondom het [vantage6 platform](https://distributedlearning.ai/) dat wordt gebruikt in het [PLUGIN project](https://distributedlearning.ai/), en internationaal in [50 andere netwerken](https://www.medicaldataworks.nl/customers). Het basis principe is dat bij FL de gegevens op afzonderlijke 'data stations' verschillende apparaten blijven die participeren in de federated SPE. Om deze data te gebruiken voor machine learning, wordt bij elk data station het algoritme lokaal c.q. afzonderlijk getraind. Vervolgens worden alleen de resultaten van het algoritme - bijvoorbeeld geaggregeerde statistieken of de modelparameters van het neurale netwerk - gedeeld met een centrale server. Deze server combineert de resultaten van afzonderlijke modellen tot één model, welke vervolgens met alle deelnemers van het federated SPE gedeeld wordt.
+Decentrale SPEs maken gebruik van federated learning (FL), wat als concept ook wel bekend staat als de Personal Health Train (PHT). FL wordt in toenemende mate gebruikt in de zorg [@teo2024federated]; de term FL wordt vooral gebruikt om naar het technische concept te verwijzen, terwijl PHT verder gaat in het definiëren van afspraken rondom het gebruik van FL. In Nederland is een actieve community rondom het [vantage6 platform](https://distributedlearning.ai/) dat wordt gebruikt in het [PLUGIN project](https://distributedlearning.ai/), en internationaal in [50 andere netwerken](https://www.medicaldataworks.nl/customers). Het basis principe is dat bij FL de gegevens op afzonderlijke 'data stations' verschillende apparaten blijven die participeren in het federatieve netwerk. Om deze data te gebruiken voor machine learning, wordt bij elk data station het algoritme lokaal c.q. afzonderlijk getraind. Vervolgens worden alleen de resultaten van het algoritme - bijvoorbeeld geaggregeerde statistieken of de modelparameters van het neurale netwerk - gedeeld met een centrale server. Deze server combineert de resultaten van afzonderlijke modellen tot één model, welke vervolgens met alle deelnemers van het federated SPE gedeeld wordt.
 
 ![Overzicht van vantage6 infrastructuur zoals in PLUGIN is gerealiseerd.](https://plugin.healthcare/wp-content/uploads/2023/10/Architectuurplaat-PLUGIN-versie-Madou.jpeg){#fig-plugin}
 
-Het [PLUGIN project](https://plugin.healthcare) heeft een federatieve SPE van tientallen ziekenhuizen gerealiseerd, waarbij gebruik wordt gemaakt [vantage6](https://distributedlearning.ai/) als platform. Belangrijkste kenmerken van deze opzet zijn:
+Het [PLUGIN project](https://plugin.healthcare) heeft een decentrale SPE van tientallen ziekenhuizen gerealiseerd, waarbij gebruik wordt gemaakt [vantage6](https://distributedlearning.ai/) als platform. Belangrijkste kenmerken van deze opzet zijn:
 
-- Sterke nadruk op veiligheid en privacy, door gebruik van beveiligde containers en virtual private networks in de basis infrastructuur
-- Ontzorgen van deelnemende ziekenhuizen, waarbij gebruik wordt gemaakt van een generieke Linux server in het IT domein van het ziekenhuis dat als basis dient om de opslag en rekenkracht voor de FLN te realiseren. Afhankelijk of een ziekenhuis mee doet als trainingsziekenhuis of alleen als gebruiker dient een zwaardere resp. lichtere Linux server te worden geconfigureerd
-- Voor elk project wordt de berekening c.q. machine learning expliciet 'verpakt' in een Docker container, zijnde de berekening die daadwerkelijk wordt uitgevoerd.
-- De generieke Linux server wordt ook gebruikt om dashboard, informatieproducten etc. te hosten binnen het IT domein van het ziekenhuis
+- Gebruik van beveiligde containers en virtual private networks voor de infrastructuur laag;
+- Ontzorgen van deelnemende ziekenhuizen, waarbij gebruik wordt gemaakt van een generieke Linux server in het IT domein van het ziekenhuis dat als basis dient om de opslag en rekenkracht om het vantage6 netwerk te realiseren. Afhankelijk of een ziekenhuis mee doet als trainingsziekenhuis of alleen als gebruiker dient een zwaardere resp. lichtere Linux server te worden geconfigureerd;
+- Voor elk project wordt de berekening c.q. machine learning expliciet 'verpakt' in een Docker container, zijnde de berekening die daadwerkelijk wordt uitgevoerd;
+- De generieke Linux server wordt ook gebruikt om dashboard, informatieproducten etc. te hosten binnen het IT domein van het ziekenhuis.
 
-Het gebruik van een standaard data model (op de data stations) is een belangrijke randvoorwaarde om federated SPEs te kunnen doen. Naast het gebruik van vantage6 als kerntechnologie, heeft PLUGIN ervoor gekozen om FHIR als data standaard te gebruiken. Hiertoe is een [FHIR profiel in ontwikkeling](https://plugin.healthcare/fhir/) die aansluit op de bestaande ZIBS2020 bouwstenen. Meer achtergrond over de keuze voor FHIR is te lezen in [dit artikel](https://plugin-healthcare.github.io/viewpoint-jmir/). Andere voorbeelden van federated SPEs zijn [hier](https://maastrichtu-biss.github.io/Inventory-DataSharing-tools/inventory.html) te vinden.
+Het gebruik van een standaard data model (op de data stations) is een belangrijke randvoorwaarde om FL te kunnen doen. Naast het gebruik van vantage6 als kerntechnologie, heeft PLUGIN ervoor gekozen om FHIR als data standaard te gebruiken. Hiertoe is een [FHIR profiel in ontwikkeling](https://plugin.healthcare/fhir/) die aansluit op de bestaande ZIBS2020 bouwstenen. Meer achtergrond over de keuze voor FHIR is te lezen in [dit artikel](https://plugin-healthcare.github.io/viewpoint-jmir/). Andere voorbeelden van decentrale SPEs gebaseerd op FL zijn [hier](https://maastrichtu-biss.github.io/Inventory-DataSharing-tools/inventory.html) te vinden.
 
 
 ### Hybride SPE: UbiOps en Roseman Labs
@@ -198,17 +193,17 @@ Een van de zaken die nader gespecificeerd moet worden is het onderscheid tussen 
 
 Met name voor het beschikbaar stellen en hergebruiken van tabulaire data uit EPDs, HISen etc. is het wenselijk om snel te verkennen of een bepaalde dataset relevant is voor een gebruiker. We zien 'verkenner' voor ons, waarbij potentiele data gebruikers in staat worden gesteld om de datastore te queryen. Typisch betreft dit het zoeken naar relevante populaties in de datastores, bijvoorbeeld "hoeveel patienten ouder dan 65 met aandoening XXX" zitten in de datastore. De resultaat van een dergelijk query is overigens altijd een anonieme dataset met enkel geaggregeerde, beschrijvende statistieken.
 
-De meeste - en zo niet alle - open standaarden voor datastores hebben een mechanisme om dit te ondersteunen:. 
+De meeste - en zo niet alle - open standaarden voor datastores hebben een mechanisme om dit te ondersteunen: 
 
-- openEHR biedt hiervoor het [Archtetype Query Language (AQL)](https://specifications.openehr.org/releases/QUERY/latest/AQL.html)
+- openEHR gebruikt hiervoor het [Archtetype Query Language (AQL)](https://specifications.openehr.org/releases/QUERY/latest/AQL.html)
 - OMOP gebruikt SQL (geen OMOP-specifieke query language) direct op de relationale database
 - binnen het FHIR ecosysteem zijn nieuwe standaarden zoals [Bulk FHIR](https://build.fhir.org/ig/HL7/bulk-data/) en [SQL-on-FHIR](https://build.fhir.org/ig/FHIR/sql-on-fhir-v2/) bedoelt om subsets te definiëren en op een makkelijke manier data te aggregeren
 
-Deze benadering zorgt ervoor dat (potentiele) data gebruikers op een eenduidige manier 'inclusiecriteria' kunnen bepalen op de datastore. Het gaat hierbij om inclusie van rijen (subjecten, patient) en kolommen (welke attributen, waarden). Alhoewel het runnen van de query elke keer een iets ander resultaat geeft (je kunt meer rijen krijgen omdat nieuwe patienten zijn toegevoegd), is het zodanig gestandaardiseerd dat het een vergelijkbare functie vervult als een statische, gepersisteerde dataset zoals een FDP dat beoogt. De metadatering van de query op de datastore zal waarschijnlijk met nagenoeg dezelfde metadata standaarden (DCAT-AP) kunnen worden gedaan.
+Deze benadering zorgt ervoor dat (potentiële) data gebruikers op een eenduidige manier 'inclusiecriteria' kunnen bepalen op de datastore. Het gaat hierbij om inclusie van rijen (subjecten, patient) en kolommen (welke attributen, waarden). Alhoewel het runnen van de query elke keer een iets ander resultaat geeft (je kunt meer rijen krijgen omdat nieuwe patiënten zijn toegevoegd), is het zodanig gestandaardiseerd dat het een vergelijkbare functie vervult als een statische, gepersisteerde dataset zoals een FDP dat beoogt. De metadatering van de query op de datastore zal waarschijnlijk met nagenoeg dezelfde metadata standaarden (DCAT-AP) kunnen worden gedaan.
 
 Alhoewel de inrichting van een 'verkenner' functie technisch mogelijk is, blijkt uit de praktijk dat er nog het nodige aan data verificatie, mapping etc. gedaan moet worden om te komen tot een 'bevroren' dataset die geschikt is voor secundair gebruik. Tijdens de hackathon in december 2024 zijn een aantal knelpunten geidentificeerd. In de uitwerken van AIDA willen we expliciet ingaan hoe we dit kunnen oplossen.
 
-### Standaard voor koppelen van vertikaal gepartitioneerde data middels pseudonimisering
+### Standaard voor koppelen van verticaal gepartitioneerde data middels pseudonimisering
 
 In veel use-cases dient data uit verschillende bronnen te worden gekoppeld op subject/patient niveau. Op dit moment is ZorgTTP een veelgebruikte pseudonimiseringsmethode dat wordt gebruikt, dat sinds 2015 tevens [openbaar is](https://www.zorgttp.nl/wp-content/uploads/2023/01/NEN-pseudonimisering-specificatie-voorstel-VWS-1.0.pdf). Het gebruik van pseudoniemen om te koppelen is met name relevant voor centrale en hybride SPEs: op deze manier kan een integrale dataset gemaakt worden voor secundair gebruik. Een decentrale SPE is minder geschikt voor het koppelen van zogenaamde verticaal gepartitioneerde data; het is niet onmogelijk maar zeker bewerkelijker. 
 
