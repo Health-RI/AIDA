@@ -213,7 +213,7 @@ Alhoewel de inrichting van een 'verkenner' functie technisch mogelijk is, blijkt
 In veel use-cases dient data uit verschillende bronnen te worden gekoppeld op subject/patient niveau. Op dit moment is ZorgTTP een veelgebruikte pseudonimiseringsmethode dat wordt gebruikt, dat sinds 2015 tevens [openbaar is](https://www.zorgttp.nl/wp-content/uploads/2023/01/NEN-pseudonimisering-specificatie-voorstel-VWS-1.0.pdf). Het gebruik van pseudoniemen om te koppelen is met name relevant voor centrale en hybride SPEs: op deze manier kan een integrale dataset gemaakt worden voor secundair gebruik. Een decentrale SPE is minder geschikt voor het koppelen van zogenaamde verticaal gepartitioneerde data; het is niet onmogelijk maar zeker bewerkelijker. 
 
 
-## Thema 3: Orchestratie van infrastructuur {#sec- orchestratie}
+## Thema 3: Orchestratie van infrastructuur {#sec-orchestratie}
 
 Orchestratie van infrastructuur binnen en tussen verschillende AIDA platformen is essentieel om tot een samenhangend Deltawerken te komen. Binnen de Simpl Open architectuur is de _Infrastructure Layer_ ook in detail uitwerkt.
 

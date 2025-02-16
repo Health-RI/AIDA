@@ -3,16 +3,6 @@ title: Strategisch perspectief
 subtitle: Achtergrond
 description: |
   Beschrijving van de achtergrond wat heeft geleid tot AIDA. Het overbruggen van _valleys of death_ als narratief.
-accordion:
-  - layers:
-    - header: Strategisch
-      body: Narratief met beschrijving van strategische rationale van het platform. Relevante _prior art_ en ontwikkelingen worden geïntroduceerd, zodat deze in de verdere uitwerking een plek kunnen krijgen.
-    - header: Business
-      body: Uitwerking van operationele en functionele eisen die "human readable" en software neutraal is. Dit omvat bijvoorbeeld personas en procesbeschrijvingen.
-    - header: Applicatie
-      body: Gestructureerde en software-neutrale technische beschrijving, die voldoende details bieden als startpunt voor implementaties. Dit omvat bijvoorbeeld technische ontwerp principes en interoperability standaarden.
-filters:
-  - accordion
 ---
 <br>
 
@@ -66,7 +56,6 @@ Specifiek voor de zorg zijn er ook al een aantal beveiligde verwerkingsomgevinge
 
 Dit document geeft een aanzet tot het Deltaplan voor AIDA. Het is opgebouwd in hoofdstukken die min of meer de [lagen van Archimate](https://archimate.visual-paradigm.com/what-is-layers-and-aspects-in-archimate-core-framework/) volgen.
 
-{{<accordion layers>}}
 
 
 We volgen ongeveer het volgende proces:
