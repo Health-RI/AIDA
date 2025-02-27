@@ -157,7 +157,7 @@ Het gebruik van een standaard data model (op de data stations) is een belangrijk
 
 ### Hybride SPE: UbiOps en Roseman Labs
 
-::: {layout-ncol=2}
+::: {layout-nrow=2}
 ![Hybride SPE in de veiligheidsketen tussen verschillende Security Operating Centra (SOCs).](/images/hybride-spe.png){#fig-hybride-spe}
 
 ![UbiOps orchestratielaag](/images/ubiops.png){#fig-ubiops}
