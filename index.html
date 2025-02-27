@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,10 +57,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f9aff69e4bf47ed7a458ae537e7bbb06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c588883fb74ac512ff8988ac4f62f456.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -488,13 +488,13 @@ Figuur&nbsp;4: Overzicht van vantage6 infrastructuur zoals in PLUGIN is gerealis
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-ncsc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-hybride-spe" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-ncsc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="./images/ncsc-soc.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figuur&nbsp;5: Hybride samenwerking tusssen SOCs"><img src="./images/ncsc-soc.png" class="img-fluid figure-img"></a>
+<div aria-describedby="fig-hybride-spe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/hybride-spe.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figuur&nbsp;5: Hybride SPE in de veiligheidsketen tussen verschillende Security Operating Centra (SOCs)."><img src="./images/hybride-spe.png" class="img-fluid figure-img"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ncsc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;5: Hybride samenwerking tusssen SOCs
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hybride-spe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;5: Hybride SPE in de veiligheidsketen tussen verschillende Security Operating Centra (SOCs).
 </figcaption>
 </figure>
 </div>
@@ -513,8 +513,8 @@ Figuur&nbsp;6: UbiOps orchestratielaag
 </div>
 </div>
 </div>
-<p>De hybride SPE is een nieuwe oplossingsrichting die we willen verkennen en realiseren in AIDA. Er zijn minder concrete voorbeelden van een dergelijke opzet. UbiOps en Roseman Labs hebben een oplossing die er het dichts bij in de buurt komt (<a href="#fig-ncsc" class="quarto-xref">Figuur&nbsp;5</a>). In analogie met data spaces, gaat het hier om het verbinden van verschillende Security Operating Centra (SOC) in de beveiligingsketen (NCSC, politie, UWV etc.) In een hybride SPE kunnen <em>compute</em> (rekenkracht) en <em>storage</em> (opslag) zowel lokaal als centraal worden uitgevoerd. In deze architectuur worden bijvoorbeeld pre-processing van data decentraal uitgevoerd in de SOCs in de onderste laag van <a href="#fig-ncsc" class="quarto-xref">Figuur&nbsp;5</a>. De resultaten van deze pre-processing gaan naar het centrale platform, in dit geval het NCSC. Daar kunnen vervolgens ook weer (vervolg-)berekeningen worden uitgevoerd, op de <em>storage</em> en <em>compute</em> die beschikbaar zijn in de omgeving van de NCSC.</p>
-<p>Deze opzet bij de NCSC is mogelijk gemaakt door <a href="https://ubiops.com/">UbiOps</a>, een platform leverancier die de orkestratielaag biedt waarmee alle <em>storage</em> en <em>compute</em> centraal wordt beheerd (<a href="#fig-ubiops" class="quarto-xref">Figuur&nbsp;6</a>). Een belangrijk ontwerpprincipe van deze orkestratielaag is dat het verschillende soort fysieke infrastructuur kan managen, variërend van <em>bare metal</em> servers, Kubernetes cluster, virtuele machines, public cloud infrastructuur etc.</p>
+<p>De hybride SPE is een nieuwe oplossingsrichting die we willen verkennen en realiseren in AIDA. Er zijn minder concrete voorbeelden van een dergelijke opzet. UbiOps en Roseman Labs hebben een oplossing die er het dichts bij in de buurt komt (<a href="#fig-hybride-spe" class="quarto-xref">Figuur&nbsp;5</a>). In analogie met data spaces, gaat het hier om het verbinden van verschillende Security Operating Centra (SOC) in de beveiligingsketen. In een hybride SPE kunnen <em>compute</em> (rekenkracht) en <em>storage</em> (opslag) zowel lokaal als centraal worden uitgevoerd. In deze architectuur worden bijvoorbeeld pre-processing van data decentraal uitgevoerd in de SOCs in de onderste laag van <a href="#fig-hybride-spe" class="quarto-xref">Figuur&nbsp;5</a>. De resultaten van deze pre-processing gaan naar het centrale platform, in dit geval het NCSC. Daar kunnen vervolgens ook weer (vervolg-)berekeningen worden uitgevoerd, op de <em>storage</em> en <em>compute</em> die beschikbaar zijn in de omgeving van de NCSC.</p>
+<p>De hybride SPE is mogelijk gemaakt door <a href="https://ubiops.com/">UbiOps</a>, een platform leverancier die de orkestratielaag biedt waarmee alle <em>storage</em> en <em>compute</em> centraal wordt beheerd (<a href="#fig-ubiops" class="quarto-xref">Figuur&nbsp;6</a>). Een belangrijk ontwerpprincipe van deze orkestratielaag is dat het verschillende soort fysieke infrastructuur kan managen, variërend van <em>bare metal</em> servers, Kubernetes cluster, virtuele machines, public cloud infrastructuur etc.</p>
 <p>Een ander onderscheidende kenmerk van deze opzet is dat de centrale dataverwerking ook onder encryptie uitgevoerd kan worden via het Roseman Labs MPC (Multiparty Computation) platform. Door berekeningen <em>in-the-blind</em> uit te voeren, zijn de data extra beschermd.</p>
 <p>Deze opzet van hybride SPE is in lijn met de recent gepubliceerde <a href="./resources/Simpl-Open Functional and Technical Architecture Specifications.pdf">Simpl-Open architectuur</a>. Deze aanpak biedt de mogelijkheid om over verschillende SPEs tot harmonisatie en interoperabiliteit te komen. Denk bijvoorbeeld aan een situaties waarbij een analyse kan worden uitgevoerd over verschillende Health-RI nodes heen. In <a href="#sec-orchestratie" class="quarto-xref">Paragraaf&nbsp;7</a> gaan we hier dieper op in.</p>
 </section>
