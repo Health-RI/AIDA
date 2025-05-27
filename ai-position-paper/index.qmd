@@ -1,0 +1,42 @@
+---
+title: AI in healthcare
+subtitle: position paper
+---
+
+## Technological developments and upcoming legislation are driving developments for AI in healthcare
+
+- Technological developments: AI in healthcare is rapidly advancing (short general context and relevance, with focus in The Netherlands and European context). 
+- EHDS: Momentum in national and European initiatives pushing for responsible, transparent, and reproducible AI, as well as data availability for secondary use (EHDS). 
+- Current landscape for AI in healthcare development, validation and deployment (let’s call these AI pipeline) in The Netherlands (also to frame it within Europe). Here we can identify shared process requirements, tools and services along the AI pipeline relevant to Dutch health data infrastructure, that is, what AI researchers and manufacturers do and use at the moment (eg: types of models developed, common data sources and tools used in the pipeline, typical development environments (academic, siloed, retrospective…). We can narrow this down by focusing on the data lifecycle (including technical, organizational, and regulatory aspects), as data availability is the main factor related to Health-RI (I believe data availability is also the main handicap that AI researchers and manufacturers experience: this shall become clear with our fieldwork, see next section). 
+- Health-RI’s existing role for secondary use (enabling data access, infrastructure, FAIR principles, national coordination…). I think it is important to define here whether Health-RI is part of HDAB-NL, as this might condition the role of Health-RI and, therefore, our position and responsibilities regarding AI. 
+
+## At the same time, significant barriers stand in the way for wide-scale adoption of AI
+- Barriers that AI researchers and manufacturers encounter -> Systemic barriers to AI deployment (final goal) -> Consequences/Impact. The idea of this section is to identify the different complications/barriers that AI researchers/manufacturers encounter along the AI pipeline, how these systematically map into the “bigger picture” of limited AI deployment, and what are the consequences/impact. Examples:
+
+
+| AI researcher/manufacturer barrier/obstacle | Systemic barrier to AI deployment | Impact / Consequences |
+|:---|:---|:---|
+| Difficulty accessing data | Fragmented data governance; legal uncertainty | AI tools cannot be trained on representative, real-world data |
+| Inability to use data across institutions | Lack of interoperability; lack of federated infrastructure | Models are limited in scope and not generalizable |
+| Unclear rules for secondary use | Legal/regulatory ambiguity (eg, GDPR, EHDS) | Institutions avoid sharing data; development stalls |
+| No place to validate models | Absence of shared, realistic validation environments; lack of co-creation, limited clinical involvement |AI tools cannot demonstrate safety or real-world performance (big obstacle for CE marking) |
+| Difficulty understanding deployment/regulatory pathway (connected to 1st valley of death) | Regulatory misalignment; unclear CE marking path | Manufacturers unable to reach approval |
+| Hard to get 1st client and upscale (connected to 2nd and 3rd valley of death) | Resistance to workflow change and infrastructure updates in healthcare institutions; procurement and reimbursement not aligned; lack of AI literacy in the workforce; lack of public trust in AI systems | AI not integrated seamlessly in routine practice; lack of business model or reimbursement mechanisms; clinicians don’t know how to interpret or trust AI outputs; public and patient resistance blocks or delays deployment |
+
+- Resulting overall tension: there is a large gap between data availability and actual use of AI in the clinic; the pipeline from development to deployment is broken. 
+
+## Question: How can Health-RI help bridge the gap between data availability and effective, responsible AI development, validation, and deployment in the Dutch health ecosystem?  
+
+## Answer (basically this position paper)
+
+Answers should be concrete, action-oriented, and aligned with our mission as facilitator, which is the role of Health-RI in the AI ecosystem as far as I see it (aligned with SHAIPED's vision). This section also aligns with WP3 of SHAIPED, whose output is a series of pathways for HDABs to bolster the AI landscape. Note: It might be that due to Health-RI’s role and capabilities, some of the barriers identified in the previous section fall out of our circle of influence, and that is alright. Perhaps we can just help identify who can help with those in the Dutch ecosystem and fully focus on the barriers we can help with. Ideas:
+
+- Health-RI’s Strategic Role: describe Health-RI as a neutral, national facilitator that connects data holders, AI researchers and manufacturers, and regulators, and emphasize our unique positioning to align legal, technical, and ethical requirements. As mentioned in the beginning, our potential role in HDAB-NL conditions this. 
+
+- Concrete Services or Actions to barriers, plus the expected impact. I think this will become clearer as we work on the paper and on other projects such as SHAIPED or Health-AI. Examples:
+  - Data accessibility: maintain and expand the national health data catalogue as the central, FAIR-aligned national registry of health datasets (and datastores), establishing and updating guidelines for interoperability -> this lowers the barrier to finding and accessing data for AI development and validation, supporting AI developers and manufacturers in identifying suitable, real-world data across institutions. 
+  - Infrastructure: supporting standardized, federated and privacy-preserving environments for AI development, validation and deployment. For instance, creating guidelines on what type of environment and what parties shall be involved depending on the type of AI application and data -> this enables federated access to inter-institutional data (building on current infrastructures), and enables safe, scalable model development and validation, increasing confidence in model performance, safety, and reproducibility; facilitate CE marking. 
+  - Legal & ethical tools: to offer templates, checklists, and legal toolkits so that data holders and AI developers/manufacturers can carry out lawful secondary data use along their pipelines within the GDPR and EHDS -> this reduces legal uncertainty, accelerates data access and facilitates CE marking. 
+  - Facilitation & Coordination: to facilitate multistakeholder engagement (for instance, bringing together data holders, AI manufacturers and regulators), to align national and European strategies (as in SHAIPED) -> this ensures long-term ecosystem alignment and sustainability 
+
+I propose to get started by diving into recent literature, as well as programming structured interviews (and sending surveys) with national representatives from AI research and manufacturing. Both approaches will help identify the current AI landscape (what they do and use at the moment) (Situation), the barriers they encounter (Complications), and the types of solutions they would like to have (valuable input for our Answers).  

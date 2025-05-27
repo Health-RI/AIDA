@@ -22,15 +22,14 @@ website:
         text: "GitHub repository"
     contents:
       - href: index.qmd
-        text: Startnotitie
+        text: "Startnotitie AIDA"
       - section: "Strategisch perspectief"
         href: strategisch/index.qmd
         contents:     
           - href: strategisch/ai-in-de-zorg.qmd
             text: "AI in de zorg"
           - href: strategisch/blauwdrukken.qmd
-            text: "Vergelijking blauwdrukken"
-                    
+            text: "Vergelijking blauwdrukken"                   
           # - href: strategisch/plugin.qmd
           #   text: "Voorbeeld: Amsterdam Health Data Space"
           # - href: strategisch/plugin.qmd
@@ -45,7 +44,7 @@ website:
           - business/personas/index.qmd
           - business/verhaallijn-data-engineer.qmd
           - business/verhaallijn-ml-engineer.qmd
-      - section: "Applicaties en technisch perspectief"
+      - section: "Appendixes"
         href: technisch/index.qmd
         contents:  
           - href: "https://health-ri.github.io/AIDA-Archimate/"
