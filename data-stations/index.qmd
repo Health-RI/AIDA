@@ -1,0 +1,152 @@
+---
+title: An open-source reference implementation of a federated composable datastack
+author:
+  - name: Daniel Kapitan
+    affiliations: 
+      - name: Health-RI
+        city: Utrecht
+        country: the Netherlands
+      - name: Dutch Hospital Data
+        city: Utrecht
+        country: the Netherlands
+      - name: Eindhoven University of Technology
+        city: Eindhoven
+        country: the Netherlands
+    orcid: 0000-0001-8979-9194
+    email: daniel@kapitan.net
+    url: https://kapitan.net
+  - name: Yannick Vinkesteijn
+    affiliations:
+      - name: Dutch Hospital Data
+        city: Utrecht
+        country: the Netherlands
+    orcid: 0009-0009-7761-5381
+    email: y.vinkesteijn@dhd.nl
+    url: https://yannickvinkesteijn.com/
+    attributes:
+      corresponding: true
+  - name: Joep de Ligt
+    affiliations: 
+      - name: Hartwig Medical Foundation
+        city: Amterdam
+        country: the Netherlands
+    orcid: 0000-0002-0348-419X
+    email: e.deli
+    url: https://hartwigmedicalfoundation.nl
+abstract: |
+  We describe ...
+keywords: [data engineering, lakehouse, Apache Arrow, Apache Parquet, Apache Icebert, duckdb, polars]
+pdf: index.pdf
+index-terms: 
+  - Scientific writing
+  - Typesetting
+  - Document creation
+  - Syntax
+citation: 
+  container-title: GitHUB
+  page: 1-3
+  type: software
+  issued: 2023-06-23
+  url: https://github.com/plugin-healthcare/federated-composable-datastack
+  pdf-url: index.pdf
+sidebar: false
+---
+
+(intented for publication in something like a *practice* paper in [Communications of ACM](https://cacm.acm.org/author-guidelines/#CACMsubmission))
+
+## A confluence of developments towards federated analytical data systems
+
+We observe a confluence of various trends into what we call federated analytics data systems (FADS). The need for FADS is exemplified by the increasing number of research consortia that are using FADS in a wide diversity of domains. As an example (list):
+    - x-omics programme
+    - EUCAIM
+    - ...
+    - ...
+
+In addition, ongoing efforts in Europe to implement data spaces in various industries provide additional impetus to these development. Large multi-year programmes such as Simple Open aim to arrive define specifications to allow interoperability ... (summarize simple open). Specifically for healthcare, we see many European countries working on implementing FADS with national coverage to support secondary use of health data for research and innovation, in line with the agenda to realize the European Health Data Space (EHDS). There are, however, a number of issues that need to be addressed to bring FADS to the highest technological readiness level (TRL) that is required for large-scale operations at the level of a country and even in a networks-of-networks as is required for the EHDS. One of those issues pertains to the concept of 'data stations', which is the focus of this practice paper.
+
+Data stations are conceived as the foundational building block with which FADS are constructed, by and large inspired as how the Internet came into existence. As of today, different architectural patterns and solution designs are emerging, as for example:
+
+- Fair Data Points (FDP) as data stations containing metadata and indexes, aimed at supporting localization of data [insert references]
+- Data stations in the sense of centralized federated learning networks, which is currently one of the most widely used solution designs for federated learning
+- 
+
+
+
+Given the need for secure and trustworthy data sharing, much work is underway to design and implement FADS.
+
+At the same time, the computer science and engineering has development couple of new concepts and technologies that make it easier to implement FADS:
+
+- A data mesh has been developed as an alternative to centralized data warehouse systems. Data mesh conceptualizes data as a product which can be consumed through an application programming interface (API). Although originally coined in the context of enterprise data platforms, it can be readily extend beyond the boundaries of a single organization into a data space
+- Capabilities of edge computing and single-node computing has increased significantly, whereby it is now possible to process up to 1 TB of tabular data on a single node thereby enabling large volumes of data processing to be done efficiently on a single data station
+- The composable data stack provides a way to unbundle the venerable data base into loosely components, thereby making it easier and more practical to implement FADS, thereby opening up a transition path towards more modular and robust architecture
+- The increasing need for privacy-enhancing technologies (PETs) additionally fuels the development of FADS-related technologies, where technologies such as secure multi-party computation (MPC) are now sufficiently mature to be used on an industrial scale.
+- Federated machine learming (or federated learning in short) has matured as a means for decentralized training of predictive models, most notable through weights sharing of deep learning networks
+
+As noted by Perreira et al. ([2023](https://dl.acm.org/doi/10.14778/3603581.3603604)), however:
+
+> The requirement for specialization in data management systems has evolved faster than our software development practices. After decades of organic growth, this situation has created a siloed landscape composed of hundreds of products developed and maintained as monoliths, with limited reuse between systems. This fragmentation has resulted in developers often reinventing the wheel, increased maintenance costs, and slowed down innovation. It has also affected the end users, who are often required to learn the idiosyncrasies of dozens of incompatible SQL and non-SQL API dialects, and settle for systems with incomplete functionality and inconsistent semantics.
+
+This paper rises to their call to take a principled, open source approach to FADS aimed at "...standardizing different aspects of the data stack (...) advocating for a paradigm shift in how data management systems are designed", focusing on federated analytics data systems.
+
+1. functional architecture and specification of FADS that integrates various common practices and blueprints from the data engineering community; we explicitly aim to clarify the different perspectives, namely requirements from primary vs secondary use, and the new development of EHDS. While each of these perspectives have much in common, our aim is to alleviate the confusion between different blueprints
+2. a reference implementation in the Python-Rust data stack that is quickly emerging as a new *de facto* standard for performant and reliable analytical processing;
+3. implementation of functionality specific to healthcare, which provided the impetus for this work (kapitan2025data).
+
+## Desiderata of analytical data systems
+
+We take Klepmann (2017) as our starting point, who states that "Many applications today are _data-intensive_, as opposed to _compute-intensive_. Raw CPU power is rarely a limiting factor for these applications—bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing."
+
+Generically, we want:
+
+| Reliability                           | Scalability                     | Maintainability                        |
+| ------------------------------------- | ------------------------------- | -------------------------------------- |
+| tolerating hardware & software vaults | Measuring load & performance    | Operability, simplicity & evolvability |
+| human error                           | Latency percentiles, throughput |                                        |
+
+We focus on analytical data systems, with different patterns from transactional data systems.
+
+|Property|Transaction processing systems (OLTP)|Analytic systems (OLAP)|
+|---|---|---|
+|Main read pattern|Small number of records per query, fetched by key|Aggregate over large number of records|
+|Main write pattern|Random-access, low-latency writes from user input|Bulk import (ETL) or event stream|
+|Primarily used by|End user/customer, via web application|Internal analyst, for decision support|
+|What data represents|Latest state of data (current point in time)|History of events that happened over time|
+|Dataset size|Gigabytes to terabytes|Terabytes to petabytes|
+
+## Design principles of analytical data systems
+
+These functional requirements lead us to the following design principles
+
+- **Colum-oriented storage and memory layout:** Apache Arrow ecosystem, including Apache Flight
+- **Late-binding with logical data models most suited for analytics:** ELT pattern with zonal architecture
+	- *staging zone:* hard business rules (does incoming data comply to syntactic standard), change data capture 
+	- *linkage & conformity zone:* concept-oriented tables, typically following a data vault modeling principle, ascertain referential integrity across resources, with tables per concept and linking tables. Mapping to coding systems.
+	- *consumption zone:* convenient standardized views like an event table (patient journey, layout for process mining) and dimenreferention integrity across star schema
+
+## Reference implementation with current open source software (OSS) components
+At the lower, technical, levels we follow the rationale of the composable data stack
+- Python and SQL(-like) languages as the *de facto* standard for analytical processing i.e. the most commonly used analytical scripting languages. Where necessary, using Intermediate Representations (IR), any analytical query can be transpiled to the target engine of choice
+- Single-node compute capable of efficiently processing up to 1 TB of data within tens of seconds (polars, DuckDB), so we do away with distributed processing
+- Open table formats (Iceberg, Hudi, Delta) and open file formats (parquet, AVRO)
+
+## Bringing it all together for federated analytics & machine learning (FAML)
+
+- Local data stations are conceptualized as serverless lakehouses
+	- Local ELT pipelines
+	- Decentralized (pre-)processing, including quality control upon ingest
+	- ...
+- For horizontally partioned data, we can apply FAML techniques where only aggregated results are combined centrally
+- For vertically partitioned data, we need an intermediate/temporary zone for linking the data
+- For both horizontally and vertically partitioned data, we can choose to add PETs, most specifically MPC, as an extra security measure
+	- Horizontally partitioned data: [one-short FL](https://rosemanlabs.com/en/blogs/privacy-safe-federated-learning)
+	- Vertically partitioned data: linkage in the blind
+- standardized approach to mapppings
+
+## Functional components
+
+- pipeline pattern
+- entity resolution
+
+## Parking lot
+
+- Difference with data mesh: mesh of domains, federation is in the same domain. Underlying technology of a data station, however, is functionally identical
