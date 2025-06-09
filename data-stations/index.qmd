@@ -18,7 +18,7 @@ author:
     url: https://kapitan.net
     attributes:
       corresponding: true
-  - name: Jack Broere
+  - name: Jack Broeren
     affiliations:
       - name: Health-RI
         city: Utrecht
