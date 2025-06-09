@@ -171,6 +171,7 @@ These functional requirements lead us to the following design principles
 
 ### Reference implementation with current open source software (OSS) components
 At the lower, technical, levels we follow the rationale of the composable data stack
+
 - Python and SQL(-like) languages as the *de facto* standard for analytical processing i.e. the most commonly used analytical scripting languages. Where necessary, using Intermediate Representations (IR), any analytical query can be transpiled to the target engine of choice
 - Single-node compute capable of efficiently processing up to 1 TB of data within tens of seconds (polars, DuckDB), so we do away with distributed processing
 - Open table formats (Iceberg, Hudi, Delta) and open file formats (parquet, AVRO)
