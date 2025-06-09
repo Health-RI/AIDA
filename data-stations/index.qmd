@@ -1,5 +1,6 @@
 ---
-title: An open-source reference implementation of a federated composable datastack
+title: "Layers, pipes and patterns: detailing the concept of data stations as a foundational building block for federated data systems in healthcare"
+lang: en
 author:
   - name: Daniel Kapitan
     affiliations: 
@@ -15,6 +16,31 @@ author:
     orcid: 0000-0001-8979-9194
     email: daniel@kapitan.net
     url: https://kapitan.net
+    attributes:
+      corresponding: true
+  - name: Jack Broere
+    affiliations:
+      - name: Health-RI
+        city: Utrecht
+        country: the Netherlands
+  - name: Jeroen Beliën
+    affiliations:
+      - name: Health-RI
+        city: Utrecht
+        country: the Netherlands
+      - name: Amsterdam UMC
+        city: Amsterdam
+        country: the Netherlands
+  - name: Niels Bolding
+    affiliations:
+      - name: Health-RI
+        city: Utrecht
+        country: the Netherlands
+  - name: Stefan van der Loop
+    affiliations:
+      - name: Cumuluz
+        city: Utrecht
+        country: the Netherlands
   - name: Yannick Vinkesteijn
     affiliations:
       - name: Dutch Hospital Data
@@ -23,15 +49,13 @@ author:
     orcid: 0009-0009-7761-5381
     email: y.vinkesteijn@dhd.nl
     url: https://yannickvinkesteijn.com/
-    attributes:
-      corresponding: true
   - name: Joep de Ligt
     affiliations: 
       - name: Hartwig Medical Foundation
         city: Amterdam
         country: the Netherlands
     orcid: 0000-0002-0348-419X
-    email: e.deli
+    email: j.deligt@hartwigmedicalfoundation.nl
     url: https://hartwigmedicalfoundation.nl
 abstract: |
   We describe ...
@@ -43,56 +67,85 @@ index-terms:
   - Document creation
   - Syntax
 citation: 
-  container-title: GitHUB
+  container-title: GitHub
   page: 1-3
-  type: software
-  issued: 2023-06-23
-  url: https://github.com/plugin-healthcare/federated-composable-datastack
+  type: article-journal  
+  issued: 2025-06-01
+  url: https://github.com/health-ri/aida
   pdf-url: index.pdf
 sidebar: false
 ---
 
-(intented for publication in something like a *practice* paper in [Communications of ACM](https://cacm.acm.org/author-guidelines/#CACMsubmission))
+## Designing and implementing health data platforms is notoriously difficult 
 
-## A confluence of developments towards federated analytical data systems
+The ambition for a seamlessly connected digital healthcare ecosystem, capable of leveraging vast quantities of patient data remains illusive. Designing and implementing health data platforms is notoriously difficult, given heterogeneity and complexity of such systems. As a starting point - and to frame the scope of this paper - consider the trade-offs along the following two design criteria.
 
-We observe a confluence of various trends into what we call federated analytics data systems (FADS). The need for FADS is exemplified by the increasing number of research consortia that are using FADS in a wide diversity of domains. As an example (list):
-    - x-omics programme
-    - EUCAIM
-    - ...
-    - ...
+First, we distinguish health data platform for primary or secondary health availability [@cascini2024health]. It is well known data systems have different design an performance characteristics depending whether they are built for online transactional processing (OLTP) or online analytical processing (OLAP), as summarized in the @tbl-oltp-olap below (taken from @kleppmann2026designing).
 
-In addition, ongoing efforts in Europe to implement data spaces in various industries provide additional impetus to these development. Large multi-year programmes such as Simple Open aim to arrive define specifications to allow interoperability ... (summarize simple open). Specifically for healthcare, we see many European countries working on implementing FADS with national coverage to support secondary use of health data for research and innovation, in line with the agenda to realize the European Health Data Space (EHDS). There are, however, a number of issues that need to be addressed to bring FADS to the highest technological readiness level (TRL) that is required for large-scale operations at the level of a country and even in a networks-of-networks as is required for the EHDS. One of those issues pertains to the concept of 'data stations', which is the focus of this practice paper.
+|Property|Transaction processing systems (OLTP)|Analytic systems (OLAP)|
+|---|---|---|
+|Main read pattern|Small number of records per query, fetched by key|Aggregate over large number of records|
+|Main write pattern|Random-access, low-latency writes from user input|Bulk import (ETL) or event stream|
+|Data modeling|Predefined |Defined post-hoc, either schema-on-read or schema-on-write |
+|Primarily used by|End user/customer, via web application|Internal analyst, for decision support|
+|What data represents|Latest state of data (current point in time)|History of events that happened over time|
+|Dataset size|Gigabytes to terabytes|Terabytes to petabytes|
 
-Data stations are conceived as the foundational building block with which FADS are constructed, by and large inspired as how the Internet came into existence. As of today, different architectural patterns and solution designs are emerging, as for example:
+: Distinguishing characteristics between transactional and analytical systems {#tbl-oltp-olap}
+
+A second design criterium pertains to the choice of single-node (centralized) or distributed (decentralized) platforms, which are not only be driven by technical considerations (scalability, elasticity, fault tolerance, latency) but are also strongly dependent on organizational, legal or regulatory requirements such as data residency.
+
+To complicate matters further, current efforts to design and implement the European Health Data Space (EHDS) in fact aims to support primary and secondary use in one go [@ehds]. This Herculean endeavour has spawned many initiatives to develop a coherent architecture and support implementation across Europe that ultimately should lead to interoperability in the broadest sense of the word, most notably:
+
+- The Simpl Programme ([@simpl]) that aims to develop an open source, secure middleware that supports data access and interoperability in European data initiatives. It provides multiple compatible components, free to use, that adhere to a common standard of data quality and data sharing.
+- TEHDAS2 ([@tehdas2]), a joint action that prepares the ground for the harmonised implementation of the secondary use of health data in the EHDS.
+- The Data Space Blueprint v2.0 by the Data Spaces Support Centre ([@dssc2025data]) that serves as a vital guide for organizations building and participating in data spaces.
+
+To illustrate the current state of affairs, @tbl-types-hdp lists known examples of existing health data platform architectures along these two trade-offs.
+
+|               | primary           | secondary       |
+|---------------|-------------------|-----------------|
+| **centralized**   | openHIE [@2024openhie], Digizorg, Nordics | kapseli, Mayo, ... |
+| **decentralized** | RSO Zuid Limburg, Twiin portaal, ...  | many federated analytics research networks such as x-omics programme and EUCAIM |
+
+: Broad categorization of health data platforms {#tbl-types-hdp}
+
+What then, is a viable development path out of this creative chaos?
+
+## A confluence of developments towards federated data systems
+
+We observe a confluence of various trends into what we call federated data systems (FDS). The need for FDS is exemplified by the increasing number of research consortia that are using FDS in a wide diversity of domains. There are, however, a number of issues that need to be addressed to bring FDS to the highest technological readiness level (TRL) that is required for large-scale operations at the level of a country and even in a networks-of-networks as is required for the EHDS.
+
+One of those issues pertains to the concept of 'data stations', which is the focus of this practice paper. Data stations are conceived as the foundational building block with which FDS are constructed, by and large inspired as how the Internet came into existence. As of today, different architectural patterns and solution designs are emerging, as for example:
 
 - Fair Data Points (FDP) as data stations containing metadata and indexes, aimed at supporting localization of data [insert references]
-- Data stations in the sense of centralized federated learning networks, which is currently one of the most widely used solution designs for federated learning
-- 
+- Data stations in the sense of centralized federated learning networks, which is currently one of the most widely used solution designs for federated learning [@kapitan2025data;@rieke2020future]
+- Graph-based data stations such as the Fair Data Cube [@liao2024fair] and the Swiss Personalized Health Network [@sphn]
+- Specifically in the Dutch context:
+  - the definition of a data station for primary health data availibility by Cumuluz [add reference]
+  - the definition of data stations by the Zorginstituut [@2024kikv]
 
+At the same time, the computer science and engineering has developed couple of new concepts and technologies that make it easier to implement FDS:
 
-
-Given the need for secure and trustworthy data sharing, much work is underway to design and implement FADS.
-
-At the same time, the computer science and engineering has development couple of new concepts and technologies that make it easier to implement FADS:
-
-- A data mesh has been developed as an alternative to centralized data warehouse systems. Data mesh conceptualizes data as a product which can be consumed through an application programming interface (API). Although originally coined in the context of enterprise data platforms, it can be readily extend beyond the boundaries of a single organization into a data space
-- Capabilities of edge computing and single-node computing has increased significantly, whereby it is now possible to process up to 1 TB of tabular data on a single node thereby enabling large volumes of data processing to be done efficiently on a single data station
-- The composable data stack provides a way to unbundle the venerable data base into loosely components, thereby making it easier and more practical to implement FADS, thereby opening up a transition path towards more modular and robust architecture
-- The increasing need for privacy-enhancing technologies (PETs) additionally fuels the development of FADS-related technologies, where technologies such as secure multi-party computation (MPC) are now sufficiently mature to be used on an industrial scale.
-- Federated machine learming (or federated learning in short) has matured as a means for decentralized training of predictive models, most notable through weights sharing of deep learning networks
+- **Capabilities of edge computing and single-node computing has increased significantly** whereby it is now possible to process up to 1 TB of tabular data on a single node thereby enabling large volumes of data processing to be done efficiently on a single data station [@raasveldt2019duckdb;@nahrstedt2024empirical]
+- The **composable data stack** provides a way to unbundle the venerable data base into loosely components, thereby making it easier and more practical to implement FDS, thereby opening up a transition path towards more modular and robust architectures [@pedreira2023composable;@composable]
+- Federated machine learning (or federated learning in short) has matured as a means for training of predictive models, most notable through weights sharing of deep learning networks [@rieke2020future]
+- The increasing need for privacy-enhancing technologies (PETs) additionally fuels the development of FDS-related technologies, where technologies such as secure multi-party computation (MPC) are now sufficiently mature to be used on an industrial scale [@un2023pet-guide;@royalsociety2023privacy]
 
 As noted by Perreira et al. ([2023](https://dl.acm.org/doi/10.14778/3603581.3603604)), however:
 
 > The requirement for specialization in data management systems has evolved faster than our software development practices. After decades of organic growth, this situation has created a siloed landscape composed of hundreds of products developed and maintained as monoliths, with limited reuse between systems. This fragmentation has resulted in developers often reinventing the wheel, increased maintenance costs, and slowed down innovation. It has also affected the end users, who are often required to learn the idiosyncrasies of dozens of incompatible SQL and non-SQL API dialects, and settle for systems with incomplete functionality and inconsistent semantics.
 
-This paper rises to their call to take a principled, open source approach to FADS aimed at "...standardizing different aspects of the data stack (...) advocating for a paradigm shift in how data management systems are designed", focusing on federated analytics data systems.
+This paper rises to their call to take a principled, open source approach to FDS aimed at "...standardizing different aspects of the data stack (...) advocating for a paradigm shift in how data management systems are designed", focusing on FDS for secondary use in healthcare, that is, federated analytics and federated learning.
 
-1. functional architecture and specification of FADS that integrates various common practices and blueprints from the data engineering community; we explicitly aim to clarify the different perspectives, namely requirements from primary vs secondary use, and the new development of EHDS. While each of these perspectives have much in common, our aim is to alleviate the confusion between different blueprints
+1. functional architecture and specification of FDS for healthcare that integrates various common practices and blueprints from the data engineering community; we explicitly aim to clarify the different perspectives, namely:
+  - requirements from primary vs secondary use, critically evaluating whether it is possible to support both with one solution design for a data station
+  - address various aspects of interoperability by explicitly detailing the architecture in using the layers pattern [@buschmann1996system]
+  - address various solution designs for the extract-transform-load (ETL) mechanisms using the pipes and filters pattern [@buschmann1996system]
+  - address various solution designs for federated learning for horizontal vs. vertically partitioned data and solution involving secure processing environments (SPEs) as defined in the EHDS
 2. a reference implementation in the Python-Rust data stack that is quickly emerging as a new *de facto* standard for performant and reliable analytical processing;
-3. implementation of functionality specific to healthcare, which provided the impetus for this work (kapitan2025data).
 
-## Desiderata of analytical data systems
+## Desiderata of federated data systems
 
 We take Klepmann (2017) as our starting point, who states that "Many applications today are _data-intensive_, as opposed to _compute-intensive_. Raw CPU power is rarely a limiting factor for these applications—bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing."
 
@@ -105,47 +158,38 @@ Generically, we want:
 
 We focus on analytical data systems, with different patterns from transactional data systems.
 
-|Property|Transaction processing systems (OLTP)|Analytic systems (OLAP)|
-|---|---|---|
-|Main read pattern|Small number of records per query, fetched by key|Aggregate over large number of records|
-|Main write pattern|Random-access, low-latency writes from user input|Bulk import (ETL) or event stream|
-|Primarily used by|End user/customer, via web application|Internal analyst, for decision support|
-|What data represents|Latest state of data (current point in time)|History of events that happened over time|
-|Dataset size|Gigabytes to terabytes|Terabytes to petabytes|
 
-## Design principles of analytical data systems
+### Design principles of analytical data systems
 
 These functional requirements lead us to the following design principles
 
 - **Colum-oriented storage and memory layout:** Apache Arrow ecosystem, including Apache Flight
 - **Late-binding with logical data models most suited for analytics:** ELT pattern with zonal architecture
 	- *staging zone:* hard business rules (does incoming data comply to syntactic standard), change data capture 
-	- *linkage & conformity zone:* concept-oriented tables, typically following a data vault modeling principle, ascertain referential integrity across resources, with tables per concept and linking tables. Mapping to coding systems.
-	- *consumption zone:* convenient standardized views like an event table (patient journey, layout for process mining) and dimenreferention integrity across star schema
+	- *linkage & conformity zone:* concept-oriented tables, typically following a data vault modeling principle, ascertain referential integrity across resources, with tables per concept and linking tables. Mapping to coding systems. Entity resolution for record linkage at the subject level
+	- *consumption zone:* convenient standardized views like an event table (patient journey, layout for process mining) with uniformity of dimensions using a star schema
 
-## Reference implementation with current open source software (OSS) components
+### Reference implementation with current open source software (OSS) components
 At the lower, technical, levels we follow the rationale of the composable data stack
 - Python and SQL(-like) languages as the *de facto* standard for analytical processing i.e. the most commonly used analytical scripting languages. Where necessary, using Intermediate Representations (IR), any analytical query can be transpiled to the target engine of choice
 - Single-node compute capable of efficiently processing up to 1 TB of data within tens of seconds (polars, DuckDB), so we do away with distributed processing
 - Open table formats (Iceberg, Hudi, Delta) and open file formats (parquet, AVRO)
 
-## Bringing it all together for federated analytics & machine learning (FAML)
+### Bringing it all together for federated analytics & machine learning (FL)
 
 - Local data stations are conceptualized as serverless lakehouses
 	- Local ELT pipelines
 	- Decentralized (pre-)processing, including quality control upon ingest
 	- ...
-- For horizontally partioned data, we can apply FAML techniques where only aggregated results are combined centrally
+- For horizontally partioned data, we can apply FL techniques where only aggregated results are combined centrally
 - For vertically partitioned data, we need an intermediate/temporary zone for linking the data
 - For both horizontally and vertically partitioned data, we can choose to add PETs, most specifically MPC, as an extra security measure
-	- Horizontally partitioned data: [one-short FL](https://rosemanlabs.com/en/blogs/privacy-safe-federated-learning)
-	- Vertically partitioned data: linkage in the blind
-- standardized approach to mapppings
+	- Horizontally partitioned data: [one-shot FL](https://rosemanlabs.com/en/blogs/privacy-safe-federated-learning)
+	- Vertically partitioned data:
+  	- linkage in the blind
+  	- reversible pseudonimization
+- standardized approach to mapppings [@zhang2024crossstandard]
 
-## Functional components
-
-- pipeline pattern
-- entity resolution
 
 ## Parking lot
 
