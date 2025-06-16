@@ -44,10 +44,7 @@ Data models across data spaces: Standardized discovery of data models across dat
     <element xsi:type="archimate:ApplicationComponent" name="Execution Engine" id="id-b68e092e22e444b786a17dbd470a6c9f"/>
     <element xsi:type="archimate:ApplicationFunction" name="Data ingestion" id="id-15a7e211105e4b94ba578d11439955ac"/>
     <element xsi:type="archimate:DataObject" name="Landing zone" id="id-09add218fae044439fdb49f512bd734e"/>
-    <element xsi:type="archimate:ApplicationFunction" name="Data transformation" id="id-a642521b7a304e858b4c073d2c5655f1">
-      <documentation>Just for one source!
-Integration is later</documentation>
-    </element>
+    <element xsi:type="archimate:ApplicationFunction" name="Data transformation" id="id-a642521b7a304e858b4c073d2c5655f1"/>
     <element xsi:type="archimate:ApplicationFunction" name="Data integration" id="id-14fb2d211a8e44e4acf66d288bee03e8"/>
     <element xsi:type="archimate:DataObject" name="Conformity zone" id="id-466d885f1b4048fbaff4e2ca455c44a2"/>
     <element xsi:type="archimate:DataObject" name="Integration zone" id="id-a18c63295a304b1aaaa13c521a19394e"/>
@@ -55,7 +52,6 @@ Integration is later</documentation>
     <element xsi:type="archimate:ApplicationFunction" name="batch ingestion" id="id-6856f776396c44b286cf9fd6f9b372dc"/>
     <element xsi:type="archimate:ApplicationFunction" name="Data modeling" id="id-5000ab0e70dc465d9279a56656dc2734"/>
     <element xsi:type="archimate:ApplicationFunction" name="change data capture" id="id-9036d5ba7f224241b12cfc5bdd0f6946"/>
-    <element xsi:type="archimate:ApplicationFunction" name="Entity resolution" id="id-a06b35db9ceb42a2a253d783f6c3d962"/>
   </folder>
   <folder name="Technology &amp; Physical" id="id-573c54566358444c9da372f8d0a7eff9" type="technology">
     <element xsi:type="archimate:Artifact" name="data file format" id="id-d7da4b6f1e66498c9f6bd95f3e6c87b2"/>
@@ -64,8 +60,7 @@ Integration is later</documentation>
       <documentation>Options:
 - PaaS such as Azure ADLS Gen2, Google Cloud Storage or OVH Cloud
 - Self-hosted Minio cluster
-
-Simpl Open states that S3-compliant is the preferred storage technology layer</documentation>
+</documentation>
     </element>
     <element xsi:type="archimate:Node" name="Container platform" id="id-da4f1159039a49bd993a4a4149ea11f5">
       <documentation>Can be Kubernetes cluster or a single node Docker engine</documentation>
@@ -142,7 +137,6 @@ Simpl Open states that S3-compliant is the preferred storage technology layer</d
     <element xsi:type="archimate:RealizationRelationship" id="id-805dba7a1058457ab5da57d9122b2c2b" source="id-15a7e211105e4b94ba578d11439955ac" target="id-e05e8280767d45d8bf5321515244e1a7"/>
     <element xsi:type="archimate:AggregationRelationship" id="id-349684564cfd4eb0b2426d31e128bc36" source="id-a642521b7a304e858b4c073d2c5655f1" target="id-5000ab0e70dc465d9279a56656dc2734"/>
     <element xsi:type="archimate:AggregationRelationship" id="id-f34493e45994480cb72916e2cd57fef7" source="id-15a7e211105e4b94ba578d11439955ac" target="id-9036d5ba7f224241b12cfc5bdd0f6946"/>
-    <element xsi:type="archimate:AggregationRelationship" id="id-4edccdc59a03429989f2dda0f8126292" source="id-14fb2d211a8e44e4acf66d288bee03e8" target="id-a06b35db9ceb42a2a253d783f6c3d962"/>
   </folder>
   <folder name="Views" id="id-ec1fd43c33fb4475811bab5611598d55" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="minimal-lakehouse" id="id-417fe98586aa4061907968d90e506614">
@@ -255,7 +249,7 @@ Composable data stack defines layers (https://voltrondata.com/codex)
     </element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="data space technical capabilities" id="id-0e694068b8b6410494c0d00d43d4ee05">
       <child xsi:type="archimate:DiagramObject" id="id-40f53f8ac64e4c3c9d38230d69a9c68b" archimateElement="id-cb5f5363f97d4aceba997825206776e8">
-        <bounds x="144" y="264" width="697" height="289"/>
+        <bounds x="120" y="264" width="697" height="289"/>
         <feature name="deriveElementLineColor" value="false"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-392696e4911a40628b6d941717d0de27" source="id-40f53f8ac64e4c3c9d38230d69a9c68b" target="id-e603598f0a58444ea9166da4e6e8f0a8" archimateRelationship="id-bddc9e1ca3c147a197c034b9a350d37a"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-a79a0b5095404a2c929e181c6cd81e4a" source="id-40f53f8ac64e4c3c9d38230d69a9c68b" target="id-66cdc78010ef4092aa1bdb38b83feb6b" archimateRelationship="id-15cb6714bebc4298b5cc404924800e0a"/>
@@ -330,11 +324,6 @@ Composable data stack defines layers (https://voltrondata.com/codex)
           <sourceConnection xsi:type="archimate:Connection" id="id-c899b143f9924f67aca9373218d10446" source="id-595586f8e4e94b729f66e91b0ce74434" target="id-f9d985790aa64e6da510af4e572d2c37" archimateRelationship="id-c5ee5d45e5ac4265abce2e1c977b0ece"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-858fa7cdbc284749943de1737e2c1d89" source="id-595586f8e4e94b729f66e91b0ce74434" target="id-7f083c97914a44228245c3056292565c" archimateRelationship="id-2245d9a2be2843bc86dcc3f954383a4a"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-17b3a12d0ecc4dbcb56253e9a4ab6902" source="id-595586f8e4e94b729f66e91b0ce74434" target="id-1de129a37a82481699f44a38977e3e89" archimateRelationship="id-cb63d51f3109481a803870e7cb7541fa"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-243e2072dc1f44129550bdeacb4b96d8" source="id-595586f8e4e94b729f66e91b0ce74434" target="id-bcc456f2826f49a7b8a7b389497c8aa2" archimateRelationship="id-4edccdc59a03429989f2dda0f8126292"/>
-          <child xsi:type="archimate:DiagramObject" id="id-bcc456f2826f49a7b8a7b389497c8aa2" targetConnections="id-243e2072dc1f44129550bdeacb4b96d8" archimateElement="id-a06b35db9ceb42a2a253d783f6c3d962">
-            <bounds x="36" y="36" width="145" height="37"/>
-            <feature name="deriveElementLineColor" value="false"/>
-          </child>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-a344bba75632437ebcbf5178388bbeb8" archimateElement="id-15a7e211105e4b94ba578d11439955ac">
           <bounds x="48" y="84" width="205" height="207"/>
