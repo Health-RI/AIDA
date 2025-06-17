@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-7fd8ad32ce0e4370ac16bf4cc08ee761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -119,7 +119,12 @@ div.csl-indent {
   <li><a href="#centralized-vs.-decentralized-platforms-what-constitutes-a-federated-data-system" id="toc-centralized-vs.-decentralized-platforms-what-constitutes-a-federated-data-system" class="nav-link" data-scroll-target="#centralized-vs.-decentralized-platforms-what-constitutes-a-federated-data-system">Centralized vs.&nbsp;decentralized platforms: what constitutes a federated data system?</a></li>
   <li><a href="#data-stations-as-a-foundational-building-block-for-federated-data-systems" id="toc-data-stations-as-a-foundational-building-block-for-federated-data-systems" class="nav-link" data-scroll-target="#data-stations-as-a-foundational-building-block-for-federated-data-systems">Data stations as a foundational building block for federated data systems</a></li>
   </ul></li>
-  <li><a href="#ontology-of-a-data-station" id="toc-ontology-of-a-data-station" class="nav-link" data-scroll-target="#ontology-of-a-data-station">Ontology of a data station</a></li>
+  <li><a href="#towards-a-unified-ontology-of-data-stations-and-trains" id="toc-towards-a-unified-ontology-of-data-stations-and-trains" class="nav-link" data-scroll-target="#towards-a-unified-ontology-of-data-stations-and-trains">Towards a unified ontology of data stations and trains</a>
+  <ul class="collapse">
+  <li><a href="#the-personal-health-train-architecture" id="toc-the-personal-health-train-architecture" class="nav-link" data-scroll-target="#the-personal-health-train-architecture">The Personal Health Train architecture</a></li>
+  <li><a href="#mapping-pht-to-the-dssc-blueprint-2.0" id="toc-mapping-pht-to-the-dssc-blueprint-2.0" class="nav-link" data-scroll-target="#mapping-pht-to-the-dssc-blueprint-2.0">Mapping PHT to the DSSC Blueprint 2.0</a></li>
+  <li><a href="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" id="toc-the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="nav-link" data-scroll-target="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</a></li>
+  </ul></li>
   <li><a href="#comparative-analyses-of-existing-data-stations" id="toc-comparative-analyses-of-existing-data-stations" class="nav-link" data-scroll-target="#comparative-analyses-of-existing-data-stations">Comparative analyses of existing data stations</a>
   <ul class="collapse">
   <li><a href="#data-stations-in-plugin" id="toc-data-stations-in-plugin" class="nav-link" data-scroll-target="#data-stations-in-plugin">Data stations in PLUGIN</a></li>
@@ -140,6 +145,7 @@ div.csl-indent {
   <li><a href="#bringing-it-all-together-for-federated-analytics-machine-learning-fl" id="toc-bringing-it-all-together-for-federated-analytics-machine-learning-fl" class="nav-link" data-scroll-target="#bringing-it-all-together-for-federated-analytics-machine-learning-fl">Bringing it all together for federated analytics &amp; machine learning (FL)</a></li>
   </ul></li>
   <li><a href="#parking-lot" id="toc-parking-lot" class="nav-link" data-scroll-target="#parking-lot">Parking lot</a></li>
+  <li><a href="#sec-glossary" id="toc-sec-glossary" class="nav-link" data-scroll-target="#sec-glossary">Glossary</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
@@ -276,20 +282,22 @@ Table&nbsp;1: Distinguishing characteristics between transactional and analytica
 <p>Inspired by previous calls to action to move towards open architectures for health data systems <span class="citation" data-cites="mehl2023fullstac estrin2010health">(<a href="#ref-mehl2023fullstac" role="doc-biblioref">Mehl et al. 2023</a>; <a href="#ref-estrin2010health" role="doc-biblioref">Estrin and Sim 2010</a>)</span> and the notion of the hourglass model <span class="citation" data-cites="estrin2010health beck2019hourglass schultes2023fair">(<a href="#ref-estrin2010health" role="doc-biblioref">Estrin and Sim 2010</a>; <a href="#ref-beck2019hourglass" role="doc-biblioref">Beck 2019</a>; <a href="#ref-schultes2023fair" role="doc-biblioref">Schultes 2023</a>)</span>, we hypothesize that the concept of a ‘data station’ can be used as a foundational building block for federated data systems. A data station should provide a set of minimal standards (at the waist of the hourglass), thereby maximizing the freedom to operate between data providers and data consumers within the context of a health data space. Note that this approach has many similarities with the FAIR Hourglass as proposed by <span class="citation" data-cites="schultes2023fair">Schultes (<a href="#ref-schultes2023fair" role="doc-biblioref">2023</a>)</span>. Our approach of data stations, however, aims to complement these approach with focus on secondary data use of routine collected clinical data and the concept op the PHT.</p>
 <p>In this paper we take loosely follow an Action Design Research approach <span class="citation" data-cites="sein2011action venable2016feds">(<a href="#ref-sein2011action" role="doc-biblioref">Sein et al. 2011</a>; <a href="#ref-venable2016feds" role="doc-biblioref">Venable, Pries-Heje, and Baskerville 2016</a>)</span> to design an open architecture for data station. Our main contributions are:</p>
 <ul>
-<li>Ontology of a data station, that integrates the PHT architecture <span class="citation" data-cites="boninodasilvasantos2022personal">(<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">Bonino da Silva Santos et al. 2022</a>)</span> and the DSSC Blueprint 2.0</li>
+<li>A harmonized ontology of a data station, that integrates the PHT architecture <span class="citation" data-cites="boninodasilvasantos2022personal">(<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">Bonino da Silva Santos et al. 2022</a>)</span> and the DSSC Blueprint 2.0</li>
 <li>Comparative analysis of existing implementations</li>
 <li>Synthesis of the above into functional and technical description of a data station in Archimate, thereby focusing on two primary patterns <span class="citation" data-cites="buschmann1996system">(<a href="#ref-buschmann1996system" role="doc-biblioref">Buschmann et al. 1996</a>)</span>:
 <ul>
-<li>the layers pattern for addressing various aspects of interoperability across the stack</li>
-<li>the pipes and filters pattern for addressing various solution designs for the extract-transform-load (ETL) mechanisms</li>
+<li>the layers pattern for addressing various aspects of interoperability across the stack, extending earlier work by <span class="citation" data-cites="welten2024study">Welten et al. (<a href="#ref-welten2024study" role="doc-biblioref">2024</a>)</span> who have introduced five layers of interoperability;</li>
+<li>the pipes and filters pattern for addressing various solution designs for the extract-transform-load (ETL) mechanisms through which data stations are populated, following the current common practice of datalakes and lakehouse solution designs <span class="citation" data-cites="harby2025data schneider2024lakehouse hai2023data abouzaid2025building mazumdar2023data">(<a href="#ref-harby2025data" role="doc-biblioref">Harby and Zulkernine 2025</a>; <a href="#ref-schneider2024lakehouse" role="doc-biblioref">Schneider et al. 2024</a>; <a href="#ref-hai2023data" role="doc-biblioref">Hai et al. 2023</a>; <a href="#ref-abouzaid2025building" role="doc-biblioref">AbouZaid et al. 2025</a>; <a href="#ref-mazumdar2023data" role="doc-biblioref">Mazumdar, Hughes, and Onofre 2023</a>)</span>;</li>
 </ul></li>
-<li>A reference implementation of data stations for federated learning</li>
+<li>A reference implementation of data stations using the trains based on containers as a generic infrastructure for federated learning and federated analysis.</li>
 </ul>
 </section>
 </section>
-<section id="ontology-of-a-data-station" class="level2">
-<h2 class="anchored" data-anchor-id="ontology-of-a-data-station">Ontology of a data station</h2>
-<p>As a starting definition, in the Personal Health Train (PHT) architecture, a Data Station is defined as a software application primarily responsible for making data and its associated metadata available to users under conditions determined by applicable regulations and Data Controllers. The main concepts are shown in <a href="#fig-pht-roles-components" class="quarto-xref">Figure&nbsp;1 (a)</a>, while the various types of trains are shown in <a href="#fig-pht-train-types" class="quarto-xref">Figure&nbsp;1 (b)</a>.</p>
+<section id="towards-a-unified-ontology-of-data-stations-and-trains" class="level2">
+<h2 class="anchored" data-anchor-id="towards-a-unified-ontology-of-data-stations-and-trains">Towards a unified ontology of data stations and trains</h2>
+<section id="the-personal-health-train-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="the-personal-health-train-architecture">The Personal Health Train architecture</h3>
+<p>We take the Personal Health Train (PHT) architecture as our starting point <span class="citation" data-cites="boninodasilvasantos2022personal">(<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">Bonino da Silva Santos et al. 2022</a>)</span>, wherein a Data Station is defined as a software application primarily responsible for making data and its associated metadata available to users under conditions determined by applicable regulations and Data Controllers. The main concepts are shown in <a href="#fig-pht-roles-components" class="quarto-xref">Figure&nbsp;1 (a)</a>, while the various types of trains are shown in <a href="#fig-pht-train-types" class="quarto-xref">Figure&nbsp;1 (b)</a>. A glossary of the concept is provided in <a href="#sec-glossary" class="quarto-xref">Section&nbsp;7</a>.</p>
 <div id="fig-pht" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-pht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -327,11 +335,16 @@ Figure&nbsp;1: High-level overview of the Personal Health Train (PHT) architectu
 </div>
 </figure>
 </div>
-<p>Taking the concepts from <span class="citation" data-cites="boninodasilvasantos2022personal">Bonino da Silva Santos et al. (<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">2022</a>)</span>, <a href="#tbl-mapping-pht-dssc" class="quarto-xref">Table&nbsp;2</a> maps the PHT architecture to the DSSC Blueprint 2.0 (DSB2). Some mappings are relatively evident. For example, the concept of Data and Metadata as defined in PHT is subsumed in the concept of a Data Product in DSB2. Less evident, is the mapping of the notion of a Train:</p>
-<blockquote class="blockquote">
-<p>A Train represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.</p>
-</blockquote>
-<p>to Value Creation Services in DSB2 that includes data fusion and enrichment, collaborative data analytics and federated learning. More specifics of this mapping will be provided in the Archimate specification.</p>
+<p>In their paper <span class="citation" data-cites="boninodasilvasantos2022personal">Bonino da Silva Santos et al. (<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">2022</a>)</span> continu to describe more details of the PHT architecture including i) the various functions, services, interface and internal components of the data station; ii) the data visiting process; and iii) the data staging concept in the case data access has been authorised, but the station is not capable of executing the train and needs to stage a capable station with enough resources to run the train. We will consider these details later.</p>
+<p>As an aside, it is good to mention that the authors of the PHT architecture have initiated the development of two specifications after publication of this paper, namely:</p>
+<ul>
+<li><a href="https://specs.fairdatapoint.org/fdp-specs-v1.2.html">FAIR Data Point</a> specification, which covers only the metadata and catalog part of the PHT architecture;</li>
+<li>the <a href="https://specs.fairdatatrain.org/">FAIR Data Train</a> specification, which covers the full scope of the original paper but at the time of writing is still incomplete.</li>
+</ul>
+</section>
+<section id="mapping-pht-to-the-dssc-blueprint-2.0" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-pht-to-the-dssc-blueprint-2.0">Mapping PHT to the DSSC Blueprint 2.0</h3>
+<p>To arrive at consistent ‘ontology’ of data stations and trains, <a href="#tbl-mapping-pht-dssc" class="quarto-xref">Table&nbsp;2</a> maps the PHT architecture to the DSSC Blueprint 2.0 (DSB2). Some mappings are relatively evident. For example, the concept of Data and Metadata as defined in PHT is subsumed in the concept of a Data Product in DSB2. Less evident, is the mapping of the notion of a Train that ‘… represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.’ to Value Creation Services in DSB2 that includes data fusion and enrichment, collaborative data analytics and federated learning. We tentatively conclude that it is possible to have a consistent conceptual mapping between, at least at the high level, of the PHT architecture into DSB2. We will return to this matter, when more detailed functions and technical standards are considered for the Archimate specification.</p>
 <div id="tbl-mapping-pht-dssc" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mapping-pht-dssc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -442,18 +455,19 @@ Table&nbsp;2: Mapping the key concepts from the PHT architecture <span class="ci
 </div>
 </figure>
 </div>
-<p>TO DO:</p>
-<ul>
-<li>Explain that <a href="https://specs.fairdatapoint.org/fdp-specs-v1.2.html">FAIR Data Point</a> specification only contain part of the functionality of a data station, namely just the metadata and catalog.</li>
-<li>Initiative has started to extend the paper by <span class="citation" data-cites="boninodasilvasantos2022personal">Bonino da Silva Santos et al. (<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">2022</a>)</span> into a full specification, named the <a href="https://specs.fairdatatrain.org/">FAIR Data Train</a></li>
-<li>One of the key questions of this paper is to detail <a href="https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download">the ‘data conformity zone’ as defined in the Cumuluz canvas</a> as the functionality through which the data station is populated</li>
-</ul>
+</section>
+<section id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="level3">
+<h3 class="anchored" data-anchor-id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</h3>
+<p>The PHT architecture does not specify <em>how</em> the data stations should be populated with data. Also the DSB2 only describes how the ‘Data, Services and Offerings descriptions’ building block should provide data providers the tools to describe a data product appropriately and completely, that is, tools for metadata creation and management.</p>
+<p>One of the key questions of this paper is to detail <a href="https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download">the ‘data conformity zone’ as defined in the Cumuluz canvas</a> as the functionality through which the data station is populated</p>
+</section>
 </section>
 <section id="comparative-analyses-of-existing-data-stations" class="level2">
 <h2 class="anchored" data-anchor-id="comparative-analyses-of-existing-data-stations">Comparative analyses of existing data stations</h2>
 <p>This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the “data station” concept is realized in existing federated data systems:</p>
 <ul>
 <li>the Dutch PLUGIN federated network <span class="citation" data-cites="kapitan2025data">(<a href="#ref-kapitan2025data" role="doc-biblioref">Kapitan et al. 2025</a>)</span> as an example of data stations that are focused on federated learning <span class="citation" data-cites="rieke2020future">(<a href="#ref-rieke2020future" role="doc-biblioref">Rieke et al. 2020</a>)</span></li>
+<li>EUCAIM</li>
 <li>the Swiss SPHN network <span class="citation" data-cites="sphn">(<a href="#ref-sphn" role="doc-biblioref"><span>“<span>SPHN</span> - <span>Swiss Personalized Health Network</span> (<span>SPHN</span>)”</span> n.d.</a>)</span> as an example of a data station that uses graph databases both for the data and metadata</li>
 <li>the Fair Data Cube <span class="citation" data-cites="liao2024fair">(<a href="#ref-liao2024fair" role="doc-biblioref">Liao et al. 2024</a>)</span> as an example of a graph-based data station combined with federated learning</li>
 <li>the Datastation-as-a-Service as defined by the Zorginstituut for federated analytics using privacy-enhancing technologies <span class="citation" data-cites="2024kikv">(<a href="#ref-2024kikv" role="doc-biblioref"><span>“<span>KIK-V</span> x <span>GERDA</span>”</span> 2024</a>)</span></li>
@@ -461,6 +475,13 @@ Table&nbsp;2: Mapping the key concepts from the PHT architecture <span class="ci
 </ul>
 <section id="data-stations-in-plugin" class="level3">
 <h3 class="anchored" data-anchor-id="data-stations-in-plugin">Data stations in PLUGIN</h3>
+<p>The PLUGIN federated learning network is an ongoing initiative initated in 2022 by DHD, IKNL and Expertisecentrum Zorgalgoritmen (EZA). Its main objective is to realize a federated learning network that includes all 70 hospitals in the Netherlands. The PLUGIN network is intended to support a wide variety of use-cases including:</p>
+<ul>
+<li>AI-assisted coding (ICD10) based on supervised learning with language models</li>
+<li>Automated data submission for national registries such as the Dutch Cancer Registry managed by IKNL</li>
+<li>Descriptive analytics, for example, performance analysis across hospitals for benchmarking purpose</li>
+</ul>
+<p>The architecture of</p>
 </section>
 <section id="data-stations-in-sphn" class="level3">
 <h3 class="anchored" data-anchor-id="data-stations-in-sphn">Data stations in SPHN</h3>
@@ -631,12 +652,30 @@ Table&nbsp;3: Broad categorization of health data platforms
 </div>
 </figure>
 </div>
+</section>
+<section id="sec-glossary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-glossary">Glossary</h2>
+<ul>
+<li><em>Data Controller</em> (Business Role) is the role of controlling rights over data.</li>
+<li><em>Data Station</em> (Business Product) is a software application responsible for making data and their related metadata available to users under the accessibility conditions determined by applicable regulations and the related Data Controllers.</li>
+<li><em>Directory Owner</em> (Business Role) is the role of being responsible for the operation of a Station Directory.</li>
+<li><em>Personal Gateway</em> (Business Product) is a software application responsible for mediating the communication between Data Stations and Data Controllers. The Data Controllers are able to exercise their control over the data available in different Data Stations through the Personal Gateway.</li>
+<li><em>Station Directory</em> (Business Product) is a software application responsible for indexing metadata from the reachable Data Stations, allowing users to search for data available in those stations.</li>
+<li><em>Train</em> (Business Representation) represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.</li>
+<li><em>Train Handler</em> (Business Representation) is a software application that interacts with the Stations Directory on behalf of a client to discover the availability and location of data and sends Trains to Data Stations.</li>
+<li><em>Station Owner</em> (Business Role) is the role of being responsible for the operation of a Data Station.</li>
+<li><em>Train Owner</em> (Business Role) is the role of using a Train Handler to send Trains to Data Stations.</li>
+<li><em>Train Provider</em> (Business Role) is the role of being responsible for the creation of a specific Train, e.g.&nbsp;the developer of a specific analysis algorithm.</li>
+</ul>
 
 
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-abouzaid2025building" class="csl-entry" role="listitem">
+AbouZaid, Ahmed, Peter J. Barclay, Christos Chrysoulas, and Nikolaos Pitropakis. 2025. <span>“Building a Modern Data Platform Based on the Data Lakehouse Architecture and Cloud-Native Ecosystem.”</span> <em>Discover Applied Sciences</em> 7 (3): 166. <a href="https://doi.org/10.1007/s42452-025-06545-w">https://doi.org/10.1007/s42452-025-06545-w</a>.
+</div>
 <div id="ref-beck2019hourglass" class="csl-entry" role="listitem">
 Beck, Micah. 2019. <span>“On the Hourglass Model.”</span> <em>Communications of the ACM</em> 62 (7): 48–57. <a href="https://doi.org/10.1145/3274770">https://doi.org/10.1145/3274770</a>.
 </div>
@@ -664,6 +703,12 @@ Estrin, Deborah, and Ida Sim. 2010. <span>“Health Care Delivery. <span class="
 <div id="ref-gu2022systematic" class="csl-entry" role="listitem">
 Gu, Zhenzhen, Francesco Corcoglioniti, Davide Lanti, Alessandro Mosca, Guohui Xiao, Jing Xiong, and Diego Calvanese. 2022. <span>“A Systematic Overview of Data Federation Systems.”</span> <em>Semantic Web</em> 15 (1): 107–65. <a href="https://doi.org/10.3233/SW-223201">https://doi.org/10.3233/SW-223201</a>.
 </div>
+<div id="ref-hai2023data" class="csl-entry" role="listitem">
+Hai, Rihan, Christos Koutras, Christoph Quix, and Matthias Jarke. 2023. <span>“Data <span>Lakes</span>: <span>A Survey</span> of <span>Functions</span> and <span>Systems</span>.”</span> <em>IEEE Transactions on Knowledge and Data Engineering</em> 35 (12): 12571–90. <a href="https://doi.org/10.1109/TKDE.2023.3270101">https://doi.org/10.1109/TKDE.2023.3270101</a>.
+</div>
+<div id="ref-harby2025data" class="csl-entry" role="listitem">
+Harby, Ahmed A., and Farhana Zulkernine. 2025. <span>“Data <span>Lakehouse</span>: <span>A</span> Survey and Experimental Study.”</span> <em>Information Systems</em> 127 (January): 102460. <a href="https://doi.org/10.1016/j.is.2024.102460">https://doi.org/10.1016/j.is.2024.102460</a>.
+</div>
 <div id="ref-kapitan2025data" class="csl-entry" role="listitem">
 Kapitan, Daniel, Femke Heddema, André Dekker, Melle Sieswerda, Bart-Jan Verhoeff, and Matt Berg. 2025. <span>“Data <span>Interoperability</span> in <span>Context</span>: <span>The Importance</span> of <span>Open-Source Implementations When Choosing Open Standards</span>.”</span> <em>Journal of Medical Internet Research</em> 27 (1): e66616. <a href="https://doi.org/10.2196/66616">https://doi.org/10.2196/66616</a>.
 </div>
@@ -678,6 +723,9 @@ Krewer, Jan, and Zuzanna Warso. 2024. <span>“Digital <span>Commons</span> as <
 </div>
 <div id="ref-liao2024fair" class="csl-entry" role="listitem">
 Liao, Xiaofeng, Thomas H.A. Ederveen, Anna Niehues, Casper de&nbsp;Visser, Junda Huang, Firdaws Badmus, Cenna Doornbos, et al. 2024. <span>“<span>FAIR Data Cube</span>, a <span>FAIR</span> Data Infrastructure for Integrated Multi-Omics Data Analysis.”</span> <em>Journal of Biomedical Semantics</em> 15 (1): 20. <a href="https://doi.org/10.1186/s13326-024-00321-2">https://doi.org/10.1186/s13326-024-00321-2</a>.
+</div>
+<div id="ref-mazumdar2023data" class="csl-entry" role="listitem">
+Mazumdar, Dipankar, Jason Hughes, and J. B. Onofre. 2023. <span>“The <span>Data Lakehouse</span>: <span>Data Warehousing</span> and <span>More</span>.”</span> October 12, 2023. <a href="http://arxiv.org/abs/2310.08697">http://arxiv.org/abs/2310.08697</a>.
 </div>
 <div id="ref-mehl2023fullstac" class="csl-entry" role="listitem">
 Mehl, Garrett L, Martin G Seneviratne, Matt L Berg, Suhel Bidani, Rebecca L Distler, Marelize Gorgens, Karin E Kallander, et al. 2023. <span>“A Full-<span>STAC</span> Remedy for Global Digital Health Transformation: Open Standards, Technologies, Architectures and Content.”</span> <em>Oxford Open Digital Health</em> 1 (January): oqad018. <a href="https://doi.org/10.1093/oodh/oqad018">https://doi.org/10.1093/oodh/oqad018</a>.
@@ -696,6 +744,9 @@ Raasveldt, Mark, and Hannes Mühleisen. 2019. <span>“<span>DuckDB</span>: An <
 </div>
 <div id="ref-rieke2020future" class="csl-entry" role="listitem">
 Rieke, Nicola, Jonny Hancox, Wenqi Li, Fausto Milletarì, Holger R. Roth, Shadi Albarqouni, Spyridon Bakas, et al. 2020. <span>“The Future of Digital Health with Federated Learning.”</span> <em>Npj Digital Medicine</em> 3 (1, 1): 1–7. <a href="https://doi.org/10.1038/s41746-020-00323-1">https://doi.org/10.1038/s41746-020-00323-1</a>.
+</div>
+<div id="ref-schneider2024lakehouse" class="csl-entry" role="listitem">
+Schneider, Jan, Christoph Gröger, Arnold Lutsch, Holger Schwarz, and Bernhard Mitschang. 2024. <span>“The <span>Lakehouse</span>: <span>State</span> of the <span>Art</span> on <span>Concepts</span> and <span>Technologies</span>.”</span> <em>SN Computer Science</em> 5 (5): 449. <a href="https://doi.org/10.1007/s42979-024-02737-0">https://doi.org/10.1007/s42979-024-02737-0</a>.
 </div>
 <div id="ref-schultes2023fair" class="csl-entry" role="listitem">
 Schultes, Erik. 2023. <span>“The <span>FAIR</span> Hourglass: <span>A</span> Framework for <span>FAIR</span> Implementation.”</span> Edited by Barbara Magagna. <em>FAIR Connect</em> 1 (1): 13–17. <a href="https://doi.org/10.3233/FC-221514">https://doi.org/10.3233/FC-221514</a>.
@@ -720,6 +771,9 @@ Sein, Maung, Ola Henfridsson, Sandeep Purao, Matti Rossi, and Rikard Lindgren. 2
 </div>
 <div id="ref-venable2016feds" class="csl-entry" role="listitem">
 Venable, John, Jan Pries-Heje, and Richard Baskerville. 2016. <span>“<span>FEDS</span>: A <span>Framework</span> for <span>Evaluation</span> in <span>Design Science Research</span>.”</span> <em>European Journal of Information Systems</em> 25 (1): 77–89. <a href="https://doi.org/10.1057/ejis.2014.36">https://doi.org/10.1057/ejis.2014.36</a>.
+</div>
+<div id="ref-welten2024study" class="csl-entry" role="listitem">
+Welten, Sascha, Marius de Arruda Botelho Herr, Lars Hempel, David Hieber, Peter Placzek, Michael Graf, Sven Weber, et al. 2024. <span>“A Study on Interoperability Between Two <span>Personal Health Train</span> Infrastructures in Leukodystrophy Data Analysis.”</span> <em>Scientific Data</em> 11 (1): 663. <a href="https://doi.org/10.1038/s41597-024-03450-6">https://doi.org/10.1038/s41597-024-03450-6</a>.
 </div>
 <div id="ref-zhang2024crossstandard" class="csl-entry" role="listitem">
 Zhang, Shuxin, Ronald Cornet, and Nirupama Benis. 2024. <span>“Cross-<span>Standard Health Data Harmonization</span> Using <span>Semantics</span> of <span>Data Elements</span>.”</span> <em>Scientific Data</em> 11 (1): 1407. <a href="https://doi.org/10.1038/s41597-024-04168-1">https://doi.org/10.1038/s41597-024-04168-1</a>.
