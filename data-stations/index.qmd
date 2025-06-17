@@ -136,17 +136,19 @@ Inspired by previous calls to action to move towards open architectures for heal
 
 In this paper we take loosely follow an Action Design Research approach [@sein2011action;@venable2016feds] to design an open architecture for data station. Our main contributions are:
 
-- Ontology of a data station, that integrates the PHT architecture [@boninodasilvasantos2022personal] and the DSSC Blueprint 2.0
+- A harmonized ontology of a data station, that integrates the PHT architecture [@boninodasilvasantos2022personal] and the DSSC Blueprint 2.0
 - Comparative analysis of existing implementations
 - Synthesis of the above into functional and technical description of a data station in Archimate, thereby focusing on two primary patterns [@buschmann1996system]:
-  - the layers pattern for addressing various aspects of interoperability across the stack 
-  - the pipes and filters pattern for addressing various solution designs for the extract-transform-load (ETL) mechanisms
-- A reference implementation of data stations for federated learning
+  - the layers pattern for addressing various aspects of interoperability across the stack, extending earlier work by @welten2024study who have introduced five layers of interoperability; 
+  - the pipes and filters pattern for addressing various solution designs for the extract-transform-load (ETL) mechanisms through which data stations are populated, following the current common practice of datalakes and lakehouse solution designs [@harby2025data;@schneider2024lakehouse;@hai2023data;@abouzaid2025building;@mazumdar2023data];
+- A reference implementation of data stations using the trains based on containers as a generic infrastructure for federated learning and federated analysis.
 
 
-## Ontology of a data station
+## Towards a unified ontology of data stations and trains
 
-As a starting definition, in the Personal Health Train (PHT) architecture, a Data Station is defined as a software application primarily responsible for making data and its associated metadata available to users under conditions determined by applicable regulations and Data Controllers. The main concepts are shown in @fig-pht-roles-components, while the various types of trains are shown in @fig-pht-train-types.
+### The Personal Health Train architecture
+
+We take the Personal Health Train (PHT) architecture as our starting point [@boninodasilvasantos2022personal], wherein a Data Station is defined as a software application primarily responsible for making data and its associated metadata available to users under conditions determined by applicable regulations and Data Controllers. The main concepts are shown in @fig-pht-roles-components, while the various types of trains are shown in @fig-pht-train-types. A glossary of the concept is provided in @sec-glossary.
 
 ::: {#fig-pht layout-nrow=2}
 
@@ -157,11 +159,16 @@ As a starting definition, in the Personal Health Train (PHT) architecture, a Dat
 High-level overview of the Personal Health Train (PHT) architecture
 :::
 
-Taking the concepts from @boninodasilvasantos2022personal, @tbl-mapping-pht-dssc maps the PHT architecture to the DSSC Blueprint 2.0 (DSB2). Some mappings are relatively evident. For example, the concept of Data and Metadata as defined in PHT is subsumed in the concept of a Data Product in DSB2. Less evident, is the mapping of the notion of a Train:
+In their paper @boninodasilvasantos2022personal continu to describe more details of the PHT architecture including i) the various functions, services, interface and internal components of the data station; ii) the data visiting process; and iii) the data staging concept in the case data access has been authorised, but the station is not capable of executing the train and needs to stage a capable station with enough resources to run the train. We will consider these details later.
 
-> A Train represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.
+As an aside, it is good to mention that the authors of the PHT architecture have initiated the development of two specifications after publication of this paper, namely:
 
-to Value Creation Services in DSB2 that includes data fusion and enrichment, collaborative data analytics and federated learning. More specifics of this mapping will be provided in the Archimate specification.
+- [FAIR Data Point](https://specs.fairdatapoint.org/fdp-specs-v1.2.html) specification, which covers only the metadata and catalog part of the PHT architecture; 
+- the [FAIR Data Train](https://specs.fairdatatrain.org/) specification, which covers the full scope of the original paper but at the time of writing is still incomplete.
+
+### Mapping PHT to the DSSC Blueprint 2.0
+
+To arrive at consistent 'ontology' of data stations and trains, @tbl-mapping-pht-dssc maps the PHT architecture to the DSSC Blueprint 2.0 (DSB2). Some mappings are relatively evident. For example, the concept of Data and Metadata as defined in PHT is subsumed in the concept of a Data Product in DSB2. Less evident, is the mapping of the notion of a Train that '... represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.' to Value Creation Services in DSB2 that includes data fusion and enrichment, collaborative data analytics and federated learning. We tentatively conclude that it is possible to have a consistent conceptual mapping between, at least at the high level, of the PHT architecture into DSB2. We will return to this matter, when more detailed functions and technical standards are considered for the Archimate specification.
 
 +-----------------------+-------------------------------------------------------------------------------------------------------------+
 | Component PHT         | mapping to DSSC Blueprint 2.0 concepts                                                                      |
@@ -194,18 +201,20 @@ to Value Creation Services in DSB2 that includes data fusion and enrichment, col
 
 : Mapping the key concepts from the PHT architecture [@boninodasilvasantos2022personal] to the [concepts of the DSSC Blueprint 2.0](https://dssc.eu/space/BVE2/1071252161/Alphabetical+List+of+All+Defined+Terms+in+Blueprint+v2.0). {#tbl-mapping-pht-dssc}
 
-TO DO:
+### The lakehouse architecture as the _de facto_ standard for populating data stations
 
-- Explain that [FAIR Data Point](https://specs.fairdatapoint.org/fdp-specs-v1.2.html) specification only contain part of the functionality of a data station, namely just the metadata and catalog. 
-- Initiative has started to extend the paper by @boninodasilvasantos2022personal into a full specification, named the [FAIR Data Train](https://specs.fairdatatrain.org/)
-- One of the key questions of this paper is to detail [the 'data conformity zone' as defined in the Cumuluz canvas](https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download) as the functionality through which the data station is populated
+The PHT architecture does not specify _how_ the data stations should be populated with data. Also the DSB2 only describes how the 'Data, Services and Offerings descriptions' building block should provide data providers the tools to describe a data product appropriately and completely, that is, tools for metadata creation and management.
+
+ 
+One of the key questions of this paper is to detail [the 'data conformity zone' as defined in the Cumuluz canvas](https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download) as the functionality through which the data station is populated
 
 
 ## Comparative analyses of existing data stations
 
 This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the "data station" concept is realized in existing federated data systems:
 
-- the Dutch PLUGIN federated network [@kapitan2025data] as an example of data stations that are focused on federated learning [@rieke2020future] 
+- the Dutch PLUGIN federated network [@kapitan2025data] as an example of data stations that are focused on federated learning [@rieke2020future]
+- EUCAIM 
 - the Swiss SPHN network [@sphn] as an example of a data station that uses graph databases both for the data and metadata
 - the Fair Data Cube [@liao2024fair] as an example of a graph-based data station combined with federated learning
 - the Datastation-as-a-Service as defined by the Zorginstituut for federated analytics using privacy-enhancing technologies [@2024kikv]
@@ -213,6 +222,14 @@ This section provides a detailed comparative analysis using the concepts of the 
 
 
 ### Data stations in PLUGIN
+
+The PLUGIN federated learning network is an ongoing initiative initated in 2022 by DHD, IKNL and Expertisecentrum Zorgalgoritmen (EZA). Its main objective is to realize a federated learning network that includes all 70 hospitals in the Netherlands. The PLUGIN network is intended to support a wide variety of use-cases including:
+
+- AI-assisted coding (ICD10) based on supervised learning with language models
+- Automated data submission for national registries such as the Dutch Cancer Registry managed by IKNL
+- Descriptive analytics, for example, performance analysis across hospitals for benchmarking purpose
+
+The architecture of 
 
 ### Data stations in SPHN
 
@@ -313,3 +330,18 @@ TO DO: explain
 | **decentralized** | RSO Zuid Limburg, Twiin portaal, ...  | many federated analytics research networks such as x-omics programme and EUCAIM |
 
 : Broad categorization of health data platforms {#tbl-types-hdp}
+
+
+## Glossary {#sec-glossary}
+
+- *Data Controller* (Business Role) is the role of controlling rights over data.
+- *Data Station* (Business Product) is a software application responsible for making data and their related metadata available to users under the accessibility conditions determined by applicable regulations and the related Data Controllers.
+- *Directory Owner* (Business Role) is the role of being responsible for the operation of a Station Directory.
+- *Personal Gateway* (Business Product) is a software application responsible for mediating the communication between Data Stations and Data Controllers. The Data Controllers are able to exercise their control over the data available in different Data Stations through the Personal Gateway.
+- *Station Directory* (Business Product) is a software application responsible for indexing metadata from the reachable Data Stations, allowing users to search for data available in those stations.
+- *Train* (Business Representation) represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.
+- *Train Handler* (Business Representation) is a software application that interacts with the Stations Directory on behalf of a client to discover the availability and location of data and sends Trains to Data Stations.
+- *Station Owner* (Business Role) is the role of being responsible for the operation of a Data Station.
+- *Train Owner* (Business Role) is the role of using a Train Handler to send Trains to Data Stations.
+- *Train Provider* (Business Role) is the role of being responsible for the creation of a specific Train, e.g. the developer of a specific analysis algorithm.
+
