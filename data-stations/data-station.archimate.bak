@@ -32,7 +32,7 @@ Data models across data spaces: Standardized discovery of data models across dat
   </folder>
   <folder name="Business" id="id-bb0a98ba36cd4255ab2018b561dff864" type="business"/>
   <folder name="Application" id="id-dc9785c3fadd40e38f24fe0da64da549" type="application">
-    <element xsi:type="archimate:DataObject" name="data table format" id="id-2717db529f254148a947a13d11a73d85">
+    <element xsi:type="archimate:DataObject" name="data" id="id-2717db529f254148a947a13d11a73d85">
       <documentation>Apache Iceberg open table format which contains schema information. Also referred to as metadata layer in Iceberg.
 </documentation>
     </element>
@@ -44,7 +44,10 @@ Data models across data spaces: Standardized discovery of data models across dat
     <element xsi:type="archimate:ApplicationComponent" name="Execution Engine" id="id-b68e092e22e444b786a17dbd470a6c9f"/>
     <element xsi:type="archimate:ApplicationFunction" name="Data ingestion" id="id-15a7e211105e4b94ba578d11439955ac"/>
     <element xsi:type="archimate:DataObject" name="Landing zone" id="id-09add218fae044439fdb49f512bd734e"/>
-    <element xsi:type="archimate:ApplicationFunction" name="Data transformation" id="id-a642521b7a304e858b4c073d2c5655f1"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Data transformation" id="id-a642521b7a304e858b4c073d2c5655f1">
+      <documentation>Just for one source!
+Integration is later</documentation>
+    </element>
     <element xsi:type="archimate:ApplicationFunction" name="Data integration" id="id-14fb2d211a8e44e4acf66d288bee03e8"/>
     <element xsi:type="archimate:DataObject" name="Conformity zone" id="id-466d885f1b4048fbaff4e2ca455c44a2"/>
     <element xsi:type="archimate:DataObject" name="Integration zone" id="id-a18c63295a304b1aaaa13c521a19394e"/>
@@ -52,6 +55,25 @@ Data models across data spaces: Standardized discovery of data models across dat
     <element xsi:type="archimate:ApplicationFunction" name="batch ingestion" id="id-6856f776396c44b286cf9fd6f9b372dc"/>
     <element xsi:type="archimate:ApplicationFunction" name="Data modeling" id="id-5000ab0e70dc465d9279a56656dc2734"/>
     <element xsi:type="archimate:ApplicationFunction" name="change data capture" id="id-9036d5ba7f224241b12cfc5bdd0f6946"/>
+    <element xsi:type="archimate:ApplicationFunction" name="Entity resolution" id="id-a06b35db9ceb42a2a253d783f6c3d962"/>
+    <element xsi:type="archimate:DataObject" name="metadata" id="id-cf9357a6841e42aa89dbde23d374e24c"/>
+    <element xsi:type="archimate:ApplicationComponent" name="polars" id="id-e1b99ee3b2904f5ba18a8637d5e5d7e0">
+      <documentation>https://pola.rs</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="DuckDB" id="id-5d3a773e728f4933997c1d327a72017d">
+      <documentation>https://duckdb.org
+</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Federated machine learning engine" id="id-aafa94ab095d4925ad3bf67716c4d2eb"/>
+    <element xsi:type="archimate:ApplicationComponent" name="flower" id="id-b0111412fd0745e687704102f0bdfb8e">
+      <documentation>https://flower.readthedocs.io/en/latest/</documentation>
+    </element>
+    <element xsi:type="archimate:ApplicationComponent" name="Container Train" id="id-8e479d6029e44649a3b54646a9a01b8f"/>
+    <element xsi:type="archimate:ApplicationComponent" name="vantage6" id="id-53df9c86b81e452389925e4a300ad9fb"/>
+    <element xsi:type="archimate:ApplicationCollaboration" name="pluginLAKE" id="id-ccca70fe119c4e7890bdc25cd07b9592"/>
+    <element xsi:type="archimate:ApplicationComponent" name="pydantic" id="id-36bf1df1947f4eb5ba483a8193e8d725"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Keras" id="id-555b74e9a267450ea901d449bff87f53"/>
+    <element xsi:type="archimate:ApplicationCollaboration" name="pluginML" id="id-458e52d84e66463b93342a935de078c6"/>
   </folder>
   <folder name="Technology &amp; Physical" id="id-573c54566358444c9da372f8d0a7eff9" type="technology">
     <element xsi:type="archimate:Artifact" name="data file format" id="id-d7da4b6f1e66498c9f6bd95f3e6c87b2"/>
@@ -60,7 +82,8 @@ Data models across data spaces: Standardized discovery of data models across dat
       <documentation>Options:
 - PaaS such as Azure ADLS Gen2, Google Cloud Storage or OVH Cloud
 - Self-hosted Minio cluster
-</documentation>
+
+Simpl Open states that S3-compliant is the preferred storage technology layer</documentation>
     </element>
     <element xsi:type="archimate:Node" name="Container platform" id="id-da4f1159039a49bd993a4a4149ea11f5">
       <documentation>Can be Kubernetes cluster or a single node Docker engine</documentation>
@@ -81,7 +104,6 @@ Data models across data spaces: Standardized discovery of data models across dat
     <element xsi:type="archimate:RealizationRelationship" id="id-0ece3728125c42ab9282849528c0c88f" source="id-d7da4b6f1e66498c9f6bd95f3e6c87b2" target="id-2717db529f254148a947a13d11a73d85"/>
     <element xsi:type="archimate:AccessRelationship" id="id-1684a04f310543c1bcb9aed2d5ea6048" source="id-a09825a417414018b86e0e4589f41c9f" target="id-2717db529f254148a947a13d11a73d85" accessType="3"/>
     <element xsi:type="archimate:AccessRelationship" id="id-fa353437bccc4b8797bfe8c7a5ab8631" source="id-58ee5a75b65f43bf8755e974de067c0d" target="id-d7da4b6f1e66498c9f6bd95f3e6c87b2" accessType="3"/>
-    <element xsi:type="archimate:AssociationRelationship" id="id-eadadcc851e64183b81627d3ae733c14" source="id-2717db529f254148a947a13d11a73d85" target="id-58ee5a75b65f43bf8755e974de067c0d" directed="true"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-852a6e45938c4c3f807e9b7dc67b6014" source="id-7332c220044f4c13ab93260acfc78560" target="id-5a2ca011465446c3bbe48ca872f24500"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-78c632d52f684f27ae96ce26bcc64a74" source="id-7332c220044f4c13ab93260acfc78560" target="id-58ee5a75b65f43bf8755e974de067c0d"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-448d03527dee4f7bb5170e73c08cda10" source="id-2c70b84905f740349af4e0bed77e64d3" target="id-a09825a417414018b86e0e4589f41c9f"/>
@@ -106,7 +128,6 @@ Data models across data spaces: Standardized discovery of data models across dat
     <element xsi:type="archimate:CompositionRelationship" id="id-e14ec1f025334c00961bcee697d7862c" source="id-7d0e6aae5ff144a3a73cfbe84a09cfbb" target="id-7332c220044f4c13ab93260acfc78560"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-49b41da698524219b49d202934a1b6fe" source="id-7d0e6aae5ff144a3a73cfbe84a09cfbb" target="id-ebd129b142724566977b7d16c331ec1d"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-6ab54d9c1ccf4d77aee247f2dd98b648" source="id-2c70b84905f740349af4e0bed77e64d3" target="id-c2aff0ee05094d6c93eda1ad75bc437c"/>
-    <element xsi:type="archimate:RealizationRelationship" id="id-d3e0ff4856dd4bcb9d31974cc4a59bef" source="id-c2aff0ee05094d6c93eda1ad75bc437c" target="id-2717db529f254148a947a13d11a73d85"/>
     <element xsi:type="archimate:AccessRelationship" id="id-ea1b99c8ffbf43c9ae52d58e1d7d0638" source="id-58ee5a75b65f43bf8755e974de067c0d" target="id-c2aff0ee05094d6c93eda1ad75bc437c" accessType="3"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-7b3d8505ae8b418cadbdfd09d213d422" source="id-563869b9cec445c79345fdb219ffbff0" target="id-6009cfde2a164dfdaac5df1d1263e4d1"/>
     <element xsi:type="archimate:CompositionRelationship" id="id-96a053646ca24e82acc56505ada3090e" source="id-563869b9cec445c79345fdb219ffbff0" target="id-8ff41be2a97b4d3b9f5615b964f8f070"/>
@@ -137,6 +158,21 @@ Data models across data spaces: Standardized discovery of data models across dat
     <element xsi:type="archimate:RealizationRelationship" id="id-805dba7a1058457ab5da57d9122b2c2b" source="id-15a7e211105e4b94ba578d11439955ac" target="id-e05e8280767d45d8bf5321515244e1a7"/>
     <element xsi:type="archimate:AggregationRelationship" id="id-349684564cfd4eb0b2426d31e128bc36" source="id-a642521b7a304e858b4c073d2c5655f1" target="id-5000ab0e70dc465d9279a56656dc2734"/>
     <element xsi:type="archimate:AggregationRelationship" id="id-f34493e45994480cb72916e2cd57fef7" source="id-15a7e211105e4b94ba578d11439955ac" target="id-9036d5ba7f224241b12cfc5bdd0f6946"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-4edccdc59a03429989f2dda0f8126292" source="id-14fb2d211a8e44e4acf66d288bee03e8" target="id-a06b35db9ceb42a2a253d783f6c3d962"/>
+    <element xsi:type="archimate:CompositionRelationship" id="id-5c789e892c7f4ca1a9f9b400f62b814c" source="id-2c70b84905f740349af4e0bed77e64d3" target="id-cf9357a6841e42aa89dbde23d374e24c"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-02f7c6a301804559ad55554ae51c61a9" source="id-c2aff0ee05094d6c93eda1ad75bc437c" target="id-cf9357a6841e42aa89dbde23d374e24c"/>
+    <element xsi:type="archimate:AccessRelationship" id="id-fe727902ec804a299e66908cffd52368" source="id-a09825a417414018b86e0e4589f41c9f" target="id-cf9357a6841e42aa89dbde23d374e24c" accessType="3"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-032a8912f2b7491fa330fb9eb1b870de" source="id-e1b99ee3b2904f5ba18a8637d5e5d7e0" target="id-3901c078fa9740998efe6522830e90d3"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-47638e58f4c44a4ab2efa8a9413fb0c6" source="id-5d3a773e728f4933997c1d327a72017d" target="id-e0451234713d4e9abb3050b7bf02ee65"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-f62b2746252448139ed2ea57a2a03e2e" source="id-53df9c86b81e452389925e4a300ad9fb" target="id-8e479d6029e44649a3b54646a9a01b8f"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-ce7224440a84427a9e97819686b6fa98" source="id-ccca70fe119c4e7890bdc25cd07b9592" target="id-e1b99ee3b2904f5ba18a8637d5e5d7e0"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-51a2f8767d384357b714721be5faf686" source="id-ccca70fe119c4e7890bdc25cd07b9592" target="id-5d3a773e728f4933997c1d327a72017d"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-1c5ee1beffce4807be21491b5feb18d4" source="id-ccca70fe119c4e7890bdc25cd07b9592" target="id-36bf1df1947f4eb5ba483a8193e8d725"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-027d1b0560a04a2897db3d023410c551" source="id-458e52d84e66463b93342a935de078c6" target="id-555b74e9a267450ea901d449bff87f53"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-9b239c50e107421bbe809574669864c7" source="id-ccca70fe119c4e7890bdc25cd07b9592" target="id-53df9c86b81e452389925e4a300ad9fb"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-c0824c0321b84b3a80ff1a832ba6e36e" source="id-458e52d84e66463b93342a935de078c6" target="id-53df9c86b81e452389925e4a300ad9fb"/>
+    <element xsi:type="archimate:AggregationRelationship" id="id-14f680dade5a4a478fd7dbcda9ea6753" source="id-458e52d84e66463b93342a935de078c6" target="id-b0111412fd0745e687704102f0bdfb8e"/>
+    <element xsi:type="archimate:RealizationRelationship" id="id-14659c03693440f997acad7806fd0861" source="id-458e52d84e66463b93342a935de078c6" target="id-aafa94ab095d4925ad3bf67716c4d2eb"/>
   </folder>
   <folder name="Views" id="id-ec1fd43c33fb4475811bab5611598d55" type="diagrams">
     <element xsi:type="archimate:ArchimateDiagramModel" name="minimal-lakehouse" id="id-417fe98586aa4061907968d90e506614">
@@ -156,7 +192,7 @@ Data models across data spaces: Standardized discovery of data models across dat
             <feature name="deriveElementLineColor" value="false"/>
             <sourceConnection xsi:type="archimate:Connection" id="id-4431e3176c2b426bbfe49451ede25cba" source="id-f4005a1d97894265bf0ab57f30ddd5a0" target="id-f7de2c81f171481da0e27b7c7b6b1085" archimateRelationship="id-0966b550b0aa449a8651c287a924e9ba"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="id-f7de2c81f171481da0e27b7c7b6b1085" targetConnections="id-4431e3176c2b426bbfe49451ede25cba id-010ae1b684cc449aabc8ba5c8fe8e34c id-85b3b23acac249d7973774669505f4bb" archimateElement="id-58ee5a75b65f43bf8755e974de067c0d">
+          <child xsi:type="archimate:DiagramObject" id="id-f7de2c81f171481da0e27b7c7b6b1085" targetConnections="id-4431e3176c2b426bbfe49451ede25cba id-010ae1b684cc449aabc8ba5c8fe8e34c" archimateElement="id-58ee5a75b65f43bf8755e974de067c0d">
             <bounds x="96" y="228" width="157" height="25"/>
             <feature name="deriveElementLineColor" value="false"/>
             <sourceConnection xsi:type="archimate:Connection" id="id-e937c57c9a354e7fbc61a4f0d9f2777d" source="id-f7de2c81f171481da0e27b7c7b6b1085" target="id-718697a3f88b42b7bab1c61f5c6bc2bb" archimateRelationship="id-fa353437bccc4b8797bfe8c7a5ab8631"/>
@@ -169,19 +205,16 @@ Data models across data spaces: Standardized discovery of data models across dat
             <sourceConnection xsi:type="archimate:Connection" id="id-4894edd492fa4d5782f627ab043e1143" source="id-293c4312dc064aa083c4823452a4f51c" target="id-e730adb6071d4eca8b5ba022c97a7831" archimateRelationship="id-f1e6b5fa9b1f412f90810cd86b1636b2"/>
             <sourceConnection xsi:type="archimate:Connection" id="id-2ed4b4907b4343fa9440ad914bba1264" source="id-293c4312dc064aa083c4823452a4f51c" target="id-718697a3f88b42b7bab1c61f5c6bc2bb" archimateRelationship="id-f41b299fc1e746309fe1628745f2dd82"/>
             <sourceConnection xsi:type="archimate:Connection" id="id-ae0727012de84201a78883782b3fe393" source="id-293c4312dc064aa083c4823452a4f51c" target="id-f0ea180ca7cd46f19c03f5838fe554d3" archimateRelationship="id-6ab54d9c1ccf4d77aee247f2dd98b648"/>
+            <sourceConnection xsi:type="archimate:Connection" id="id-c7e132d9744a4c66ba61dcc57d123fcf" source="id-293c4312dc064aa083c4823452a4f51c" target="id-c6edd5608b534be284a4985052895e84" archimateRelationship="id-5c789e892c7f4ca1a9f9b400f62b814c"/>
             <child xsi:type="archimate:DiagramObject" id="id-a7a2b9e7f8054cbe871487557d1c9044" targetConnections="id-dcf0ff511a4a4bb4bfb68e72b2656514" archimateElement="id-a09825a417414018b86e0e4589f41c9f">
-              <bounds x="72" y="36" width="157" height="25"/>
+              <bounds x="48" y="36" width="217" height="25"/>
               <feature name="deriveElementLineColor" value="false"/>
               <sourceConnection xsi:type="archimate:Connection" id="id-935959b4635449b58c770c67942b74bc" source="id-a7a2b9e7f8054cbe871487557d1c9044" target="id-e730adb6071d4eca8b5ba022c97a7831" archimateRelationship="id-1684a04f310543c1bcb9aed2d5ea6048"/>
+              <sourceConnection xsi:type="archimate:Connection" id="id-652cea37adb74a85beb4c79e2ed28569" source="id-a7a2b9e7f8054cbe871487557d1c9044" target="id-c6edd5608b534be284a4985052895e84" archimateRelationship="id-fe727902ec804a299e66908cffd52368"/>
             </child>
-            <child xsi:type="archimate:DiagramObject" id="id-e730adb6071d4eca8b5ba022c97a7831" targetConnections="id-aac748cae78c48d3901184c6874653fa id-935959b4635449b58c770c67942b74bc id-4894edd492fa4d5782f627ab043e1143 id-24a9a99a49d04ee9b8c52722aed912f1" archimateElement="id-2717db529f254148a947a13d11a73d85">
-              <bounds x="72" y="84" width="157" height="25"/>
+            <child xsi:type="archimate:DiagramObject" id="id-e730adb6071d4eca8b5ba022c97a7831" targetConnections="id-aac748cae78c48d3901184c6874653fa id-935959b4635449b58c770c67942b74bc id-4894edd492fa4d5782f627ab043e1143" archimateElement="id-2717db529f254148a947a13d11a73d85">
+              <bounds x="48" y="84" width="97" height="25"/>
               <feature name="deriveElementLineColor" value="false"/>
-              <sourceConnection xsi:type="archimate:Connection" id="id-85b3b23acac249d7973774669505f4bb" source="id-e730adb6071d4eca8b5ba022c97a7831" target="id-f7de2c81f171481da0e27b7c7b6b1085" archimateRelationship="id-eadadcc851e64183b81627d3ae733c14">
-                <bendpoint startX="-114" endX="-114" endY="-132"/>
-                <bendpoint startX="-114" startY="72" endX="-114" endY="-60"/>
-                <bendpoint startX="-114" startY="132" endX="-114"/>
-              </sourceConnection>
             </child>
             <child xsi:type="archimate:DiagramObject" id="id-718697a3f88b42b7bab1c61f5c6bc2bb" targetConnections="id-e937c57c9a354e7fbc61a4f0d9f2777d id-2ed4b4907b4343fa9440ad914bba1264" archimateElement="id-d7da4b6f1e66498c9f6bd95f3e6c87b2">
               <bounds x="48" y="132" width="97" height="37"/>
@@ -191,7 +224,11 @@ Data models across data spaces: Standardized discovery of data models across dat
             <child xsi:type="archimate:DiagramObject" id="id-f0ea180ca7cd46f19c03f5838fe554d3" targetConnections="id-ae0727012de84201a78883782b3fe393 id-50561bb3f5f24378ab4163b90acca08c" archimateElement="id-c2aff0ee05094d6c93eda1ad75bc437c">
               <bounds x="156" y="132" width="109" height="37"/>
               <feature name="deriveElementLineColor" value="false"/>
-              <sourceConnection xsi:type="archimate:Connection" id="id-24a9a99a49d04ee9b8c52722aed912f1" source="id-f0ea180ca7cd46f19c03f5838fe554d3" target="id-e730adb6071d4eca8b5ba022c97a7831" archimateRelationship="id-d3e0ff4856dd4bcb9d31974cc4a59bef"/>
+              <sourceConnection xsi:type="archimate:Connection" id="id-138f2d4745314d87a5c0a42ce1ba05a8" source="id-f0ea180ca7cd46f19c03f5838fe554d3" target="id-c6edd5608b534be284a4985052895e84" archimateRelationship="id-02f7c6a301804559ad55554ae51c61a9"/>
+            </child>
+            <child xsi:type="archimate:DiagramObject" id="id-c6edd5608b534be284a4985052895e84" targetConnections="id-c7e132d9744a4c66ba61dcc57d123fcf id-138f2d4745314d87a5c0a42ce1ba05a8 id-652cea37adb74a85beb4c79e2ed28569" archimateElement="id-cf9357a6841e42aa89dbde23d374e24c">
+              <bounds x="156" y="84" width="109" height="25"/>
+              <feature name="deriveElementLineColor" value="false"/>
             </child>
           </child>
         </child>
@@ -249,7 +286,7 @@ Composable data stack defines layers (https://voltrondata.com/codex)
     </element>
     <element xsi:type="archimate:ArchimateDiagramModel" name="data space technical capabilities" id="id-0e694068b8b6410494c0d00d43d4ee05">
       <child xsi:type="archimate:DiagramObject" id="id-40f53f8ac64e4c3c9d38230d69a9c68b" archimateElement="id-cb5f5363f97d4aceba997825206776e8">
-        <bounds x="120" y="264" width="697" height="289"/>
+        <bounds x="144" y="264" width="697" height="289"/>
         <feature name="deriveElementLineColor" value="false"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-392696e4911a40628b6d941717d0de27" source="id-40f53f8ac64e4c3c9d38230d69a9c68b" target="id-e603598f0a58444ea9166da4e6e8f0a8" archimateRelationship="id-bddc9e1ca3c147a197c034b9a350d37a"/>
         <sourceConnection xsi:type="archimate:Connection" id="id-a79a0b5095404a2c929e181c6cd81e4a" source="id-40f53f8ac64e4c3c9d38230d69a9c68b" target="id-66cdc78010ef4092aa1bdb38b83feb6b" archimateRelationship="id-15cb6714bebc4298b5cc404924800e0a"/>
@@ -324,6 +361,11 @@ Composable data stack defines layers (https://voltrondata.com/codex)
           <sourceConnection xsi:type="archimate:Connection" id="id-c899b143f9924f67aca9373218d10446" source="id-595586f8e4e94b729f66e91b0ce74434" target="id-f9d985790aa64e6da510af4e572d2c37" archimateRelationship="id-c5ee5d45e5ac4265abce2e1c977b0ece"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-858fa7cdbc284749943de1737e2c1d89" source="id-595586f8e4e94b729f66e91b0ce74434" target="id-7f083c97914a44228245c3056292565c" archimateRelationship="id-2245d9a2be2843bc86dcc3f954383a4a"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-17b3a12d0ecc4dbcb56253e9a4ab6902" source="id-595586f8e4e94b729f66e91b0ce74434" target="id-1de129a37a82481699f44a38977e3e89" archimateRelationship="id-cb63d51f3109481a803870e7cb7541fa"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-243e2072dc1f44129550bdeacb4b96d8" source="id-595586f8e4e94b729f66e91b0ce74434" target="id-bcc456f2826f49a7b8a7b389497c8aa2" archimateRelationship="id-4edccdc59a03429989f2dda0f8126292"/>
+          <child xsi:type="archimate:DiagramObject" id="id-bcc456f2826f49a7b8a7b389497c8aa2" targetConnections="id-243e2072dc1f44129550bdeacb4b96d8" archimateElement="id-a06b35db9ceb42a2a253d783f6c3d962">
+            <bounds x="36" y="36" width="145" height="37"/>
+            <feature name="deriveElementLineColor" value="false"/>
+          </child>
         </child>
         <child xsi:type="archimate:DiagramObject" id="id-a344bba75632437ebcbf5178388bbeb8" archimateElement="id-15a7e211105e4b94ba578d11439955ac">
           <bounds x="48" y="84" width="205" height="207"/>
@@ -378,6 +420,73 @@ Composable data stack defines layers (https://voltrondata.com/codex)
           <bounds x="60" y="30" width="205" height="55"/>
           <feature name="deriveElementLineColor" value="false"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-0049c0a0a0ee4b2cb52bc8865fa0492c" source="id-a72c261ad1cc4f6f8555a19c181aeecd" target="id-3da616b30aa7487297c75a114b299277" archimateRelationship="id-bca9ab047a0d4f4ab41627ea7b432dd1"/>
+        </child>
+      </child>
+    </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="python-train" id="id-578a0f807bb1452cbbb971d9416c6508">
+      <child xsi:type="archimate:DiagramObject" id="id-18c7717a69224c17aa7a9c42ba63ba32" archimateElement="id-f545f997d7f940c89a4c59b72b561ba8">
+        <bounds x="348" y="312" width="277" height="133"/>
+        <feature name="deriveElementLineColor" value="false"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-17b2e8ab2909455e97e18ca18baf8d5b" source="id-18c7717a69224c17aa7a9c42ba63ba32" target="id-3e7cf44fff494204964d30ad16153218" archimateRelationship="id-6ea6a901f7fb4137950f32712031b066"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-bab621510c404a74ac166830e9110931" source="id-18c7717a69224c17aa7a9c42ba63ba32" target="id-1e04cc4c99bd4d538d7540a24ea9bb12" archimateRelationship="id-5c833706fd284291a6412efd03dd8b00"/>
+        <child xsi:type="archimate:DiagramObject" id="id-1e04cc4c99bd4d538d7540a24ea9bb12" targetConnections="id-fddd73d90700433cac81e301197f74d4 id-bab621510c404a74ac166830e9110931" archimateElement="id-3901c078fa9740998efe6522830e90d3">
+          <bounds x="12" y="48" width="120" height="55"/>
+          <feature name="deriveElementLineColor" value="false"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-3e7cf44fff494204964d30ad16153218" targetConnections="id-65f31c1dd92a4673bb8fd53a1dfa9243 id-17b2e8ab2909455e97e18ca18baf8d5b" archimateElement="id-e0451234713d4e9abb3050b7bf02ee65">
+          <bounds x="144" y="48" width="120" height="55"/>
+          <feature name="deriveElementLineColor" value="false"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-0be0b8b7b8cc4bc09fb02dadc3f0e47b" targetConnections="id-92221aaff1ba42959cbdcd3c9ec93146" archimateElement="id-aafa94ab095d4925ad3bf67716c4d2eb">
+        <bounds x="948" y="312" width="361" height="133"/>
+        <feature name="deriveElementLineColor" value="false"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-5a65e18ef91d45c989620172297276df" targetConnections="id-8a9599be184743db98c300c922747b90" archimateElement="id-8e479d6029e44649a3b54646a9a01b8f">
+        <bounds x="804" y="312" width="120" height="133"/>
+        <feature name="deriveElementLineColor" value="false"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-47157588efec4af5b16459b56ab8f385" targetConnections="id-9295cdacc2b047138ec35db237cac501 id-1742b84bbf214707bf41766ad8fbf96d" archimateElement="id-53df9c86b81e452389925e4a300ad9fb">
+        <bounds x="804" y="228" width="120" height="55"/>
+        <feature name="deriveElementLineColor" value="false"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-8a9599be184743db98c300c922747b90" source="id-47157588efec4af5b16459b56ab8f385" target="id-5a65e18ef91d45c989620172297276df" archimateRelationship="id-f62b2746252448139ed2ea57a2a03e2e"/>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-ef275413d4fe4666a88de997e1709c48" archimateElement="id-ccca70fe119c4e7890bdc25cd07b9592">
+        <bounds x="324" y="180" width="445" height="109"/>
+        <feature name="deriveElementLineColor" value="false"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-745b4d567a2f42d597ecaaad55dbbf14" source="id-ef275413d4fe4666a88de997e1709c48" target="id-88f3c9270d994549bf0ebed31730d969" archimateRelationship="id-ce7224440a84427a9e97819686b6fa98"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-4ca91303ffb24e638c7feed76c127f4b" source="id-ef275413d4fe4666a88de997e1709c48" target="id-78b9a388cb884e258389ff64ff0cffd3" archimateRelationship="id-51a2f8767d384357b714721be5faf686"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-a163caf066cc42fc9267c753b9ae8e18" source="id-ef275413d4fe4666a88de997e1709c48" target="id-c61857f3456f48aebd3c6f13cc10785e" archimateRelationship="id-1c5ee1beffce4807be21491b5feb18d4"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-9295cdacc2b047138ec35db237cac501" source="id-ef275413d4fe4666a88de997e1709c48" target="id-47157588efec4af5b16459b56ab8f385" archimateRelationship="id-9b239c50e107421bbe809574669864c7"/>
+        <child xsi:type="archimate:DiagramObject" id="id-88f3c9270d994549bf0ebed31730d969" targetConnections="id-745b4d567a2f42d597ecaaad55dbbf14" archimateElement="id-e1b99ee3b2904f5ba18a8637d5e5d7e0">
+          <bounds x="36" y="36" width="120" height="55"/>
+          <feature name="deriveElementLineColor" value="false"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-fddd73d90700433cac81e301197f74d4" source="id-88f3c9270d994549bf0ebed31730d969" target="id-1e04cc4c99bd4d538d7540a24ea9bb12" archimateRelationship="id-032a8912f2b7491fa330fb9eb1b870de"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-78b9a388cb884e258389ff64ff0cffd3" targetConnections="id-4ca91303ffb24e638c7feed76c127f4b" archimateElement="id-5d3a773e728f4933997c1d327a72017d">
+          <bounds x="168" y="36" width="120" height="55"/>
+          <feature name="deriveElementLineColor" value="false"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-65f31c1dd92a4673bb8fd53a1dfa9243" source="id-78b9a388cb884e258389ff64ff0cffd3" target="id-3e7cf44fff494204964d30ad16153218" archimateRelationship="id-47638e58f4c44a4ab2efa8a9413fb0c6"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-c61857f3456f48aebd3c6f13cc10785e" targetConnections="id-a163caf066cc42fc9267c753b9ae8e18" archimateElement="id-36bf1df1947f4eb5ba483a8193e8d725">
+          <bounds x="300" y="36" width="120" height="55"/>
+          <feature name="deriveElementLineColor" value="false"/>
+        </child>
+      </child>
+      <child xsi:type="archimate:DiagramObject" id="id-81089cac8a0342e2840474aba1a61536" archimateElement="id-458e52d84e66463b93342a935de078c6">
+        <bounds x="948" y="180" width="361" height="103"/>
+        <feature name="deriveElementLineColor" value="false"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-dff714954ce74bc88f29004d1633783f" source="id-81089cac8a0342e2840474aba1a61536" target="id-c3e5218c116143de86e4b1ffe00c855c" archimateRelationship="id-027d1b0560a04a2897db3d023410c551"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-1742b84bbf214707bf41766ad8fbf96d" source="id-81089cac8a0342e2840474aba1a61536" target="id-47157588efec4af5b16459b56ab8f385" archimateRelationship="id-c0824c0321b84b3a80ff1a832ba6e36e"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-ad4cb9e9a53046d8b0c931901d361167" source="id-81089cac8a0342e2840474aba1a61536" target="id-2bc4761336e643c491f76c2bc01e9304" archimateRelationship="id-14f680dade5a4a478fd7dbcda9ea6753"/>
+        <sourceConnection xsi:type="archimate:Connection" id="id-92221aaff1ba42959cbdcd3c9ec93146" source="id-81089cac8a0342e2840474aba1a61536" target="id-0be0b8b7b8cc4bc09fb02dadc3f0e47b" archimateRelationship="id-14659c03693440f997acad7806fd0861"/>
+        <child xsi:type="archimate:DiagramObject" id="id-c3e5218c116143de86e4b1ffe00c855c" targetConnections="id-dff714954ce74bc88f29004d1633783f" archimateElement="id-555b74e9a267450ea901d449bff87f53">
+          <bounds x="168" y="24" width="120" height="55"/>
+          <feature name="deriveElementLineColor" value="false"/>
+        </child>
+        <child xsi:type="archimate:DiagramObject" id="id-2bc4761336e643c491f76c2bc01e9304" targetConnections="id-ad4cb9e9a53046d8b0c931901d361167" archimateElement="id-b0111412fd0745e687704102f0bdfb8e">
+          <bounds x="24" y="24" width="133" height="55"/>
+          <feature name="deriveElementLineColor" value="false"/>
         </child>
       </child>
     </element>
