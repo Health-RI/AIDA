@@ -1,7 +1,8 @@
 ---
-title: Comparative analysis for federated health data systems
+title: Comparative analysis of data stations in federated health data systems
 description: |
-    This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the "data station" concept is realized in existing federated data systems:
+    This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the "data station" concept is realized in existing federated data systems.
+lang: en
 ---
 
 ## EUCAIM

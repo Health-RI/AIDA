@@ -1,7 +1,8 @@
 ---
 title: Harmonized solution design of data stations
 description: |
-    This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the "data station" concept is realized in existing federated data systems:
+    This section provides a detailed, harmonized solution design of data stations and data hubs in federated data systems for secondary use of health data.
+lang: en
 ---
 
 
