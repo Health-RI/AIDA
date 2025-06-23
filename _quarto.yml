@@ -10,49 +10,66 @@ website:
     type: primary
     position: above-navbar
   reader-mode: true
+  navbar:
+    title: false
+    logo: no-logo.png
+    search: false
+    right:  
+      - text: "AIDA"
+        href: index.qmd
+      - text: "Data Stations"
+        href: data-stations/index.qmd  
   sidebar:
-    search: true
-    style: floating
-    tools:
-      - icon: linkedin
-        href: https://www.linkedin.com/company/health-ri/
-        text: "LinkedIn profile"
-      - icon: github
-        href: https://github.com/Health-RI/AIDA
-        text: "GitHub repository"
-    contents:
-      - href: index.qmd
-        text: "Startnotitie AIDA"
-      - section: "Strategisch perspectief"
-        href: strategisch/index.qmd
-        contents:     
-          - href: strategisch/ai-in-de-zorg.qmd
-            text: "AI in de zorg"
-          - href: strategisch/blauwdrukken.qmd
-            text: "Vergelijking blauwdrukken"                   
-          # - href: strategisch/plugin.qmd
-          #   text: "Voorbeeld: Amsterdam Health Data Space"
-          # - href: strategisch/plugin.qmd
-          #   text: "Voorbeeld: AnDREa"
-          # - href: strategisch/plugin.qmd
-          #   text: "Voorbeeld: PLUGIN"
-          # - href: strategisch/mpc.qmd
-          #   text: "Voorbeeld: Multiparty Computation"
-      - section: "Business perspectief"
-        href: business/index.qmd
-        contents:        
-          - business/personas/index.qmd
-          - business/verhaallijn-data-engineer.qmd
-          - business/verhaallijn-ml-engineer.qmd
-      - section: "Appendixes"
-        href: technisch/index.qmd
-        contents:  
-          - href: "https://health-ri.github.io/AIDA-Archimate/"
-            text: "AIDA Archimate viewer"
-            target: _blank
-          - href: "https://health-ri.github.io/simple-open-architecture/"
-            text: "Simpl Open Archimate viewer"
-            target: _blank
+    - title: "AIDA"
+      logo: logo-health-ri.png
+      search: true
+      style: floating
+      tools:
+        - icon: linkedin
+          href: https://www.linkedin.com/company/health-ri/
+          text: "LinkedIn profile"
+        - icon: github
+          href: https://github.com/Health-RI/AIDA
+          text: "GitHub repository"
+      contents:
+        - href: index.qmd
+          text: "Startnotitie AIDA"
+        - section: "Strategisch perspectief"
+          href: strategisch/index.qmd
+          contents:     
+            - href: strategisch/ai-in-de-zorg.qmd
+              text: "AI in de zorg"
+            - href: strategisch/blauwdrukken.qmd
+              text: "Vergelijking blauwdrukken"                   
+            # - href: strategisch/plugin.qmd
+            #   text: "Voorbeeld: Amsterdam Health Data Space"
+            # - href: strategisch/plugin.qmd
+            #   text: "Voorbeeld: AnDREa"
+            # - href: strategisch/plugin.qmd
+            #   text: "Voorbeeld: PLUGIN"
+            # - href: strategisch/mpc.qmd
+            #   text: "Voorbeeld: Multiparty Computation"
+        - section: "Business perspectief"
+          href: business/index.qmd
+          contents:        
+            - business/personas/index.qmd
+            - business/verhaallijn-data-engineer.qmd
+            - business/verhaallijn-ml-engineer.qmd
+        - section: "Appendixes"
+          href: technisch/index.qmd
+          contents:  
+            - href: "https://health-ri.github.io/AIDA-Archimate/"
+              text: "AIDA Archimate viewer"
+              target: _blank
+            - href: "https://health-ri.github.io/simple-open-architecture/"
+              text: "Simpl Open Archimate viewer"
+              target: _blank
+    - title: "Data Stations"
+      contents:
+        - href: ./data-stations/index.qmd
+          text: "Introduction"
+        - href: ./data-stations/comparison.qmd
+          text: "Comparative analysis"
   page-navigation: true
 
 lightbox: true
