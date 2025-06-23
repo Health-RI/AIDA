@@ -76,6 +76,7 @@ comments:
   giscus: 
     repo: health-ri/aida
 bibliography: health-ri.bib
+csl: diabetologia.csl
 filters:
   - d2
 d2:

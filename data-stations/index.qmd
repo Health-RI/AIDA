@@ -223,8 +223,9 @@ This section provides a detailed comparative analysis using the concepts of the 
 - the Datastation-as-a-Service as defined by the Zorginstituut for federated analytics using privacy-enhancing technologies [@2024kikv]
 - TO DO: data station as defined by Cumuluz
 
+::: {.panel-tabset}
 
-### Data stations in PLUGIN
+## PLUGIN
 
 The PLUGIN federated learning network is an ongoing initiative initated in 2022 by DHD, IKNL and Expertisecentrum Zorgalgoritmen (EZA). Its main objective is to realize a federated learning network that includes all 70 hospitals in the Netherlands. The PLUGIN network is intended to support a wide variety of use-cases including:
 
@@ -234,12 +235,29 @@ The PLUGIN federated learning network is an ongoing initiative initated in 2022 
 
 The architecture of 
 
-### Data stations in SPHN
+## Fair Data Cube
 
-### Data stations in the Fair Data Cube
+The Fair Data Cube [@liao2024fair] is a framework for the storage, analysis and integration of multi-omics data. Fair Data Cube reuses and extends existing open software components/modules and initiatives. This includes the FAIR Data Point [@dasilvasantos2023fair] and vantage6 [@moncada-torres2021vantage6]. Further elements of the FDCube are the Investigation-Study-Assay (ISA) metadata framework[@sansone2012interoperable;@johnson2021isa] for capturing general study metadata, sample (including basic sample characteristics), and assay metadata, and the Phenopackets [@ladewig2023ga4gh] standards for capturing phenotypic description of a patient/sample. The concept of the FDCube is illustrated @fig-fair-data-cube.
 
-### Datastation-as-a-Service in KIK-V
+:::{#fig-fair-data-cube layout-nrow=2}
 
+![The concept of the FDCube. More details are available in [https://github.com/Xomics/FAIRDataCube/wiki](https://github.com/Xomics/FAIRDataCube/wiki).](fair-data-cube.jpg){#fig-fair-data-cube}
+
+![Use of FDCube in the TWOC demonstrator. The FDCube workflows covers various functions including creating and publishing metadata, browsing and querying the metadata on FDP, and creating and running federated data analysis.](twoc-demonstrator.jpg){#fig-twoc-demonstrator}
+
+:::
+
+@fig-twoc-demonstrator shows an example of how Fair Data Cube is used on a public dataset on COVID-19 featuring multi-omics patient data. This dataset was prepared, harmonized and FAIRified as part of the TWOC project. The dataset consists of paired omics data layers describing transcriptomics, proteomics and metabolomics of blood samples, and includes comprehensive phenotype information. Both the ISA metadata schema and Phenopackets schema are adopted. The ISA metadata schema is used as a standard metadata schema to capture metadata about (-omics) experiments, and serializes in an ISA-json file using ISA tools. The ISA tools also provided additional functionalities to convert the ISA objects into linked data, for example a ttl (Terse RDF Triple Language) file. The FAIRified metadata of the TWOC dataset was published on a Fair Data Point portal allowing for querying using SPARQL. After finding an interesting dataset via browsing or by SPARQL, the researcher could further run follow-up analyses on the target dataset by raising a computation request to the Vantage6 server and retrieve the returning results from the data station via Vantage6.
+
+
+
+## Swiss Personal Health Network
+
+
+
+## Datastation-as-a-Service in KIK-V
+
+:::
 
 ## Synthesis of solution patterns patterns for data stations 
 
