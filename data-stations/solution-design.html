@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the “data station” concept is realized in existing federated data systems:">
 
-<title>ram – Working document AI platform</title>
+<title>Harmonized solution design of data stations – Working document AI platform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +24,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7fd8ad32ce0e4370ac16bf4cc08ee761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../data-stations/reference-implementation.html" rel="next">
+<link href="../data-stations/comparison.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7fd8ad32ce0e4370ac16bf4cc08ee761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,10 +75,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,8 +88,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../logo.png" alt="" class="navbar-logo">
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -92,11 +98,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">AIDA</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../data-stations/index.html"> 
+    <a class="nav-link" href="../data-stations/index.html"> 
 <span class="menu-text">Data Stations</span></a>
   </li>  
 </ul>
@@ -110,58 +116,184 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-stations/solution-design.html">Solution design</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo-health-ri.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://www.linkedin.com/company/health-ri/" title="LinkedIn profile" class="quarto-navigation-tool px-1" aria-label="LinkedIn profile"><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/Health-RI/AIDA" title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-stations/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-stations/comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparative analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-stations/solution-design.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Solution design</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-stations/reference-implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference implementation</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Op deze pagina</h2>
    
   <ul>
-  <li><a href="#context-and-the-unmet-need" id="toc-context-and-the-unmet-need" class="nav-link active" data-scroll-target="#context-and-the-unmet-need">Context and the unmet need</a></li>
-  <li><a href="#a-ram-as-a-connecting-role-in-the-research-ecosystem" id="toc-a-ram-as-a-connecting-role-in-the-research-ecosystem" class="nav-link" data-scroll-target="#a-ram-as-a-connecting-role-in-the-research-ecosystem">A RAM as a connecting role in the research ecosystem</a></li>
+  <li><a href="#detailing-the-layers-of-a-data-station" id="toc-detailing-the-layers-of-a-data-station" class="nav-link active" data-scroll-target="#detailing-the-layers-of-a-data-station">Detailing the layers of a data station</a></li>
+  <li><a href="#detailing-the-data-conformity-zone" id="toc-detailing-the-data-conformity-zone" class="nav-link" data-scroll-target="#detailing-the-data-conformity-zone">Detailing the data conformity zone</a></li>
+  <li><a href="#detailing-the-trains" id="toc-detailing-the-trains" class="nav-link" data-scroll-target="#detailing-the-trains">Detailing the trains</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="ram.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="solution-design.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Harmonized solution design of data stations</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the “data station” concept is realized in existing federated data systems:</p>
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<p>(cl-infrastructure-ram)= # Research Application Managers: Overview</p>
-<section id="context-and-the-unmet-need" class="level2">
-<h2 class="anchored" data-anchor-id="context-and-the-unmet-need">Context and the unmet need</h2>
-<p>Academic incentives encourage the creation of novel knowledge, such as creating new machine learning algorithms. Often, after ground-breaking work has been published in an academic journal, the algorithm and the software built to deploy it are not supported because the researcher begins a new project or moves to another institution. Traditionally, academia is less interested in supporting and rewarding work on: - Improving and extending existing research outputs/software - Promoting interoperability of new and existing outputs/software - Investing in usability, re-usability and user-friendliness of outputs/software (new and existing) - Co-creating outputs with users from the early stages of the research output lifecycle - Proactively discovering new real-world applications and use cases beyond the original academic field and investing in their promotion, adaptation and adoption</p>
-<p>In other words, academia highly prizes knowledge creation. Investment in dissemination, interconnectivity and usability beyond the original academic field is typically not rewarded with the greatest academic prizes. In the highly competitive world of early career research, such work is therefore often not prioritised.</p>
+</header>
+
+
+<p>We take Klepmann (2017) as our starting point, who states that “Many applications today are&nbsp;<em>data-intensive</em>, as opposed to&nbsp;<em>compute-intensive</em>.&nbsp;Raw CPU power is rarely a limiting factor for these applications—bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing.”</p>
+<p>Generically, we want:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 29%">
+<col style="width: 35%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>```pdgqsjfc ../../figures/research-application-managers.*</th>
+<th>Reliability</th>
+<th>Scalability</th>
+<th>Maintainability</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>name: research-application-managers</td>
+<td>tolerating hardware &amp; software vaults</td>
+<td>Measuring load &amp; performance</td>
+<td>Operability, simplicity &amp; evolvability</td>
 </tr>
 <tr class="even">
-<td>alt: An illustration depicting the animal rams as the research application managers who are connecting with users, applying research in real world and facilitating innovative process in research infrastructure.</td>
+<td>human error</td>
+<td>Latency percentiles, throughput</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>Research Application Managers work with the research team to embed outputs into user organisations. <em>The Turing Way</em> Community, &amp; Scriberia. (2020, November). Illustrations from the Turing Way book dashes. Zenodo. http://doi.org/10.5281/zenodo.4323154 ```</p>
+<p>We focus on analytical data systems, with different patterns from transactional data systems.</p>
+<section id="detailing-the-layers-of-a-data-station" class="level3">
+<h3 class="anchored" data-anchor-id="detailing-the-layers-of-a-data-station">Detailing the layers of a data station</h3>
+<p>TO DO: provide detailed layers, and explain how interoperability works across the layers:</p>
+<ul>
+<li>Storage layer (technology): all reference architectures stipulate use of S3-compliant blob storage</li>
+<li>Data and metadata (application): resides in the data station</li>
+<li>We propose to move towards open table formats, that is, Apache Iceberg, whereby storage and compute can be separated</li>
+</ul>
+<div id="fig-minimal-lakehouse" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-minimal-lakehouse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/minimal-lakehouse.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figuur&nbsp;1: Solution of a minimal lakehouse that sits at the core of a data station"><img src="./images/minimal-lakehouse.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-minimal-lakehouse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: Solution of a minimal lakehouse that sits at the core of a data station
+</figcaption>
+</figure>
+</div>
 </section>
-<section id="a-ram-as-a-connecting-role-in-the-research-ecosystem" class="level2">
-<h2 class="anchored" data-anchor-id="a-ram-as-a-connecting-role-in-the-research-ecosystem">A RAM as a connecting role in the research ecosystem</h2>
-<p>We have created the role of a Research Application Manager (RAM) at The Alan Turing Institute with the aim of addressing this incentive gap. RAMs are specifically incentivised and rewarded to conduct the work that traditionally sits on the margins for a typical early career researcher engaging in creating outputs such as open source software.</p>
-<p>RAMs are in part inspired by the role of a Product Manager in tech firms. They also have similarities with the role of a Developer Advocate and their work overlaps with that of the Community Manager. In some cases the RAM workload may include detailed, often technical, input, resembling a Solutions Engineer or a Forward Deployed Engineer, who interface directly with customers to ensure that the tool meets user needs.</p>
-<p>The measures of success for a RAM: - Engaging with the research team early on in the project to bring the perspective of potential users of their software tools and to proactively co-create from the early stages - Advocating for the user perspective throughout the development and feature prioritisation process - Identifying the key users and the target audience - Researching and understanding the user community - Engaging with the user community - Identifying sustainability and funding solutions in collaboration with the research team - Promoting the tools outside the academic field of the original research team - Approaching the output as a research “product” and bringing an appropriate level of “market intelligence” to the academic team - “Packaging” or “re-packaging” the tool to improve usability and accessibility to different audiences</p>
-<p>RAMs are a solution primarily to the incentive gap problem. They bring a “Team Science” mindset to the research teams and promote research best practices - a task they share with the Community Manager role.</p>
-<p>Both RAMs and CMs promote best practices in: - Interoperability of outputs - Reproducibility of research findings and outputs - Team science and open science - Ethics - Co-creation - Inclusivity</p>
-<p>Community managers are becoming an established role in the research ecosystem and in open source software communities in particular. We hope that RAMs will have a similarly successful trajectory.</p>
-<p>Key RAM values: <em>adaptability, collaboration and legacy</em></p>
+<section id="detailing-the-data-conformity-zone" class="level3">
+<h3 class="anchored" data-anchor-id="detailing-the-data-conformity-zone">Detailing the data conformity zone</h3>
+<p>TO DO: explain that</p>
+<ul>
+<li><p>data conformity zone is essentialy a lakehouse pattern</p></li>
+<li><p>the architecture of a lakehouse has stabilized and converged towards:</p>
+<ul>
+<li><strong>Colum-oriented storage and memory layout:</strong> Apache Arrow ecosystem, including Apache Flight</li>
+<li><strong>Late-binding with logical data models most suited for analytics:</strong> ELT pattern with zonal architecture
+<ul>
+<li><em>staging zone:</em> hard business rules (does incoming data comply to syntactic standard), change data capture</li>
+<li><em>linkage &amp; conformity zone:</em> concept-oriented tables, typically following a data vault modeling principle, ascertain referential integrity across resources, with tables per concept and linking tables. Mapping to coding systems. Entity resolution for record linkage at the subject level</li>
+<li><em>consumption zone:</em> convenient standardized views like an event table (patient journey, layout for process mining) with uniformity of dimensions using a star schema</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="detailing-the-trains" class="level3">
+<h3 class="anchored" data-anchor-id="detailing-the-trains">Detailing the trains</h3>
+<p>TO DO: explain</p>
+<ul>
+<li>difference between centralized and distributed federated learning (causes lots of confusion)</li>
+<li>basically Train is a generalization of all types of computes</li>
+<li>difference between
+<ul>
+<li>Train for secondary use, which usually with batch-wise, less strict latency requirements</li>
+<li>Train for primary use, like API call and messaging, with stricter latency requirements. This also includes deployment of AI for inference</li>
+</ul></li>
+</ul>
 
 
 </section>
@@ -595,7 +727,51 @@ ul.task-list li input[type="checkbox"] {
   }
   loadGiscus();
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../data-stations/comparison.html" class="pagination-link" aria-label="Comparative analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Comparative analysis</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../data-stations/reference-implementation.html" class="pagination-link" aria-label="Reference implementation">
+        <span class="nav-page-text">Reference implementation</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

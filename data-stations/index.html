@@ -6,6 +6,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Daniel Kapitan">
+<meta name="author" content="Jack Broeren">
+<meta name="author" content="Jeroen Beliën">
+<meta name="author" content="Niels Bolding">
+<meta name="author" content="Stefan van der Loop">
+<meta name="author" content="Yannick Vinkesteijn">
+<meta name="author" content="Joep de Ligt">
 <meta name="keywords" content="personal health train, federated learning, data systems, data engineering, lakehouse, Apache Arrow, Apache Parquet, Apache Icebert, duckdb, polars">
 
 <title>Layers, pipes and patterns: detailing the concept of data stations as a foundational building block for federated data systems in healthcare – Working document AI platform</title>
@@ -180,6 +187,18 @@ div.csl-indent {
  <span class="menu-text">Comparative analysis</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-stations/solution-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solution design</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-stations/reference-implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference implementation</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -205,19 +224,6 @@ div.csl-indent {
   <li><a href="#mapping-pht-to-the-dssc-blueprint-2.0" id="toc-mapping-pht-to-the-dssc-blueprint-2.0" class="nav-link" data-scroll-target="#mapping-pht-to-the-dssc-blueprint-2.0">Mapping PHT to the DSSC Blueprint 2.0</a></li>
   <li><a href="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" id="toc-the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="nav-link" data-scroll-target="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</a></li>
   </ul></li>
-  <li><a href="#comparative-analyses-of-existing-data-stations" id="toc-comparative-analyses-of-existing-data-stations" class="nav-link" data-scroll-target="#comparative-analyses-of-existing-data-stations">Comparative analyses of existing data stations</a></li>
-  <li><a href="#synthesis-of-solution-patterns-patterns-for-data-stations" id="toc-synthesis-of-solution-patterns-patterns-for-data-stations" class="nav-link" data-scroll-target="#synthesis-of-solution-patterns-patterns-for-data-stations">Synthesis of solution patterns patterns for data stations</a>
-  <ul class="collapse">
-  <li><a href="#detailing-the-layers-of-a-data-station" id="toc-detailing-the-layers-of-a-data-station" class="nav-link" data-scroll-target="#detailing-the-layers-of-a-data-station">Detailing the layers of a data station</a></li>
-  <li><a href="#detailing-the-data-conformity-zone" id="toc-detailing-the-data-conformity-zone" class="nav-link" data-scroll-target="#detailing-the-data-conformity-zone">Detailing the data conformity zone</a></li>
-  <li><a href="#detailing-the-trains" id="toc-detailing-the-trains" class="nav-link" data-scroll-target="#detailing-the-trains">Detailing the trains</a></li>
-  </ul></li>
-  <li><a href="#reference-implementation-with-current-open-source-software-oss-components" id="toc-reference-implementation-with-current-open-source-software-oss-components" class="nav-link" data-scroll-target="#reference-implementation-with-current-open-source-software-oss-components">Reference implementation with current open source software (OSS) components</a>
-  <ul class="collapse">
-  <li><a href="#data-stations-from-the-composable-data-stack" id="toc-data-stations-from-the-composable-data-stack" class="nav-link" data-scroll-target="#data-stations-from-the-composable-data-stack">Data stations from the composable data stack</a></li>
-  <li><a href="#container-based-trains-as-the-most-versatile-solution" id="toc-container-based-trains-as-the-most-versatile-solution" class="nav-link" data-scroll-target="#container-based-trains-as-the-most-versatile-solution">Container-based trains as the most versatile solution</a></li>
-  <li><a href="#bringing-it-all-together-for-federated-analytics-machine-learning-fl" id="toc-bringing-it-all-together-for-federated-analytics-machine-learning-fl" class="nav-link" data-scroll-target="#bringing-it-all-together-for-federated-analytics-machine-learning-fl">Bringing it all together for federated analytics &amp; machine learning (FL)</a></li>
-  </ul></li>
   <li><a href="#parking-lot" id="toc-parking-lot" class="nav-link" data-scroll-target="#parking-lot">Parking lot</a></li>
   <li><a href="#sec-glossary" id="toc-sec-glossary" class="nav-link" data-scroll-target="#sec-glossary">Glossary</a></li>
   </ul>
@@ -232,10 +238,80 @@ div.csl-indent {
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://kapitan.net">Daniel Kapitan</a> <a href="mailto:daniel@kapitan.net" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0001-8979-9194" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Health-RI
+          </p>
+        <p class="affiliation">
+            Dutch Hospital Data
+          </p>
+        <p class="affiliation">
+            Eindhoven University of Technology
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Jack Broeren </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Health-RI
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Jeroen Beliën </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Health-RI
+          </p>
+        <p class="affiliation">
+            Amsterdam UMC
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Niels Bolding </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Health-RI
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Stefan van der Loop </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Cumuluz
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://yannickvinkesteijn.com/">Yannick Vinkesteijn</a> <a href="mailto:y.vinkesteijn@dhd.nl" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0009-7761-5381" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Dutch Hospital Data
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://hartwigmedicalfoundation.nl">Joep de Ligt</a> <a href="mailto:j.deligt@hartwigmedicalfoundation.nl" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-0348-419X" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Hartwig Medical Foundation
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
@@ -378,7 +454,7 @@ Table&nbsp;1: Distinguishing characteristics between online transactional and an
 <h2 class="anchored" data-anchor-id="towards-a-unified-ontology-of-data-stations-and-data-hubs">Towards a unified ontology of data stations and data hubs</h2>
 <section id="the-personal-health-train-architecture" class="level3">
 <h3 class="anchored" data-anchor-id="the-personal-health-train-architecture">The Personal Health Train architecture</h3>
-<p>We take the Personal Health Train (PHT) architecture as our starting point <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">15</a>]</span>, wherein a Data Station is defined as a software application primarily responsible for making data and its associated metadata available to users under conditions determined by applicable regulations and Data Controllers. The main concepts are shown in <a href="#fig-pht-roles-components" class="quarto-xref">Figure&nbsp;1 (a)</a>, while the various types of trains are shown in <a href="#fig-pht-train-types" class="quarto-xref">Figure&nbsp;1 (b)</a>. A glossary of the concept is provided in <a href="#sec-glossary" class="quarto-xref">Section&nbsp;8</a>.</p>
+<p>We take the Personal Health Train (PHT) architecture as our starting point <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">15</a>]</span>, wherein a Data Station is defined as a software application primarily responsible for making data and its associated metadata available to users under conditions determined by applicable regulations and Data Controllers. The main concepts are shown in <a href="#fig-pht-roles-components" class="quarto-xref">Figure&nbsp;1 (a)</a>, while the various types of trains are shown in <a href="#fig-pht-train-types" class="quarto-xref">Figure&nbsp;1 (b)</a>. A glossary of the concept is provided in <a href="#sec-glossary" class="quarto-xref">Section&nbsp;5</a>.</p>
 <div id="fig-pht" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-pht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -543,125 +619,6 @@ Table&nbsp;2: Mapping the key concepts from the PHT architecture <span class="ci
 <p>One of the key questions of this paper is to detail <a href="https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download">the ‘data conformity zone’ as defined in the Cumuluz canvas</a> as the functionality through which the data station is populated</p>
 </section>
 </section>
-<section id="comparative-analyses-of-existing-data-stations" class="level2">
-<h2 class="anchored" data-anchor-id="comparative-analyses-of-existing-data-stations">Comparative analyses of existing data stations</h2>
-</section>
-<section id="synthesis-of-solution-patterns-patterns-for-data-stations" class="level2">
-<h2 class="anchored" data-anchor-id="synthesis-of-solution-patterns-patterns-for-data-stations">Synthesis of solution patterns patterns for data stations</h2>
-<p>We take Klepmann (2017) as our starting point, who states that “Many applications today are&nbsp;<em>data-intensive</em>, as opposed to&nbsp;<em>compute-intensive</em>.&nbsp;Raw CPU power is rarely a limiting factor for these applications—bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing.”</p>
-<p>Generically, we want:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 34%">
-<col style="width: 29%">
-<col style="width: 35%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Reliability</th>
-<th>Scalability</th>
-<th>Maintainability</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>tolerating hardware &amp; software vaults</td>
-<td>Measuring load &amp; performance</td>
-<td>Operability, simplicity &amp; evolvability</td>
-</tr>
-<tr class="even">
-<td>human error</td>
-<td>Latency percentiles, throughput</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>We focus on analytical data systems, with different patterns from transactional data systems.</p>
-<section id="detailing-the-layers-of-a-data-station" class="level3">
-<h3 class="anchored" data-anchor-id="detailing-the-layers-of-a-data-station">Detailing the layers of a data station</h3>
-<p>TO DO: provide detailed layers, and explain how interoperability works across the layers:</p>
-<ul>
-<li>Storage layer (technology): all reference architectures stipulate use of S3-compliant blob storage</li>
-<li>Data and metadata (application): resides in the data station</li>
-<li>We propose to move towards open table formats, that is, Apache Iceberg, whereby storage and compute can be separated</li>
-</ul>
-<div id="fig-minimal-lakehouse" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-minimal-lakehouse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Solution of a minimal lakehouse that sits at the core of a data station
-</figcaption>
-<div aria-describedby="fig-minimal-lakehouse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="./images/minimal-lakehouse.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Solution of a minimal lakehouse that sits at the core of a data station"><img src="./images/minimal-lakehouse.png" class="img-fluid figure-img"></a>
-</div>
-</figure>
-</div>
-</section>
-<section id="detailing-the-data-conformity-zone" class="level3">
-<h3 class="anchored" data-anchor-id="detailing-the-data-conformity-zone">Detailing the data conformity zone</h3>
-<p>TO DO: explain that</p>
-<ul>
-<li><p>data conformity zone is essentialy a lakehouse pattern</p></li>
-<li><p>the architecture of a lakehouse has stabilized and converged towards:</p>
-<ul>
-<li><strong>Colum-oriented storage and memory layout:</strong> Apache Arrow ecosystem, including Apache Flight</li>
-<li><strong>Late-binding with logical data models most suited for analytics:</strong> ELT pattern with zonal architecture
-<ul>
-<li><em>staging zone:</em> hard business rules (does incoming data comply to syntactic standard), change data capture</li>
-<li><em>linkage &amp; conformity zone:</em> concept-oriented tables, typically following a data vault modeling principle, ascertain referential integrity across resources, with tables per concept and linking tables. Mapping to coding systems. Entity resolution for record linkage at the subject level</li>
-<li><em>consumption zone:</em> convenient standardized views like an event table (patient journey, layout for process mining) with uniformity of dimensions using a star schema</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="detailing-the-trains" class="level3">
-<h3 class="anchored" data-anchor-id="detailing-the-trains">Detailing the trains</h3>
-<p>TO DO: explain</p>
-<ul>
-<li>difference between centralized and distributed federated learning (causes lots of confusion)</li>
-<li>basically Train is a generalization of all types of computes</li>
-<li>difference between
-<ul>
-<li>Train for secondary use, which usually with batch-wise, less strict latency requirements</li>
-<li>Train for primary use, like API call and messaging, with stricter latency requirements. This also includes deployment of AI for inference</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="reference-implementation-with-current-open-source-software-oss-components" class="level2">
-<h2 class="anchored" data-anchor-id="reference-implementation-with-current-open-source-software-oss-components">Reference implementation with current open source software (OSS) components</h2>
-<section id="data-stations-from-the-composable-data-stack" class="level3">
-<h3 class="anchored" data-anchor-id="data-stations-from-the-composable-data-stack">Data stations from the composable data stack</h3>
-<ul>
-<li>Python and SQL(-like) languages as the <em>de facto</em> standard for analytical processing i.e.&nbsp;the most commonly used analytical scripting languages. Where necessary, using Intermediate Representations (IR), any analytical query can be transpiled to the target engine of choice</li>
-<li>Single-node compute capable of efficiently processing up to 1 TB of data within tens of seconds (polars, DuckDB), so we do away with distributed processing</li>
-<li>Open table formats (Iceberg, Hudi, Delta) and open file formats (parquet, AVRO)</li>
-</ul>
-</section>
-<section id="container-based-trains-as-the-most-versatile-solution" class="level3">
-<h3 class="anchored" data-anchor-id="container-based-trains-as-the-most-versatile-solution">Container-based trains as the most versatile solution</h3>
-</section>
-<section id="bringing-it-all-together-for-federated-analytics-machine-learning-fl" class="level3">
-<h3 class="anchored" data-anchor-id="bringing-it-all-together-for-federated-analytics-machine-learning-fl">Bringing it all together for federated analytics &amp; machine learning (FL)</h3>
-<ul>
-<li>Local data stations are conceptualized as serverless lakehouses
-<ul>
-<li>Local ELT pipelines</li>
-<li>Decentralized (pre-)processing, including quality control upon ingest</li>
-<li>…</li>
-</ul></li>
-<li>For horizontally partioned data, we can apply FL techniques where only aggregated results are combined centrally</li>
-<li>For vertically partitioned data, we need an intermediate/temporary zone for linking the data</li>
-<li>For both horizontally and vertically partitioned data, we can choose to add PETs, most specifically MPC, as an extra security measure
-<ul>
-<li>Horizontally partitioned data: <a href="https://rosemanlabs.com/en/blogs/privacy-safe-federated-learning">one-shot FL</a></li>
-<li>Vertically partitioned data:</li>
-<li>linkage in the blind</li>
-<li>reversible pseudonimization</li>
-</ul></li>
-<li>standardized approach to mapppings <span class="citation" data-cites="zhang2024crossstandard">[<a href="#ref-zhang2024crossstandard" role="doc-biblioref">38</a>]</span></li>
-</ul>
-</section>
-</section>
 <section id="parking-lot" class="level2">
 <h2 class="anchored" data-anchor-id="parking-lot">Parking lot</h2>
 <ul>
@@ -692,7 +649,7 @@ Table&nbsp;3: Broad categorization of health data platforms
 <tbody>
 <tr class="odd">
 <td><strong>centralized</strong></td>
-<td>openHIE <span class="citation" data-cites="2024openhie">[<a href="#ref-2024openhie" role="doc-biblioref">39</a>]</span>, Digizorg, Nordics</td>
+<td>openHIE <span class="citation" data-cites="2024openhie">[<a href="#ref-2024openhie" role="doc-biblioref">38</a>]</span>, Digizorg, Nordics</td>
 <td>kapseli, Mayo, …</td>
 </tr>
 <tr class="even">
@@ -837,28 +794,28 @@ Table&nbsp;3: Broad categorization of health data platforms
 <div id="ref-mazumdar2023data" class="csl-entry" role="listitem">
 <div class="csl-left-margin">37. </div><div class="csl-right-inline">Mazumdar D, Hughes J, Onofre JB (2023) The <span>Data Lakehouse</span>: <span>Data Warehousing</span> and <span>More</span>. <a href="http://arxiv.org/abs/2310.08697">http://arxiv.org/abs/2310.08697</a>. Accessed 11 Jan 2024</div>
 </div>
-<div id="ref-zhang2024crossstandard" class="csl-entry" role="listitem">
-<div class="csl-left-margin">38. </div><div class="csl-right-inline">Zhang S, Cornet R, Benis N (2024) Cross-<span>Standard Health Data Harmonization</span> using <span>Semantics</span> of <span>Data Elements</span>. Sci Data 11(1):1407. <a href="https://doi.org/10.1038/s41597-024-04168-1">https://doi.org/10.1038/s41597-024-04168-1</a></div>
-</div>
 <div id="ref-2024openhie" class="csl-entry" role="listitem">
-<div class="csl-left-margin">39. </div><div class="csl-right-inline">(2024) <a href="https://ohie.org/"><span>OpenHIE Framework</span> v5.2-en</a></div>
+<div class="csl-left-margin">38. </div><div class="csl-right-inline">(2024) <a href="https://ohie.org/"><span>OpenHIE Framework</span> v5.2-en</a></div>
 </div>
-</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{2025,
-  author = {},
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{kapitan2025,
+  author = {Kapitan, Daniel and Broeren, Jack and Beliën, Jeroen and
+    Bolding, Niels and van der Loop, Stefan and Vinkesteijn, Yannick and
+    de Ligt, Joep},
   title = {Layers, Pipes and Patterns: Detailing the Concept of Data
     Stations as a Foundational Building Block for Federated Data Systems
     in Healthcare},
   journal = {GitHub},
   pages = {1-3},
   date = {2025-06-01},
-  url = {https://github.com/health-ri/aida},
+  url = {https://github.com/health-ri/aida/data-stations/index.html},
   langid = {en},
   abstract = {We describe ...}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-2025" class="csl-entry quarto-appendix-citeas" role="listitem">
-<div class="">(2025) <a href="https://github.com/health-ri/aida">Layers, pipes and patterns:
-detailing the concept of data stations as a foundational building block
-for federated data systems in healthcare</a>. GitHub 1–3</div>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-kapitan2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+<div class="">Kapitan D, Broeren J, Beliën J, et al (2025) <a href="https://github.com/health-ri/aida/data-stations/index.html">Layers,
+pipes and patterns: detailing the concept of data stations as a
+foundational building block for federated data systems in
+healthcare</a>. GitHub 1–3</div>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
