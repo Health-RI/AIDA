@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="nl" xml:lang="nl"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the “data station” concept is realized in existing federated data systems:">
+<meta name="description" content="This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the “data station” concept is realized in existing federated data systems.">
 
-<title>Comparative analysis for federated health data systems – Working document AI platform</title>
+<title>Comparative analysis of data stations in federated health data systems – Working document AI platform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,17 +79,17 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Geen resultaten",
-    "search-matching-documents-text": "Gevonden documenten",
-    "search-copy-link-title": "Kopieer link om te zoeken",
-    "search-hide-matches-text": "Extra overeenkomsten verbergen",
-    "search-more-match-text": "meer overeenkomst in dit document",
-    "search-more-matches-text": "meer overeenkomsten in dit document",
-    "search-clear-button-title": "Wissen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Annuleren",
-    "search-submit-button-title": "Verzenden",
-    "search-label": "Zoeken"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -111,7 +111,7 @@ div.csl-indent {
     <img src="../logo.png" alt="" class="navbar-logo">
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -127,7 +127,7 @@ div.csl-indent {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Schakel leesmodus">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
@@ -137,13 +137,13 @@ div.csl-indent {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-stations/comparison.html">Comparative analysis</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -164,7 +164,7 @@ div.csl-indent {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Zoeken"></div>
+        <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -200,7 +200,7 @@ div.csl-indent {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Op deze pagina</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#eucaim" id="toc-eucaim" class="nav-link active" data-scroll-target="#eucaim">EUCAIM</a></li>
@@ -210,19 +210,19 @@ div.csl-indent {
   <li><a href="#datastation-as-a-service-in-kik-v" id="toc-datastation-as-a-service-in-kik-v" class="nav-link" data-scroll-target="#datastation-as-a-service-in-kik-v">Datastation-as-a-Service in KIK-V</a></li>
   <li><a href="#cumuluz-data-station" id="toc-cumuluz-data-station" class="nav-link" data-scroll-target="#cumuluz-data-station">Cumuluz data station</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="comparison.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="comparison.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Comparative analysis for federated health data systems</h1>
+<h1 class="title">Comparative analysis of data stations in federated health data systems</h1>
 </div>
 
 <div>
   <div class="description">
-    <p>This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the “data station” concept is realized in existing federated data systems:</p>
+    <p>This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the “data station” concept is realized in existing federated data systems.</p>
   </div>
 </div>
 
@@ -254,7 +254,7 @@ div.csl-indent {
 </section>
 <section id="fair-data-cube" class="level2">
 <h2 class="anchored" data-anchor-id="fair-data-cube">Fair Data Cube</h2>
-<p>The Fair Data Cube <span class="citation" data-cites="liao2024fair">[<a href="#ref-liao2024fair" role="doc-biblioref">2</a>]</span> is a framework for the storage, analysis and integration of multi-omics data. Fair Data Cube reuses and extends existing open software components/modules and initiatives. This includes the FAIR Data Point <span class="citation" data-cites="dasilvasantos2023fair">[<a href="#ref-dasilvasantos2023fair" role="doc-biblioref">3</a>]</span> and vantage6 <span class="citation" data-cites="moncada-torres2021vantage6">[<a href="#ref-moncada-torres2021vantage6" role="doc-biblioref">4</a>]</span>. Further elements of the FDCube are the Investigation-Study-Assay (ISA) metadata framework<span class="citation" data-cites="sansone2012interoperable johnson2021isa">[<a href="#ref-sansone2012interoperable" role="doc-biblioref">5</a>, <a href="#ref-johnson2021isa" role="doc-biblioref">6</a>]</span> for capturing general study metadata, sample (including basic sample characteristics), and assay metadata, and the Phenopackets <span class="citation" data-cites="ladewig2023ga4gh">[<a href="#ref-ladewig2023ga4gh" role="doc-biblioref">7</a>]</span> standards for capturing phenotypic description of a patient/sample. The concept of the FDCube is illustrated <a href="#fig-fair-data-cube" class="quarto-xref">Figuur&nbsp;1</a>.</p>
+<p>The Fair Data Cube <span class="citation" data-cites="liao2024fair">[<a href="#ref-liao2024fair" role="doc-biblioref">2</a>]</span> is a framework for the storage, analysis and integration of multi-omics data. Fair Data Cube reuses and extends existing open software components/modules and initiatives. This includes the FAIR Data Point <span class="citation" data-cites="dasilvasantos2023fair">[<a href="#ref-dasilvasantos2023fair" role="doc-biblioref">3</a>]</span> and vantage6 <span class="citation" data-cites="moncada-torres2021vantage6">[<a href="#ref-moncada-torres2021vantage6" role="doc-biblioref">4</a>]</span>. Further elements of the FDCube are the Investigation-Study-Assay (ISA) metadata framework<span class="citation" data-cites="sansone2012interoperable johnson2021isa">[<a href="#ref-sansone2012interoperable" role="doc-biblioref">5</a>, <a href="#ref-johnson2021isa" role="doc-biblioref">6</a>]</span> for capturing general study metadata, sample (including basic sample characteristics), and assay metadata, and the Phenopackets <span class="citation" data-cites="ladewig2023ga4gh">[<a href="#ref-ladewig2023ga4gh" role="doc-biblioref">7</a>]</span> standards for capturing phenotypic description of a patient/sample. The concept of the FDCube is illustrated <a href="#fig-fair-data-cube" class="quarto-xref">Figure&nbsp;1</a>.</p>
 <div id="fig-fair-data-cube" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fair-data-cube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -273,7 +273,7 @@ div.csl-indent {
 <div id="fig-twoc-demonstrator" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-twoc-demonstrator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="./images/twoc-demonstrator.jpg" class="lightbox" data-gallery="fig-fair-data-cube" title="Figuur&nbsp;1&nbsp;(a): Use of FDCube in the TWOC demonstrator. The FDCube workflows covers various functions including creating and publishing metadata, browsing and querying the metadata on FDP, and creating and running federated data analysis."><img src="./images/twoc-demonstrator.jpg" class="img-fluid figure-img" data-ref-parent="fig-fair-data-cube"></a>
+<a href="./images/twoc-demonstrator.jpg" class="lightbox" data-gallery="fig-fair-data-cube" title="Figure&nbsp;1&nbsp;(a): Use of FDCube in the TWOC demonstrator. The FDCube workflows covers various functions including creating and publishing metadata, browsing and querying the metadata on FDP, and creating and running federated data analysis."><img src="./images/twoc-demonstrator.jpg" class="img-fluid figure-img" data-ref-parent="fig-fair-data-cube"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-twoc-demonstrator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Use of FDCube in the TWOC demonstrator. The FDCube workflows covers various functions including creating and publishing metadata, browsing and querying the metadata on FDP, and creating and running federated data analysis.
@@ -284,11 +284,11 @@ div.csl-indent {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fair-data-cube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;1
+Figure&nbsp;1
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-twoc-demonstrator" class="quarto-xref">Figuur&nbsp;1 (a)</a> shows an example of how Fair Data Cube is used on a public dataset on COVID-19 featuring multi-omics patient data. This dataset was prepared, harmonized and FAIRified as part of the TWOC project. The dataset consists of paired omics data layers describing transcriptomics, proteomics and metabolomics of blood samples, and includes comprehensive phenotype information. Both the ISA metadata schema and Phenopackets schema are adopted. The ISA metadata schema is used as a standard metadata schema to capture metadata about (-omics) experiments, and serializes in an ISA-json file using ISA tools. The ISA tools also provided additional functionalities to convert the ISA objects into linked data, for example a ttl (Terse RDF Triple Language) file. The FAIRified metadata of the TWOC dataset was published on a Fair Data Point portal allowing for querying using SPARQL. After finding an interesting dataset via browsing or by SPARQL, the researcher could further run follow-up analyses on the target dataset by raising a computation request to the Vantage6 server and retrieve the returning results from the data station via Vantage6.</p>
+<p><a href="#fig-twoc-demonstrator" class="quarto-xref">Figure&nbsp;1 (a)</a> shows an example of how Fair Data Cube is used on a public dataset on COVID-19 featuring multi-omics patient data. This dataset was prepared, harmonized and FAIRified as part of the TWOC project. The dataset consists of paired omics data layers describing transcriptomics, proteomics and metabolomics of blood samples, and includes comprehensive phenotype information. Both the ISA metadata schema and Phenopackets schema are adopted. The ISA metadata schema is used as a standard metadata schema to capture metadata about (-omics) experiments, and serializes in an ISA-json file using ISA tools. The ISA tools also provided additional functionalities to convert the ISA objects into linked data, for example a ttl (Terse RDF Triple Language) file. The FAIRified metadata of the TWOC dataset was published on a Fair Data Point portal allowing for querying using SPARQL. After finding an interesting dataset via browsing or by SPARQL, the researcher could further run follow-up analyses on the target dataset by raising a computation request to the Vantage6 server and retrieve the returning results from the data station via Vantage6.</p>
 </section>
 <section id="swiss-personal-health-network" class="level2">
 <h2 class="anchored" data-anchor-id="swiss-personal-health-network">Swiss Personal Health Network</h2>
@@ -306,30 +306,30 @@ Figuur&nbsp;1
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-kapitan2025data" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Kapitan D, Heddema F, Dekker A, Sieswerda M, Verhoeff B-J, Berg M (2025) Data <span>Interoperability</span> in <span>Context</span>: <span>The Importance</span> of <span>Open-Source Implementations When Choosing Open Standards</span>. Journal of Medical Internet Research 27(1):e66616. <a href="https://doi.org/10.2196/66616">https://doi.org/10.2196/66616</a></div>
 </div>
 <div id="ref-liao2024fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">Liao X, Ederveen THA, Niehues A, et al (2024) <span>FAIR Data Cube</span>, a <span>FAIR</span> Data Infrastructure for Integrated Multi-Omics Data Analysis. J Biomed Semant 15(1):20. <a href="https://doi.org/10.1186/s13326-024-00321-2">https://doi.org/10.1186/s13326-024-00321-2</a></div>
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Liao X, Ederveen THA, Niehues A, et al (2024) <span>FAIR Data Cube</span>, a <span>FAIR</span> data infrastructure for integrated multi-omics data analysis. J Biomed Semant 15(1):20. <a href="https://doi.org/10.1186/s13326-024-00321-2">https://doi.org/10.1186/s13326-024-00321-2</a></div>
 </div>
 <div id="ref-dasilvasantos2023fair" class="csl-entry" role="listitem">
 <div class="csl-left-margin">3. </div><div class="csl-right-inline">da Silva Santos LOB, Burger K, Kaliyaperumal R, Wilkinson MD (2023) <span>FAIR Data Point</span>: <span>A FAIR-Oriented Approach</span> for <span>Metadata Publication</span>. Data Intelligence 5(1):163–183. <a href="https://doi.org/10.1162/dint_a_00160">https://doi.org/10.1162/dint_a_00160</a></div>
 </div>
 <div id="ref-moncada-torres2021vantage6" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">Moncada-Torres A, Martin F, Sieswerda M, Van Soest J, Geleijnse G (2021) <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8075508"><span>VANTAGE6</span>: An Open Source <span>priVAcy preserviNg federaTed leArninG infrastructurE</span> for <span>Secure Insight eXchange</span></a>. AMIA Annu Symp Proc 2020:870–877</div>
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Moncada-Torres A, Martin F, Sieswerda M, Van Soest J, Geleijnse G (2021) <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8075508"><span>VANTAGE6</span>: An open source <span class="nocase">priVAcy preserviNg federaTed leArninG infrastructurE</span> for <span class="nocase">Secure Insight eXchange</span></a>. AMIA Annu Symp Proc 2020:870–877</div>
 </div>
 <div id="ref-sansone2012interoperable" class="csl-entry" role="listitem">
-<div class="csl-left-margin">5. </div><div class="csl-right-inline">Sansone S-A, Rocca-Serra P, Field D, et al (2012) Toward Interoperable Bioscience Data. Nat Genet 44(2):121–126. <a href="https://doi.org/10.1038/ng.1054">https://doi.org/10.1038/ng.1054</a></div>
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Sansone S-A, Rocca-Serra P, Field D, et al (2012) Toward interoperable bioscience data. Nat Genet 44(2):121–126. <a href="https://doi.org/10.1038/ng.1054">https://doi.org/10.1038/ng.1054</a></div>
 </div>
 <div id="ref-johnson2021isa" class="csl-entry" role="listitem">
-<div class="csl-left-margin">6. </div><div class="csl-right-inline">Johnson D, Batista D, Cochrane K, et al (2021) <span>ISA API</span>: <span>An</span> Open Platform for Interoperable Life Science Experimental Metadata. GigaScience 10(9):giab060. <a href="https://doi.org/10.1093/gigascience/giab060">https://doi.org/10.1093/gigascience/giab060</a></div>
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Johnson D, Batista D, Cochrane K, et al (2021) <span>ISA API</span>: <span>An</span> open platform for interoperable life science experimental metadata. GigaScience 10(9):giab060. <a href="https://doi.org/10.1093/gigascience/giab060">https://doi.org/10.1093/gigascience/giab060</a></div>
 </div>
 <div id="ref-ladewig2023ga4gh" class="csl-entry" role="listitem">
 <div class="csl-left-margin">7. </div><div class="csl-right-inline">Ladewig MS, Jacobsen JOB, Wagner AH, et al (2023) <span>GA4GH Phenopackets</span>: <span>A Practical Introduction</span>. Advanced Genetics 4(1):2200016. <a href="https://doi.org/10.1002/ggn2.202200016">https://doi.org/10.1002/ggn2.202200016</a></div>
 </div>
 <div id="ref-sphn" class="csl-entry" role="listitem">
-<div class="csl-left-margin">8. </div><div class="csl-right-inline"><span>SPHN</span> - <span>Swiss Personalized Health Network</span> (<span>SPHN</span>). <a href="https://sphn.ch/">https://sphn.ch/</a>. Accessed 9 jun 2025</div>
+<div class="csl-left-margin">8. </div><div class="csl-right-inline"><span>SPHN</span> - <span>Swiss Personalized Health Network</span> (<span>SPHN</span>). <a href="https://sphn.ch/">https://sphn.ch/</a>. Accessed 9 Jun 2025</div>
 </div>
 <div id="ref-2024kikv" class="csl-entry" role="listitem">
 <div class="csl-left-margin">9. </div><div class="csl-right-inline">(2024) <a href="https://populationhealthdata.nl/wp-content/uploads/2024/07/Whitepaper-GERDA-x-KIK-V_-databeschikbaarheid-door-hergebruik.pdf"><span>KIK-V</span> x <span>GERDA</span></a>. Zorginstituut</div>
@@ -360,12 +360,12 @@ Figuur&nbsp;1
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Gekopieerd!");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Gekopieerd!");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
