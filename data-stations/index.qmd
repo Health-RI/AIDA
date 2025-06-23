@@ -1,62 +1,62 @@
 ---
 title: "Layers, pipes and patterns: detailing the concept of data stations as a foundational building block for federated data systems in healthcare"
 lang: en
-# author:
-#   - name: Daniel Kapitan
-#     affiliations: 
-#       - name: Health-RI
-#         city: Utrecht
-#         country: the Netherlands
-#       - name: Dutch Hospital Data
-#         city: Utrecht
-#         country: the Netherlands
-#       - name: Eindhoven University of Technology
-#         city: Eindhoven
-#         country: the Netherlands
-#     orcid: 0000-0001-8979-9194
-#     email: daniel@kapitan.net
-#     url: https://kapitan.net
-#     attributes:
-#       corresponding: true
-#   - name: Jack Broeren
-#     affiliations:
-#       - name: Health-RI
-#         city: Utrecht
-#         country: the Netherlands
-#   - name: Jeroen Beliën
-#     affiliations:
-#       - name: Health-RI
-#         city: Utrecht
-#         country: the Netherlands
-#       - name: Amsterdam UMC
-#         city: Amsterdam
-#         country: the Netherlands
-#   - name: Niels Bolding
-#     affiliations:
-#       - name: Health-RI
-#         city: Utrecht
-#         country: the Netherlands
-#   - name: Stefan van der Loop
-#     affiliations:
-#       - name: Cumuluz
-#         city: Utrecht
-#         country: the Netherlands
-#   - name: Yannick Vinkesteijn
-#     affiliations:
-#       - name: Dutch Hospital Data
-#         city: Utrecht
-#         country: the Netherlands
-#     orcid: 0009-0009-7761-5381
-#     email: y.vinkesteijn@dhd.nl
-#     url: https://yannickvinkesteijn.com/
-#   - name: Joep de Ligt
-#     affiliations: 
-#       - name: Hartwig Medical Foundation
-#         city: Amterdam
-#         country: the Netherlands
-#     orcid: 0000-0002-0348-419X
-#     email: j.deligt@hartwigmedicalfoundation.nl
-#     url: https://hartwigmedicalfoundation.nl
+author:
+  - name: Daniel Kapitan
+    affiliations: 
+      - name: Health-RI
+        city: Utrecht
+        country: the Netherlands
+      - name: Dutch Hospital Data
+        city: Utrecht
+        country: the Netherlands
+      - name: Eindhoven University of Technology
+        city: Eindhoven
+        country: the Netherlands
+    orcid: 0000-0001-8979-9194
+    email: daniel@kapitan.net
+    url: https://kapitan.net
+    attributes:
+      corresponding: true
+  - name: Jack Broeren
+    affiliations:
+      - name: Health-RI
+        city: Utrecht
+        country: the Netherlands
+  - name: Jeroen Beliën
+    affiliations:
+      - name: Health-RI
+        city: Utrecht
+        country: the Netherlands
+      - name: Amsterdam UMC
+        city: Amsterdam
+        country: the Netherlands
+  - name: Niels Bolding
+    affiliations:
+      - name: Health-RI
+        city: Utrecht
+        country: the Netherlands
+  - name: Stefan van der Loop
+    affiliations:
+      - name: Cumuluz
+        city: Utrecht
+        country: the Netherlands
+  - name: Yannick Vinkesteijn
+    affiliations:
+      - name: Dutch Hospital Data
+        city: Utrecht
+        country: the Netherlands
+    orcid: 0009-0009-7761-5381
+    email: y.vinkesteijn@dhd.nl
+    url: https://yannickvinkesteijn.com/
+  - name: Joep de Ligt
+    affiliations: 
+      - name: Hartwig Medical Foundation
+        city: Amterdam
+        country: the Netherlands
+    orcid: 0000-0002-0348-419X
+    email: j.deligt@hartwigmedicalfoundation.nl
+    url: https://hartwigmedicalfoundation.nl
 abstract: |
   We describe ...
 keywords: [personal health train, federated learning, data systems, data engineering, lakehouse, Apache Arrow, Apache Parquet, Apache Icebert, duckdb, polars]
@@ -71,7 +71,7 @@ citation:
   page: 1-3
   type: article-journal  
   issued: 2025-06-01
-  url: https://github.com/health-ri/aida
+  url: https://github.com/health-ri/aida/data-stations/index.html
   pdf-url: index.pdf
 fig-cap-location: top
 ---
@@ -209,88 +209,6 @@ The PHT architecture does not specify _how_ the data stations should be populate
 
  
 One of the key questions of this paper is to detail [the 'data conformity zone' as defined in the Cumuluz canvas](https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download) as the functionality through which the data station is populated
-
-
-## Comparative analyses of existing data stations
-
-
-
-## Synthesis of solution patterns patterns for data stations 
-
-We take Klepmann (2017) as our starting point, who states that "Many applications today are _data-intensive_, as opposed to _compute-intensive_. Raw CPU power is rarely a limiting factor for these applications—bigger problems are usually the amount of data, the complexity of data, and the speed at which it is changing."
-
-Generically, we want:
-
-| Reliability                           | Scalability                     | Maintainability                        |
-| ------------------------------------- | ------------------------------- | -------------------------------------- |
-| tolerating hardware & software vaults | Measuring load & performance    | Operability, simplicity & evolvability |
-| human error                           | Latency percentiles, throughput |                                        |
-
-We focus on analytical data systems, with different patterns from transactional data systems.
-
-
-
-### Detailing the layers of a data station
-
-TO DO: provide detailed layers, and explain how interoperability works across the layers:
-
-- Storage layer (technology): all reference architectures stipulate use of S3-compliant blob storage
-- Data and metadata (application): resides in the data station
-- We propose to move towards open table formats, that is, Apache Iceberg, whereby storage and compute can be separated
-
-![Solution of a minimal lakehouse that sits at the core of a data station](./images/minimal-lakehouse.png){#fig-minimal-lakehouse}
-
-
-### Detailing the data conformity zone
-
-TO DO: explain that
-
-- data conformity zone is essentialy a lakehouse pattern
-- the architecture of a lakehouse has stabilized and converged towards:
-
-  - **Colum-oriented storage and memory layout:** Apache Arrow ecosystem, including Apache Flight
-  - **Late-binding with logical data models most suited for analytics:** ELT pattern with zonal architecture
-    - *staging zone:* hard business rules (does incoming data comply to syntactic standard), change data capture 
-    - *linkage & conformity zone:* concept-oriented tables, typically following a data vault modeling principle, ascertain referential integrity across resources, with tables per concept and linking tables. Mapping to coding systems. Entity resolution for record linkage at the subject level
-    - *consumption zone:* convenient standardized views like an event table (patient journey, layout for process mining) with uniformity of dimensions using a star schema
-
-### Detailing the trains
-
-TO DO: explain
-
-- difference between centralized and distributed federated learning (causes lots of confusion)
-- basically Train is a generalization of all types of computes
-- difference between
-  - Train for secondary use, which usually with batch-wise, less strict latency requirements
-  - Train for primary use, like API call and messaging, with stricter latency requirements. This also includes deployment of AI for inference
-
-
-
-
-## Reference implementation with current open source software (OSS) components
-
-### Data stations from the composable data stack
-
-- Python and SQL(-like) languages as the *de facto* standard for analytical processing i.e. the most commonly used analytical scripting languages. Where necessary, using Intermediate Representations (IR), any analytical query can be transpiled to the target engine of choice
-- Single-node compute capable of efficiently processing up to 1 TB of data within tens of seconds (polars, DuckDB), so we do away with distributed processing
-- Open table formats (Iceberg, Hudi, Delta) and open file formats (parquet, AVRO)
-
-### Container-based trains as the most versatile solution
-
-### Bringing it all together for federated analytics & machine learning (FL)
-
-- Local data stations are conceptualized as serverless lakehouses
-	- Local ELT pipelines
-	- Decentralized (pre-)processing, including quality control upon ingest
-	- ...
-- For horizontally partioned data, we can apply FL techniques where only aggregated results are combined centrally
-- For vertically partitioned data, we need an intermediate/temporary zone for linking the data
-- For both horizontally and vertically partitioned data, we can choose to add PETs, most specifically MPC, as an extra security measure
-	- Horizontally partitioned data: [one-shot FL](https://rosemanlabs.com/en/blogs/privacy-safe-federated-learning)
-	- Vertically partitioned data:
-  	- linkage in the blind
-  	- reversible pseudonimization
-- standardized approach to mapppings [@zhang2024crossstandard]
 
 
 ## Parking lot

@@ -70,6 +70,10 @@ website:
           text: "Introduction"
         - href: ./data-stations/comparison.qmd
           text: "Comparative analysis"
+        - href: ./data-stations/solution-design.qmd
+          text: "Solution design"
+        - href: ./data-stations/reference-implementation.qmd
+          text: "Reference implementation"
   page-navigation: true
 
 lightbox: true
