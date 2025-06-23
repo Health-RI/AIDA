@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the “data station” concept is realized in existing federated data systems:">
 
-<title>data-wrangler – Working document AI platform</title>
+<title>Comparative analysis for federated health data systems – Working document AI platform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +21,49 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7fd8ad32ce0e4370ac16bf4cc08ee761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../data-stations/index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7fd8ad32ce0e4370ac16bf4cc08ee761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,10 +93,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -85,8 +106,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../logo.png" alt="" class="navbar-logo">
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -95,11 +116,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">AIDA</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../data-stations/index.html"> 
+    <a class="nav-link" href="../data-stations/index.html"> 
 <span class="menu-text">Data Stations</span></a>
   </li>  
 </ul>
@@ -113,103 +134,194 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-stations/comparison.html">Comparative analysis</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo-health-ri.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://www.linkedin.com/company/health-ri/" title="LinkedIn profile" class="quarto-navigation-tool px-1" aria-label="LinkedIn profile"><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/Health-RI/AIDA" title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Zoeken"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-stations/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-stations/comparison.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Comparative analysis</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Op deze pagina</h2>
    
   <ul>
-  <li><a href="#data-wranglers-overview" id="toc-data-wranglers-overview" class="nav-link active" data-scroll-target="#data-wranglers-overview">Data Wranglers: Overview</a>
-  <ul class="collapse">
-  <li><a href="#what-do-data-wranglers-do" id="toc-what-do-data-wranglers-do" class="nav-link" data-scroll-target="#what-do-data-wranglers-do">What do Data Wranglers do?</a>
-  <ul class="collapse">
-  <li><a href="#examples-of-day-to-day-tasks" id="toc-examples-of-day-to-day-tasks" class="nav-link" data-scroll-target="#examples-of-day-to-day-tasks">Examples of day-to-day tasks:</a></li>
-  </ul></li>
-  <li><a href="#what-qualifications-or-skills-do-you-need-to-be-a-data-wrangler" id="toc-what-qualifications-or-skills-do-you-need-to-be-a-data-wrangler" class="nav-link" data-scroll-target="#what-qualifications-or-skills-do-you-need-to-be-a-data-wrangler">What qualifications or skills do you need to be a Data Wrangler?</a></li>
-  <li><a href="#challenges-for-data-wranglers" id="toc-challenges-for-data-wranglers" class="nav-link" data-scroll-target="#challenges-for-data-wranglers">Challenges for Data Wranglers</a></li>
-  <li><a href="#benefits-of-having-data-wranglers" id="toc-benefits-of-having-data-wranglers" class="nav-link" data-scroll-target="#benefits-of-having-data-wranglers">Benefits of having Data Wranglers</a></li>
-  <li><a href="#data-wranglers-summary" id="toc-data-wranglers-summary" class="nav-link" data-scroll-target="#data-wranglers-summary">Data Wranglers: Summary</a></li>
-  </ul></li>
+  <li><a href="#eucaim" id="toc-eucaim" class="nav-link active" data-scroll-target="#eucaim">EUCAIM</a></li>
+  <li><a href="#plugin" id="toc-plugin" class="nav-link" data-scroll-target="#plugin">PLUGIN</a></li>
+  <li><a href="#fair-data-cube" id="toc-fair-data-cube" class="nav-link" data-scroll-target="#fair-data-cube">Fair Data Cube</a></li>
+  <li><a href="#swiss-personal-health-network" id="toc-swiss-personal-health-network" class="nav-link" data-scroll-target="#swiss-personal-health-network">Swiss Personal Health Network</a></li>
+  <li><a href="#datastation-as-a-service-in-kik-v" id="toc-datastation-as-a-service-in-kik-v" class="nav-link" data-scroll-target="#datastation-as-a-service-in-kik-v">Datastation-as-a-Service in KIK-V</a></li>
+  <li><a href="#cumuluz-data-station" id="toc-cumuluz-data-station" class="nav-link" data-scroll-target="#cumuluz-data-station">Cumuluz data station</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="data-wrangler.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="comparison.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
-
-
-
-<section id="data-wranglers-overview" class="level1">
-<h1>Data Wranglers: Overview</h1>
-<p>Data Wranglers can be viewed as a specialised type of data scientist, primarily working in the space between data generators and data analysts. There are many activities that a data scientist might undertake, for example, data collection, wrangling, analysis, modelling, visualisation and communication. How these activities map onto different job titles is domain specific and will vary on a project and organisational level.</p>
-<div id="fig-data-wrangler" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-data-wrangler-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../../images/data-wrangler.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figuur&nbsp;1: A Data Wrangler collaborates with multiple specialists to provide research-ready data whilst upholding data privacy and domain-specific standards. Created by Scriberia with The Turing Way community. Used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807"><img src="../../images/data-wrangler.png" class="img-fluid figure-img"></a>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Comparative analysis for federated health data systems</h1>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-wrangler-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figuur&nbsp;1: A Data Wrangler collaborates with multiple specialists to provide research-ready data whilst upholding data privacy and domain-specific standards. Created by Scriberia with The Turing Way community. Used under a CC-BY 4.0 licence. DOI: <a href="https://doi.org/10.5281/zenodo.3332807">10.5281/zenodo.3332807</a>
+
+<div>
+  <div class="description">
+    <p>This section provides a detailed comparative analysis using the concepts of the PHT architecture of how the “data station” concept is realized in existing federated data systems:</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="eucaim" class="level2">
+<h2 class="anchored" data-anchor-id="eucaim">EUCAIM</h2>
+</section>
+<section id="plugin" class="level2">
+<h2 class="anchored" data-anchor-id="plugin">PLUGIN</h2>
+<p>The PLUGIN federated learning network is an ongoing initiative initated in 2022 by DHD, IKNL and Expertisecentrum Zorgalgoritmen (EZA) <span class="citation" data-cites="kapitan2025data">[<a href="#ref-kapitan2025data" role="doc-biblioref">1</a>]</span>. Its main objective is to realize a federated learning network that includes all 70 hospitals in the Netherlands. The PLUGIN network is intended to support a wide variety of use-cases including:</p>
+<ul>
+<li>AI-assisted coding (ICD10) based on supervised learning with language models</li>
+<li>Automated data submission for national registries such as the Dutch Cancer Registry managed by IKNL</li>
+<li>Descriptive analytics, for example, performance analysis across hospitals for benchmarking purpose</li>
+</ul>
+<p>The architecture of</p>
+</section>
+<section id="fair-data-cube" class="level2">
+<h2 class="anchored" data-anchor-id="fair-data-cube">Fair Data Cube</h2>
+<p>The Fair Data Cube <span class="citation" data-cites="liao2024fair">[<a href="#ref-liao2024fair" role="doc-biblioref">2</a>]</span> is a framework for the storage, analysis and integration of multi-omics data. Fair Data Cube reuses and extends existing open software components/modules and initiatives. This includes the FAIR Data Point <span class="citation" data-cites="dasilvasantos2023fair">[<a href="#ref-dasilvasantos2023fair" role="doc-biblioref">3</a>]</span> and vantage6 <span class="citation" data-cites="moncada-torres2021vantage6">[<a href="#ref-moncada-torres2021vantage6" role="doc-biblioref">4</a>]</span>. Further elements of the FDCube are the Investigation-Study-Assay (ISA) metadata framework<span class="citation" data-cites="sansone2012interoperable johnson2021isa">[<a href="#ref-sansone2012interoperable" role="doc-biblioref">5</a>, <a href="#ref-johnson2021isa" role="doc-biblioref">6</a>]</span> for capturing general study metadata, sample (including basic sample characteristics), and assay metadata, and the Phenopackets <span class="citation" data-cites="ladewig2023ga4gh">[<a href="#ref-ladewig2023ga4gh" role="doc-biblioref">7</a>]</span> standards for capturing phenotypic description of a patient/sample. The concept of the FDCube is illustrated <a href="#fig-fair-data-cube" class="quarto-xref">Figuur&nbsp;1</a>.</p>
+<div id="fig-fair-data-cube" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fair-data-cube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./images/fair-data-cube.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The concept of the FDCube. More details are available in https://github.com/Xomics/FAIRDataCube/wiki."><img src="./images/fair-data-cube.jpg" class="img-fluid figure-img"></a></p>
+<figcaption>The concept of the FDCube. More details are available in <a href="https://github.com/Xomics/FAIRDataCube/wiki">https://github.com/Xomics/FAIRDataCube/wiki</a>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-fair-data-cube" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-twoc-demonstrator" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-twoc-demonstrator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/twoc-demonstrator.jpg" class="lightbox" data-gallery="fig-fair-data-cube" title="Figuur&nbsp;1&nbsp;(a): Use of FDCube in the TWOC demonstrator. The FDCube workflows covers various functions including creating and publishing metadata, browsing and querying the metadata on FDP, and creating and running federated data analysis."><img src="./images/twoc-demonstrator.jpg" class="img-fluid figure-img" data-ref-parent="fig-fair-data-cube"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-twoc-demonstrator-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Use of FDCube in the TWOC demonstrator. The FDCube workflows covers various functions including creating and publishing metadata, browsing and querying the metadata on FDP, and creating and running federated data analysis.
 </figcaption>
 </figure>
 </div>
-<section id="what-do-data-wranglers-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-do-data-wranglers-do">What do Data Wranglers do?</h2>
-<p>In a data science project, it is commonly observed that data wrangling tasks take the majority of time {cite:ps}<code>anaconda2020sods</code>, in contrast to data analysis and modelling. Traditionally, data wrangling tasks involve cleaning, restructuring and filtering data into analysis-ready formats. However, in terms of Data Wrangler as a profession, day to day tasks and objectives can be much more diverse.</p>
-<p>Data Wranglers work primarily in the space between data generators and data analysts, who are addressing the research question of interest. Understanding the intended use for the data in the context of the analysis and research questions, Data Wranglers can be in the position of influencing data generators in improving data collection methods. Similarly, Data Wranglers will conduct preliminary analysis on the data to ensure both completeness of data and preparation for data analysis, acting as a proxy for the data generator’s knowledge during the data analysis process. A key focus of a Data Wrangler’s role is the preparation of analysis/research-ready data {cite:ps}<code>stewart2022table</code> in which data security, data management and FAIR standards {cite:ps}<code>mons2017fair</code> are all core priorities.</p>
-<section id="examples-of-day-to-day-tasks" class="level3">
-<h3 class="anchored" data-anchor-id="examples-of-day-to-day-tasks">Examples of day-to-day tasks:</h3>
-<ul>
-<li>Data retrieval, querying, data analysis and visualizations</li>
-<li>Data pipeline development, maintenance and improvement</li>
-<li>Communicating with domain and technical experts</li>
-<li>Data privacy and infrastructure setup and management</li>
-<li>Summarising domain specific research papers</li>
-<li>Sharing and reviewing resources and code</li>
-<li>Maintaining communication across multiple teams</li>
-<li>Running workshops on data wrangling and related skills</li>
-</ul>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fair-data-cube-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-twoc-demonstrator" class="quarto-xref">Figuur&nbsp;1 (a)</a> shows an example of how Fair Data Cube is used on a public dataset on COVID-19 featuring multi-omics patient data. This dataset was prepared, harmonized and FAIRified as part of the TWOC project. The dataset consists of paired omics data layers describing transcriptomics, proteomics and metabolomics of blood samples, and includes comprehensive phenotype information. Both the ISA metadata schema and Phenopackets schema are adopted. The ISA metadata schema is used as a standard metadata schema to capture metadata about (-omics) experiments, and serializes in an ISA-json file using ISA tools. The ISA tools also provided additional functionalities to convert the ISA objects into linked data, for example a ttl (Terse RDF Triple Language) file. The FAIRified metadata of the TWOC dataset was published on a Fair Data Point portal allowing for querying using SPARQL. After finding an interesting dataset via browsing or by SPARQL, the researcher could further run follow-up analyses on the target dataset by raising a computation request to the Vantage6 server and retrieve the returning results from the data station via Vantage6.</p>
 </section>
+<section id="swiss-personal-health-network" class="level2">
+<h2 class="anchored" data-anchor-id="swiss-personal-health-network">Swiss Personal Health Network</h2>
+<p>The Swiss SPHN network <span class="citation" data-cites="sphn">[<a href="#ref-sphn" role="doc-biblioref">8</a>]</span> as an example of a data station that uses graph databases both for the data and metadata</p>
 </section>
-<section id="what-qualifications-or-skills-do-you-need-to-be-a-data-wrangler" class="level2">
-<h2 class="anchored" data-anchor-id="what-qualifications-or-skills-do-you-need-to-be-a-data-wrangler">What qualifications or skills do you need to be a Data Wrangler?</h2>
-<p>Data Wranglers should have experience with programming (no specific language required, but there is a wider adoption of both <code>R</code> and <code>Python</code>), database querying (<code>SQL</code>) and data analysis. They will have an educational background to equip them to engage with the specific research data objects relevant to the projects they will work on. Therefore, they will have undergraduate and postgraduate degrees, or equivalent experience. As with many data science and research infrastructure roles, further relevant training and specialisation can happen on the job. They need good problem solving skills, with a curiosity and willingness to learn. Lastly, good interpersonal skills are required in order to work with people with many different backgrounds, skillsets and priorities.</p>
+<section id="datastation-as-a-service-in-kik-v" class="level2">
+<h2 class="anchored" data-anchor-id="datastation-as-a-service-in-kik-v">Datastation-as-a-Service in KIK-V</h2>
+<p>The Datastation-as-a-Service as defined by the Zorginstituut for federated analytics using privacy-enhancing technologies <span class="citation" data-cites="2024kikv">[<a href="#ref-2024kikv" role="doc-biblioref">9</a>]</span></p>
 </section>
-<section id="challenges-for-data-wranglers" class="level2">
-<h2 class="anchored" data-anchor-id="challenges-for-data-wranglers">Challenges for Data Wranglers</h2>
-<p>Some key challenges of a Data Wrangler role are:</p>
-<ul>
-<li>Immutable data collection methods (unable to change how data has been collected and stored)</li>
-<li>Stringent data privacy requirements</li>
-<li>Difficulties in accessing datasets</li>
-<li>Lack of or missing documentation on data generation, data structure and contextual information</li>
-<li>Insufficient resources (human, computational, economic)</li>
-<li>Unclear scope of responsibilities within the project</li>
-</ul>
-<p>In an ideal situation, some of these challenges can be mitigated if communication with Data Wranglers near the start of a project is encouraged and facilitated.</p>
-</section>
-<section id="benefits-of-having-data-wranglers" class="level2">
-<h2 class="anchored" data-anchor-id="benefits-of-having-data-wranglers">Benefits of having Data Wranglers</h2>
-<ul>
-<li>Improved communication between stakeholders: Data Wranglers will mediate the ‘language barriers’ between the different people involved in collecting the data, analysing the data and interpreting the data.</li>
-<li>Centrally coordinated efforts: Data Wranglers can collect common questions and discussion topics of interest and provide answers and resources.</li>
-<li>Data Wranglers will provide expertise in data collection, structuring and quality assurance. This can decrease the time it takes to go from data provider to data analysis, whilst also improving analysis quality and focus.</li>
-<li>Data Wranglers can ensure a project keeps up to date with field specific knowledge and standards relevant to data processing and sharing, and communicate this back to the project team.</li>
-<li>By participating and contributing to data analysis meetings and tasks, Data Wranglers can provide the best suitable datasets for the analysis, help understand and overcome challenges, and suggest further research paths.</li>
-</ul>
-</section>
-<section id="data-wranglers-summary" class="level2">
-<h2 class="anchored" data-anchor-id="data-wranglers-summary">Data Wranglers: Summary</h2>
-<p>A Data Wrangler position is becoming recognised as a crucial part of any project that involves large amounts of complex data, specifically in a research context. They will have a diverse set of technical and interpersonal skills. A Data Wrangler will bring dedicated time and resources to increasing data quality whilst facilitating collaboration, ultimately resulting in more efficient and impactful project outcomes.</p>
+<section id="cumuluz-data-station" class="level2">
+<h2 class="anchored" data-anchor-id="cumuluz-data-station">Cumuluz data station</h2>
+<p>[TO DO]</p>
+
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-kapitan2025data" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Kapitan D, Heddema F, Dekker A, Sieswerda M, Verhoeff B-J, Berg M (2025) Data <span>Interoperability</span> in <span>Context</span>: <span>The Importance</span> of <span>Open-Source Implementations When Choosing Open Standards</span>. Journal of Medical Internet Research 27(1):e66616. <a href="https://doi.org/10.2196/66616">https://doi.org/10.2196/66616</a></div>
+</div>
+<div id="ref-liao2024fair" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Liao X, Ederveen THA, Niehues A, et al (2024) <span>FAIR Data Cube</span>, a <span>FAIR</span> Data Infrastructure for Integrated Multi-Omics Data Analysis. J Biomed Semant 15(1):20. <a href="https://doi.org/10.1186/s13326-024-00321-2">https://doi.org/10.1186/s13326-024-00321-2</a></div>
+</div>
+<div id="ref-dasilvasantos2023fair" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">da Silva Santos LOB, Burger K, Kaliyaperumal R, Wilkinson MD (2023) <span>FAIR Data Point</span>: <span>A FAIR-Oriented Approach</span> for <span>Metadata Publication</span>. Data Intelligence 5(1):163–183. <a href="https://doi.org/10.1162/dint_a_00160">https://doi.org/10.1162/dint_a_00160</a></div>
+</div>
+<div id="ref-moncada-torres2021vantage6" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Moncada-Torres A, Martin F, Sieswerda M, Van Soest J, Geleijnse G (2021) <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8075508"><span>VANTAGE6</span>: An Open Source <span>priVAcy preserviNg federaTed leArninG infrastructurE</span> for <span>Secure Insight eXchange</span></a>. AMIA Annu Symp Proc 2020:870–877</div>
+</div>
+<div id="ref-sansone2012interoperable" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Sansone S-A, Rocca-Serra P, Field D, et al (2012) Toward Interoperable Bioscience Data. Nat Genet 44(2):121–126. <a href="https://doi.org/10.1038/ng.1054">https://doi.org/10.1038/ng.1054</a></div>
+</div>
+<div id="ref-johnson2021isa" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Johnson D, Batista D, Cochrane K, et al (2021) <span>ISA API</span>: <span>An</span> Open Platform for Interoperable Life Science Experimental Metadata. GigaScience 10(9):giab060. <a href="https://doi.org/10.1093/gigascience/giab060">https://doi.org/10.1093/gigascience/giab060</a></div>
+</div>
+<div id="ref-ladewig2023ga4gh" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Ladewig MS, Jacobsen JOB, Wagner AH, et al (2023) <span>GA4GH Phenopackets</span>: <span>A Practical Introduction</span>. Advanced Genetics 4(1):2200016. <a href="https://doi.org/10.1002/ggn2.202200016">https://doi.org/10.1002/ggn2.202200016</a></div>
+</div>
+<div id="ref-sphn" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline"><span>SPHN</span> - <span>Swiss Personalized Health Network</span> (<span>SPHN</span>). <a href="https://sphn.ch/">https://sphn.ch/</a>. Accessed 9 jun 2025</div>
+</div>
+<div id="ref-2024kikv" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">(2024) <a href="https://populationhealthdata.nl/wp-content/uploads/2024/07/Whitepaper-GERDA-x-KIK-V_-databeschikbaarheid-door-hergebruik.pdf"><span>KIK-V</span> x <span>GERDA</span></a>. Zorginstituut</div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -638,6 +750,15 @@ Figuur&nbsp;1: A Data Wrangler collaborates with multiple specialists to provide
   }
   loadGiscus();
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../data-stations/index.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {

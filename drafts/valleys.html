@@ -25,7 +25,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -65,11 +64,11 @@ div.csl-indent {
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -96,137 +95,48 @@ div.csl-indent {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <div id="quarto-announcement" data-announcement-id="5a3953608c613b1fc2dd7a15dda4f10a" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
 <p><strong>Let op</strong> - dit is een werkdocument dat bedoeld is om met experts, partners en andere belanghebbenden in discussie te gaan.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Strategisch perspectief</li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-      <div class="sidebar-tools-main tools-wide">
-    <a href="https://www.linkedin.com/company/health-ri/" title="LinkedIn profile" class="quarto-navigation-tool px-1" aria-label="LinkedIn profile"><i class="bi bi-linkedin"></i></a>
-    <a href="https://github.com/Health-RI/AIDA" title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../logo.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">AIDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data-stations/index.html"> 
+<span class="menu-text">Data Stations</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Schakel leesmodus">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
 </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Zoeken"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Startnotitie AIDA</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../strategisch/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Strategisch perspectief</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../strategisch/ai-in-de-zorg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AI in de zorg</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../strategisch/blauwdrukken.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Vergelijking blauwdrukken</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../business/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Business perspectief</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../business/personas/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Personas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../business/verhaallijn-data-engineer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verhaallijn data engineer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../business/verhaallijn-ml-engineer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verhaallijn machine learning engineer</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../technisch/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Appendixes</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://health-ri.github.io/AIDA-Archimate/" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">AIDA Archimate viewer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://health-ri.github.io/simple-open-architecture/" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Simpl Open Archimate viewer</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -278,7 +188,7 @@ div.csl-indent {
 </ul>
 <p>Elk van deze initiatieven maakt op zichzelf goede voortgang, maar lopen tegen knelpunten aan die ze individueel niet kunnen oplossen. Hiervoor is overzicht, regie en nauwe samenwerking met VWS nodig en intrinsieke betrokkenheid van essentiële ketenpartijen, waaronder Nictiz, de koepels, de Patiëntenfederatie en de zorg- en onderzoeksorganisaties.</p>
 <p>Het is in deze context dat Health-RI, NLAIC de krachten gebundeld, met betrokkenheid van ZN, om gezamenlijk een versneld en positief AI-innovatieklimaat te creëren in zorg en onderzoek wat heeft geleid tot een eerste aanzet voor een nationaal actieplan: AI4Health.</p>
-<p>Met deze aanpak willen we breed barrières aangepakken die het momenteel AI-gedreven innovaties buitengewoon moeilijk maken om de opschalingsfase bereiken. Vanuit de praktijk , waardoor impact op de noodzakelijke zorgtransformatie achterblijft. De dagelijkse praktijk wijst uit dat er drie breed-gevoelde barrières (<em>valleys of death</em>) die overkomen moeten worden (zie <span class="citation" data-cites="mxi2024ai">Gude, van Eekeren, en Vasseur (<a href="#ref-mxi2024ai" role="doc-biblioref">2024</a>)</span> voor een recent overzicht).</p>
+<p>Met deze aanpak willen we breed barrières aangepakken die het momenteel AI-gedreven innovaties buitengewoon moeilijk maken om de opschalingsfase bereiken. Vanuit de praktijk , waardoor impact op de noodzakelijke zorgtransformatie achterblijft. De dagelijkse praktijk wijst uit dat er drie breed-gevoelde barrières (<em>valleys of death</em>) die overkomen moeten worden (zie <span class="citation" data-cites="mxi2024ai">[<a href="#ref-mxi2024ai" role="doc-biblioref">1</a>]</span> voor een recent overzicht).</p>
 <div id="fig-three-valleys-of-death" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-three-valleys-of-death-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -303,12 +213,12 @@ Figuur&nbsp;1: De drie <em>valleys of death</em> die grootschalig gebruik van AI
 <blockquote class="blockquote">
 <p>“beveiligde verwerkingsomgeving”: de fysieke of virtuele omgeving en organisatorische middelen om te zorgen voor de naleving van het Unierecht, zoals Verordening (EU) 2016/679 (de Algemene verordening gegevensbescherming), met name wat betreft de rechten van datasubjecten, intellectuele-eigendomsrechten, en handels- en statistisch geheim, integriteit en toegankelijkheid, alsook van het toepasselijke nationale recht, en om de entiteit die de beveiligde verwerkingsomgeving biedt in staat te stellen alle gegevensverwerkingsactiviteiten te bepalen en er toezicht op te houden, met inbegrip van het tonen, opslaan, downloaden en exporteren van gegevens en het berekenen van afgeleide gegevens door middel van computeralgoritmen;</p>
 </blockquote>
-<p>Nationaal als ook internationaal zijn er voorbeelden van dergelijke beveiligde verwerkingsomgevingen. Zo hebben de meeste <em>National Statistics Offices (NSOs)</em> zoals het CBS een <a href="https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen">microdata omgeving</a>. Alhoewel deze omgevingen zijn opzet voordat machine learning zijn intrede deed, bieden de meeste microdata omgevingen nu ook al de mogelijkheid om ‘lichte’ algoritmes te trainen op tabulaire data. Een rapport van de Verenigde Naties beschrijft dat deze omgevingen in toenemende mate ook worden uitgebreid met nieuwe AI-technieken, zoals privacy-enhancing technologieën (PETs)(<span class="citation" data-cites="un2023pet-guide">(<a href="#ref-un2023pet-guide" role="doc-biblioref"><span>‘The <span>PET Guide</span>’</span> 2023</a>)</span>).</p>
+<p>Nationaal als ook internationaal zijn er voorbeelden van dergelijke beveiligde verwerkingsomgevingen. Zo hebben de meeste <em>National Statistics Offices (NSOs)</em> zoals het CBS een <a href="https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen">microdata omgeving</a>. Alhoewel deze omgevingen zijn opzet voordat machine learning zijn intrede deed, bieden de meeste microdata omgevingen nu ook al de mogelijkheid om ‘lichte’ algoritmes te trainen op tabulaire data. Een rapport van de Verenigde Naties beschrijft dat deze omgevingen in toenemende mate ook worden uitgebreid met nieuwe AI-technieken, zoals privacy-enhancing technologieën (PETs)(<span class="citation" data-cites="un2023pet-guide">[<a href="#ref-un2023pet-guide" role="doc-biblioref">2</a>]</span>).</p>
 <p>Specifiek voor de zorg zijn er ook al een aantal beveiligde verwerkingsomgevingen operationeel.</p>
 <ul>
 <li>Het Finse Social and Health Data Permit Authority (Findata) biedt met <a href="https://findata.fi/en/kapseli/">Kapseli</a> een landelijke voorziening aan dat aanvullend is op het Finse NSO.</li>
 <li>Het <a href="https://www.mayoclinicplatform.org/discover/">Mayo Clinic Platform_Discover</a> is een voorbeeld van een platform binnen een netwerk van zorg leveranciers.</li>
-<li>In toenemende mate worden federated learning (FL) platformen gebruikt <span class="citation" data-cites="teo2024federated">(<a href="#ref-teo2024federated" role="doc-biblioref">Teo e.a. 2024</a>)</span>. In Nederland is een actieve community rondom het <a href="https://distributedlearning.ai/">vantage6 platform</a> dat wordt gebruikt in het <a href="https://distributedlearning.ai/">PLUGIN project</a>, en internationaal in <a href="https://www.medicaldataworks.nl/customers">50 andere netwerken</a>.</li>
+<li>In toenemende mate worden federated learning (FL) platformen gebruikt <span class="citation" data-cites="teo2024federated">[<a href="#ref-teo2024federated" role="doc-biblioref">3</a>]</span>. In Nederland is een actieve community rondom het <a href="https://distributedlearning.ai/">vantage6 platform</a> dat wordt gebruikt in het <a href="https://distributedlearning.ai/">PLUGIN project</a>, en internationaal in <a href="https://www.medicaldataworks.nl/customers">50 andere netwerken</a>.</li>
 </ul>
 </section>
 <section id="een-eerste-ontwerp-van-aida" class="level2">
@@ -333,15 +243,15 @@ Figuur&nbsp;1: De drie <em>valleys of death</em> die grootschalig gebruik van AI
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-mxi2024ai" class="csl-entry" role="listitem">
-Gude, Wouter, Patrick van Eekeren, en Jordan Vasseur. 2024. <span>‘AI Monitor Ziekenhuizen 2024’</span>. M&amp;I Partners. <a href="https://mxi.nl/uploads/files/publication/ai-monitor-2024.pdf">https://mxi.nl/uploads/files/publication/ai-monitor-2024.pdf</a>.
-</div>
-<div id="ref-teo2024federated" class="csl-entry" role="listitem">
-Teo, Zhen Ling, Liyuan Jin, Nan Liu, Siqi Li, Di Miao, Xiaoman Zhang, Wei Yan Ng, e.a. 2024. <span>‘Federated Machine Learning in Healthcare: <span>A</span> Systematic Review on Clinical Applications and Technical Architecture’</span>. <em>Cell Reports Medicine</em> 5 (2): 101419. <a href="https://doi.org/10.1016/j.xcrm.2024.101419">https://doi.org/10.1016/j.xcrm.2024.101419</a>.
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Gude W, van Eekeren P, Vasseur J (2024) <a href="https://mxi.nl/uploads/files/publication/ai-monitor-2024.pdf">AI Monitor Ziekenhuizen 2024</a>. M&amp;I Partners</div>
 </div>
 <div id="ref-un2023pet-guide" class="csl-entry" role="listitem">
-<span>‘The <span>PET Guide</span>’</span>. 2023. United Nations. <a href="https://unstats.un.org/bigdata/task-teams/privacy/guide/">https://unstats.un.org/bigdata/task-teams/privacy/guide/</a>.
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">(2023) <a href="https://unstats.un.org/bigdata/task-teams/privacy/guide/">The <span>PET Guide</span></a>. United Nations</div>
+</div>
+<div id="ref-teo2024federated" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Teo ZL, Jin L, Liu N, et al (2024) Federated Machine Learning in Healthcare: <span>A</span> Systematic Review on Clinical Applications and Technical Architecture. Cell Reports Medicine 5(2):101419. <a href="https://doi.org/10.1016/j.xcrm.2024.101419">https://doi.org/10.1016/j.xcrm.2024.101419</a></div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -25,7 +25,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -66,11 +65,11 @@ div.csl-indent {
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -97,13 +96,44 @@ div.csl-indent {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <div id="quarto-announcement" data-announcement-id="5a3953608c613b1fc2dd7a15dda4f10a" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
 <p><strong>Let op</strong> - dit is een werkdocument dat bedoeld is om met experts, partners en andere belanghebbenden in discussie te gaan.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./logo.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">AIDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./data-stations/index.html"> 
+<span class="menu-text">Data Stations</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Schakel leesmodus">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -119,21 +149,16 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./logo-health-ri.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
-      <div class="sidebar-tools-main tools-wide">
+      <div class="sidebar-tools-main">
     <a href="https://www.linkedin.com/company/health-ri/" title="LinkedIn profile" class="quarto-navigation-tool px-1" aria-label="LinkedIn profile"><i class="bi bi-linkedin"></i></a>
     <a href="https://github.com/Health-RI/AIDA" title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Schakel leesmodus">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -289,7 +314,7 @@ div.csl-indent {
 <p><br></p>
 <section id="aanleiding-oproep-voor-een-nationaal-actieplan-ai4health" class="level2">
 <h2 class="anchored" data-anchor-id="aanleiding-oproep-voor-een-nationaal-actieplan-ai4health">Aanleiding: oproep voor een nationaal actieplan AI4health</h2>
-<p>Tijdens de laatste ICT&amp;Health conferentie is <a href="https://icthealth.nl/nieuws/overwin-de-valleys-of-death-in-ai-voor-de-zorg">een oproep gedaan</a> om te komen tot een nationaal actieplan AI4Health. De kern van deze oproep is dat, ondanks alle lopende initiatieven, er nog steeds veel barrières zijn om data- en AI-gedreven innovaties in de zorg op grote schaal te realiseren. De praktijk wijst uit dat er drie <em>valleys of death</em> overkomen moeten worden (zie <span class="citation" data-cites="mxi2024ai">Gude, van Eekeren, en Vasseur (<a href="#ref-mxi2024ai" role="doc-biblioref">2024</a>)</span> voor een recent overzicht):</p>
+<p>Tijdens de laatste ICT&amp;Health conferentie is <a href="https://icthealth.nl/nieuws/overwin-de-valleys-of-death-in-ai-voor-de-zorg">een oproep gedaan</a> om te komen tot een nationaal actieplan AI4Health. De kern van deze oproep is dat, ondanks alle lopende initiatieven, er nog steeds veel barrières zijn om data- en AI-gedreven innovaties in de zorg op grote schaal te realiseren. De praktijk wijst uit dat er drie <em>valleys of death</em> overkomen moeten worden (zie <span class="citation" data-cites="mxi2024ai">[<a href="#ref-mxi2024ai" role="doc-biblioref">1</a>]</span> voor een recent overzicht):</p>
 <div id="fig-three-valleys-of-death" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-three-valleys-of-death-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -452,7 +477,7 @@ Figuur&nbsp;3: Positionering van SANE binnen een generieke data space architectu
 </div>
 <p>Belangrijk kenmerk van SANE en andere TREs is dat de data fysiek naar de <em>Secure Data Zone</em> wordt gekopieerd. Naast het veilig aanbieden van data (als data houder), is dit ook het mechanisme waarmee data gebruikers hun eigen data mee kunnen nemen naar de TRE, om daarbinnen te koppelen aan andere data. Dit gebeurd vaak met gebruik van pseudonimisering. De CBS microdata omgeving werkt op een vergelijkbare manier.</p>
 <p>Binnen de blauwdruk van EOSC-ENTRUST wordt gesproken over <em>Federation Services</em> tussen verschillende TREs. Daarbij gaat het om data federation: data wordt (tijdelijk) van de ene naar de andere TRE gekopieerd zodat het daar in combinatie verwerkt kan worden. Data federation als mechanisme is anders dan federated learning: daarbij worden de berekeningen decentraal uitgevoerd en alleen de resultaten centraal gedeeld (zie hieronder). Federated learning is met name nuttig voor horizontaal gepartitioneerde data. Voor verticaal gepartitioneerde data, is data federation zoals beschreven door EOSC-ENTRUST meer geschikt.</p>
-<p>Er zijn meer voorbeelden van centrale SPEs. Zo hebben de meeste <em>National Statistics Offices (NSOs)</em> zoals het CBS een <a href="https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen">microdata omgeving</a>. Alhoewel deze omgevingen zijn opzet voordat machine learning zijn intrede deed, bieden de meeste microdata omgevingen nu ook al de mogelijkheid om ‘lichte’ algoritmes te trainen op tabulaire data. Een rapport van de Verenigde Naties beschrijft dat deze omgevingen in toenemende mate ook worden uitgebreid met nieuwe AI-technieken, zoals privacy-enhancing technologieën (PETs, zie <span class="citation" data-cites="un2023pet-guide"><span>‘The <span>PET Guide</span>’</span> (<a href="#ref-un2023pet-guide" role="doc-biblioref">2023</a>)</span>).</p>
+<p>Er zijn meer voorbeelden van centrale SPEs. Zo hebben de meeste <em>National Statistics Offices (NSOs)</em> zoals het CBS een <a href="https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen">microdata omgeving</a>. Alhoewel deze omgevingen zijn opzet voordat machine learning zijn intrede deed, bieden de meeste microdata omgevingen nu ook al de mogelijkheid om ‘lichte’ algoritmes te trainen op tabulaire data. Een rapport van de Verenigde Naties beschrijft dat deze omgevingen in toenemende mate ook worden uitgebreid met nieuwe AI-technieken, zoals privacy-enhancing technologieën (PETs, zie <span class="citation" data-cites="un2023pet-guide">[<a href="#ref-un2023pet-guide" role="doc-biblioref">2</a>]</span>).</p>
 <p>Er zijn ook voorbeelden van centrale SPEs specifiek voor de zorg:</p>
 <ul>
 <li>Het Finse Social and Health Data Permit Authority (Findata) biedt met <a href="https://findata.fi/en/kapseli/">Kapseli</a> een landelijke voorziening aan dat aanvullend is op het Finse NSO.</li>
@@ -461,7 +486,7 @@ Figuur&nbsp;3: Positionering van SANE binnen een generieke data space architectu
 </section>
 <section id="decentrale-spes-pluginvantage6" class="level3">
 <h3 class="anchored" data-anchor-id="decentrale-spes-pluginvantage6">Decentrale SPEs: PLUGIN/vantage6</h3>
-<p>Decentrale SPEs maken gebruik van federated learning (FL), wat als concept ook wel bekend staat als de Personal Health Train (PHT). FL wordt in toenemende mate gebruikt in de zorg <span class="citation" data-cites="teo2024federated">(<a href="#ref-teo2024federated" role="doc-biblioref">Teo e.a. 2024</a>)</span>; de term FL wordt vooral gebruikt om naar het technische concept te verwijzen, terwijl PHT verder gaat in het definiëren van afspraken rondom het gebruik van FL. In Nederland is een actieve community rondom het <a href="https://distributedlearning.ai/">vantage6 platform</a> dat wordt gebruikt in het <a href="https://distributedlearning.ai/">PLUGIN project</a>, en internationaal in <a href="https://www.medicaldataworks.nl/customers">50 andere netwerken</a>. Het basis principe is dat bij FL de gegevens op afzonderlijke ‘data stations’ verschillende apparaten blijven die participeren in het federatieve netwerk. Om deze data te gebruiken voor machine learning, wordt bij elk data station het algoritme lokaal c.q. afzonderlijk getraind. Vervolgens worden alleen de resultaten van het algoritme - bijvoorbeeld geaggregeerde statistieken of de modelparameters van het neurale netwerk - gedeeld met een centrale server. Deze server combineert de resultaten van afzonderlijke modellen tot één model, welke vervolgens met alle deelnemers van het federated SPE gedeeld wordt.</p>
+<p>Decentrale SPEs maken gebruik van federated learning (FL), wat als concept ook wel bekend staat als de Personal Health Train (PHT). FL wordt in toenemende mate gebruikt in de zorg <span class="citation" data-cites="teo2024federated">[<a href="#ref-teo2024federated" role="doc-biblioref">3</a>]</span>; de term FL wordt vooral gebruikt om naar het technische concept te verwijzen, terwijl PHT verder gaat in het definiëren van afspraken rondom het gebruik van FL. In Nederland is een actieve community rondom het <a href="https://distributedlearning.ai/">vantage6 platform</a> dat wordt gebruikt in het <a href="https://distributedlearning.ai/">PLUGIN project</a>, en internationaal in <a href="https://www.medicaldataworks.nl/customers">50 andere netwerken</a>. Het basis principe is dat bij FL de gegevens op afzonderlijke ‘data stations’ verschillende apparaten blijven die participeren in het federatieve netwerk. Om deze data te gebruiken voor machine learning, wordt bij elk data station het algoritme lokaal c.q. afzonderlijk getraind. Vervolgens worden alleen de resultaten van het algoritme - bijvoorbeeld geaggregeerde statistieken of de modelparameters van het neurale netwerk - gedeeld met een centrale server. Deze server combineert de resultaten van afzonderlijke modellen tot één model, welke vervolgens met alle deelnemers van het federated SPE gedeeld wordt.</p>
 <div id="fig-plugin" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plugin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -549,7 +574,7 @@ Figuur&nbsp;8: Bouwblokken voor geautomatiseerd proces voor beheer, uitgifte en 
 <section id="onderscheid-datastores-en-datasets" class="level3">
 <h3 class="anchored" data-anchor-id="onderscheid-datastores-en-datasets">Onderscheid datastores en datasets</h3>
 <p>Een van de uitgangspunten van de Health-RI architectuur is dat <a href="https://health-ri.atlassian.net/wiki/spaces/HNG/pages/608305356/Data+wordt+zo+dicht+mogelijk+bij+de+bron+FAIR+gemaakt+t.b.v.+meervoudig+gebruik.">data zo dicht mogelijk bij de bron FAIR wordt gemaakt</a>. Het concept van een <a href="https://www.fairdatapoint.org/">FAIR Data Point</a> is hierin leidend, waarvan inmiddels verschillende implementaties zijn en complementaire software componenten voor b.v. het <em>harvesten</em> van FAIR metadata catalogi.</p>
-<p>Een van de zaken die nader gespecificeerd moet worden is het onderscheid tussen een FAIR data set en een datastore. Een datastore in deze is een component dat als <em>system of record</em> data beschikbaar stelt voor hergebruik en/of een longitudinale datastore waarbij data vanuit verschillende bronsystemen worden gecombineerd en gepersisteerd. openEHR en OMOP zijn veel gebruikte standaarden voor de implemenetatie van een dergelijk datastore. Voor meer details en achtergrond verwijzen we naar <span class="citation" data-cites="tsafnat2024converge">Tsafnat e.a. (<a href="#ref-tsafnat2024converge" role="doc-biblioref">2024</a>)</span>.</p>
+<p>Een van de zaken die nader gespecificeerd moet worden is het onderscheid tussen een FAIR data set en een datastore. Een datastore in deze is een component dat als <em>system of record</em> data beschikbaar stelt voor hergebruik en/of een longitudinale datastore waarbij data vanuit verschillende bronsystemen worden gecombineerd en gepersisteerd. openEHR en OMOP zijn veel gebruikte standaarden voor de implemenetatie van een dergelijk datastore. Voor meer details en achtergrond verwijzen we naar <span class="citation" data-cites="tsafnat2024converge">[<a href="#ref-tsafnat2024converge" role="doc-biblioref">4</a>]</span>.</p>
 <p>Met name voor het beschikbaar stellen en hergebruiken van tabulaire data uit EPDs, HISen etc. is het wenselijk om snel te verkennen of een bepaalde dataset relevant is voor een gebruiker. We zien ‘verkenner’ voor ons, waarbij potentiele data gebruikers in staat worden gesteld om de datastore te queryen. Typisch betreft dit het zoeken naar relevante populaties in de datastores, bijvoorbeeld “hoeveel patienten ouder dan 65 met aandoening XXX” zitten in de datastore. De resultaat van een dergelijk query is overigens altijd een anonieme dataset met enkel geaggregeerde, beschrijvende statistieken.</p>
 <p>De meeste - en zo niet alle - open standaarden voor datastores hebben een mechanisme om dit te ondersteunen:</p>
 <ul>
@@ -619,18 +644,18 @@ Figuur&nbsp;9: Vereenvoudigd overzicht van de <em>composable data stack</em> (<a
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-mxi2024ai" class="csl-entry" role="listitem">
-Gude, Wouter, Patrick van Eekeren, en Jordan Vasseur. 2024. <span>‘AI Monitor Ziekenhuizen 2024’</span>. M&amp;I Partners. <a href="https://mxi.nl/uploads/files/publication/ai-monitor-2024.pdf">https://mxi.nl/uploads/files/publication/ai-monitor-2024.pdf</a>.
-</div>
-<div id="ref-teo2024federated" class="csl-entry" role="listitem">
-Teo, Zhen Ling, Liyuan Jin, Nan Liu, Siqi Li, Di Miao, Xiaoman Zhang, Wei Yan Ng, e.a. 2024. <span>‘Federated Machine Learning in Healthcare: <span>A</span> Systematic Review on Clinical Applications and Technical Architecture’</span>. <em>Cell Reports Medicine</em> 5 (2): 101419. <a href="https://doi.org/10.1016/j.xcrm.2024.101419">https://doi.org/10.1016/j.xcrm.2024.101419</a>.
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Gude W, van Eekeren P, Vasseur J (2024) <a href="https://mxi.nl/uploads/files/publication/ai-monitor-2024.pdf">AI Monitor Ziekenhuizen 2024</a>. M&amp;I Partners</div>
 </div>
 <div id="ref-un2023pet-guide" class="csl-entry" role="listitem">
-<span>‘The <span>PET Guide</span>’</span>. 2023. United Nations. <a href="https://unstats.un.org/bigdata/task-teams/privacy/guide/">https://unstats.un.org/bigdata/task-teams/privacy/guide/</a>.
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">(2023) <a href="https://unstats.un.org/bigdata/task-teams/privacy/guide/">The <span>PET Guide</span></a>. United Nations</div>
+</div>
+<div id="ref-teo2024federated" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Teo ZL, Jin L, Liu N, et al (2024) Federated Machine Learning in Healthcare: <span>A</span> Systematic Review on Clinical Applications and Technical Architecture. Cell Reports Medicine 5(2):101419. <a href="https://doi.org/10.1016/j.xcrm.2024.101419">https://doi.org/10.1016/j.xcrm.2024.101419</a></div>
 </div>
 <div id="ref-tsafnat2024converge" class="csl-entry" role="listitem">
-Tsafnat, Guy, Rachel Dunscombe, Davera Gabriel, Grahame Grieve, en Christian Reich. 2024. <span>‘Converge or <span>Collide</span>? <span>Making Sense</span> of a <span>Plethora</span> of <span>Open Data Standards</span> in <span>Health Care</span>’</span>. <em>Journal of Medical Internet Research</em> 26 (1): e55779. <a href="https://doi.org/10.2196/55779">https://doi.org/10.2196/55779</a>.
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Tsafnat G, Dunscombe R, Gabriel D, Grieve G, Reich C (2024) Converge or <span>Collide</span>? <span>Making Sense</span> of a <span>Plethora</span> of <span>Open Data Standards</span> in <span>Health Care</span>. Journal of Medical Internet Research 26(1):e55779. <a href="https://doi.org/10.2196/55779">https://doi.org/10.2196/55779</a></div>
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Voetnoten</h2>
 

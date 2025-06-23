@@ -25,7 +25,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -67,11 +66,11 @@ div.csl-indent {
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -98,13 +97,44 @@ div.csl-indent {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <div id="quarto-announcement" data-announcement-id="5a3953608c613b1fc2dd7a15dda4f10a" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
 <p><strong>Let op</strong> - dit is een werkdocument dat bedoeld is om met experts, partners en andere belanghebbenden in discussie te gaan.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../logo.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">AIDA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data-stations/index.html"> 
+<span class="menu-text">Data Stations</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Schakel leesmodus">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -120,21 +150,16 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../logo-health-ri.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
-      <div class="sidebar-tools-main tools-wide">
+      <div class="sidebar-tools-main">
     <a href="https://www.linkedin.com/company/health-ri/" title="LinkedIn profile" class="quarto-navigation-tool px-1" aria-label="LinkedIn profile"><i class="bi bi-linkedin"></i></a>
     <a href="https://github.com/Health-RI/AIDA" title="GitHub repository" class="quarto-navigation-tool px-1" aria-label="GitHub repository"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Schakel leesmodus">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -347,7 +372,7 @@ Figuur&nbsp;2
 </section>
 <section id="het-standaard-ontwikkelproces-voor-machine-learning-crisp-dm" class="level2">
 <h2 class="anchored" data-anchor-id="het-standaard-ontwikkelproces-voor-machine-learning-crisp-dm">Het standaard ontwikkelproces voor machine learning: CRISP-DM</h2>
-<p>Het ontwikkelen, trainen en evalueren van machine learning algoritmes wordt gedaan aan de hand van een standaard proces. De CRISP-DM methode is hiervan de meest gebruikte (zie <a href="#fig-crisp-dm" class="quarto-xref">Figuur&nbsp;3</a>). <span class="citation" data-cites="demast2022analytical">de Mast e.a. (<a href="#ref-demast2022analytical" role="doc-biblioref">2022</a>)</span> beschrijft hoe andere procesmodellen voor <em>problem solving</em> zoals Six Sigma DMAIC and PDCA ook hiervoor gebruikt kunnen worden. Aan de hand van dit proces schetsen wij hoog over wat AIDA zoal moet kunnen ondersteunen</p>
+<p>Het ontwikkelen, trainen en evalueren van machine learning algoritmes wordt gedaan aan de hand van een standaard proces. De CRISP-DM methode is hiervan de meest gebruikte (zie <a href="#fig-crisp-dm" class="quarto-xref">Figuur&nbsp;3</a>). <span class="citation" data-cites="demast2022analytical">[<a href="#ref-demast2022analytical" role="doc-biblioref">1</a>]</span> beschrijft hoe andere procesmodellen voor <em>problem solving</em> zoals Six Sigma DMAIC and PDCA ook hiervoor gebruikt kunnen worden. Aan de hand van dit proces schetsen wij hoog over wat AIDA zoal moet kunnen ondersteunen</p>
 <div id="fig-crisp-dm" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crisp-dm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -384,9 +409,9 @@ Figuur&nbsp;3: CRISP-DM methode voor het ontwikkelen van machine learning algori
 <section id="scope-aida" class="level2">
 <h2 class="anchored" data-anchor-id="scope-aida">Scope AIDA</h2>
 <ul>
-<li>Ondersteunen beide soorten. Voor een uitgebreider overzicht, zie <span class="citation" data-cites="ali2023systematic">Ali e.a. (<a href="#ref-ali2023systematic" role="doc-biblioref">2023</a>)</span></li>
+<li>Ondersteunen beide soorten. Voor een uitgebreider overzicht, zie <span class="citation" data-cites="ali2023systematic">[<a href="#ref-ali2023systematic" role="doc-biblioref">2</a>]</span></li>
 <li>Uitdaging is dat afhankelijk van de soort machine learning dat ontwikkeld wordt, de functionele eisen van AIDA anders zijn. Concreet: het trainen van een relatief eenvoudige classificatie model op een dataset van 10.000 patienten vereist veel minder rekenkracht dan b.v. het trainen van een foundational LLM met gebruik van klinische teksten uit EPD</li>
-<li>Machine learning vatten we breed op, dus het omvat ook andere vormen van statistical learning en problem solving (zie <span class="citation" data-cites="demast2022analytical">de Mast e.a. (<a href="#ref-demast2022analytical" role="doc-biblioref">2022</a>)</span>). Naast machine learning dient AIDA ook gebruikt te kunnen worden voor
+<li>Machine learning vatten we breed op, dus het omvat ook andere vormen van statistical learning en problem solving (zie <span class="citation" data-cites="demast2022analytical">[<a href="#ref-demast2022analytical" role="doc-biblioref">1</a>]</span>). Naast machine learning dient AIDA ook gebruikt te kunnen worden voor
 <ul>
 <li>Causal inference, Bayesian inference, structural causal modeling</li>
 <li>Deductieve modellen, zoals vaak in operations research worden gebruikt</li>
@@ -397,12 +422,12 @@ Figuur&nbsp;3: CRISP-DM methode voor het ontwikkelen van machine learning algori
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-ali2023systematic" class="csl-entry" role="listitem">
-Ali, Omar, Wiem Abdelbaki, Anup Shrestha, Ersin Elbasi, Mohammad Abdallah Ali Alryalat, en Yogesh K Dwivedi. 2023. <span>‘A Systematic Literature Review of Artificial Intelligence in the Healthcare Sector: <span>Benefits</span>, Challenges, Methodologies, and Functionalities’</span>. <em>Journal of Innovation &amp; Knowledge</em> 8 (1): 100333. <a href="https://doi.org/10.1016/j.jik.2023.100333">https://doi.org/10.1016/j.jik.2023.100333</a>.
-</div>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body" role="list">
 <div id="ref-demast2022analytical" class="csl-entry" role="listitem">
-Mast, Jeroen de, Stefan H. Steiner, Wim P. M. Nuijten, en Daniel Kapitan. 2022. <span>‘Analytical <span>Problem Solving Based</span> on <span>Causal</span>, <span>Correlational</span> and <span>Deductive Models</span>’</span>. <em>The American Statistician</em>, januari, 1–11. <a href="https://doi.org/10.1080/00031305.2021.2023633">https://doi.org/10.1080/00031305.2021.2023633</a>.
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">de Mast J, Steiner SH, Nuijten WPM, Kapitan D (2022) Analytical <span>Problem Solving Based</span> on <span>Causal</span>, <span>Correlational</span> and <span>Deductive Models</span>. null 1–11. <a href="https://doi.org/10.1080/00031305.2021.2023633">https://doi.org/10.1080/00031305.2021.2023633</a></div>
+</div>
+<div id="ref-ali2023systematic" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Ali O, Abdelbaki W, Shrestha A, Elbasi E, Alryalat MAA, Dwivedi YK (2023) A Systematic Literature Review of Artificial Intelligence in the Healthcare Sector: <span>Benefits</span>, Challenges, Methodologies, and Functionalities. Journal of Innovation &amp; Knowledge 8(1):100333. <a href="https://doi.org/10.1016/j.jik.2023.100333">https://doi.org/10.1016/j.jik.2023.100333</a></div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
