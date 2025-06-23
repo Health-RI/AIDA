@@ -77,12 +77,34 @@ sidebar: false
 fig-cap-location: top
 ---
 
-## Towards federated health data platforms for secondary use 
+## A shift towards federated data systems as a design paradigm
 
-The ambition for a seamlessly connected digital healthcare ecosystem, capable of leveraging vast quantities of patient data remains illusive. Designing and implementing health data platforms is notoriously difficult, given the heterogeneity and complexity of such systems. As a starting point - and to frame the scope of this paper - consider the trade-offs along the following two design criteria.
+The ambition for a seamlessly connected digital healthcare ecosystem, capable of leveraging vast quantities of patient data remains illusive. Designing and implementing health data platforms is notoriously difficult, given the heterogeneity and complexity of such systems. To address these issues, federated data systems have emerged as a design paradigm. This approach enables data to remain securely at its source, while allowing for distributed analysis and the generation of collective knowledge.
 
-### Primary vs. secondary health data sharing
-First, we distinguish health data platform for primary or secondary health availability [@cascini2024health]. It is well known data systems have different design an performance characteristics depending whether they are built for online transactional processing (OLTP) or online analytical processing (OLAP), as summarized in the @tbl-oltp-olap below (taken from @kleppmann2026designing).
+Recent technological inventions offer important new enablers to implement federated data systems, most notably:
+
+- Capabilities of edge computing and single-node computing has increased significantly whereby it is now possible to process up to 1 TB of tabular data on a single node thereby enabling large volumes of data processing to be done efficiently in a decentralized fashion [@raasveldt2019duckdb;@nahrstedt2024empirical];
+- Federated analytics [@wang2025survey], and specifically federated learning, has matured as a means for training of predictive models, most notable through weights sharing of deep learning networks [@rieke2020future;@teo2024federated];
+- Privacy-enhancing technologies (PETs) such as secure multi-party computation (MPC) significantly improve secure processing across a network of participants and are now sufficiently mature to be used on an industrial scale [@un2023pet-guide;@royalsociety2023privacy];
+- The composable data stack provides a way to unbundle the venerable relational database into loosely components, thereby making it easier and more practical to implement FDS using cloud-based components with microservices, thereby opening up a transition path towards more modular and robust architectures for FDS [@pedreira2023composable;@composable].
+
+The architectural shift from centralized to federated data systems is not merely a technical evolution. Modern approaches to data governance are undergoing a similar paradigm shift towards federated solutions. As an example, the concept of a [data mesh](https://martinfowler.com/articles/data-mesh-principles.html) is increasingly being adopted at large corporations. From the perspective of sovereignty and solidarity, we believe that a commons-based, federated approach has distinct benefits in moving towards a more equitable, open digital infrastructure [@krewer2024digital]. Federated data systems are inherently more aligned with contemporary data governance frameworks, including the Data Governance Act (DGA), the European Health Data Space (EHDS) and the concept of data solidarity [@prainsack2023beyond].
+
+However, this ongoing paradigm shift towards is not without challenges. The notion of what constitutes a federated data system needs to be defined in more detail if we are to see the forest for the trees between different instantiations of the same concept. For example, 'federation' can mean any of the following solution patterns:
+
+- Data federation addresses the problem of uniformly accessing multiple, possibly heterogeneous data sources, by mapping them into a unified schema, such as an RDF(S)/OWL ontology or a relational schema, and by supporting the execution of queries, like SPARQL or SQL queries, over that unified schema [@gu2022systematic];
+- Federation within the context of a Personal Health Train (PHT) refers to the concept by data processing is brought to the (personal health) data rather than the other way around, allowing (private) data accessed to be controlled, and to observe ethical and legal concerns [@beyan2020distributed;@choudhury2020personal;@boninodasilvasantos2022personal;@zhang2023secure], and is just one of many solutions designs that are collectively grouped as federated analytics [@wang2025survey];
+- Federation as a mechanism for data sharing in a temporary staging environment within a network of research organizations in a Trusted Research Environment (TRE), with different types of federations services (localization, access);
+- Federation services as defined in the DSSC Blueprint 2.0 pertain to the support the interplay of participants in a data space, operating in accordance to the policies and rules specified in the Rulebook by the data space authority.
+
+What then, is a viable development path out of this creative chaos?
+
+## Data stations as a foundational building block
+
+Inspired by previous calls to action to move towards open architectures for health data systems [@estrin2010health;@mehl2023fullstac] and the notion of the hourglass model [@estrin2010health;@beck2019hourglass;@schultes2023fair], we hypothesize that the concept of a 'data station' can be used as a foundational building block for federated data systems. A data station should provide a set of minimal standards (at the waist of the hourglass), thereby maximizing the freedom to operate between data providers and data consumers within the context of a health data space. Note that this approach has many similarities with the FAIR Hourglass [@boninodasilvasantos2022fair;@schultes2023fair]. Our approach of data stations presented here focuses on enabling on secondary data use of routine collected clinical data using the architecture of the Personal Health Train as a starting point [@beyan2020distributed;@choudhury2020personal;@boninodasilvasantos2022personal;@zhang2023secure]. The objective of this paper is to extend this architecture in order to address four design questions that are relevant in ongoing efforts to implement nation-wide federated systems.
+
+### Online transactional vs. analytical processing 
+First, it is well known data systems have different design an performance characteristics depending whether they are built for online transactional processing (OLTP) or online analytical processing (OLAP), as summarized in the @tbl-oltp-olap below (taken from @kleppmann2026designing).
 
 |Property|Transaction processing systems (OLTP)|Analytic systems (OLAP)|
 |---|---|---|
@@ -93,58 +115,39 @@ First, we distinguish health data platform for primary or secondary health avail
 |What data represents|Latest state of data (current point in time)|History of events that happened over time|
 |Dataset size|Gigabytes to terabytes|Terabytes to petabytes|
 
-: Distinguishing characteristics between transactional and analytical systems {#tbl-oltp-olap}
+: Distinguishing characteristics between online transactional and analytical systems {#tbl-oltp-olap}
 
-Current efforts to design and implement the European Health Data Space (EHDS) in fact aims to support primary and secondary use in one go [@ehds]. This Herculean endeavour has spawned many initiatives to develop a coherent architecture and support implementation across Europe that ultimately should lead to interoperability in the broadest sense of the word, most notably:
+Current efforts to design and implement the EHDS in fact aims to support primary (i.e. OLTP) and secondary use (OLAP) in one go [@ehds;@cascini2024health]. This Herculean endeavour has spawned many initiatives to develop a coherent architecture and support implementation across Europe that ultimately should lead to interoperability in the broadest sense of the word, most notably:
 
 - The Data Space Blueprint v2.0 (DSB2) by the Data Spaces Support Centre ([@dssc2025data]) that serves as a vital guide for organizations building and participating in data spaces.
 - The Simpl Programme ([@simpl]) that aims to develop an open source, secure middleware that supports data access and interoperability in European data initiatives. It provides multiple compatible components, free to use, that adhere to a common standard of data quality and data sharing.
 - TEHDAS2 ([@tehdas2]), a joint action that prepares the ground for the harmonised implementation of the secondary use of health data in the EHDS.
 
-We believe, however, that in order to successfully design and implement health data spaces, more detailed analysis and solution patterns are required that distinguish between primary (OLTP) and secondary (OLAP) data use. Although functional components can be shared between these two, it is a matter of the devil being in the details. Hence one of the objectives of this paper is to detail an open, technology agnostic architecture for secondary use, to complement existing efforts and guide the development in the field. Although this paper is mostly informed within the context of the Dutch healthcare sector, the solutions we propose are written with the wider European context in mind.
+We believe, however, that in order to successfully design and implement health data spaces, more detailed analysis and solution patterns are required that distinguish between primary (OLTP) and secondary (OLAP) data use. Although functional components can be shared between these two, it is a matter of the devil being in the details. Hence one of the objectives of this paper is to detail an open, technology agnostic architecture for secondary use, to complement existing efforts and guide the development in the field.
 
-### Centralized vs. decentralized platforms: what constitutes a federated data system?
-A second design criterium pertains to the choice of single-node (centralized) or distributed (decentralized) platforms, which are not only be driven by technical considerations (scalability, elasticity, fault tolerance, latency) but are also strongly dependent on organizational, legal or regulatory requirements such as data residency. The general approach of EHDS and other data spaces is federative by nature, that is, decentralized. For example, DSB2 stresses the need for interoperability and federative protocols within and across data spaces.
+### Centralized vs decentralized processing
+A second design question pertains to the choice of single-node (centralized) or distributed (decentralized) platforms, which are not only be driven by technical considerations (scalability, elasticity, fault tolerance, latency) but are also strongly dependent on organizational, legal or regulatory requirements such as data residency. The general approach of EHDS and other data spaces is federative by nature, that is, decentralized. For example, DSB2 stresses the need for interoperability and federative protocols within and across data spaces.
 
-Upon closer inspection, however, specific functional components that are foreseen within the EHDS are best characterized as centralized (sub-)systems. As an example, consider the secure processing environments (SPE) as defined in [article 50 of the EHDS](https://www.european-health-data-space.com/European_Health_Data_Space_Article_50_(Proposal_3.5.2022).html). Known examples of such SPEs include data platforms provided by national statistics officces (CBS Microdata environment), healthcare-specific national platforms (Finland's Kapseli platform) and Trusted Research Environments (TREs) within the domain of research (see [EOSC-ENTRUST](https://eosc-entrust.eu/) for examples across Europe). Given that healthcare data is often vertically partitioned (data elements of the same subject are scattered across various data holders), SPEs provide the most effective means to (temporarily) share, integrate and analyse such data. Hence many SPEs are best described as centralized systems, and thus we need to take into account that data spaces constiute a hybrid architecture that includes both centralized and decentralized components.
+Upon closer inspection, however, specific functional components that are foreseen within the EHDS are best characterized as centralized (sub-)systems. As an example, consider the secure processing environments (SPE) as defined in [recital 77 of the EHDS](https://eur-lex.europa.eu/legal-content/en/TXT/HTML/?uri=OJ:L_202500327#rct_77). Known examples of such SPEs include data platforms provided by national statistics offices (CBS Microdata environment), healthcare-specific national platforms (Finland's Kapseli platform) and Trusted Research Environments (TREs) within the domain of research (see [EOSC-ENTRUST](https://eosc-entrust.eu/) for examples across Europe). Given that healthcare data is often vertically partitioned (data elements of the same subject are scattered across various data holders), SPEs provide the most effective means to (temporarily) share, integrate and analyse such data. Hence many SPEs are best described as centralized systems, and thus we need to take into account that data spaces constitute a hybrid architecture that includes both centralized and decentralized components. Thus a more detailed analysis is required to arrive at scalable solution patterns that combine centralized vs. decentralized processing in a larger federated health data system.
 
-In computer science and engineering, federated data systems (FDS) have emerged as a new paradigm. Recent technological inventions offer important new enablers to to implement FDS:
+### Solution patterns to populate data stations
+A third design issue pertains to the mechanisms through which the data stations are to be populated with data by the data holder. In essence the industry is converging towards solution patterns from data engineering and data warehousing. OpenHIE specification, for example, makes a distinction of a Shared Health Record as a OLTP system for primary health data use vis-a-vis FHIR data pipelines that populate data stations for analytical, secondary use. [TO DO: improve wording, add references]
 
-- Capabilities of edge computing and single-node computing has increased significantly whereby it is now possible to process up to 1 TB of tabular data on a single node thereby enabling large volumes of data processing to be done efficiently on a single data station [@raasveldt2019duckdb;@nahrstedt2024empirical]
-- Federated machine learning (or federated learning in short) has matured as a means for training of predictive models, most notable through weights sharing of deep learning networks [@rieke2020future]
-- Privacy-enhancing technologies (PETs) such as secure multi-party computation (MPC) significantly improve secure processing across a network of participants and are now sufficiently mature to be used on an industrial scale [@un2023pet-guide;@royalsociety2023privacy]
-- The composable data stack provides a way to unbundle the venerable relational database into loosely components, thereby making it easier and more practical to implement FDS using cloud-based components with microservices, thereby opening up a transition path towards more modular and robust architectures for FDS [@pedreira2023composable;@composable].
+### Federation as system of systems
+The fourth design challenge pertains to the need for having a 'system of systems' [@gorod2008paradox] in the federated health data system at large. In real-world setting, secondary health data sharing will need to take into account the limited resources and expertise of smaller health care providers. In fact, the EHDS explicitly addresses this issue in article [article 50](https://eur-lex.europa.eu/legal-content/en/TXT/HTML/?uri=OJ:L_202500327#art_50) that exempts micro enterprises from the obligation to directly participate in the EHDS, but that each member state may opt to form so-called data intermediaries to act as a go-between ([recital 59](https://eur-lex.europa.eu/legal-content/en/TXT/HTML/?uri=OJ:L_202500327#rct_59)). Along a different dimension, we foresee a system of systems of various domain-specific federated networks that are loosely coupled, which poses design challenges in terms of autonomy (to what extend can each sub-network make independent choices), connectivity (how to connect sub-systems) and diversity.
 
-The architectural shift from centralized to federated data systems is not merely a technical evolution. Modern approaches to data governance are undergoing a paradigm shift towards federated solutions. As an example, the concept of a [data mesh](https://martinfowler.com/articles/data-mesh-principles.html) is increasingly being adopted at large corporations. From the perspective of sovereignty and solidarity, we believe that a commons-based, federated approach has distinct benefits in moving towards a more equitable, open digital infrastructure [@krewer2024digital].
+### Outline
 
-The ongoing paradigm shift is not without challenges. As noted by Perreira et al. ([2023](https://dl.acm.org/doi/10.14778/3603581.3603604)):
+In this paper we take loosely follow an Action Design Research approach [@sein2011action;@venable2016feds] to address these design questions. Our main contributions are:
 
-> The requirement for specialization in data management systems has evolved faster than our software development practices. After decades of organic growth, this situation has created a siloed landscape composed of hundreds of products developed and maintained as monoliths, with limited reuse between systems. This fragmentation has resulted in developers often reinventing the wheel, increased maintenance costs, and slowed down innovation. It has also affected the end users, who are often required to learn the idiosyncrasies of dozens of incompatible SQL and non-SQL API dialects, and settle for systems with incomplete functionality and inconsistent semantics.
-
-Also, the notion of what constitutes a federated data system needs to be defined more specifically if we are to see the forest for the trees between different instantiations of the same concept. 'Federation' can mean any of the following solution patterns:
-
-- Data federation addresses the problem of uniformly accessing multiple, possibly heterogeneous data sources, by mapping them into a unified schema, such as an RDF(S)/OWL ontology or a relational schema, and by supporting the execution of queries, like SPARQL or SQL queries, over that unified schema [@gu2022systematic];
-- Federation within the concext of a Personal Health Train (PHT) refers to the concept by data processing is brought to the (personal health) data rather than the other way around, allowing (private) data accessed to be controlled, and to observe ethical and legal concerns [@boninodasilvasantos2022personal];
-- Data sharing within a network of research organizations in a TRE, with different types of federations services (localization, access);
-- Federation services as defined in the DSSC Blueprint 2.0 pertain to the support the interplay of participants in a data space, operating in accordance to the policies and rules specified in the Rulebook by the data space authority.
-
-What then, is a viable development path out of this creative chaos?
-
-### Data stations as a foundational building block for federated data systems
-
-Inspired by previous calls to action to move towards open architectures for health data systems [@mehl2023fullstac;@estrin2010health] and the notion of the hourglass model [@estrin2010health;@beck2019hourglass;@schultes2023fair], we hypothesize that the concept of a 'data station' can be used as a foundational building block for federated data systems. A data station should provide a set of minimal standards (at the waist of the hourglass), thereby maximizing the freedom to operate between data providers and data consumers within the context of a health data space. Note that this approach has many similarities with the FAIR Hourglass as proposed by @schultes2023fair. Our approach of data stations, however, aims to complement these approach with focus on secondary data use of routine collected clinical data and the concept op the PHT.
-
-In this paper we take loosely follow an Action Design Research approach [@sein2011action;@venable2016feds] to design an open architecture for data station. Our main contributions are:
-
-- A harmonized ontology of a data station, that integrates the PHT architecture [@boninodasilvasantos2022personal] and the DSSC Blueprint 2.0
+- A harmonized ontology of a data station and data hub, that integrates the PHT architecture [@boninodasilvasantos2022personal] and the DSSC Blueprint 2.0
 - Comparative analysis of existing implementations
 - Synthesis of the above into functional and technical description of a data station in Archimate, thereby focusing on two primary patterns [@buschmann1996system]:
   - the layers pattern for addressing various aspects of interoperability across the stack, extending earlier work by @welten2024study who have introduced five layers of interoperability; 
   - the pipes and filters pattern for addressing various solution designs for the extract-transform-load (ETL) mechanisms through which data stations are populated, following the current common practice of datalakes and lakehouse solution designs [@harby2025data;@schneider2024lakehouse;@hai2023data;@abouzaid2025building;@mazumdar2023data];
 - A reference implementation of data stations using the trains based on containers as a generic infrastructure for federated learning and federated analysis.
 
-
-## Towards a unified ontology of data stations and trains
+## Towards a unified ontology of data stations and data hubs
 
 ### The Personal Health Train architecture
 
@@ -159,7 +162,7 @@ We take the Personal Health Train (PHT) architecture as our starting point [@bon
 High-level overview of the Personal Health Train (PHT) architecture
 :::
 
-In their paper @boninodasilvasantos2022personal continu to describe more details of the PHT architecture including i) the various functions, services, interface and internal components of the data station; ii) the data visiting process; and iii) the data staging concept in the case data access has been authorised, but the station is not capable of executing the train and needs to stage a capable station with enough resources to run the train. We will consider these details later.
+In their paper @boninodasilvasantos2022personal continu to describe more details of the PHT architecture including i) the various functions, services, interface and internal components of the data station; ii) the data visiting process; and iii) the data staging concept in the case data access has been authorized, but the station is not capable of executing the train and needs to stage a capable station with enough resources to run the train. We will consider these details later.
 
 As an aside, it is good to mention that the authors of the PHT architecture have initiated the development of two specifications after publication of this paper, namely:
 
@@ -168,7 +171,7 @@ As an aside, it is good to mention that the authors of the PHT architecture have
 
 ### Mapping PHT to the DSSC Blueprint 2.0
 
-To arrive at consistent 'ontology' of data stations and trains, @tbl-mapping-pht-dssc maps the PHT architecture to the DSSC Blueprint 2.0 (DSB2). Some mappings are relatively evident. For example, the concept of Data and Metadata as defined in PHT is subsumed in the concept of a Data Product in DSB2. Less evident, is the mapping of the notion of a Train that '... represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.' to Value Creation Services in DSB2 that includes data fusion and enrichment, collaborative data analytics and federated learning. We tentatively conclude that it is possible to have a consistent conceptual mapping between, at least at the high level, of the PHT architecture into DSB2. We will return to this matter, when more detailed functions and technical standards are considered for the Archimate specification.
+To arrive at consistent conceptualization of data stations and trains, @tbl-mapping-pht-dssc maps the PHT architecture to the DSSC Blueprint 2.0 (DSB2). Some mappings are relatively evident. For example, the concept of Data and Metadata as defined in PHT is subsumed in the concept of a Data Product in DSB2. Less evident, is the mapping of the notion of a Train that '... represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.' to Value Creation Services in DSB2 that includes data fusion and enrichment, collaborative data analytics and federated learning. We tentatively conclude that it is possible to have a consistent conceptual mapping between, at least at the high level, of the PHT architecture into DSB2. We will return to this matter, when more detailed functions and technical standards are considered for the Archimate specification.
 
 +-----------------------+-------------------------------------------------------------------------------------------------------------+
 | Component PHT         | mapping to DSSC Blueprint 2.0 concepts                                                                      |
@@ -193,7 +196,7 @@ To arrive at consistent 'ontology' of data stations and trains, @tbl-mapping-pht
 +-----------------------+-------------------------------------------------------------------------------------------------------------+
 | - Train Provider      | - Service Provider                                                                                          |
 +-----------------------+-------------------------------------------------------------------------------------------------------------+
-| - Train Handler       | - specialization of Data Space Component that realises the Train Value Creation Service                     |
+| - Train Handler       | - specialization of Data Space Component that realizes the Train Value Creation Service                     |
 +-----------------------+-------------------------------------------------------------------------------------------------------------+
 | - Train Owner         | - included in Service Provider as most generic role                                                         |
 |                       | - concept of Intermediary (specialization of SP) is closer to definition of Train Owner                     |
