@@ -2,106 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://Health-RI.github.io/AIDA/ai-position-paper/index.html</loc>
-    <lastmod>2025-06-24T18:19:32.928Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.639Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/business/personas/community-manager.html</loc>
-    <lastmod>2025-06-24T18:19:32.928Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/business/personas/research-infrastructure-developer.html</loc>
-    <lastmod>2025-06-24T18:19:32.928Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/business/personas/data-wrangler.html</loc>
-    <lastmod>2025-06-24T18:19:32.928Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/business/verhaallijn-data-engineer.html</loc>
-    <lastmod>2025-06-24T18:19:32.929Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/strategisch/index.html</loc>
-    <lastmod>2025-06-24T18:19:33.673Z</lastmod>
+    <lastmod>2025-06-26T15:22:09.392Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/strategisch/ahds.html</loc>
-    <lastmod>2025-06-24T18:19:33.673Z</lastmod>
+    <lastmod>2025-06-26T15:22:09.392Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/technisch/index.html</loc>
-    <lastmod>2025-06-24T18:19:33.674Z</lastmod>
+    <lastmod>2025-06-26T15:22:09.392Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/drafts/valleys.html</loc>
-    <lastmod>2025-06-24T18:19:32.951Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.668Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/drafts/mpc.html</loc>
-    <lastmod>2025-06-24T18:19:32.951Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/drafts/kapseli.html</loc>
-    <lastmod>2025-06-24T18:19:32.951Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/data-stations/index.html</loc>
-    <lastmod>2025-06-24T18:19:32.951Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/data-stations/comparison.html</loc>
-    <lastmod>2025-06-24T18:19:32.929Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Health-RI.github.io/AIDA/data-stations/terminology.html</loc>
+    <lastmod>2025-06-26T15:22:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/data-stations/reference-implementation.html</loc>
-    <lastmod>2025-06-24T18:19:32.951Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/data-stations/solution-design.html</loc>
-    <lastmod>2025-06-24T18:19:32.951Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/drafts/plugin.html</loc>
-    <lastmod>2025-06-24T18:19:32.951Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/drafts/andrea.html</loc>
-    <lastmod>2025-06-24T18:19:32.951Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/drafts/scratchpad.html</loc>
-    <lastmod>2025-06-24T18:19:32.951Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/strategisch/blauwdrukken.html</loc>
-    <lastmod>2025-06-24T18:19:33.673Z</lastmod>
+    <lastmod>2025-06-26T15:22:09.392Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/strategisch/ai-in-de-zorg.html</loc>
-    <lastmod>2025-06-24T18:19:33.673Z</lastmod>
+    <lastmod>2025-06-26T15:22:09.392Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/business/verhaallijn-ml-engineer.html</loc>
-    <lastmod>2025-06-24T18:19:32.929Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/business/personas/rse-personal-story.html</loc>
-    <lastmod>2025-06-24T18:19:32.928Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/business/personas/rse.html</loc>
-    <lastmod>2025-06-24T18:19:32.929Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/business/personas/ram.html</loc>
-    <lastmod>2025-06-24T18:19:32.928Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/business/personas/index.html</loc>
-    <lastmod>2025-06-24T18:19:32.928Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.640Z</lastmod>
   </url>
   <url>
     <loc>https://Health-RI.github.io/AIDA/index.html</loc>
-    <lastmod>2025-06-24T18:19:32.972Z</lastmod>
+    <lastmod>2025-06-26T15:22:08.689Z</lastmod>
   </url>
 </urlset>

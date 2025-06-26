@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Personas – Working document AI platform</title>
+<title>Towards a unified ontology of data stations and data hubs – Working document AI platform</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +20,50 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../business/verhaallijn-data-engineer.html" rel="next">
-<link href="../../business/index.html" rel="prev">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7fd8ad32ce0e4370ac16bf4cc08ee761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../data-stations/comparison.html" rel="next">
+<link href="../data-stations/index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7fd8ad32ce0e4370ac16bf4cc08ee761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,67 +91,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Zoeken"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-personas .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-personas'] = new List('listing-personas', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -144,8 +106,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../logo.png" alt="" class="navbar-logo">
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Schakel navigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -154,11 +116,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">AIDA</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../data-stations/index.html"> 
+    <a class="nav-link" href="../data-stations/index.html"> 
 <span class="menu-text">Data Stations</span></a>
   </li>  
 </ul>
@@ -177,7 +139,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../business/index.html">Business perspectief</a></li><li class="breadcrumb-item"><a href="../../business/personas/index.html">Personas</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-stations/terminology.html">Harmonized terminology</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Schakel zijbalknavigatie" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Zoeken" onclick="window.quartoOpenSearch();">
@@ -191,8 +153,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../logo-health-ri.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo-health-ri.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
     <a href="https://www.linkedin.com/company/health-ri/" title="LinkedIn profile" class="quarto-navigation-tool px-1" aria-label="LinkedIn profile"><i class="bi bi-linkedin"></i></a>
@@ -208,99 +170,58 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Startnotitie AIDA</span></a>
+  <a href="../data-stations/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../strategisch/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Strategisch perspectief</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../strategisch/ai-in-de-zorg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AI in de zorg</span></a>
+  <a href="../data-stations/terminology.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Harmonized terminology</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../strategisch/blauwdrukken.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Vergelijking blauwdrukken</span></a>
+  <a href="../data-stations/comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparative analysis</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../business/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Business perspectief</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../business/personas/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Personas</span></a>
+  <a href="../data-stations/solution-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solution design</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../business/verhaallijn-data-engineer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verhaallijn data engineer</span></a>
+  <a href="../data-stations/reference-implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reference implementation</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../business/verhaallijn-ml-engineer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Verhaallijn machine learning engineer</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../technisch/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Appendixes</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Schakel sectie">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://health-ri.github.io/AIDA-Archimate/" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">AIDA Archimate viewer</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="https://health-ri.github.io/simple-open-architecture/" class="sidebar-item-text sidebar-link" target="_blank">
- <span class="menu-text">Simpl Open Archimate viewer</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Op deze pagina</h2>
+   
+  <ul>
+  <li><a href="#the-personal-health-train-architecture" id="toc-the-personal-health-train-architecture" class="nav-link active" data-scroll-target="#the-personal-health-train-architecture">The Personal Health Train architecture</a></li>
+  <li><a href="#mapping-pht-to-the-dssc-blueprint-2.0" id="toc-mapping-pht-to-the-dssc-blueprint-2.0" class="nav-link" data-scroll-target="#mapping-pht-to-the-dssc-blueprint-2.0">Mapping PHT to the DSSC Blueprint 2.0</a></li>
+  <li><a href="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" id="toc-the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="nav-link" data-scroll-target="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</a></li>
+  <li><a href="#parking-lot" id="toc-parking-lot" class="nav-link" data-scroll-target="#parking-lot">Parking lot</a></li>
+  <li><a href="#sec-glossary" id="toc-sec-glossary" class="nav-link" data-scroll-target="#sec-glossary">Glossary</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Andere formaten</h2><ul><li><a href="terminology.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../business/index.html">Business perspectief</a></li><li class="breadcrumb-item"><a href="../../business/personas/index.html">Personas</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Personas</h1>
+<h1 class="title">Towards a unified ontology of data stations and data hubs</h1>
 </div>
 
 
@@ -317,113 +238,243 @@ window.Quarto = {
 </header>
 
 
-<p>Vanuit de dagelijkse praktijk van data science &amp; AI ontwikkeling weten we dat er verschillende rollen zijn. Deze rollen zijn echter nog fluide, er is geen ‘standaard’ definitie. Als startpunt nemen we de beschrijvingen van personas van <a href="https://book.the-turing-way.org/">The Turing Way</a>, een Europees initatief dat <em>best practices</em> beschrijft data science in een onderzoek- en ontwikkelomgeving. Voor nu zijn de Engelse teksten overgenomen, deze kunnen later naar het nederlands worden vertaald.</p>
-<p>De rollen die binnen de architectuur van databeschikbaarheid reeds zijn beschreven zijn buiten beschouwing gelaten (<a href="https://health-ri.atlassian.net/wiki/spaces/HWV4/pages/793611340/Rollen">Rollen v4.0</a>)</p>
-<div id="listing-personas" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-personas-sort" class="form-select" aria-label="Sorteer op" onchange="window['quarto-listings']['listing-personas'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Sorteer op</option>
-      <option value="index" data-direction="asc">Standaard</option>
-      <option value="listing-title-sort" data-direction="asc">
-        Titel
-      </option>
-      <option value="listing-author" data-direction="asc">
-        Auteur
-      </option>
-    </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
+<section id="the-personal-health-train-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="the-personal-health-train-architecture">The Personal Health Train architecture</h2>
+<p>We take the Personal Health Train (PHT) architecture as our starting point <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">1</a>]</span>, wherein a Data Station is defined as a software application primarily responsible for making data and its associated metadata available to users under conditions determined by applicable regulations and Data Controllers. The main concepts are shown in <a href="#fig-pht-roles-components" class="quarto-xref">Figuur&nbsp;1 (a)</a>, while the various types of trains are shown in <a href="#fig-pht-train-types" class="quarto-xref">Figuur&nbsp;1 (b)</a>. A glossary of the concept is provided in <a href="#sec-glossary" class="quarto-xref">Paragraaf&nbsp;5</a>.</p>
+<div id="fig-pht" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pht" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-pht-roles-components" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-pht-roles-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/pht-roles-components.png" class="lightbox" data-gallery="fig-pht" title="Figuur&nbsp;1&nbsp;(a): Main roles and components"><img src="./images/pht-roles-components.png" class="img-fluid figure-img" data-ref-parent="fig-pht"></a>
 </div>
-<table class="quarto-listing-table table">
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pht-roles-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Main roles and components
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pht" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-pht-train-types" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-pht-train-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="./images/pht-train-types.png" class="lightbox" data-gallery="fig-pht" title="Figuur&nbsp;1&nbsp;(b): Train types"><img src="./images/pht-train-types.png" class="img-fluid figure-img" data-ref-parent="fig-pht"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pht-train-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Train types
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figuur&nbsp;1: High-level overview of the Personal Health Train (PHT) architecture
+</figcaption>
+</figure>
+</div>
+<p>In their paper <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">1</a>]</span> continu to describe more details of the PHT architecture including i) the various functions, services, interface and internal components of the data station; ii) the data visiting process; and iii) the data staging concept in the case data access has been authorized, but the station is not capable of executing the train and needs to stage a capable station with enough resources to run the train. We will consider these details later.</p>
+<p>As an aside, it is good to mention that the authors of the PHT architecture have initiated the development of two specifications after publication of this paper, namely:</p>
+<ul>
+<li><a href="https://specs.fairdatapoint.org/fdp-specs-v1.2.html">FAIR Data Point</a> specification, which covers only the metadata and catalog part of the PHT architecture;</li>
+<li>the <a href="https://specs.fairdatatrain.org/">FAIR Data Train</a> specification, which covers the full scope of the original paper but at the time of writing is still incomplete.</li>
+</ul>
+</section>
+<section id="mapping-pht-to-the-dssc-blueprint-2.0" class="level2">
+<h2 class="anchored" data-anchor-id="mapping-pht-to-the-dssc-blueprint-2.0">Mapping PHT to the DSSC Blueprint 2.0</h2>
+<p>To arrive at consistent conceptualization of data stations and trains, <a href="#tbl-mapping-pht-dssc" class="quarto-xref">Tabel&nbsp;1</a> maps the PHT architecture to the DSSC Blueprint 2.0 (DSB2). Some mappings are relatively evident. For example, the concept of Data and Metadata as defined in PHT is subsumed in the concept of a Data Product in DSB2. Less evident, is the mapping of the notion of a Train that ‘… represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.’ to Value Creation Services in DSB2 that includes data fusion and enrichment, collaborative data analytics and federated learning. We tentatively conclude that it is possible to have a consistent conceptual mapping between, at least at the high level, of the PHT architecture into DSB2. We will return to this matter, when more detailed functions and technical standards are considered for the Archimate specification.</p>
+<div id="tbl-mapping-pht-dssc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mapping-pht-dssc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;1: Mapping the key concepts from the PHT architecture <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">1</a>]</span> to the <a href="https://dssc.eu/space/BVE2/1071252161/Alphabetical+List+of+All+Defined+Terms+in+Blueprint+v2.0">concepts of the DSSC Blueprint 2.0</a>.
+</figcaption>
+<div aria-describedby="tbl-mapping-pht-dssc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <thead>
-<tr>
-
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Titel</a>
-</th>
-
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Auteur</a>
-</th>
-
+<tr class="header">
+<th style="text-align: left;">Component PHT</th>
+<th style="text-align: left;">mapping to DSSC Blueprint 2.0 concepts</th>
 </tr>
 </thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-file-modified-sort="1750951328640" data-listing-reading-time-sort="5" data-listing-word-count-sort="930" data-listing-title-sort="Community Managers: Overview" data-listing-filename-sort="community-manager.md">
-<td>
-<a href="../../business/personas/community-manager.html" class="title listing-title">Community Managers: Overview</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><ul>
+<li>Data Station</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>Data Space Building Block</li>
+</ul></td>
 </tr>
-
-<tr data-index="1" data-listing-file-modified-sort="1750951328640" data-listing-reading-time-sort="4" data-listing-word-count-sort="741" data-listing-title-sort="Data Wranglers: Overview" data-listing-filename-sort="data-wrangler.md">
-<td>
-<a href="../../business/personas/data-wrangler.html" class="title listing-title">Data Wranglers: Overview</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
+<tr class="even">
+<td style="text-align: left;"><ul>
+<li>Data</li>
+<li>Metadata</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li><a href="https://dssc.eu/space/BVE2/1071253231/Data+Space+Offering#3.1.-Data-products">Data Product</a></li>
+</ul></td>
 </tr>
-
-<tr data-index="2" data-listing-file-modified-sort="1750951328640" data-listing-reading-time-sort="3" data-listing-word-count-sort="576" data-listing-title-sort="Research Application Managers: Overview" data-listing-filename-sort="ram.md">
-<td>
-<a href="../../business/personas/ram.html" class="title listing-title">Research Application Managers: Overview</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
+<tr class="odd">
+<td style="text-align: left;"><ul>
+<li>Data Controller</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>Data Rights Holder</li>
+</ul></td>
 </tr>
-
-<tr data-index="3" data-listing-file-modified-sort="1750951328640" data-listing-reading-time-sort="3" data-listing-word-count-sort="588" data-listing-title-sort="Research Infrastructure Developer: Overview" data-listing-filename-sort="research-infrastructure-developer.md">
-<td>
-<a href="../../business/personas/research-infrastructure-developer.html" class="title listing-title">Research Infrastructure Developer: Overview</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
+<tr class="even">
+<td style="text-align: left;"><ul>
+<li>Station Controller</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>Data Product Provider</li>
+</ul></td>
 </tr>
-
-<tr data-index="4" data-listing-file-modified-sort="1750951328640" data-listing-reading-time-sort="2" data-listing-word-count-sort="371" data-listing-title-sort="Research Software Engineer: Overview" data-listing-filename-sort="rse.md">
-<td>
-<a href="../../business/personas/rse.html" class="title listing-title">Research Software Engineer: Overview</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
+<tr class="odd">
+<td style="text-align: left;"><ul>
+<li>Personal Gateway</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>included in Participant Agent Services</li>
+</ul></td>
 </tr>
-
-<tr data-index="5" data-listing-file-modified-sort="1750951328640" data-listing-reading-time-sort="8" data-listing-word-count-sort="1593" data-listing-title-sort="Research Software Engineering Personal Story" data-listing-filename-sort="rse-personal-story.md">
-<td>
-<a href="../../business/personas/rse-personal-story.html" class="title listing-title">Research Software Engineering Personal Story</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-
+<tr class="even">
+<td style="text-align: left;"><ul>
+<li>Station Directory</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>included in Federation Services</li>
+<li>Catalogue provisions and discovers offerings of data and services in a data space</li>
+</ul></td>
 </tr>
-
+<tr class="odd">
+<td style="text-align: left;"><ul>
+<li>Directory Owner</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>Common Intermediary provides federation services that are common to all participants of the data space</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><ul>
+<li>Train</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>Value Creation Services</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><ul>
+<li>Train Provider</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>Service Provider</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><ul>
+<li>Train Handler</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>specialization of Data Space Component that realizes the Train Value Creation Service</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><ul>
+<li>Train Owner</li>
+</ul></td>
+<td style="text-align: left;"><ul>
+<li>included in Service Provider as most generic role</li>
+<li>concept of Intermediary (specialization of SP) is closer to definition of Train Owner</li>
+</ul></td>
+</tr>
 </tbody>
 </table>
-<div class="listing-no-matching d-none">Geen overeenkomsten</div>
 </div>
+</figure>
+</div>
+</section>
+<section id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="level2">
+<h2 class="anchored" data-anchor-id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</h2>
+<p>The PHT architecture does not specify <em>how</em> the data stations should be populated with data. Also the DSB2 only describes how the ‘Data, Services and Offerings descriptions’ building block should provide data providers the tools to describe a data product appropriately and completely, that is, tools for metadata creation and management.</p>
+<p>One of the key questions of this paper is to detail <a href="https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download">the ‘data conformity zone’ as defined in the Cumuluz canvas</a> as the functionality through which the data station is populated</p>
+</section>
+<section id="parking-lot" class="level2">
+<h2 class="anchored" data-anchor-id="parking-lot">Parking lot</h2>
+<ul>
+<li>Difference with data mesh: mesh of domains, federation is in the same domain. Underlying technology of a data station, however, is functionally identical</li>
+<li>UMCU: CQRS pattern for separately optimizing read/write patterns</li>
+<li>DSSC Blueprint: FL subsumed in value adding services</li>
+</ul>
+<p><a href="#tbl-types-hdp" class="quarto-xref">Tabel&nbsp;2</a> lists known examples of existing health data platform architectures along these two trade-offs.</p>
+<div id="tbl-types-hdp" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-types-hdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabel&nbsp;2: Broad categorization of health data platforms
+</figcaption>
+<div aria-describedby="tbl-types-hdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 37%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>primary</th>
+<th>secondary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>centralized</strong></td>
+<td>openHIE <span class="citation" data-cites="2024openhie">[<a href="#ref-2024openhie" role="doc-biblioref">2</a>]</span>, Digizorg, Nordics</td>
+<td>kapseli, Mayo, …</td>
+</tr>
+<tr class="even">
+<td><strong>decentralized</strong></td>
+<td>RSO Zuid Limburg, Twiin portaal, …</td>
+<td>many federated analytics research networks such as x-omics programme and EUCAIM</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-glossary" class="level2">
+<h2 class="anchored" data-anchor-id="sec-glossary">Glossary</h2>
+<ul>
+<li><em>Data Controller</em> (Business Role) is the role of controlling rights over data.</li>
+<li><em>Data Station</em> (Business Product) is a software application responsible for making data and their related metadata available to users under the accessibility conditions determined by applicable regulations and the related Data Controllers.</li>
+<li><em>Directory Owner</em> (Business Role) is the role of being responsible for the operation of a Station Directory.</li>
+<li><em>Personal Gateway</em> (Business Product) is a software application responsible for mediating the communication between Data Stations and Data Controllers. The Data Controllers are able to exercise their control over the data available in different Data Stations through the Personal Gateway.</li>
+<li><em>Station Directory</em> (Business Product) is a software application responsible for indexing metadata from the reachable Data Stations, allowing users to search for data available in those stations.</li>
+<li><em>Train</em> (Business Representation) represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.</li>
+<li><em>Train Handler</em> (Business Representation) is a software application that interacts with the Stations Directory on behalf of a client to discover the availability and location of data and sends Trains to Data Stations.</li>
+<li><em>Station Owner</em> (Business Role) is the role of being responsible for the operation of a Data Station.</li>
+<li><em>Train Owner</em> (Business Role) is the role of using a Train Handler to send Trains to Data Stations.</li>
+<li><em>Train Provider</em> (Business Role) is the role of being responsible for the creation of a specific Train, e.g.&nbsp;the developer of a specific analysis algorithm.</li>
+</ul>
 
 
 
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referenties</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-boninodasilvasantos2022personal" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Bonino da Silva Santos LO, Ferreira Pires L, Martinez V, Moreira J, Guizzardi R (2022) Personal <span>Health Train Architecture</span> with <span>Dynamic Cloud Staging</span>. SN Computer Science 4. <a href="https://doi.org/10.1007/s42979-022-01422-4">https://doi.org/10.1007/s42979-022-01422-4</a></div>
+</div>
+<div id="ref-2024openhie" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">(2024) <a href="https://ohie.org/"><span>OpenHIE Framework</span> v5.2-En</a></div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -854,17 +905,49 @@ window.Quarto = {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../business/index.html" class="pagination-link" aria-label="Business perspectief">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Business perspectief</span>
+      <a href="../data-stations/index.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../business/verhaallijn-data-engineer.html" class="pagination-link" aria-label="Verhaallijn data engineer">
-        <span class="nav-page-text">Verhaallijn data engineer</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../data-stations/comparison.html" class="pagination-link" aria-label="Comparative analysis">
+        <span class="nav-page-text">Comparative analysis</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

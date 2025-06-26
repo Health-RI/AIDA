@@ -57,7 +57,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../data-stations/comparison.html" rel="next">
+<link href="../data-stations/terminology.html" rel="next">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -183,6 +183,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../data-stations/terminology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Harmonized terminology</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../data-stations/comparison.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Comparative analysis</span></a>
   </div>
@@ -210,22 +216,15 @@ div.csl-indent {
    
   <ul>
   <li><a href="#a-shift-towards-federated-data-systems-as-a-design-paradigm" id="toc-a-shift-towards-federated-data-systems-as-a-design-paradigm" class="nav-link active" data-scroll-target="#a-shift-towards-federated-data-systems-as-a-design-paradigm">A shift towards federated data systems as a design paradigm</a></li>
-  <li><a href="#data-stations-as-a-foundational-building-block" id="toc-data-stations-as-a-foundational-building-block" class="nav-link" data-scroll-target="#data-stations-as-a-foundational-building-block">Data stations as a foundational building block</a>
+  <li><a href="#towards-data-availability-for-secondary-use" id="toc-towards-data-availability-for-secondary-use" class="nav-link" data-scroll-target="#towards-data-availability-for-secondary-use">Towards data availability for secondary use</a>
   <ul class="collapse">
   <li><a href="#online-transactional-vs.-analytical-processing" id="toc-online-transactional-vs.-analytical-processing" class="nav-link" data-scroll-target="#online-transactional-vs.-analytical-processing">Online transactional vs.&nbsp;analytical processing</a></li>
   <li><a href="#centralized-vs-decentralized-processing" id="toc-centralized-vs-decentralized-processing" class="nav-link" data-scroll-target="#centralized-vs-decentralized-processing">Centralized vs decentralized processing</a></li>
   <li><a href="#solution-patterns-to-populate-data-stations" id="toc-solution-patterns-to-populate-data-stations" class="nav-link" data-scroll-target="#solution-patterns-to-populate-data-stations">Solution patterns to populate data stations</a></li>
   <li><a href="#federation-as-system-of-systems" id="toc-federation-as-system-of-systems" class="nav-link" data-scroll-target="#federation-as-system-of-systems">Federation as system of systems</a></li>
+  <li><a href="#design-questions-framed-within-realization-of-secure-processing-environments-for-secondary-use" id="toc-design-questions-framed-within-realization-of-secure-processing-environments-for-secondary-use" class="nav-link" data-scroll-target="#design-questions-framed-within-realization-of-secure-processing-environments-for-secondary-use">Design questions framed within realization of Secure Processing Environments for secondary use</a></li>
   <li><a href="#outline" id="toc-outline" class="nav-link" data-scroll-target="#outline">Outline</a></li>
   </ul></li>
-  <li><a href="#towards-a-unified-ontology-of-data-stations-and-data-hubs" id="toc-towards-a-unified-ontology-of-data-stations-and-data-hubs" class="nav-link" data-scroll-target="#towards-a-unified-ontology-of-data-stations-and-data-hubs">Towards a unified ontology of data stations and data hubs</a>
-  <ul class="collapse">
-  <li><a href="#the-personal-health-train-architecture" id="toc-the-personal-health-train-architecture" class="nav-link" data-scroll-target="#the-personal-health-train-architecture">The Personal Health Train architecture</a></li>
-  <li><a href="#mapping-pht-to-the-dssc-blueprint-2.0" id="toc-mapping-pht-to-the-dssc-blueprint-2.0" class="nav-link" data-scroll-target="#mapping-pht-to-the-dssc-blueprint-2.0">Mapping PHT to the DSSC Blueprint 2.0</a></li>
-  <li><a href="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" id="toc-the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="nav-link" data-scroll-target="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</a></li>
-  </ul></li>
-  <li><a href="#parking-lot" id="toc-parking-lot" class="nav-link" data-scroll-target="#parking-lot">Parking lot</a></li>
-  <li><a href="#sec-glossary" id="toc-sec-glossary" class="nav-link" data-scroll-target="#sec-glossary">Glossary</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
@@ -335,30 +334,30 @@ div.csl-indent {
 
 <section id="a-shift-towards-federated-data-systems-as-a-design-paradigm" class="level2">
 <h2 class="anchored" data-anchor-id="a-shift-towards-federated-data-systems-as-a-design-paradigm">A shift towards federated data systems as a design paradigm</h2>
-<p>The ambition for a seamlessly connected digital healthcare ecosystem, capable of leveraging vast quantities of patient data remains illusive. Designing and implementing health data platforms is notoriously difficult, given the heterogeneity and complexity of such systems. To address these issues, federated data systems have emerged as a design paradigm. This approach enables data to remain securely at its source, while allowing for distributed analysis and the generation of collective knowledge.</p>
+<p>The ambition for a seamlessly connected digital healthcare ecosystem, capable of leveraging vast quantities of patient data remains illusive. Designing and implementing health data platforms is notoriously difficult, given the heterogeneity and complexity of such systems. To address these issues, federated data systems have emerged as a design paradigm. This approach enables data to remain securely at its source and perform computations in a decentralized, distributed fashion.</p>
 <p>Recent technological inventions offer important new enablers to implement federated data systems, most notably:</p>
 <ul>
-<li>Capabilities of edge computing and single-node computing has increased significantly whereby it is now possible to process up to 1 TB of tabular data on a single node thereby enabling large volumes of data processing to be done efficiently in a decentralized fashion <span class="citation" data-cites="raasveldt2019duckdb nahrstedt2024empirical">[<a href="#ref-raasveldt2019duckdb" role="doc-biblioref">1</a>, <a href="#ref-nahrstedt2024empirical" role="doc-biblioref">2</a>]</span>;</li>
-<li>Federated analytics <span class="citation" data-cites="wang2025survey">[<a href="#ref-wang2025survey" role="doc-biblioref">3</a>]</span>, and specifically federated learning, has matured as a means for training of predictive models, most notable through weights sharing of deep learning networks <span class="citation" data-cites="rieke2020future teo2024federated">[<a href="#ref-rieke2020future" role="doc-biblioref">4</a>, <a href="#ref-teo2024federated" role="doc-biblioref">5</a>]</span>;</li>
-<li>Privacy-enhancing technologies (PETs) such as secure multi-party computation (MPC) significantly improve secure processing across a network of participants and are now sufficiently mature to be used on an industrial scale <span class="citation" data-cites="un2023pet-guide royalsociety2023privacy">[<a href="#ref-un2023pet-guide" role="doc-biblioref">6</a>, <a href="#ref-royalsociety2023privacy" role="doc-biblioref">7</a>]</span>;</li>
-<li>The composable data stack provides a way to unbundle the venerable relational database into loosely components, thereby making it easier and more practical to implement FDS using cloud-based components with microservices, thereby opening up a transition path towards more modular and robust architectures for FDS <span class="citation" data-cites="pedreira2023composable composable">[<a href="#ref-pedreira2023composable" role="doc-biblioref">8</a>, <a href="#ref-composable" role="doc-biblioref">9</a>]</span>.</li>
+<li><strong>Significant increase in single-node computing capabilities</strong>, whereby it is now possible to process up to 1 TB of tabular data on a single machine node thereby enabling increasingly large volumes of data to be processed in a decentralized, federated system <span class="citation" data-cites="raasveldt2019duckdb nahrstedt2024empirical">[<a href="#ref-raasveldt2019duckdb" role="doc-biblioref">1</a>, <a href="#ref-nahrstedt2024empirical" role="doc-biblioref">2</a>]</span>;</li>
+<li><strong>Maturity of federated analytics</strong> and specifically federated learning as a means of performing analysis whilst ‘hidding’ the data from third parties, including training of deep learning models through aggregation of weights <span class="citation" data-cites="wang2025survey rieke2020future teo2024federated">[<a href="#ref-wang2025survey" role="doc-biblioref">3</a>–<a href="#ref-teo2024federated" role="doc-biblioref">5</a>]</span>;</li>
+<li><strong>Privacy-enhancing technologies (PETs) such as secure multi-party computation (MPC)</strong> that are now sufficiently mature to be used on an industrial scale, enabling computations to be done under encryption (in-the-blind) thereby significantly improving security across a network of participants <span class="citation" data-cites="un2023pet-guide royalsociety2023privacy">[<a href="#ref-un2023pet-guide" role="doc-biblioref">6</a>, <a href="#ref-royalsociety2023privacy" role="doc-biblioref">7</a>]</span>;</li>
+<li><strong>The composable data stack</strong> as a solution design that allows for unbundling of the venerable relational database into loosely coupled components, thereby making it easier and more practical to implement federated data systems using cloud-based components with microservices and thus opening up a transition path towards more modular and robust architectures <span class="citation" data-cites="pedreira2023composable composable">[<a href="#ref-pedreira2023composable" role="doc-biblioref">8</a>, <a href="#ref-composable" role="doc-biblioref">9</a>]</span>.</li>
 </ul>
-<p>The architectural shift from centralized to federated data systems is not merely a technical evolution. Modern approaches to data governance are undergoing a similar paradigm shift towards federated solutions. As an example, the concept of a <a href="https://martinfowler.com/articles/data-mesh-principles.html">data mesh</a> is increasingly being adopted at large corporations. From the perspective of sovereignty and solidarity, we believe that a commons-based, federated approach has distinct benefits in moving towards a more equitable, open digital infrastructure <span class="citation" data-cites="krewer2024digital">[<a href="#ref-krewer2024digital" role="doc-biblioref">10</a>]</span>. Federated data systems are inherently more aligned with contemporary data governance frameworks, including the Data Governance Act (DGA), the European Health Data Space (EHDS) and the concept of data solidarity <span class="citation" data-cites="prainsack2023beyond">[<a href="#ref-prainsack2023beyond" role="doc-biblioref">11</a>]</span>.</p>
-<p>However, this ongoing paradigm shift towards is not without challenges. The notion of what constitutes a federated data system needs to be defined in more detail if we are to see the forest for the trees between different instantiations of the same concept. For example, ‘federation’ can mean any of the following solution patterns:</p>
+<p>The architectural shift from centralized to federated data systems is not merely a technical evolution. Modern approaches to data governance are undergoing a similar paradigm shift towards federated solutions. Federated data systems are inherently more aligned with contemporary data governance frameworks, including the Data Governance Act (DGA), the European Health Data Space (EHDS) and the concept of data solidarity <span class="citation" data-cites="prainsack2023beyond">[<a href="#ref-prainsack2023beyond" role="doc-biblioref">10</a>]</span>. Within the context of large corporations, the concept of a <a href="https://martinfowler.com/articles/data-mesh-principles.html">data mesh</a> is increasingly being adopted as well, which in essence is a federation of data producers and consumers within a commercial setting. From the perspective of sovereignty and solidarity, we believe that a commons-based, federated approach has distinct benefits in moving towards a more equitable, open digital infrastructure <span class="citation" data-cites="krewer2024digital">[<a href="#ref-krewer2024digital" role="doc-biblioref">11</a>]</span>.</p>
+<p>However, this ongoing paradigm shift towards is not without challenges. The notion of what constitutes a federated data system needs to be defined in more detail if we are to see the forest for the trees between different instantiations of the same concept. For example, ‘federation’ can mean any of the concepts:</p>
 <ul>
-<li>Data federation addresses the problem of uniformly accessing multiple, possibly heterogeneous data sources, by mapping them into a unified schema, such as an RDF(S)/OWL ontology or a relational schema, and by supporting the execution of queries, like SPARQL or SQL queries, over that unified schema <span class="citation" data-cites="gu2022systematic">[<a href="#ref-gu2022systematic" role="doc-biblioref">12</a>]</span>;</li>
-<li>Federation within the context of a Personal Health Train (PHT) refers to the concept by data processing is brought to the (personal health) data rather than the other way around, allowing (private) data accessed to be controlled, and to observe ethical and legal concerns <span class="citation" data-cites="beyan2020distributed choudhury2020personal boninodasilvasantos2022personal zhang2023secure">[<a href="#ref-beyan2020distributed" role="doc-biblioref">13</a>–<a href="#ref-zhang2023secure" role="doc-biblioref">16</a>]</span>, and is just one of many solutions designs that are collectively grouped as federated analytics <span class="citation" data-cites="wang2025survey">[<a href="#ref-wang2025survey" role="doc-biblioref">3</a>]</span>;</li>
-<li>Federation as a mechanism for data sharing in a temporary staging environment within a network of research organizations in a Trusted Research Environment (TRE), with different types of federations services (localization, access);</li>
-<li>Federation services as defined in the DSSC Blueprint 2.0 pertain to the support the interplay of participants in a data space, operating in accordance to the policies and rules specified in the Rulebook by the data space authority.</li>
+<li><strong>Data federation</strong> in de context of distributed databases addresses the problem of uniformly accessing multiple, possibly heterogeneous data sources, by mapping them into a unified schema, such as an RDF(S)/OWL ontology or a relational schema, and by supporting the execution of queries, like SPARQL or SQL queries, over that unified schema <span class="citation" data-cites="gu2022systematic">[<a href="#ref-gu2022systematic" role="doc-biblioref">12</a>]</span>;</li>
+<li><strong>Federation within the context of a Personal Health Train (PHT)</strong> refers to the concept where data processing is brought to the (personal health) data rather than the other way around, allowing (private) data accessed to be controlled, and to observe ethical and legal concerns <span class="citation" data-cites="beyan2020distributed choudhury2020personal boninodasilvasantos2022personal zhang2023secure">[<a href="#ref-beyan2020distributed" role="doc-biblioref">13</a>–<a href="#ref-zhang2023secure" role="doc-biblioref">16</a>]</span>, and is just one of many solutions designs that are collectively grouped as federated analytics <span class="citation" data-cites="wang2025survey">[<a href="#ref-wang2025survey" role="doc-biblioref">3</a>]</span>;</li>
+<li><strong>Federation in Trusted Research Environment (TRE)</strong> pertains to a mechanism for data sharing in a temporary staging environment within a network of research organizations through federations services such as localization and access <span class="citation" data-cites="eosc-entrust">[<a href="#ref-eosc-entrust" role="doc-biblioref">17</a>]</span>;</li>
+<li><strong>Federation in the context of data spaces</strong>, as described in the DSSC Blueprint 2.0, pertains to the support the interplay of participants in a data space, operating in accordance to the policies and rules specified in the Rulebook by the data space authority.</li>
 </ul>
 <p>What then, is a viable development path out of this creative chaos?</p>
 </section>
-<section id="data-stations-as-a-foundational-building-block" class="level2">
-<h2 class="anchored" data-anchor-id="data-stations-as-a-foundational-building-block">Data stations as a foundational building block</h2>
-<p>Inspired by previous calls to action to move towards open architectures for health data systems <span class="citation" data-cites="estrin2010health mehl2023fullstac">[<a href="#ref-estrin2010health" role="doc-biblioref">17</a>, <a href="#ref-mehl2023fullstac" role="doc-biblioref">18</a>]</span> and the notion of the hourglass model <span class="citation" data-cites="estrin2010health beck2019hourglass schultes2023fair">[<a href="#ref-estrin2010health" role="doc-biblioref">17</a>, <a href="#ref-beck2019hourglass" role="doc-biblioref">19</a>, <a href="#ref-schultes2023fair" role="doc-biblioref">20</a>]</span>, we hypothesize that the concept of a ‘data station’ can be used as a foundational building block for federated data systems. A data station should provide a set of minimal standards (at the waist of the hourglass), thereby maximizing the freedom to operate between data providers and data consumers within the context of a health data space. Note that this approach has many similarities with the FAIR Hourglass <span class="citation" data-cites="boninodasilvasantos2022fair schultes2023fair">[<a href="#ref-schultes2023fair" role="doc-biblioref">20</a>, <a href="#ref-boninodasilvasantos2022fair" role="doc-biblioref">21</a>]</span>. Our approach of data stations presented here focuses on enabling on secondary data use of routine collected clinical data using the architecture of the Personal Health Train as a starting point <span class="citation" data-cites="beyan2020distributed choudhury2020personal boninodasilvasantos2022personal zhang2023secure">[<a href="#ref-beyan2020distributed" role="doc-biblioref">13</a>–<a href="#ref-zhang2023secure" role="doc-biblioref">16</a>]</span>. The objective of this paper is to extend this architecture in order to address four design questions that are relevant in ongoing efforts to implement nation-wide federated systems.</p>
+<section id="towards-data-availability-for-secondary-use" class="level2">
+<h2 class="anchored" data-anchor-id="towards-data-availability-for-secondary-use">Towards data availability for secondary use</h2>
+<p>Inspired by previous calls to action to move towards open architectures for health data systems <span class="citation" data-cites="estrin2010health mehl2023fullstac">[<a href="#ref-estrin2010health" role="doc-biblioref">18</a>, <a href="#ref-mehl2023fullstac" role="doc-biblioref">19</a>]</span> and the notion of the hourglass model <span class="citation" data-cites="estrin2010health beck2019hourglass schultes2023fair">[<a href="#ref-estrin2010health" role="doc-biblioref">18</a>, <a href="#ref-beck2019hourglass" role="doc-biblioref">20</a>, <a href="#ref-schultes2023fair" role="doc-biblioref">21</a>]</span>, we hypothesize that the concept of a ‘data station’ can be used as a foundational building block for federated data systems. A data station should provide a set of minimal standards (at the waist of the hourglass), thereby maximizing the freedom to operate between data providers and data consumers within the context of a health data space. Note that this approach has many similarities with the FAIR Hourglass <span class="citation" data-cites="boninodasilvasantos2022fair schultes2023fair">[<a href="#ref-schultes2023fair" role="doc-biblioref">21</a>, <a href="#ref-boninodasilvasantos2022fair" role="doc-biblioref">22</a>]</span>. Our approach of data stations presented here focuses on enabling on secondary data use of routine collected clinical data using the architecture of the Personal Health Train as a starting point <span class="citation" data-cites="beyan2020distributed choudhury2020personal boninodasilvasantos2022personal zhang2023secure choudhury2025advancing">[<a href="#ref-beyan2020distributed" role="doc-biblioref">13</a>–<a href="#ref-zhang2023secure" role="doc-biblioref">16</a>, <a href="#ref-choudhury2025advancing" role="doc-biblioref">23</a>]</span>. The objective of this paper is to extend this architecture in order to address four design questions that are relevant in ongoing efforts to implement nation-wide federated systems.</p>
 <section id="online-transactional-vs.-analytical-processing" class="level3">
 <h3 class="anchored" data-anchor-id="online-transactional-vs.-analytical-processing">Online transactional vs.&nbsp;analytical processing</h3>
-<p>First, it is well known data systems have different design an performance characteristics depending whether they are built for online transactional processing (OLTP) or online analytical processing (OLAP), as summarized in the <a href="#tbl-oltp-olap" class="quarto-xref">Table&nbsp;1</a> below (taken from <span class="citation" data-cites="kleppmann2026designing">[<a href="#ref-kleppmann2026designing" role="doc-biblioref">22</a>]</span>).</p>
+<p>First, it is well known data systems have different design an performance characteristics depending whether they are built for online transactional processing (OLTP) or online analytical processing (OLAP), as summarized in the <a href="#tbl-oltp-olap" class="quarto-xref">Table&nbsp;1</a> below (taken from <span class="citation" data-cites="kleppmann2026designing">[<a href="#ref-kleppmann2026designing" role="doc-biblioref">24</a>]</span>).</p>
 <div id="tbl-oltp-olap" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-oltp-olap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -414,11 +413,11 @@ Table&nbsp;1: Distinguishing characteristics between online transactional and an
 </div>
 </figure>
 </div>
-<p>Current efforts to design and implement the EHDS in fact aims to support primary (i.e.&nbsp;OLTP) and secondary use (OLAP) in one go <span class="citation" data-cites="ehds cascini2024health">[<a href="#ref-ehds" role="doc-biblioref">23</a>, <a href="#ref-cascini2024health" role="doc-biblioref">24</a>]</span>. This Herculean endeavour has spawned many initiatives to develop a coherent architecture and support implementation across Europe that ultimately should lead to interoperability in the broadest sense of the word, most notably:</p>
+<p>Current efforts to design and implement the EHDS in fact aims to support primary (i.e.&nbsp;OLTP) and secondary use (OLAP) in one go <span class="citation" data-cites="ehds cascini2024health">[<a href="#ref-ehds" role="doc-biblioref">25</a>, <a href="#ref-cascini2024health" role="doc-biblioref">26</a>]</span>. This Herculean endeavour has spawned many initiatives to develop a coherent architecture and support implementation across Europe that ultimately should lead to interoperability in the broadest sense of the word, most notably:</p>
 <ul>
-<li>The Data Space Blueprint v2.0 (DSB2) by the Data Spaces Support Centre (<span class="citation" data-cites="dssc2025data">[<a href="#ref-dssc2025data" role="doc-biblioref">25</a>]</span>) that serves as a vital guide for organizations building and participating in data spaces.</li>
-<li>The Simpl Programme (<span class="citation" data-cites="simpl">[<a href="#ref-simpl" role="doc-biblioref">26</a>]</span>) that aims to develop an open source, secure middleware that supports data access and interoperability in European data initiatives. It provides multiple compatible components, free to use, that adhere to a common standard of data quality and data sharing.</li>
-<li>TEHDAS2 (<span class="citation" data-cites="tehdas2">[<a href="#ref-tehdas2" role="doc-biblioref">27</a>]</span>), a joint action that prepares the ground for the harmonised implementation of the secondary use of health data in the EHDS.</li>
+<li>The Data Space Blueprint v2.0 (DSB2) by the Data Spaces Support Centre (<span class="citation" data-cites="dssc2025data">[<a href="#ref-dssc2025data" role="doc-biblioref">27</a>]</span>) that serves as a vital guide for organizations building and participating in data spaces.</li>
+<li>The Simpl Programme (<span class="citation" data-cites="simpl">[<a href="#ref-simpl" role="doc-biblioref">28</a>]</span>) that aims to develop an open source, secure middleware that supports data access and interoperability in European data initiatives. It provides multiple compatible components, free to use, that adhere to a common standard of data quality and data sharing.</li>
+<li>TEHDAS2 (<span class="citation" data-cites="tehdas2">[<a href="#ref-tehdas2" role="doc-biblioref">29</a>]</span>), a joint action that prepares the ground for the harmonised implementation of the secondary use of health data in the EHDS.</li>
 </ul>
 <p>We believe, however, that in order to successfully design and implement health data spaces, more detailed analysis and solution patterns are required that distinguish between primary (OLTP) and secondary (OLAP) data use. Although functional components can be shared between these two, it is a matter of the devil being in the details. Hence one of the objectives of this paper is to detail an open, technology agnostic architecture for secondary use, to complement existing efforts and guide the development in the field.</p>
 </section>
@@ -433,253 +432,50 @@ Table&nbsp;1: Distinguishing characteristics between online transactional and an
 </section>
 <section id="federation-as-system-of-systems" class="level3">
 <h3 class="anchored" data-anchor-id="federation-as-system-of-systems">Federation as system of systems</h3>
-<p>The fourth design challenge pertains to the need for having a ‘system of systems’ <span class="citation" data-cites="gorod2008paradox">[<a href="#ref-gorod2008paradox" role="doc-biblioref">28</a>]</span> in the federated health data system at large. In real-world setting, secondary health data sharing will need to take into account the limited resources and expertise of smaller health care providers. In fact, the EHDS explicitly addresses this issue in article <a href="https://eur-lex.europa.eu/legal-content/en/TXT/HTML/?uri=OJ:L_202500327#art_50">article 50</a> that exempts micro enterprises from the obligation to directly participate in the EHDS, but that each member state may opt to form so-called data intermediaries to act as a go-between (<a href="https://eur-lex.europa.eu/legal-content/en/TXT/HTML/?uri=OJ:L_202500327#rct_59">recital 59</a>). Along a different dimension, we foresee a system of systems of various domain-specific federated networks that are loosely coupled, which poses design challenges in terms of autonomy (to what extend can each sub-network make independent choices), connectivity (how to connect sub-systems) and diversity.</p>
+<p>The fourth design challenge pertains to the need for having a ‘system of systems’ <span class="citation" data-cites="gorod2008paradox">[<a href="#ref-gorod2008paradox" role="doc-biblioref">30</a>]</span> in the federated health data system at large. In real-world setting, secondary health data sharing will need to take into account the limited resources and expertise of smaller health care providers. In fact, the EHDS explicitly addresses this issue in article <a href="https://eur-lex.europa.eu/legal-content/en/TXT/HTML/?uri=OJ:L_202500327#art_50">article 50</a> that exempts micro enterprises from the obligation to directly participate in the EHDS, but that each member state may opt to form so-called data intermediaries to act as a go-between (<a href="https://eur-lex.europa.eu/legal-content/en/TXT/HTML/?uri=OJ:L_202500327#rct_59">recital 59</a>). Along a different dimension, we foresee a system of systems of various domain-specific federated networks that are loosely coupled, which poses design challenges in terms of autonomy (to what extend can each sub-network make independent choices), connectivity (how to connect sub-systems) and diversity.</p>
+</section>
+<section id="design-questions-framed-within-realization-of-secure-processing-environments-for-secondary-use" class="level3">
+<h3 class="anchored" data-anchor-id="design-questions-framed-within-realization-of-secure-processing-environments-for-secondary-use">Design questions framed within realization of Secure Processing Environments for secondary use</h3>
+<p>By addressing these four design questions, our aim is to specify the solution designs for a <strong><em>federated health data system with national coverage that can support secondary data use within the context of the EHDS</em></strong>. To clarify this objective, consider <a href="#fig-spe-layered-view" class="quarto-xref">Figure&nbsp;1</a> depicting the main concepts relevant to our paper in terms of an Archimate layered view. Starting from the top, the Secure Processing Environments (SPE) is taken as the key capability that needs to be realized as part of the EHDS. SPE can be realized using different types of platforms, namely centralized, federated or hybrid. At the time of writing, we observe that there are already quite a few products available in the market, be it commercial or as an established open source project. The secure processing platforms (note we use platform to designate the business product vs.&nbsp;SPE to denote the capability) are composed of various <a href="https://dssc.eu/space/BVE2/1071257170/Value+creation+services#2.3-Information-model-of-Value-Creation-Services">value creation services</a> as defined in the DSB2 (<a href="#fig-dssc-value-creation-services" class="quarto-xref">Figure&nbsp;2</a>). These services in turn are realized by underlying data analysis processes, which are envisaged to be supported by (Data) Service Providers.</p>
+<div id="fig-spe-layered-view" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-spe-layered-view-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Layered view of Secure Processing Environments (SPEs) as capability in the European Health Data Space.
+</figcaption>
+<div aria-describedby="fig-spe-layered-view-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/spe-layered-view.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Layered view of Secure Processing Environments (SPEs) as capability in the European Health Data Space."><img src="images/spe-layered-view.png" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
+<div id="fig-dssc-value-creation-services" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-dssc-value-creation-services-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Taxonomy of value creation services as defined in the DSSC Blueprint 2.0. Source: <a href="https://dssc.eu/space/BVE2/1071257170/Value+creation+services">dssc.eu</a>.
+</figcaption>
+<div aria-describedby="fig-dssc-value-creation-services-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/dssc-value-creation-services.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Taxonomy of value creation services as defined in the DSSC Blueprint 2.0. Source: dssc.eu."><img src="images/dssc-value-creation-services.png" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </section>
 <section id="outline" class="level3">
 <h3 class="anchored" data-anchor-id="outline">Outline</h3>
-<p>In this paper we take loosely follow an Action Design Research approach <span class="citation" data-cites="sein2011action venable2016feds">[<a href="#ref-sein2011action" role="doc-biblioref">29</a>, <a href="#ref-venable2016feds" role="doc-biblioref">30</a>]</span> to address these design questions. Our main contributions are:</p>
+<p>With this overarching layered view in mind, we loosely follow an Action Design Research approach <span class="citation" data-cites="sein2011action venable2016feds">[<a href="#ref-sein2011action" role="doc-biblioref">31</a>, <a href="#ref-venable2016feds" role="doc-biblioref">32</a>]</span> to address these design questions. Our main contributions are:</p>
 <ul>
 <li>A harmonized ontology of a data station and data hub, that integrates the PHT architecture <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">15</a>]</span> and the DSSC Blueprint 2.0</li>
 <li>Comparative analysis of existing implementations</li>
-<li>Synthesis of the above into functional and technical description of a data station in Archimate, thereby focusing on two primary patterns <span class="citation" data-cites="buschmann1996system">[<a href="#ref-buschmann1996system" role="doc-biblioref">31</a>]</span>:
+<li>Synthesis of the above into functional and technical description of a data station in Archimate, thereby focusing on two primary patterns <span class="citation" data-cites="buschmann1996system">[<a href="#ref-buschmann1996system" role="doc-biblioref">33</a>]</span>:
 <ul>
-<li>the layers pattern for addressing various aspects of interoperability across the stack, extending earlier work by <span class="citation" data-cites="welten2024study">[<a href="#ref-welten2024study" role="doc-biblioref">32</a>]</span> who have introduced five layers of interoperability;</li>
-<li>the pipes and filters pattern for addressing various solution designs for the extract-transform-load (ETL) mechanisms through which data stations are populated, following the current common practice of datalakes and lakehouse solution designs <span class="citation" data-cites="harby2025data schneider2024lakehouse hai2023data abouzaid2025building mazumdar2023data">[<a href="#ref-harby2025data" role="doc-biblioref">33</a>–<a href="#ref-mazumdar2023data" role="doc-biblioref">37</a>]</span>;</li>
+<li>the layers pattern for addressing various aspects of interoperability across the stack, extending earlier work by <span class="citation" data-cites="welten2024study">[<a href="#ref-welten2024study" role="doc-biblioref">34</a>]</span> who have introduced five layers of interoperability;</li>
+<li>the pipes and filters pattern for addressing various solution designs for the extract-transform-load (ETL) mechanisms through which data stations are populated, following the current common practice of datalakes and lakehouse solution designs <span class="citation" data-cites="harby2025data schneider2024lakehouse hai2023data abouzaid2025building mazumdar2023data">[<a href="#ref-harby2025data" role="doc-biblioref">35</a>–<a href="#ref-mazumdar2023data" role="doc-biblioref">39</a>]</span>;</li>
 </ul></li>
+<li>Proposals for new designs for specific domains, such as genomics or imaging.</li>
 <li>A reference implementation of data stations using the trains based on containers as a generic infrastructure for federated learning and federated analysis.</li>
 </ul>
-</section>
-</section>
-<section id="towards-a-unified-ontology-of-data-stations-and-data-hubs" class="level2">
-<h2 class="anchored" data-anchor-id="towards-a-unified-ontology-of-data-stations-and-data-hubs">Towards a unified ontology of data stations and data hubs</h2>
-<section id="the-personal-health-train-architecture" class="level3">
-<h3 class="anchored" data-anchor-id="the-personal-health-train-architecture">The Personal Health Train architecture</h3>
-<p>We take the Personal Health Train (PHT) architecture as our starting point <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">15</a>]</span>, wherein a Data Station is defined as a software application primarily responsible for making data and its associated metadata available to users under conditions determined by applicable regulations and Data Controllers. The main concepts are shown in <a href="#fig-pht-roles-components" class="quarto-xref">Figure&nbsp;1 (a)</a>, while the various types of trains are shown in <a href="#fig-pht-train-types" class="quarto-xref">Figure&nbsp;1 (b)</a>. A glossary of the concept is provided in <a href="#sec-glossary" class="quarto-xref">Section&nbsp;5</a>.</p>
-<div id="fig-pht" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-pht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: High-level overview of the Personal Health Train (PHT) architecture
-</figcaption>
-<div aria-describedby="fig-pht-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pht" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-pht-roles-components" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-fig" id="fig-pht-roles-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Main roles and components
-</figcaption>
-<div aria-describedby="fig-pht-roles-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="./images/pht-roles-components.png" class="lightbox" data-gallery="fig-pht" title="Figure&nbsp;1&nbsp;(a): Main roles and components"><img src="./images/pht-roles-components.png" class="img-fluid figure-img" data-ref-parent="fig-pht"></a>
-</div>
-</figure>
-</div>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pht" style="flex-basis: 100.0%;justify-content: flex-start;">
-<div id="fig-pht-train-types" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-fig" id="fig-pht-train-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) Train types
-</figcaption>
-<div aria-describedby="fig-pht-train-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="./images/pht-train-types.png" class="lightbox" data-gallery="fig-pht" title="Figure&nbsp;1&nbsp;(b): Train types"><img src="./images/pht-train-types.png" class="img-fluid figure-img" data-ref-parent="fig-pht"></a>
-</div>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</figure>
-</div>
-<p>In their paper <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">15</a>]</span> continu to describe more details of the PHT architecture including i) the various functions, services, interface and internal components of the data station; ii) the data visiting process; and iii) the data staging concept in the case data access has been authorized, but the station is not capable of executing the train and needs to stage a capable station with enough resources to run the train. We will consider these details later.</p>
-<p>As an aside, it is good to mention that the authors of the PHT architecture have initiated the development of two specifications after publication of this paper, namely:</p>
-<ul>
-<li><a href="https://specs.fairdatapoint.org/fdp-specs-v1.2.html">FAIR Data Point</a> specification, which covers only the metadata and catalog part of the PHT architecture;</li>
-<li>the <a href="https://specs.fairdatatrain.org/">FAIR Data Train</a> specification, which covers the full scope of the original paper but at the time of writing is still incomplete.</li>
-</ul>
-</section>
-<section id="mapping-pht-to-the-dssc-blueprint-2.0" class="level3">
-<h3 class="anchored" data-anchor-id="mapping-pht-to-the-dssc-blueprint-2.0">Mapping PHT to the DSSC Blueprint 2.0</h3>
-<p>To arrive at consistent conceptualization of data stations and trains, <a href="#tbl-mapping-pht-dssc" class="quarto-xref">Table&nbsp;2</a> maps the PHT architecture to the DSSC Blueprint 2.0 (DSB2). Some mappings are relatively evident. For example, the concept of Data and Metadata as defined in PHT is subsumed in the concept of a Data Product in DSB2. Less evident, is the mapping of the notion of a Train that ‘… represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.’ to Value Creation Services in DSB2 that includes data fusion and enrichment, collaborative data analytics and federated learning. We tentatively conclude that it is possible to have a consistent conceptual mapping between, at least at the high level, of the PHT architecture into DSB2. We will return to this matter, when more detailed functions and technical standards are considered for the Archimate specification.</p>
-<div id="tbl-mapping-pht-dssc" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mapping-pht-dssc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Mapping the key concepts from the PHT architecture <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">15</a>]</span> to the <a href="https://dssc.eu/space/BVE2/1071252161/Alphabetical+List+of+All+Defined+Terms+in+Blueprint+v2.0">concepts of the DSSC Blueprint 2.0</a>.
-</figcaption>
-<div aria-describedby="tbl-mapping-pht-dssc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Component PHT</th>
-<th style="text-align: left;">mapping to DSSC Blueprint 2.0 concepts</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Data Station</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Data Space Building Block</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Data</li>
-<li>Metadata</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li><a href="https://dssc.eu/space/BVE2/1071253231/Data+Space+Offering#3.1.-Data-products">Data Product</a></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Data Controller</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Data Rights Holder</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Station Controller</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Data Product Provider</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Personal Gateway</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>included in Participant Agent Services</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Station Directory</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>included in Federation Services</li>
-<li>Catalogue provisions and discovers offerings of data and services in a data space</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Directory Owner</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Common Intermediary provides federation services that are common to all participants of the data space</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Train</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Value Creation Services</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Train Provider</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Service Provider</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Train Handler</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>specialization of Data Space Component that realizes the Train Value Creation Service</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Train Owner</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>included in Service Provider as most generic role</li>
-<li>concept of Intermediary (specialization of SP) is closer to definition of Train Owner</li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</section>
-<section id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="level3">
-<h3 class="anchored" data-anchor-id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</h3>
-<p>The PHT architecture does not specify <em>how</em> the data stations should be populated with data. Also the DSB2 only describes how the ‘Data, Services and Offerings descriptions’ building block should provide data providers the tools to describe a data product appropriately and completely, that is, tools for metadata creation and management.</p>
-<p>One of the key questions of this paper is to detail <a href="https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download">the ‘data conformity zone’ as defined in the Cumuluz canvas</a> as the functionality through which the data station is populated</p>
-</section>
-</section>
-<section id="parking-lot" class="level2">
-<h2 class="anchored" data-anchor-id="parking-lot">Parking lot</h2>
-<ul>
-<li>Difference with data mesh: mesh of domains, federation is in the same domain. Underlying technology of a data station, however, is functionally identical</li>
-<li>UMCU: CQRS pattern for separately optimizing read/write patterns</li>
-<li>DSSC Blueprint: FL subsumed in value adding services</li>
-</ul>
-<p><a href="#tbl-types-hdp" class="quarto-xref">Table&nbsp;3</a> lists known examples of existing health data platform architectures along these two trade-offs.</p>
-<div id="tbl-types-hdp" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-types-hdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Broad categorization of health data platforms
-</figcaption>
-<div aria-describedby="tbl-types-hdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 37%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>primary</th>
-<th>secondary</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>centralized</strong></td>
-<td>openHIE <span class="citation" data-cites="2024openhie">[<a href="#ref-2024openhie" role="doc-biblioref">38</a>]</span>, Digizorg, Nordics</td>
-<td>kapseli, Mayo, …</td>
-</tr>
-<tr class="even">
-<td><strong>decentralized</strong></td>
-<td>RSO Zuid Limburg, Twiin portaal, …</td>
-<td>many federated analytics research networks such as x-omics programme and EUCAIM</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</section>
-<section id="sec-glossary" class="level2">
-<h2 class="anchored" data-anchor-id="sec-glossary">Glossary</h2>
-<ul>
-<li><em>Data Controller</em> (Business Role) is the role of controlling rights over data.</li>
-<li><em>Data Station</em> (Business Product) is a software application responsible for making data and their related metadata available to users under the accessibility conditions determined by applicable regulations and the related Data Controllers.</li>
-<li><em>Directory Owner</em> (Business Role) is the role of being responsible for the operation of a Station Directory.</li>
-<li><em>Personal Gateway</em> (Business Product) is a software application responsible for mediating the communication between Data Stations and Data Controllers. The Data Controllers are able to exercise their control over the data available in different Data Stations through the Personal Gateway.</li>
-<li><em>Station Directory</em> (Business Product) is a software application responsible for indexing metadata from the reachable Data Stations, allowing users to search for data available in those stations.</li>
-<li><em>Train</em> (Business Representation) represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.</li>
-<li><em>Train Handler</em> (Business Representation) is a software application that interacts with the Stations Directory on behalf of a client to discover the availability and location of data and sends Trains to Data Stations.</li>
-<li><em>Station Owner</em> (Business Role) is the role of being responsible for the operation of a Data Station.</li>
-<li><em>Train Owner</em> (Business Role) is the role of using a Train Handler to send Trains to Data Stations.</li>
-<li><em>Train Provider</em> (Business Role) is the role of being responsible for the creation of a specific Train, e.g.&nbsp;the developer of a specific analysis algorithm.</li>
-</ul>
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
@@ -710,11 +506,11 @@ Table&nbsp;3: Broad categorization of health data platforms
 <div id="ref-composable" class="csl-entry" role="listitem">
 <div class="csl-left-margin">9. </div><div class="csl-right-inline">The <span>Composable Codex</span>. <a href="https://voltrondata.com/codex.html">https://voltrondata.com/codex.html</a>. Accessed 16 Oct 2024</div>
 </div>
-<div id="ref-krewer2024digital" class="csl-entry" role="listitem">
-<div class="csl-left-margin">10. </div><div class="csl-right-inline">Krewer J, Warso Z (2024) <a href="https://openfuture.eu/publication/digital-commons-as-providers-of-public-digital-infrastructures">Digital <span>Commons</span> as <span>Providers</span> of <span>Public Digital Infrastructures</span></a>. Open Future Foundation</div>
-</div>
 <div id="ref-prainsack2023beyond" class="csl-entry" role="listitem">
-<div class="csl-left-margin">11. </div><div class="csl-right-inline">Prainsack B, El-Sayed S (2023) Beyond <span>Individual Rights</span>: <span>How Data Solidarity Gives People Meaningful Control</span> over <span>Data</span>. The American Journal of Bioethics 23(11):36–39. <a href="https://doi.org/10.1080/15265161.2023.2256267">https://doi.org/10.1080/15265161.2023.2256267</a></div>
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Prainsack B, El-Sayed S (2023) Beyond <span>Individual Rights</span>: <span>How Data Solidarity Gives People Meaningful Control</span> over <span>Data</span>. The American Journal of Bioethics 23(11):36–39. <a href="https://doi.org/10.1080/15265161.2023.2256267">https://doi.org/10.1080/15265161.2023.2256267</a></div>
+</div>
+<div id="ref-krewer2024digital" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Krewer J, Warso Z (2024) <a href="https://openfuture.eu/publication/digital-commons-as-providers-of-public-digital-infrastructures">Digital <span>Commons</span> as <span>Providers</span> of <span>Public Digital Infrastructures</span></a>. Open Future Foundation</div>
 </div>
 <div id="ref-gu2022systematic" class="csl-entry" role="listitem">
 <div class="csl-left-margin">12. </div><div class="csl-right-inline">Gu Z, Corcoglioniti F, Lanti D, et al (2022) A systematic overview of data federation systems. Semantic Web 15(1):107–165. <a href="https://doi.org/10.3233/SW-223201">https://doi.org/10.3233/SW-223201</a></div>
@@ -731,71 +527,74 @@ Table&nbsp;3: Broad categorization of health data platforms
 <div id="ref-zhang2023secure" class="csl-entry" role="listitem">
 <div class="csl-left-margin">16. </div><div class="csl-right-inline">Zhang C, Choudhury A, Volmer L, et al (2023) Secure and <span>Private Healthcare Analytics</span>: <span>A Feasibility Study</span> of <span>Federated Deep Learning</span> with <span>Personal Health Train</span>. <a href="https://www.researchsquare.com/article/rs-3158418/v1">https://www.researchsquare.com/article/rs-3158418/v1</a>. Accessed 24 Oct 2024</div>
 </div>
+<div id="ref-eosc-entrust" class="csl-entry" role="listitem">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">(2024) European network of trusted research environments (<span>EOSC-ENTRUST</span>) project. <a href="https://eosc-entrust.eu/">https://eosc-entrust.eu/</a>. Accessed 26 Jun 2025</div>
+</div>
 <div id="ref-estrin2010health" class="csl-entry" role="listitem">
-<div class="csl-left-margin">17. </div><div class="csl-right-inline">Estrin D, Sim I (2010) Health care delivery. <span class="nocase">Open mHealth</span> architecture: An engine for health care innovation. Science 330(6005):759–760. <a href="https://doi.org/10.1126/science.1196187">https://doi.org/10.1126/science.1196187</a></div>
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Estrin D, Sim I (2010) Health care delivery. <span class="nocase">Open mHealth</span> architecture: An engine for health care innovation. Science 330(6005):759–760. <a href="https://doi.org/10.1126/science.1196187">https://doi.org/10.1126/science.1196187</a></div>
 </div>
 <div id="ref-mehl2023fullstac" class="csl-entry" role="listitem">
-<div class="csl-left-margin">18. </div><div class="csl-right-inline">Mehl GL, Seneviratne MG, Berg ML, et al (2023) A full-<span>STAC</span> remedy for global digital health transformation: Open standards, technologies, architectures and content. Oxford Open Digital Health 1:oqad018. <a href="https://doi.org/10.1093/oodh/oqad018">https://doi.org/10.1093/oodh/oqad018</a></div>
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Mehl GL, Seneviratne MG, Berg ML, et al (2023) A full-<span>STAC</span> remedy for global digital health transformation: Open standards, technologies, architectures and content. Oxford Open Digital Health 1:oqad018. <a href="https://doi.org/10.1093/oodh/oqad018">https://doi.org/10.1093/oodh/oqad018</a></div>
 </div>
 <div id="ref-beck2019hourglass" class="csl-entry" role="listitem">
-<div class="csl-left-margin">19. </div><div class="csl-right-inline">Beck M (2019) On the hourglass model. Communications of the ACM 62(7):48–57. <a href="https://doi.org/10.1145/3274770">https://doi.org/10.1145/3274770</a></div>
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Beck M (2019) On the hourglass model. Communications of the ACM 62(7):48–57. <a href="https://doi.org/10.1145/3274770">https://doi.org/10.1145/3274770</a></div>
 </div>
 <div id="ref-schultes2023fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">20. </div><div class="csl-right-inline">Schultes E (2023) The <span>FAIR</span> hourglass: <span>A</span> framework for <span>FAIR</span> implementation. FC 1(1):13–17. <a href="https://doi.org/10.3233/FC-221514">https://doi.org/10.3233/FC-221514</a></div>
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Schultes E (2023) The <span>FAIR</span> hourglass: <span>A</span> framework for <span>FAIR</span> implementation. FC 1(1):13–17. <a href="https://doi.org/10.3233/FC-221514">https://doi.org/10.3233/FC-221514</a></div>
 </div>
 <div id="ref-boninodasilvasantos2022fair" class="csl-entry" role="listitem">
-<div class="csl-left-margin">21. </div><div class="csl-right-inline">Bonino da Silva Santos LO, Guizzardi G, Prince Sales T (2022) <a href="https://fairdigitalobjectframework.org/"><span>FAIR Digital Object Framework</span></a></div>
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Bonino da Silva Santos LO, Guizzardi G, Prince Sales T (2022) <a href="https://fairdigitalobjectframework.org/"><span>FAIR Digital Object Framework</span></a></div>
+</div>
+<div id="ref-choudhury2025advancing" class="csl-entry" role="listitem">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Choudhury A, Volmer L, Martin F, et al (2025) Advancing <span>Privacy-Preserving Health Care Analytics</span> and <span>Implementation</span> of the <span>Personal Health Train</span>: <span>Federated Deep Learning Study</span>. JMIR AI 4(1):e60847. <a href="https://doi.org/10.2196/60847">https://doi.org/10.2196/60847</a></div>
 </div>
 <div id="ref-kleppmann2026designing" class="csl-entry" role="listitem">
-<div class="csl-left-margin">22. </div><div class="csl-right-inline">Kleppmann M, Riccomini C (2026) Designing data-intensive applications, 2nd edtion (early release). O’Reilly</div>
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Kleppmann M, Riccomini C (2026) Designing data-intensive applications, 2nd edtion (early release). O’Reilly</div>
 </div>
 <div id="ref-ehds" class="csl-entry" role="listitem">
-<div class="csl-left-margin">23. </div><div class="csl-right-inline">(2025) European <span>Health Data Space Regulation</span> (<span>EHDS</span>). <a href="https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en">https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en</a>. Accessed 9 Jun 2025</div>
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">(2025) European <span>Health Data Space Regulation</span> (<span>EHDS</span>). <a href="https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en">https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en</a>. Accessed 9 Jun 2025</div>
 </div>
 <div id="ref-cascini2024health" class="csl-entry" role="listitem">
-<div class="csl-left-margin">24. </div><div class="csl-right-inline">Cascini F, Pantovic A, Al-Ajlouni YA, Puleo V, De Maio L, Ricciardi W (2024) Health data sharing attitudes towards primary and secondary use of data: A systematic review. eClinicalMedicine 71:102551. <a href="https://doi.org/10.1016/j.eclinm.2024.102551">https://doi.org/10.1016/j.eclinm.2024.102551</a></div>
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">Cascini F, Pantovic A, Al-Ajlouni YA, Puleo V, De Maio L, Ricciardi W (2024) Health data sharing attitudes towards primary and secondary use of data: A systematic review. eClinicalMedicine 71:102551. <a href="https://doi.org/10.1016/j.eclinm.2024.102551">https://doi.org/10.1016/j.eclinm.2024.102551</a></div>
 </div>
 <div id="ref-dssc2025data" class="csl-entry" role="listitem">
-<div class="csl-left-margin">25. </div><div class="csl-right-inline">Data <span>Spaces Blueprint</span> v2.0. <a href="https://dssc.eu/space/BVE2/1071251457/Data+Spaces+Blueprint+v2.0+-+Home">https://dssc.eu/space/BVE2/1071251457/Data+Spaces+Blueprint+v2.0+-+Home</a>. Accessed 9 Jun 2025</div>
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">Data <span>Spaces Blueprint</span> v2.0. <a href="https://dssc.eu/space/BVE2/1071251457/Data+Spaces+Blueprint+v2.0+-+Home">https://dssc.eu/space/BVE2/1071251457/Data+Spaces+Blueprint+v2.0+-+Home</a>. Accessed 9 Jun 2025</div>
 </div>
 <div id="ref-simpl" class="csl-entry" role="listitem">
-<div class="csl-left-margin">26. </div><div class="csl-right-inline">Simpl <span>Programme</span>. <a href="https://simpl-programme.ec.europa.eu/">https://simpl-programme.ec.europa.eu/</a>. Accessed 9 Jun 2025</div>
+<div class="csl-left-margin">28. </div><div class="csl-right-inline">Simpl <span>Programme</span>. <a href="https://simpl-programme.ec.europa.eu/">https://simpl-programme.ec.europa.eu/</a>. Accessed 9 Jun 2025</div>
 </div>
 <div id="ref-tehdas2" class="csl-entry" role="listitem">
-<div class="csl-left-margin">27. </div><div class="csl-right-inline"><span>TEHDAS2</span>. <a href="https://tehdas.eu/">https://tehdas.eu/</a>. Accessed 9 Jun 2025</div>
+<div class="csl-left-margin">29. </div><div class="csl-right-inline"><span>TEHDAS2</span>. <a href="https://tehdas.eu/">https://tehdas.eu/</a>. Accessed 9 Jun 2025</div>
 </div>
 <div id="ref-gorod2008paradox" class="csl-entry" role="listitem">
-<div class="csl-left-margin">28. </div><div class="csl-right-inline">Gorod A, Sauser B, Boardman J (2008) <a href="https://doi.org/10.1109/SYSOSE.2008.4724171">Paradox: <span>Holarchical</span> view of system of systems engineering management</a>. In: 2008 <span>IEEE International Conference</span> on <span>System</span> of <span>Systems Engineering</span>. pp 1–6</div>
+<div class="csl-left-margin">30. </div><div class="csl-right-inline">Gorod A, Sauser B, Boardman J (2008) <a href="https://doi.org/10.1109/SYSOSE.2008.4724171">Paradox: <span>Holarchical</span> view of system of systems engineering management</a>. In: 2008 <span>IEEE International Conference</span> on <span>System</span> of <span>Systems Engineering</span>. pp 1–6</div>
 </div>
 <div id="ref-sein2011action" class="csl-entry" role="listitem">
-<div class="csl-left-margin">29. </div><div class="csl-right-inline">Sein M, Henfridsson O, Purao S, Rossi M, Lindgren R (2011) Action <span>Design Research</span>. MIS Quarterly 35:37–56. <a href="https://doi.org/10.2307/23043488">https://doi.org/10.2307/23043488</a></div>
+<div class="csl-left-margin">31. </div><div class="csl-right-inline">Sein M, Henfridsson O, Purao S, Rossi M, Lindgren R (2011) Action <span>Design Research</span>. MIS Quarterly 35:37–56. <a href="https://doi.org/10.2307/23043488">https://doi.org/10.2307/23043488</a></div>
 </div>
 <div id="ref-venable2016feds" class="csl-entry" role="listitem">
-<div class="csl-left-margin">30. </div><div class="csl-right-inline">Venable J, Pries-Heje J, Baskerville R (2016) <span>FEDS</span>: A <span>Framework</span> for <span>Evaluation</span> in <span>Design Science Research</span>. Eur J Inf Syst 25(1):77–89. <a href="https://doi.org/10.1057/ejis.2014.36">https://doi.org/10.1057/ejis.2014.36</a></div>
+<div class="csl-left-margin">32. </div><div class="csl-right-inline">Venable J, Pries-Heje J, Baskerville R (2016) <span>FEDS</span>: A <span>Framework</span> for <span>Evaluation</span> in <span>Design Science Research</span>. Eur J Inf Syst 25(1):77–89. <a href="https://doi.org/10.1057/ejis.2014.36">https://doi.org/10.1057/ejis.2014.36</a></div>
 </div>
 <div id="ref-buschmann1996system" class="csl-entry" role="listitem">
-<div class="csl-left-margin">31. </div><div class="csl-right-inline">Buschmann F, Meunier R, Rohnert H, Sommerlad P, Stal M (1996) A <span>System</span> of <span>Patterns</span>. Wiley</div>
+<div class="csl-left-margin">33. </div><div class="csl-right-inline">Buschmann F, Meunier R, Rohnert H, Sommerlad P, Stal M (1996) A <span>System</span> of <span>Patterns</span>. Wiley</div>
 </div>
 <div id="ref-welten2024study" class="csl-entry" role="listitem">
-<div class="csl-left-margin">32. </div><div class="csl-right-inline">Welten S, de Arruda Botelho Herr M, Hempel L, et al (2024) A study on interoperability between two <span>Personal Health Train</span> infrastructures in leukodystrophy data analysis. Sci Data 11(1):663. <a href="https://doi.org/10.1038/s41597-024-03450-6">https://doi.org/10.1038/s41597-024-03450-6</a></div>
+<div class="csl-left-margin">34. </div><div class="csl-right-inline">Welten S, de Arruda Botelho Herr M, Hempel L, et al (2024) A study on interoperability between two <span>Personal Health Train</span> infrastructures in leukodystrophy data analysis. Sci Data 11(1):663. <a href="https://doi.org/10.1038/s41597-024-03450-6">https://doi.org/10.1038/s41597-024-03450-6</a></div>
 </div>
 <div id="ref-harby2025data" class="csl-entry" role="listitem">
-<div class="csl-left-margin">33. </div><div class="csl-right-inline">Harby AA, Zulkernine F (2025) Data <span>Lakehouse</span>: <span>A</span> survey and experimental study. Information Systems 127:102460. <a href="https://doi.org/10.1016/j.is.2024.102460">https://doi.org/10.1016/j.is.2024.102460</a></div>
+<div class="csl-left-margin">35. </div><div class="csl-right-inline">Harby AA, Zulkernine F (2025) Data <span>Lakehouse</span>: <span>A</span> survey and experimental study. Information Systems 127:102460. <a href="https://doi.org/10.1016/j.is.2024.102460">https://doi.org/10.1016/j.is.2024.102460</a></div>
 </div>
 <div id="ref-schneider2024lakehouse" class="csl-entry" role="listitem">
-<div class="csl-left-margin">34. </div><div class="csl-right-inline">Schneider J, Gröger C, Lutsch A, Schwarz H, Mitschang B (2024) The <span>Lakehouse</span>: <span>State</span> of the <span>Art</span> on <span>Concepts</span> and <span>Technologies</span>. SN COMPUT SCI 5(5):449. <a href="https://doi.org/10.1007/s42979-024-02737-0">https://doi.org/10.1007/s42979-024-02737-0</a></div>
+<div class="csl-left-margin">36. </div><div class="csl-right-inline">Schneider J, Gröger C, Lutsch A, Schwarz H, Mitschang B (2024) The <span>Lakehouse</span>: <span>State</span> of the <span>Art</span> on <span>Concepts</span> and <span>Technologies</span>. SN COMPUT SCI 5(5):449. <a href="https://doi.org/10.1007/s42979-024-02737-0">https://doi.org/10.1007/s42979-024-02737-0</a></div>
 </div>
 <div id="ref-hai2023data" class="csl-entry" role="listitem">
-<div class="csl-left-margin">35. </div><div class="csl-right-inline">Hai R, Koutras C, Quix C, Jarke M (2023) Data <span>Lakes</span>: <span>A Survey</span> of <span>Functions</span> and <span>Systems</span>. IEEE Transactions on Knowledge and Data Engineering 35(12):12571–12590. <a href="https://doi.org/10.1109/TKDE.2023.3270101">https://doi.org/10.1109/TKDE.2023.3270101</a></div>
+<div class="csl-left-margin">37. </div><div class="csl-right-inline">Hai R, Koutras C, Quix C, Jarke M (2023) Data <span>Lakes</span>: <span>A Survey</span> of <span>Functions</span> and <span>Systems</span>. IEEE Transactions on Knowledge and Data Engineering 35(12):12571–12590. <a href="https://doi.org/10.1109/TKDE.2023.3270101">https://doi.org/10.1109/TKDE.2023.3270101</a></div>
 </div>
 <div id="ref-abouzaid2025building" class="csl-entry" role="listitem">
-<div class="csl-left-margin">36. </div><div class="csl-right-inline">AbouZaid A, Barclay PJ, Chrysoulas C, Pitropakis N (2025) Building a modern data platform based on the data lakehouse architecture and cloud-native ecosystem. Discov Appl Sci 7(3):166. <a href="https://doi.org/10.1007/s42452-025-06545-w">https://doi.org/10.1007/s42452-025-06545-w</a></div>
+<div class="csl-left-margin">38. </div><div class="csl-right-inline">AbouZaid A, Barclay PJ, Chrysoulas C, Pitropakis N (2025) Building a modern data platform based on the data lakehouse architecture and cloud-native ecosystem. Discov Appl Sci 7(3):166. <a href="https://doi.org/10.1007/s42452-025-06545-w">https://doi.org/10.1007/s42452-025-06545-w</a></div>
 </div>
 <div id="ref-mazumdar2023data" class="csl-entry" role="listitem">
-<div class="csl-left-margin">37. </div><div class="csl-right-inline">Mazumdar D, Hughes J, Onofre JB (2023) The <span>Data Lakehouse</span>: <span>Data Warehousing</span> and <span>More</span>. <a href="http://arxiv.org/abs/2310.08697">http://arxiv.org/abs/2310.08697</a>. Accessed 11 Jan 2024</div>
-</div>
-<div id="ref-2024openhie" class="csl-entry" role="listitem">
-<div class="csl-left-margin">38. </div><div class="csl-right-inline">(2024) <a href="https://ohie.org/"><span>OpenHIE Framework</span> v5.2-en</a></div>
+<div class="csl-left-margin">39. </div><div class="csl-right-inline">Mazumdar D, Hughes J, Onofre JB (2023) The <span>Data Lakehouse</span>: <span>Data Warehousing</span> and <span>More</span>. <a href="http://arxiv.org/abs/2310.08697">http://arxiv.org/abs/2310.08697</a>. Accessed 11 Jan 2024</div>
 </div>
 </div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{kapitan2025,
   author = {Kapitan, Daniel and Broeren, Jack and Beliën, Jeroen and
@@ -1249,8 +1048,8 @@ healthcare</a>. GitHub 1–3</div>
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../data-stations/comparison.html" class="pagination-link" aria-label="Comparative analysis">
-        <span class="nav-page-text">Comparative analysis</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../data-stations/terminology.html" class="pagination-link" aria-label="Harmonized terminology">
+        <span class="nav-page-text">Harmonized terminology</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
