@@ -143,7 +143,7 @@ By addressing these four design questions, our aim is to specify the solution de
 ### Outline
 With this overarching layered view in mind, we loosely follow an Action Design Research approach [@sein2011action;@venable2016feds] to address these design questions. Our main contributions are:
 
-- A harmonized ontology of a data station and data hub, that integrates the PHT architecture [@boninodasilvasantos2022personal] and the DSSC Blueprint 2.0
+- A harmonized ontology of a data station and data hub, that integrates the PHT architecture [@boninodasilvasantos2022personal;@choudhury2025advancing] and the DSSC Blueprint 2.0
 - Comparative analysis of existing implementations
 - Synthesis of the above into functional and technical description of a data station in Archimate, thereby focusing on two primary patterns [@buschmann1996system]:
   - the layers pattern for addressing various aspects of interoperability across the stack, extending earlier work by @welten2024study who have introduced five layers of interoperability; 
