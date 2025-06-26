@@ -68,6 +68,8 @@ website:
       contents:
         - href: ./data-stations/index.qmd
           text: "Introduction"
+        - href: ./data-stations/terminology.qmd
+          text: "Harmonized terminology"        
         - href: ./data-stations/comparison.qmd
           text: "Comparative analysis"
         - href: ./data-stations/solution-design.qmd

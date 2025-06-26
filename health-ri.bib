@@ -356,6 +356,25 @@
   publisher = {Wiley}
 }
 
+@article{cadavid2024docker,
+  title = {Beyond {{Docker}}: {{Enhancing}} Vantage6 with {{Kubernetes}} for {{Federated Learning}}},
+  shorttitle = {Beyond {{Docker}}},
+  author = {Cadavid, Héctor and Geng, Cunliang},
+  date = {2024-08-22},
+  journaltitle = {Studies in Health Technology and Informatics},
+  shortjournal = {Stud Health Technol Inform},
+  volume = {316},
+  eprint = {39176516},
+  eprinttype = {pubmed},
+  pages = {1603--1604},
+  issn = {1879-8365},
+  doi = {10.3233/SHTI240729},
+  abstract = {Vantage6, a powerful platform for privacy-preserving analysis in the life-sciences domain, employs Docker in its data nodes when performing tasks like federated learning. This tight bond to Docker poses challenges on infrastructure security, efficient computing resources usage, and integration of alternative container technologies. To overcome these challenges, we explored the integration of Kubernetes into vantage6 through a Proof-of-Concept (PoC) approach. The PoC designed and implemented a Kubernetes-based architecture for vantage6, which can be easily deployed on a single machine or a cluster. This PoC serves as the reference to accelerate the adoption of Kubernetes in vantage6.},
+  langid = {english},
+  keywords = {Biological Science Disciplines,Computer Security,Containers,Docker,Federated learning,Humans,Kubernetes,Machine Learning,Software,vantage6},
+  file = {/Users/dkapitan/Zotero/storage/ZGKKEMBM/Cadavid and Geng - 2024 - Beyond Docker Enhancing vantage6 with Kubernetes for Federated Learning.pdf}
+}
+
 @article{cascini2024health,
   title = {Health Data Sharing Attitudes towards Primary and Secondary Use of Data: A Systematic Review},
   shorttitle = {Health Data Sharing Attitudes towards Primary and Secondary Use of Data},
@@ -402,6 +421,24 @@
   langid = {english},
   keywords = {FAIR,FHIR,Personal health train},
   file = {/Users/dkapitan/Zotero/storage/MX4FY5MX/Choudhury et al. - 2020 - Personal Health Train on FHIR A Privacy Preservin.pdf}
+}
+
+@article{choudhury2025advancing,
+  title = {Advancing {{Privacy-Preserving Health Care Analytics}} and {{Implementation}} of the {{Personal Health Train}}: {{Federated Deep Learning Study}}},
+  shorttitle = {Advancing {{Privacy-Preserving Health Care Analytics}} and {{Implementation}} of the {{Personal Health Train}}},
+  author = {Choudhury, Ananya and Volmer, Leroy and Martin, Frank and Fijten, Rianne and Wee, Leonard and Dekker, Andre and family=Soest, given=Johan, prefix=van, useprefix=false},
+  date = {2025-02-06},
+  journaltitle = {JMIR AI},
+  volume = {4},
+  number = {1},
+  pages = {e60847},
+  publisher = {JMIR Publications Inc., Toronto, Canada},
+  doi = {10.2196/60847},
+  url = {https://ai.jmir.org/2025/1/e60847},
+  urldate = {2025-06-26},
+  abstract = {Background: The rapid advancement of deep learning in health care presents significant opportunities for automating complex medical tasks and improving clinical workflows. However, widespread adoption is impeded by data privacy concerns and the necessity for large, diverse datasets across multiple institutions. Federated learning (FL) has emerged as a viable solution, enabling collaborative artificial intelligence model development without sharing individual patient data. To effectively implement FL in health care, robust and secure infrastructures are essential. Developing such federated deep learning frameworks is crucial to harnessing the full potential of artificial intelligence while ensuring patient data privacy and regulatory compliance. Objective: The objective is to introduce an innovative FL infrastructure called the Personal Health Train (PHT) that includes the procedural, technical, and governance components needed to implement FL on real-world health care data, including training deep learning neural networks. The study aims to apply this federated deep learning infrastructure to the use case of gross tumor volume segmentation on chest computed tomography images of patients with lung cancer and present the results from a proof-of-concept experiment. Methods: The PHT framework addresses the challenges of data privacy when sharing data, by keeping data close to the source and instead bringing the analysis to the data. Technologically, PHT requires 3 interdependent components: “tracks” (protected communication channels), “trains” (containerized software apps), and “stations” (institutional data repositories), which are supported by the open source “Vantage6” software. The study applies this federated deep learning infrastructure to the use case of gross tumor volume segmentation on chest computed tomography images of patients with lung cancer, with the introduction of an additional component called the secure aggregation server, where the model averaging is done in a trusted and inaccessible environment. Results: We demonstrated the feasibility of executing deep learning algorithms in a federated manner using PHT and presented the results from a proof-of-concept study. The infrastructure linked 12 hospitals across 8 nations, covering 4 continents, demonstrating the scalability and global reach of the proposed approach. During the execution and training of the deep learning algorithm, no data were shared outside the hospital. Conclusions: The findings of the proof-of-concept study, as well as the implications and limitations of the infrastructure and the results, are discussed. The application of federated deep learning to unstructured medical imaging data, facilitated by the PHT framework and Vantage6 platform, represents a significant advancement in the field. The proposed infrastructure addresses the challenges of data privacy and enables collaborative model development, paving the way for the widespread adoption of deep learning–based tools in the medical domain and beyond. The introduction of the secure aggregation server implied that data leakage problems in FL can be prevented by careful design decisions of the infrastructure. Trial Registration: ClinicalTrials.gov NCT05775068; https://clinicaltrials.gov/study/NCT05775068},
+  langid = {english},
+  file = {/Users/dkapitan/Zotero/storage/MXEUL77T/e60847.html}
 }
 
 @article{chustecki2024benefits,
@@ -586,6 +623,17 @@
   abstract = {Federated analytics (FA) is a privacy-preserving framework for computing data analytics over multiple remote parties (e.g., mobile devices) or silo-ed institutional entities (e.g., hospitals, banks) without sharing the data among parties. Motivated by the practical use cases of federated analytics, we follow a systematic discussion on federated analytics in this article. In particular, we discuss the unique characteristics of federated analytics and how it differs from federated learning. We also explore a wide range of FA queries and discuss various existing solutions and potential use case applications for different FA queries.},
   langid = {english},
   file = {/Users/dkapitan/Zotero/storage/6XTNZGAM/Elkordy et al. - 2023 - Federated Analytics A Survey.pdf}
+}
+
+@online{eosc-entrust,
+  title = {European Network of Trusted Research Environments ({{EOSC-ENTRUST}}) Project},
+  date = {2024-03-01},
+  url = {https://eosc-entrust.eu/},
+  urldate = {2025-06-26},
+  abstract = {EOSC-ENTRUST aims to create a European network of Trusted Research Environments (TREs) for sensitive data.},
+  langid = {english},
+  organization = {EOSC-ENTRUST},
+  file = {/Users/dkapitan/Zotero/storage/8MUED39X/eosc-entrust.eu.html}
 }
 
 @article{escriba-montagut2024federated,
@@ -855,6 +903,13 @@
   file = {/Users/dkapitan/Zotero/storage/WE6FZEL3/Hosch et al. - 2023 - FHIR-PYrate a data science friendly Python package to query FHIR servers.pdf}
 }
 
+@online{jmirc,
+  title = {{{JMIR AI}} - {{Advancing Privacy-Preserving Health Care Analytics}} and {{Implementation}} of the {{Personal Health Train}}: {{Federated Deep Learning Study}}},
+  url = {https://ai.jmir.org/2025/1/e60847},
+  urldate = {2025-06-24},
+  file = {/Users/dkapitan/Zotero/storage/UB8FREI6/e60847.html}
+}
+
 @article{johnson2021isa,
   title = {{{ISA API}}: {{An}} Open Platform for Interoperable Life Science Experimental Metadata},
   shorttitle = {{{ISA API}}},
@@ -995,6 +1050,16 @@
   abstract = {Background: Observational clinical studies play a pivotal role in advancing medical knowledge and patient healthcare. To lessen the prohibitive costs of conducting these studies and support evidence-based medicine, results emanating from these studies need to be shared and compared to one another. Current approaches for clinical study management have limitations that prohibit the effective sharing of clinical research data. Methods: The objective of this paper is to present a proposal for a clinical study architecture to not only facilitate the communication of clinical study data but also its context so that the data that is being communicated can be unambiguously understood at the receiving end. Our approach is two-fold. First we outline our methodology to map clinical data from Clinical Data Interchange Standards Consortium Operational Data Model (ODM) to the Fast Healthcare Interoperable Resource (FHIR) and outline the strengths and weaknesses of this approach. Next, we propose two FHIR-based models, to capture the metadata and data from the clinical study, that not only facilitate the syntactic but also semantic interoperability of clinical study data. Conclusions: This work shows that our proposed FHIR resources provide a good fit to semantically enrich the ODM data. By exploiting the rich information model in FHIR, we can organise clinical data in a manner that preserves its organisation but captures its context. Our implementations demonstrate that FHIR can natively manage clinical data. Furthermore, by providing links at several levels, it improves the traversal and querying of the data. The intended benefits of this approach is more efficient and effective data exchange that ultimately will allow clinicians to switch their focus back to decision-making and evidence-based medicines.},
   langid = {english},
   file = {/Users/dkapitan/Zotero/storage/336XH4TF/Leroux et al. - 2017 - Towards achieving semantic interoperability of clinical study data with FHIR.pdf}
+}
+
+@book{li2024challenges,
+  title = {From {{Challenges}} and {{Pitfalls}} to {{Recommendations}} and {{Opportunities}}: {{Implementing Federated Learning}} in {{Healthcare}}},
+  shorttitle = {From {{Challenges}} and {{Pitfalls}} to {{Recommendations}} and {{Opportunities}}},
+  author = {Li, Ming and Xu, Pengcheng and Hu, Junjie and Tang, Zeyu and Yang, Guang},
+  date = {2024-09-15},
+  doi = {10.48550/arXiv.2409.09727},
+  abstract = {Federated learning holds great potential for enabling large-scale healthcare research and collaboration across multiple centres while ensuring data privacy and security are not compromised. Although numerous recent studies suggest or utilize federated learning based methods in healthcare, it remains unclear which ones have potential clinical utility. This review paper considers and analyzes the most recent studies up to May 2024 that describe federated learning based methods in healthcare. After a thorough review, we find that the vast majority are not appropriate for clinical use due to their methodological flaws and/or underlying biases which include but are not limited to privacy concerns, generalization issues, and communication costs. As a result, the effectiveness of federated learning in healthcare is significantly compromised. To overcome these challenges, we provide recommendations and promising opportunities that might be implemented to resolve these problems and improve the quality of model development in federated learning with healthcare.},
+  file = {/Users/dkapitan/Zotero/storage/7LYW3Y58/Li et al. - 2024 - From Challenges and Pitfalls to Recommendations and Opportunities Implementing Federated Learning i.pdf}
 }
 
 @article{li2025evolution,
@@ -1441,6 +1506,23 @@
   urldate = {2025-06-11},
   langid = {english},
   file = {/Users/dkapitan/Zotero/storage/V9I4G94C/Rinaldi et al. - 2023 - International Clinical Research Data Ecosystem From Data Standardization to Federated Analysis.pdf}
+}
+
+@article{riviera2023felebrities,
+  title = {{{FeLebrities}}: {{A User-Centric Assessment}} of {{Federated Learning Frameworks}}},
+  shorttitle = {{{FeLebrities}}},
+  author = {Riviera, Walter and Galazzo, Ilaria Boscolo and Menegaz, Gloria},
+  date = {2023},
+  journaltitle = {IEEE Access},
+  volume = {11},
+  pages = {96865--96878},
+  issn = {2169-3536},
+  doi = {10.1109/ACCESS.2023.3312579},
+  url = {https://ieeexplore.ieee.org/ielx7/6287639/10005208/10242027.pdf},
+  urldate = {2025-06-24},
+  abstract = {Federated Learning (FL) is a new paradigm aimed at solving data access problems. It provides a solution by moving the focus from sharing data to sharing models. The FL paradigm involves different entities (institutions) holding proprietary datasets that, contributing with each other to train a global Artificial Intelligence (AI) model using their own locally available data. Although several studies have proposed methods to distribute the computation or aggregate results, few efforts have been made to cover on how to implement FL pipelines. With the aim of accelerating the exploitation of FL frameworks, this paper proposes a survey of public tools that are currently available for building FL pipelines, an objective ranking based on the current state of user preferences, and an assessment of the growing trend of the tool’s popularity over a one year time window, with measurements performed every six months. These measurements include objective metrics, like the number of “Watch,” “Star” and “Follow” available from software repositories as well as thirteen custom metrics grouped into three main categories: Usability, Portability, and Flexibility. Finally, a ranking of the maturity of the tools is derived based on the key aspects to consider when building a FL pipeline.},
+  keywords = {AI at scale,Artificial intelligence,Computational modeling,Data models,Distributed management,distributed systems,Federated learning,Federated learning tools,Guidelines,Surveys},
+  file = {/Users/dkapitan/Zotero/storage/H3KEUTSJ/Riviera et al. - 2023 - FeLebrities A User-Centric Assessment of Federated Learning Frameworks.pdf}
 }
 
 @incollection{rosenau2024structured,

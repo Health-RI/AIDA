@@ -7,6 +7,7 @@ lang: en
 
 ## EUCAIM
 
+![High-level architecture of EUCAIM node](./images/eucaim-node.png)
 
 ## PLUGIN
 
