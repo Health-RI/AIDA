@@ -1,0 +1,16 @@
+---
+title: Genomics
+---
+
+Context:
+- GA4GH
+- Germline vs Somatic
+
+Points to make:
+- Where it breaks/does not work with generic Trusted Processing Environments
+    - Overview of Genomics (T)PEs
+- Users need to bring not only software but data into the environment
+    - Balance figure (open-effective-user control-some privacy risks / closed-ineffective-central control-full privacy)
+- Federated learning currently under development
+    - Beacons
+    - WEP/S
