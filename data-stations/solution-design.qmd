@@ -54,5 +54,40 @@ TO DO: explain
   - Train for primary use, like API call and messaging, with stricter latency requirements. This also includes deployment of AI for inference
 
 
+### The lakehouse architecture as the _de facto_ standard for populating data stations
+The PHT architecture does not specify _how_ the data stations should be populated with data. Also the DSB2 only describes how the 'Data, Services and Offerings descriptions' building block should provide data providers the tools to describe a data product appropriately and completely, that is, tools for metadata creation and management.
+
+One of the key questions of this paper is to detail [the 'data conformity zone' as defined in the Cumuluz canvas](https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download) as the functionality through which the data station is populated
 
 
+### Parking lot: operational readiness assessment
+
+- Andre: how do we manage the project, through which governance do we want to decide the priorities
+  - We want to run it as a proper open source project
+  - But we need to make sure other people contribute to it (not just Frank and Bart)
+  - SURF as new candidate are managing organization
+  - @Andre: action for follow up
+- Point Johan: decision principles i) logs from nodes; ii) logs from central server. What is the philosophy what we want to make visible, because it has implications for security
+  - User point of view: we want some level of central visibility
+  - Software point of view: should we build this in vantage6, or should we integrate another existing open source package
+  - Johan:
+    - we should separate out different types of logs
+    - maintenance dashboard
+  - Yannick: clarifies finding in debugging SocketIO time-outs  
+    - splitting pay-loads
+    - optimizing proxy
+    - Bart & Andre: known issues, in previous version of vantage6 it was solved in fork
+  - action Tim, Marlou & Yannick: PR July is a short-term
+  - Larger question: should we continue with SocketIO?
+    - Melle: use SocketIO for short messages, but don't use it for logging training
+- Hardware failure
+  - vantage6 v5 will be Kubernetes, but both MDW and DHD are in favour of keeping Docker as a simpeler solution
+  - Andre: we agree on technical perspectives
+  - Ideas
+    - keep v4 in Docker
+    - build v6 with Kubernetes
+    - possibility for allowing hybrid, Docker option in v5
+    - contractual
+      - MDW: have general contracts
+      - DHD: does specify in contract that it is Docker Engine
+    - 

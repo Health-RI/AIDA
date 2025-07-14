@@ -69,7 +69,7 @@ website:
         - href: ./data-stations/index.qmd
           text: "Introduction"
         - href: ./data-stations/terminology.qmd
-          text: "Harmonized terminology"        
+          text: "Data stations for federated analytics"        
         - href: ./data-stations/comparison.qmd
           text: "Comparative analysis"
         - href: ./data-stations/solution-design.qmd

@@ -5,6 +5,15 @@ description: |
 lang: en
 ---
 
+@tbl-types-hdp lists known examples of existing health data platform architectures along these two trade-offs.
+
+|               | primary           | secondary       |
+|---------------|-------------------|-----------------|
+| **centralized**   | openHIE [@2024openhie], Digizorg, Nordics | kapseli, Mayo, ... |
+| **decentralized** | RSO Zuid Limburg, Twiin portaal, ...  | many federated analytics research networks such as x-omics programme and EUCAIM |
+
+: Broad categorization of health data platforms {#tbl-types-hdp}
+
 ## EUCAIM
 
 ![High-level architecture of EUCAIM node](./images/eucaim-node.png)
