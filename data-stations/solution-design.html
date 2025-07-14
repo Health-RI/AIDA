@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7d4da23191948fe4990abb378bf680ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ef7e8e838799dd346a0a09fbcfd33bd8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data-stations/terminology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Harmonized terminology</span></a>
+ <span class="menu-text">Data stations for federated analytics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -193,6 +193,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#detailing-the-layers-of-a-data-station" id="toc-detailing-the-layers-of-a-data-station" class="nav-link active" data-scroll-target="#detailing-the-layers-of-a-data-station">Detailing the layers of a data station</a></li>
   <li><a href="#detailing-the-data-conformity-zone" id="toc-detailing-the-data-conformity-zone" class="nav-link" data-scroll-target="#detailing-the-data-conformity-zone">Detailing the data conformity zone</a></li>
   <li><a href="#detailing-the-trains" id="toc-detailing-the-trains" class="nav-link" data-scroll-target="#detailing-the-trains">Detailing the trains</a></li>
+  <li><a href="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" id="toc-the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="nav-link" data-scroll-target="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</a></li>
+  <li><a href="#parking-lot-operational-readiness-assessment" id="toc-parking-lot-operational-readiness-assessment" class="nav-link" data-scroll-target="#parking-lot-operational-readiness-assessment">Parking lot: operational readiness assessment</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="solution-design.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
@@ -298,6 +300,61 @@ Figure&nbsp;1: Solution of a minimal lakehouse that sits at the core of a data s
 <ul>
 <li>Train for secondary use, which usually with batch-wise, less strict latency requirements</li>
 <li>Train for primary use, like API call and messaging, with stricter latency requirements. This also includes deployment of AI for inference</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="level3">
+<h3 class="anchored" data-anchor-id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</h3>
+<p>The PHT architecture does not specify <em>how</em> the data stations should be populated with data. Also the DSB2 only describes how the ‘Data, Services and Offerings descriptions’ building block should provide data providers the tools to describe a data product appropriately and completely, that is, tools for metadata creation and management.</p>
+<p>One of the key questions of this paper is to detail <a href="https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download">the ‘data conformity zone’ as defined in the Cumuluz canvas</a> as the functionality through which the data station is populated</p>
+</section>
+<section id="parking-lot-operational-readiness-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="parking-lot-operational-readiness-assessment">Parking lot: operational readiness assessment</h3>
+<ul>
+<li>Andre: how do we manage the project, through which governance do we want to decide the priorities
+<ul>
+<li>We want to run it as a proper open source project</li>
+<li>But we need to make sure other people contribute to it (not just Frank and Bart)</li>
+<li>SURF as new candidate are managing organization</li>
+<li>Andre: action for follow up</li>
+</ul></li>
+<li>Point Johan: decision principles i) logs from nodes; ii) logs from central server. What is the philosophy what we want to make visible, because it has implications for security
+<ul>
+<li>User point of view: we want some level of central visibility</li>
+<li>Software point of view: should we build this in vantage6, or should we integrate another existing open source package</li>
+<li>Johan:
+<ul>
+<li>we should separate out different types of logs</li>
+<li>maintenance dashboard</li>
+</ul></li>
+<li>Yannick: clarifies finding in debugging SocketIO time-outs
+<ul>
+<li>splitting pay-loads</li>
+<li>optimizing proxy</li>
+<li>Bart &amp; Andre: known issues, in previous version of vantage6 it was solved in fork</li>
+</ul></li>
+<li>action Tim, Marlou &amp; Yannick: PR July is a short-term</li>
+<li>Larger question: should we continue with SocketIO?
+<ul>
+<li>Melle: use SocketIO for short messages, but don’t use it for logging training</li>
+</ul></li>
+</ul></li>
+<li>Hardware failure
+<ul>
+<li>vantage6 v5 will be Kubernetes, but both MDW and DHD are in favour of keeping Docker as a simpeler solution</li>
+<li>Andre: we agree on technical perspectives</li>
+<li>Ideas
+<ul>
+<li>keep v4 in Docker</li>
+<li>build v6 with Kubernetes</li>
+<li>possibility for allowing hybrid, Docker option in v5</li>
+<li>contractual
+<ul>
+<li>MDW: have general contracts</li>
+<li>DHD: does specify in contract that it is Docker Engine</li>
+</ul></li>
+<li></li>
+</ul></li>
 </ul></li>
 </ul>
 

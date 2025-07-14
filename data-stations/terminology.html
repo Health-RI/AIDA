@@ -60,7 +60,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7d4da23191948fe4990abb378bf680ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ef7e8e838799dd346a0a09fbcfd33bd8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -139,7 +139,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-stations/terminology.html">Harmonized terminology</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-stations/terminology.html">Data stations for federated analytics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -177,7 +177,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data-stations/terminology.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Harmonized terminology</span></a>
+ <span class="menu-text">Data stations for federated analytics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -208,16 +208,15 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#federated-analytics-and-the-personal-health-train-architecture" id="toc-federated-analytics-and-the-personal-health-train-architecture" class="nav-link active" data-scroll-target="#federated-analytics-and-the-personal-health-train-architecture">Federated analytics and the Personal Health Train architecture</a></li>
-  <li><a href="#mapping-the-pht-architecture-into-the-dssc-blueprint-2.0" id="toc-mapping-the-pht-architecture-into-the-dssc-blueprint-2.0" class="nav-link" data-scroll-target="#mapping-the-pht-architecture-into-the-dssc-blueprint-2.0">Mapping the PHT architecture into the DSSC Blueprint 2.0</a>
+  <li><a href="#the-personal-health-train-architecture-as-a-starting-point" id="toc-the-personal-health-train-architecture-as-a-starting-point" class="nav-link active" data-scroll-target="#the-personal-health-train-architecture-as-a-starting-point">The Personal Health Train architecture as a starting point</a></li>
+  <li><a href="#the-pht-architecture-in-terms-of-eira-building-blocks" id="toc-the-pht-architecture-in-terms-of-eira-building-blocks" class="nav-link" data-scroll-target="#the-pht-architecture-in-terms-of-eira-building-blocks">The PHT architecture in terms of EIRA building blocks</a></li>
+  <li><a href="#defining-layers-of-interoperability" id="toc-defining-layers-of-interoperability" class="nav-link" data-scroll-target="#defining-layers-of-interoperability">Defining layers of interoperability</a>
   <ul class="collapse">
-  <li><a href="#conceptual-framework-for-interoperability" id="toc-conceptual-framework-for-interoperability" class="nav-link" data-scroll-target="#conceptual-framework-for-interoperability">Conceptual framework for interoperability</a></li>
-  <li><a href="#ideas-from-tno" id="toc-ideas-from-tno" class="nav-link" data-scroll-target="#ideas-from-tno">Ideas from TNO</a></li>
+  <li><a href="#eira-lost-framework" id="toc-eira-lost-framework" class="nav-link" data-scroll-target="#eira-lost-framework">EIRA LOST framework</a></li>
+  <li><a href="#interoperability-within-the-dssc-blueprint" id="toc-interoperability-within-the-dssc-blueprint" class="nav-link" data-scroll-target="#interoperability-within-the-dssc-blueprint">Interoperability within the DSSC Blueprint</a></li>
+  <li><a href="#layers-of-interoperability-of-pht" id="toc-layers-of-interoperability-of-pht" class="nav-link" data-scroll-target="#layers-of-interoperability-of-pht">Layers of interoperability of PHT</a></li>
   </ul></li>
-  <li><a href="#mapping-pht-to-the-dssc-blueprint-2.0" id="toc-mapping-pht-to-the-dssc-blueprint-2.0" class="nav-link" data-scroll-target="#mapping-pht-to-the-dssc-blueprint-2.0">Mapping PHT to the DSSC Blueprint 2.0</a></li>
-  <li><a href="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" id="toc-the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="nav-link" data-scroll-target="#the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</a></li>
   <li><a href="#parking-lot" id="toc-parking-lot" class="nav-link" data-scroll-target="#parking-lot">Parking lot</a></li>
-  <li><a href="#sec-glossary" id="toc-sec-glossary" class="nav-link" data-scroll-target="#sec-glossary">Glossary</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="terminology.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li></ul></div></nav>
     </div>
@@ -243,9 +242,9 @@ div.csl-indent {
 </header>
 
 
-<section id="federated-analytics-and-the-personal-health-train-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="federated-analytics-and-the-personal-health-train-architecture">Federated analytics and the Personal Health Train architecture</h2>
-<p>The network topology choice for implementing FL can vary from client-server, peer-to-peer, tree-based hierarchical, or hybrid topologies. While peer-to-peer architecture is more cost-effective and offers a high capacity, it has the disadvantages of a lack of security and privacy constraints and a complex troubleshooting process in the event of a failure. The choice of network topology for this study is based on a client-server architecture, offering a single point of control in the form of the central server. We take the Personal Health Train (PHT) architecture as our starting point <span class="citation" data-cites="choudhury2025advancing">[<a href="#ref-choudhury2025advancing" role="doc-biblioref">1</a>]</span>. Note that the architecture describes here is based on the <a href="https://distributedlearning.ai/">vantage6</a> platform, which we aim to generalize in this paper.</p>
+<section id="the-personal-health-train-architecture-as-a-starting-point" class="level2">
+<h2 class="anchored" data-anchor-id="the-personal-health-train-architecture-as-a-starting-point">The Personal Health Train architecture as a starting point</h2>
+<p>We take the Personal Health Train (PHT) architecture as our starting point <span class="citation" data-cites="choudhury2025advancing">[<a href="#ref-choudhury2025advancing" role="doc-biblioref">1</a>]</span>. Note that the architecture described here is based on the <a href="https://distributedlearning.ai/">vantage6</a> platform, which we aim to generalize in this paper.</p>
 <div id="fig-pht-overview-argos" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pht-overview-argos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -256,7 +255,7 @@ Figure&nbsp;1: Overall architecture of a federated deep learning architecture ad
 </figcaption>
 </figure>
 </div>
-<p><a href="#fig-pht-overview-argos" class="quarto-xref">Figure&nbsp;1</a> depicts the key components of the architecture, which are described in the infobox below.</p>
+<p><a href="#fig-pht-overview-argos" class="quarto-xref">Figure&nbsp;1</a> depicts the key components of the architecture, which are described in the infobox below. It is important to note that we will focus on a hub-and-spoke network topology (also referred to as client-server) for the federated analytics architecture. While there are many different network topologies choice for implementing federated analytics, including peer-to-peer and tree-based hierarchical, we focus on hub-and-spoke primarily because of a better fit for the healthcare domain in terms of security and privacy requirements. While peer-to-peer architecture is more cost-effective and offers a high capacity, it has the disadvantages of a lack of security and privacy constraints and a complex troubleshooting process in the event of a failure. By choosing the client-server network topology, we assume that Data Consumers gain access and use the platform through a central server, which also functions as the main point of control for the federated analytics network.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Central coordination server</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Secure Aggregation Server (SAS)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Data Stations</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Trains</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Tracks and Track Provider</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false">Data Providers</a></li></ul>
 <div class="tab-content">
@@ -295,12 +294,83 @@ Figure&nbsp;2: Illustration of federated machine learning training workflow.
 <p>The blue shaded section of <a href="#fig-pht-workflow" class="quarto-xref">Figure&nbsp;2</a> shows the details of the security mechanisms used in vantage6. The SAS verifies the JWT signature of each received model and forwards the request to the Algorithm API. The Algorithm API extracts the weight and metadata information of the models. Once the SAS receives all the required locally trained models for that cycle, it initiates the FedAvg algorithm to consolidate the models and create an intermediate averaged model, which is stored locally. This completes the first iteration of the training cycle. For the second and subsequent iterations, the data stations request the SAS to send the intermediate averaged model weights from the previous iteration. The SAS validates these requests and sends the model weights to the data stations, which then use them for further training on their local data. This cycle of training and averaging continues until the model converges or the desired number of iterations is reached.</p>
 <p>At the end of the training process, the SAS sends a notification to the researcher indicating the successful completion of the task. The researcher can then download the final global model from the server. It is important to note that during the training iterations, the researcher or other users of the infrastructure do not have access to the intermediate averaged models generated by the SAS. This design choice prevents the possibility of insider attacks and data leakage, as users cannot regenerate patterns from the training data using the intermediate models.is conducted. key components of the architecture:</p>
 </section>
-<section id="mapping-the-pht-architecture-into-the-dssc-blueprint-2.0" class="level2">
-<h2 class="anchored" data-anchor-id="mapping-the-pht-architecture-into-the-dssc-blueprint-2.0">Mapping the PHT architecture into the DSSC Blueprint 2.0</h2>
+<section id="the-pht-architecture-in-terms-of-eira-building-blocks" class="level2">
+<h2 class="anchored" data-anchor-id="the-pht-architecture-in-terms-of-eira-building-blocks">The PHT architecture in terms of EIRA building blocks</h2>
+<p>The European Interoperability Reference Architecture (EIRA) provides a framework for describing interoperable digital solutions. The info box below describes the concepts of Architecture Building Blocks, Solution Building Blocks and Solution Architecture Template that are used for this purpose.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Architecture Building Block (ABB)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Solution Building Block (SBB)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Solution Architecture Template (SAT)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Based on the TOGAF definition <span class="citation" data-cites="togaf">[<a href="#ref-togaf" role="doc-biblioref">3</a>]</span>, an Architecture Building Block is an abstract component that captures architecture requirements and that directs and guides the development of Solution Building Blocks. An ABB represents a (potentially re-usable) component of legal, organisational, semantic or technical capability that can be combined with other Architecture Building Blocks. An Architecture Building Block describes generic characteristics and functionalities. Architecture Building Blocks are used to describe reference architectures, solution architecture templates or solution architectures of a specific solutions.</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Based on the TOGAF definition <span class="citation" data-cites="togaf">[<a href="#ref-togaf" role="doc-biblioref">3</a>]</span>, a Solution Building Block is a concrete element that defines the implementation and Introduction to the European Interoperability Reference Architecture v3.0.0 27 European Interoperability Reference Architecture (EIRA©) v3.0.0 fulfils the required business requirements of one or more Architecture Building Blocks. On the technical view, a Solution Building Block is a specific product or software component and may be either procured or developed.</p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p>A solution architecture template (SAT) is a specification containing including a sub-set of Architecture Building Blocks of the EIRA© and some optional Solution Building Blocks. It focuses on the most salient building blocks needed to build an interoperable solution addressing a particular business capability involving business information exchange.</p>
+</div>
+</div>
+</div>
+<div id="fig-data-stations-blueprint" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-stations-blueprint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/Data stations - blueprint.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Blueprint of data stations for federated analytics in terms of EIRA ABB."><img src="images/Data stations - blueprint.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-stations-blueprint-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Blueprint of data stations for federated analytics in terms of EIRA ABB.
+</figcaption>
+</figure>
+</div>
+<p>Each of the application components are described in EIRA with a unique identifier, as for example the <a href="https://interoperable-europe.ec.europa.eu/taxonomy/term/10605"><em>Data Extraction, Transformation and Loading</em></a>. To navigate the blueprint, refer to the online Archimate model [TO DO: add hyperlink].</p>
+<p>Note that the blueprint explicitly accounts for hybrid SPEs, where data stations feed into a centralized Trusted Research Environment (TRE)</p>
+<p><a href="images/Data stations - federated analytics.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/Data stations - federated analytics.png" class="img-fluid"></a></p>
+</section>
+<section id="defining-layers-of-interoperability" class="level2">
+<h2 class="anchored" data-anchor-id="defining-layers-of-interoperability">Defining layers of interoperability</h2>
+<p>We want to move toward open standards and specifications of the blueprint to move towards interoperability. This requires i) defining the layers; ii) defining the open standards and specification <em>within</em> each layer; and iii) defining the interface <em>between</em> layers. To put the issue into context, we first present existing frameworks for assessing interoperability that are relevant to data stations</p>
+<section id="eira-lost-framework" class="level3">
+<h3 class="anchored" data-anchor-id="eira-lost-framework">EIRA LOST framework</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/eira-lost.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="The LOST layers of EIRA."><img src="images/eira-lost.png" class="img-fluid figure-img" alt="The LOST layers of EIRA."></a></p>
+<figcaption>The LOST layers of EIRA.</figcaption>
+</figure>
+</div>
+</section>
+<section id="interoperability-within-the-dssc-blueprint" class="level3">
+<h3 class="anchored" data-anchor-id="interoperability-within-the-dssc-blueprint">Interoperability within the DSSC Blueprint</h3>
 <p>To arrive at consistent conceptualization of data stations and trains, we want to relate the PHT architecture to the key components as defined in the <a href="https://dssc.eu/space/BVE2/1071251457/Data+Spaces+Blueprint+v2.0+-+Home">DSSC Blueprint 2.0 (DSB2)</a>. The technical building blocks of DSB2 make an important distinction between between a control plane and a data plane. The control plane is responsible for deciding how data is managed, routed and processed. The data plane is responsible for the actual moving of data. For example, the control plane handles the identification of users and the handling of access and usage policies. The data plane handles the actual exchange of data. This implies that the control plane by nature can be standardised to a high-level, using common standards for identification, authentication, etc. The data plane can be different for each data space, as different types of data exchange take place. Some data spaces focus on the sharing of large datasets, others on message exchange, and others take an event-based approach. There is no one-size-fits-all, although there are some mechanisms (especially in the data interoperability pillar) which can assist in making sure different data planes work together.</p>
-<section id="conceptual-framework-for-interoperability" class="level3">
-<h3 class="anchored" data-anchor-id="conceptual-framework-for-interoperability">Conceptual framework for interoperability</h3>
-<p>We follow <span class="citation" data-cites="welten2024study">[<a href="#ref-welten2024study" role="doc-biblioref">3</a>]</span>:</p>
+<div id="fig-ddsc-c25" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ddsc-c25-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/dssc-c25.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;4: Conceptual overview of interoperability as defined in DSSC Blueprint 2.0."><img src="images/dssc-c25.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ddsc-c25-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Conceptual overview of interoperability as defined in DSSC Blueprint 2.0.
+</figcaption>
+</figure>
+</div>
+<div id="fig-four-planes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-four-planes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/analytics-data-plane.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;5: Simplified view of the four layers required for interoperability of data spaces. Image credit: Maarten Kollenstart, TNO."><img src="images/analytics-data-plane.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-four-planes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Simplified view of the four layers required for interoperability of data spaces. Image credit: Maarten Kollenstart, TNO.
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>Communication within first three are envisaged to be done with did:web</li>
+<li>“Any Docker that emits events can be supported”</li>
+<li>“We can disregard Simpl Open”</li>
+<li>“Data plane = data station”</li>
+<li>Data space protocol and decentralized ID will be proposed to ISO as a standard</li>
+</ul>
+</section>
+<section id="layers-of-interoperability-of-pht" class="level3">
+<h3 class="anchored" data-anchor-id="layers-of-interoperability-of-pht">Layers of interoperability of PHT</h3>
+<p>Welten et al. <span class="citation" data-cites="welten2024study">[<a href="#ref-welten2024study" role="doc-biblioref">4</a>]</span> have defined five layers:</p>
 <ul>
 <li><strong>Layer 0 - Data integration.</strong> The foundational step in our multi-layered approach involves harmonizing data across different infrastructures. This layer focuses on aligning and integrating the different data formats, structures, and standards from various data sources into a unified format such that it can be seamlessly processed by the analysis train.</li>
 <li><strong>Layer 1 - Assigning (globally unique) identifiers to stations.</strong> In order to transfer trains between infrastructures, it is necessary to establish a method for identifying the station unambiguously across infrastructural borders. This is essential to ensure the correct routing of trains between the infrastructures and stations.</li>
@@ -310,158 +380,6 @@ Figure&nbsp;2: Illustration of federated machine learning training workflow.
 </ul>
 <p>?!Do we need to define standards at the algorithm job layer? I think this is in fact less important, aside from the topology that you use for aggregation.</p>
 </section>
-<section id="ideas-from-tno" class="level3">
-<h3 class="anchored" data-anchor-id="ideas-from-tno">Ideas from TNO</h3>
-<p>Four layers 1. SSI wallet voor IAA functions 2. Control plane (Eclipse Dataspace protocol) 3. Analytics data plane 4. Algorithm jobs</p>
-<p>The last two are considere <em>event-based collaborative analytics</em> Communication within first three are envisaged to be done with did:web “Any Docker that emits events can be supported” “We can disregard Simpl Open” “Data plane = data station”</p>
-<p>Data space protocol and decentralized ID will be proposed to ISO as a standard</p>
-<div id="fig-pht-roles-components" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-pht-roles-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="./images/pht-roles-components.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Main roles and components"><img src="./images/pht-roles-components.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pht-roles-components-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Main roles and components
-</figcaption>
-</figure>
-</div>
-<div id="fig-pht-train-types" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-pht-train-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="./images/pht-train-types.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Train types"><img src="./images/pht-train-types.png" class="img-fluid figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pht-train-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Train types
-</figcaption>
-</figure>
-</div>
-<p>High-level overview of the Personal Health Train (PHT) architecture</p>
-<p>In their paper <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">4</a>]</span> continu to describe more details of the PHT architecture including i) the various functions, services, interface and internal components of the data station; ii) the data visiting process; and iii) the data staging concept in the case data access has been authorized, but the station is not capable of executing the train and needs to stage a capable station with enough resources to run the train. We will consider these details later.</p>
-<p>As an aside, it is good to mention that the authors of the PHT architecture have initiated the development of two specifications after publication of this paper, namely:</p>
-<ul>
-<li><a href="https://specs.fairdatapoint.org/fdp-specs-v1.2.html">FAIR Data Point</a> specification, which covers only the metadata and catalog part of the PHT architecture;</li>
-<li>the <a href="https://specs.fairdatatrain.org/">FAIR Data Train</a> specification, which covers the full scope of the original paper but at the time of writing is still incomplete.</li>
-</ul>
-</section>
-</section>
-<section id="mapping-pht-to-the-dssc-blueprint-2.0" class="level2">
-<h2 class="anchored" data-anchor-id="mapping-pht-to-the-dssc-blueprint-2.0">Mapping PHT to the DSSC Blueprint 2.0</h2>
-<p>To arrive at consistent conceptualization of data stations and trains, <a href="#tbl-mapping-pht-dssc" class="quarto-xref">Table&nbsp;1</a> maps the PHT architecture to the DSSC Blueprint 2.0 (DSB2). Some mappings are relatively evident. For example, the concept of Data and Metadata as defined in PHT is subsumed in the concept of a Data Product in DSB2. Less evident, is the mapping of the notion of a Train that ‘… represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.’ to Value Creation Services in DSB2 that includes data fusion and enrichment, collaborative data analytics and federated learning. We tentatively conclude that it is possible to have a consistent conceptual mapping between, at least at the high level, of the PHT architecture into DSB2. We will return to this matter, when more detailed functions and technical standards are considered for the Archimate specification.</p>
-<div id="tbl-mapping-pht-dssc" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-mapping-pht-dssc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Mapping the key concepts from the PHT architecture <span class="citation" data-cites="boninodasilvasantos2022personal">[<a href="#ref-boninodasilvasantos2022personal" role="doc-biblioref">4</a>]</span> to the <a href="https://dssc.eu/space/BVE2/1071252161/Alphabetical+List+of+All+Defined+Terms+in+Blueprint+v2.0">concepts of the DSSC Blueprint 2.0</a>.
-</figcaption>
-<div aria-describedby="tbl-mapping-pht-dssc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Component PHT</th>
-<th style="text-align: left;">mapping to DSSC Blueprint 2.0 concepts</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Data Station</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Data Space Building Block</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Data</li>
-<li>Metadata</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li><a href="https://dssc.eu/space/BVE2/1071253231/Data+Space+Offering#3.1.-Data-products">Data Product</a></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Data Controller</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Data Rights Holder</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Station Controller</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Data Product Provider</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Personal Gateway</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>included in Participant Agent Services</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Station Directory</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>included in Federation Services</li>
-<li>Catalogue provisions and discovers offerings of data and services in a data space</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Directory Owner</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Common Intermediary provides federation services that are common to all participants of the data space</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Train</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Value Creation Services</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Train Provider</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>Service Provider</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><ul>
-<li>Train Handler</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>specialization of Data Space Component that realizes the Train Value Creation Service</li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><ul>
-<li>Train Owner</li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li>included in Service Provider as most generic role</li>
-<li>concept of Intermediary (specialization of SP) is closer to definition of Train Owner</li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</section>
-<section id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations" class="level2">
-<h2 class="anchored" data-anchor-id="the-lakehouse-architecture-as-the-de-facto-standard-for-populating-data-stations">The lakehouse architecture as the <em>de facto</em> standard for populating data stations</h2>
-<p>The PHT architecture does not specify <em>how</em> the data stations should be populated with data. Also the DSB2 only describes how the ‘Data, Services and Offerings descriptions’ building block should provide data providers the tools to describe a data product appropriately and completely, that is, tools for metadata creation and management.</p>
-<p>One of the key questions of this paper is to detail <a href="https://www.vzvz.nl/media/downloads/canvas-voor-databeschikbaarheid-v11-003pdf/download">the ‘data conformity zone’ as defined in the Cumuluz canvas</a> as the functionality through which the data station is populated</p>
 </section>
 <section id="parking-lot" class="level2">
 <h2 class="anchored" data-anchor-id="parking-lot">Parking lot</h2>
@@ -469,57 +387,6 @@ Table&nbsp;1: Mapping the key concepts from the PHT architecture <span class="ci
 <li>Difference with data mesh: mesh of domains, federation is in the same domain. Underlying technology of a data station, however, is functionally identical</li>
 <li>UMCU: CQRS pattern for separately optimizing read/write patterns</li>
 <li>DSSC Blueprint: FL subsumed in value adding services</li>
-</ul>
-<p><a href="#tbl-types-hdp" class="quarto-xref">Table&nbsp;2</a> lists known examples of existing health data platform architectures along these two trade-offs.</p>
-<div id="tbl-types-hdp" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-types-hdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Broad categorization of health data platforms
-</figcaption>
-<div aria-describedby="tbl-types-hdp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 29%">
-<col style="width: 37%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>primary</th>
-<th>secondary</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>centralized</strong></td>
-<td>openHIE <span class="citation" data-cites="2024openhie">[<a href="#ref-2024openhie" role="doc-biblioref">5</a>]</span>, Digizorg, Nordics</td>
-<td>kapseli, Mayo, …</td>
-</tr>
-<tr class="even">
-<td><strong>decentralized</strong></td>
-<td>RSO Zuid Limburg, Twiin portaal, …</td>
-<td>many federated analytics research networks such as x-omics programme and EUCAIM</td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-</section>
-<section id="sec-glossary" class="level2">
-<h2 class="anchored" data-anchor-id="sec-glossary">Glossary</h2>
-<ul>
-<li><em>Data Controller</em> (Business Role) is the role of controlling rights over data.</li>
-<li><em>Data Station</em> (Business Product) is a software application responsible for making data and their related metadata available to users under the accessibility conditions determined by applicable regulations and the related Data Controllers.</li>
-<li><em>Directory Owner</em> (Business Role) is the role of being responsible for the operation of a Station Directory.</li>
-<li><em>Personal Gateway</em> (Business Product) is a software application responsible for mediating the communication between Data Stations and Data Controllers. The Data Controllers are able to exercise their control over the data available in different Data Stations through the Personal Gateway.</li>
-<li><em>Station Directory</em> (Business Product) is a software application responsible for indexing metadata from the reachable Data Stations, allowing users to search for data available in those stations.</li>
-<li><em>Train</em> (Business Representation) represents the way data consumers interact with the data available in the Data Stations. Trains represent a particular data access request and, therefore, each train carries information about who is responsible for the request, the required data, what will be done with the data, what it expects from the station, etc.</li>
-<li><em>Train Handler</em> (Business Representation) is a software application that interacts with the Stations Directory on behalf of a client to discover the availability and location of data and sends Trains to Data Stations.</li>
-<li><em>Station Owner</em> (Business Role) is the role of being responsible for the operation of a Data Station.</li>
-<li><em>Train Owner</em> (Business Role) is the role of using a Train Handler to send Trains to Data Stations.</li>
-<li><em>Train Provider</em> (Business Role) is the role of being responsible for the creation of a specific Train, e.g.&nbsp;the developer of a specific analysis algorithm.</li>
 </ul>
 
 
@@ -533,14 +400,11 @@ Table&nbsp;2: Broad categorization of health data platforms
 <div id="ref-wang2025survey" class="csl-entry" role="listitem">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">Wang Z, Ji H, Zhu Y, Wang D, Han Z (2025) A <span>Survey</span> on <span>Federated Analytics</span>: <span>Taxonomy</span>, <span>Enabling Techniques</span>, <span>Applications</span> and <span>Open Issues</span>. IEEE Commun Surv Tutorials 1–1. <a href="https://doi.org/10.1109/COMST.2025.3558755">https://doi.org/10.1109/COMST.2025.3558755</a></div>
 </div>
+<div id="ref-togaf" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">The <span>TOGAF</span>® <span>Standard</span>, <span>Version</span> 9.2. <a href="https://pubs.opengroup.org/architecture/togaf9-doc/arch/index.html">https://pubs.opengroup.org/architecture/togaf9-doc/arch/index.html</a>. Accessed 7 Jul 2025</div>
+</div>
 <div id="ref-welten2024study" class="csl-entry" role="listitem">
-<div class="csl-left-margin">3. </div><div class="csl-right-inline">Welten S, de Arruda Botelho Herr M, Hempel L, et al (2024) A study on interoperability between two <span>Personal Health Train</span> infrastructures in leukodystrophy data analysis. Sci Data 11(1):663. <a href="https://doi.org/10.1038/s41597-024-03450-6">https://doi.org/10.1038/s41597-024-03450-6</a></div>
-</div>
-<div id="ref-boninodasilvasantos2022personal" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">Bonino da Silva Santos LO, Ferreira Pires L, Martinez V, Moreira J, Guizzardi R (2022) Personal <span>Health Train Architecture</span> with <span>Dynamic Cloud Staging</span>. SN Computer Science 4. <a href="https://doi.org/10.1007/s42979-022-01422-4">https://doi.org/10.1007/s42979-022-01422-4</a></div>
-</div>
-<div id="ref-2024openhie" class="csl-entry" role="listitem">
-<div class="csl-left-margin">5. </div><div class="csl-right-inline">(2024) <a href="https://ohie.org/"><span>OpenHIE Framework</span> v5.2-en</a></div>
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Welten S, de Arruda Botelho Herr M, Hempel L, et al (2024) A study on interoperability between two <span>Personal Health Train</span> infrastructures in leukodystrophy data analysis. Sci Data 11(1):663. <a href="https://doi.org/10.1038/s41597-024-03450-6">https://doi.org/10.1038/s41597-024-03450-6</a></div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
