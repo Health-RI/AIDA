@@ -66,7 +66,7 @@ One of the key questions of this paper is to detail [the 'data conformity zone' 
   - We want to run it as a proper open source project
   - But we need to make sure other people contribute to it (not just Frank and Bart)
   - SURF as new candidate are managing organization
-  - @Andre: action for follow up
+  - Andre: action for follow up
 - Point Johan: decision principles i) logs from nodes; ii) logs from central server. What is the philosophy what we want to make visible, because it has implications for security
   - User point of view: we want some level of central visibility
   - Software point of view: should we build this in vantage6, or should we integrate another existing open source package
