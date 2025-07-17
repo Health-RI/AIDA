@@ -3,7 +3,7 @@ title: "Layers, pipes and patterns: detailing the concept of data stations as a 
 lang: en
 abstract: |
   We generalize the concept of Personal Health Train in terms of the European Interoperability Reference Architecture, using the concept of a data station as a foundational building block. By conceptualizing data stations as persistent data storage within the domain of the Data Holder that is tightly integrated with decentralized computing resources, we outline steps towards interoperable federated analytics networks in healthcare.
-keywords: [personal health train, federated learning, data station, data systems, data engineering, lakehouse, Apache Arrow, Apache Parquet, Apache Icebert, duckdb, polars]
+keywords: [personal health train, federated learning, data station, data systems, data engineering, lakehouse, Apache Arrow, Apache Parquet, Apache Iceberg, duckdb, polars]
 pdf: index.pdf
 index-terms: 
   - Scientific writing
